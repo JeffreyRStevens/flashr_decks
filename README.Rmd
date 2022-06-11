@@ -1,3 +1,8 @@
+---
+output:
+  md_document
+---
+
 # Welcome to the flashcard deck repository for `{flashr}`
 
 This is the repository of flashcard decks for the [`{flashr}`](https://github.com/JeffreyRStevens/flashr) R package. Check out the categories of decks below or look in the `decks/` directory for individual decks.
