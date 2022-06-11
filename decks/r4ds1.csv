@@ -1,4 +1,4 @@
-"term","description","package"
-"install.packages()","installs R packages","base"
-"library()","loads R packages","base"
-"session.info()","returns R session info and loaded packages","sessioninfo"
+"term","description","package","title"
+"install.packages()","installs R packages","base","R4DS Chapter 1"
+"library()","loads R packages","base",
+"session.info()","returns R session info and loaded packages","sessioninfo",
