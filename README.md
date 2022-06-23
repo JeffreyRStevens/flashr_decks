@@ -1,8 +1,8 @@
-# Welcome to the flashcard deck repository for `{flashr}`
+# Welcome to the flashcard deck repository for flashr
 
 This is the repository of flashcard decks for the
-[`{flashr}`](https://github.com/JeffreyRStevens/flashr) R package. Check
-out the categories of decks below or look in the `decks/` directory for
+[flashr](https://github.com/JeffreyRStevens/flashr) R package. Check out
+the categories of decks below or look in the `decks/` directory for
 individual decks.
 
 ## Available decks
@@ -20,7 +20,7 @@ CSV files for the decks and submit a pull request. To create the CSV
 files, create columns titled `term`, `description`, `package`, and
 `title` (optional). Then fill in these columns with the terms,
 descriptions, and packages that you would like included in your
-flashcards. Check out the `{flashr}` documentation for my details on
+flashcards. Check out the flashr documentation for my details on
 creating decks. Please keep file names short and consistent (e.g.,
 `r2ds1.csv` for functions from *R for Data Science* Chapter 1).
 
@@ -34,9 +34,10 @@ the project’s [code of conduct](code_of_conduct.md).
 
 ## Code of Conduct
 
-Please note that the `{flashr}` decks project is released with a
-[contributor code of conduct](code_of_conduct.md).<br>By participating
-in this project you agree to abide by its terms.
+Please note that the flashr decks project is released with a
+[contributor code of conduct](code_of_conduct.md).
+
+By participating in this project you agree to abide by its terms.
 
 ## License
 
