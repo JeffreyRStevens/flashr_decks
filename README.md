@@ -7,8 +7,19 @@ individual decks.
 
 ## Available decks
 
-### [R for Data Science](https://r4ds.had.co.nz) (1st edition), category ID: `r4ds`
+<details>
+<summary>
+[R for Data Science](https://r4ds.had.co.nz) (1st edition), category ID:
+`r4ds`
+</summary>
 
+-   Chapter 1 Introduction: `r4ds1`
+-   Chapter 3 Data visualization: `r4ds3`
+-   Chapter 5 Data transformation: `r4ds5`
+-   Chapter 7 Exploratory data analysis: `r4ds7`
+-   Chapter 8 Workflow: projects: `r4ds8`
+
+</details>
 <!-- ### [R for Data Science](https://r4ds.had.co.nz) (2nd edition), category ID `r4ds2e` -->
 
 ## Proposing decks
