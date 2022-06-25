@@ -9,8 +9,7 @@ individual decks.
 
 <details>
 <summary>
-[R for Data Science](https://r4ds.had.co.nz) (1st edition), category ID:
-`r4ds`
+<a href = "https://r4ds.had.co.nz">R for Data Science</a> (1st edition)
 </summary>
 
 -   Chapter 1 Introduction: `r4ds1`
@@ -18,6 +17,16 @@ individual decks.
 -   Chapter 5 Data transformation: `r4ds5`
 -   Chapter 7 Exploratory data analysis: `r4ds7`
 -   Chapter 8 Workflow: projects: `r4ds8`
+
+</details>
+<details>
+<summary>
+Miscellaneous decks
+</summary>
+
+-   Data types: `data_types`
+-   Operators: `operators`
+-   Vectors: `vectors`
 
 </details>
 <!-- ### [R for Data Science](https://r4ds.had.co.nz) (2nd edition), category ID `r4ds2e` -->
