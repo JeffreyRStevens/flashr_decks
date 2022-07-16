@@ -2,7 +2,9 @@ abline
 aes
 assignOps
 attr
+bolding
 br
+centre
 coord
 dblcolon
 desc
@@ -12,6 +14,7 @@ ethz
 flashr
 getwd
 ggplot
+github
 horizonal
 https
 ifelse
@@ -24,8 +27,13 @@ nrow
 ns
 num
 pipeOp
+psyteachr
+PsyTeachR
+QFA
 quickmap
 rdrr
+rstudio
+RStudio
 sessioninfo
 setwd
 str
