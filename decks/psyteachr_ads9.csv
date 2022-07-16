@@ -1,0 +1,10 @@
+term,description,url,title
+Boolean expression,An expression that evaluates to TRUE or FALSE.,https://psyteachr.github.io/glossary/b.html#boolean-expression,PsyTeachR ADS Ch. 9
+coercion,Changing the data type of values in a vector to a single compatible type.,https://psyteachr.github.io/glossary/c.html#coercion,PsyTeachR ADS Ch. 9
+data type,The kind of data represented by an object.,https://psyteachr.github.io/glossary/d.html#data-type,PsyTeachR ADS Ch. 9
+data wrangling,The process of preparing data for visualisation and statistical analysis.,https://psyteachr.github.io/glossary/d.html#data-wrangling,PsyTeachR ADS Ch. 9
+factor,A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter,https://psyteachr.github.io/glossary/f.html#factor,PsyTeachR ADS Ch. 9
+logical,A data type representing TRUE or FALSE values.,https://psyteachr.github.io/glossary/l.html#logical,PsyTeachR ADS Ch. 9
+match operator,A binary operator (%in%) that returns a logical vector indicating if there is a match or not for its left operand.,https://psyteachr.github.io/glossary/m.html#match-operator,PsyTeachR ADS Ch. 9
+operator,"A symbol that performs a mathematical operation, such as +, -, *, /",https://psyteachr.github.io/glossary/o.html#operator,PsyTeachR ADS Ch. 9
+string,A piece of text inside of quotes.,https://psyteachr.github.io/glossary/s.html#string,PsyTeachR ADS Ch. 9

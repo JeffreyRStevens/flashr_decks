@@ -1,0 +1,27 @@
+term,description,url,title
+argument,A variable that provides input to a function.,https://psyteachr.github.io/glossary/a.html#argument,PsyTeachR ADS Ch. 3
+categorical,"Data that can only take certain values, such as types of pet.",https://psyteachr.github.io/glossary/c.html#categorical,PsyTeachR ADS Ch. 3
+character,A data type representing strings of text.,https://psyteachr.github.io/glossary/c.html#character,PsyTeachR ADS Ch. 3
+chunk,A section of code in an R Markdown file,https://psyteachr.github.io/glossary/c.html#chunk,PsyTeachR ADS Ch. 3
+continuous,Data that can take on any values between other existing values.,https://psyteachr.github.io/glossary/c.html#continuous,PsyTeachR ADS Ch. 3
+data type,The kind of data represented by an object.,https://psyteachr.github.io/glossary/d.html#data-type,PsyTeachR ADS Ch. 3
+default value,A value that a function uses for an argument if it is skipped.,https://psyteachr.github.io/glossary/d.html#default-value,PsyTeachR ADS Ch. 3
+double,A data type representing a real decimal number,https://psyteachr.github.io/glossary/d.html#double,PsyTeachR ADS Ch. 3
+factor,A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter,https://psyteachr.github.io/glossary/f.html#factor,PsyTeachR ADS Ch. 3
+geom,"The geometric style in which data are displayed, such as boxplot, density, or histogram.",https://psyteachr.github.io/glossary/g.html#geom,PsyTeachR ADS Ch. 3
+integer,A data type representing whole numbers.,https://psyteachr.github.io/glossary/i.html#integer,PsyTeachR ADS Ch. 3
+knit,"To create an HTML, PDF, or Word document from an R Markdown (Rmd) document",https://psyteachr.github.io/glossary/k.html#knit,PsyTeachR ADS Ch. 3
+likert,A rating scale with a small number of discrete points in order,https://psyteachr.github.io/glossary/l.html#likert,PsyTeachR ADS Ch. 3
+logical,A data type representing TRUE or FALSE values.,https://psyteachr.github.io/glossary/l.html#logical,PsyTeachR ADS Ch. 3
+median,The middle number in a distribution where half of the values are larger and half are smaller.,https://psyteachr.github.io/glossary/m.html#median,PsyTeachR ADS Ch. 3
+nominal,"Categorical variables that don't have an inherent order, such as types of animal.",https://psyteachr.github.io/glossary/n.html#nominal,PsyTeachR ADS Ch. 3
+numeric,A data type representing a real decimal number or integer.,https://psyteachr.github.io/glossary/n.html#numeric,PsyTeachR ADS Ch. 3
+observation,All of the data about a single trial or question.,https://psyteachr.github.io/glossary/o.html#observation,PsyTeachR ADS Ch. 3
+ordinal,"Discrete variables that have an inherent order, such as number of legs",https://psyteachr.github.io/glossary/o.html#ordinal,PsyTeachR ADS Ch. 3
+outlier,A data point that is extremely distant from most of the other data points,https://psyteachr.github.io/glossary/o.html#outlier,PsyTeachR ADS Ch. 3
+R markdown,"The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.",https://psyteachr.github.io/glossary/r.html#r-markdown,PsyTeachR ADS Ch. 3
+string,A piece of text inside of quotes.,https://psyteachr.github.io/glossary/s.html#string,PsyTeachR ADS Ch. 3
+tidy data,A format for data that maps the meaning onto the structure.,https://psyteachr.github.io/glossary/t.html#tidy-data,PsyTeachR ADS Ch. 3
+value,A single number or piece of data.,https://psyteachr.github.io/glossary/v.html#value,PsyTeachR ADS Ch. 3
+variable,A word that identifies and stores the value of some data for later use.,https://psyteachr.github.io/glossary/v.html#variable,PsyTeachR ADS Ch. 3
+vector,"A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.",https://psyteachr.github.io/glossary/v.html#vector,PsyTeachR ADS Ch. 3

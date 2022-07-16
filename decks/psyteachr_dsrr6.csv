@@ -1,0 +1,9 @@
+term,description,url,title
+character,A data type representing strings of text.,https://psyteachr.github.io/glossary/c.html#character,PsyTeachR DSRR Ch. 6
+double,A data type representing a real decimal number,https://psyteachr.github.io/glossary/d.html#double,PsyTeachR DSRR Ch. 6
+integer,A data type representing whole numbers.,https://psyteachr.github.io/glossary/i.html#integer,PsyTeachR DSRR Ch. 6
+long,Data where each observation is on a separate row,https://psyteachr.github.io/glossary/l.html#long,PsyTeachR DSRR Ch. 6
+observation,All of the data about a single trial or question.,https://psyteachr.github.io/glossary/o.html#observation,PsyTeachR DSRR Ch. 6
+value,A single number or piece of data.,https://psyteachr.github.io/glossary/v.html#value,PsyTeachR DSRR Ch. 6
+variable,A word that identifies and stores the value of some data for later use.,https://psyteachr.github.io/glossary/v.html#variable,PsyTeachR DSRR Ch. 6
+wide,Data where all of the observations about one subject are in the same row,https://psyteachr.github.io/glossary/w.html#wide,PsyTeachR DSRR Ch. 6

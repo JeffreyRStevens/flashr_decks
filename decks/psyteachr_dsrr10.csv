@@ -1,0 +1,30 @@
+term,description,url,title
+alpha,(stats) The cutoff value for making a decision to reject the null hypothesis; (graphics) A value between 0 and 1 used to control the levels of transparency in a plot,https://psyteachr.github.io/glossary/a.html#alpha,PsyTeachR DSRR Ch. 10
+beta,The false negative rate we accept for a statistical test.,https://psyteachr.github.io/glossary/b.html#beta,PsyTeachR DSRR Ch. 10
+binomial distribution,"The distribution of data where each observation can have one of two outcomes, like success/failure, yes/no or head/tails.",https://psyteachr.github.io/glossary/b.html#binomial-distribution,PsyTeachR DSRR Ch. 10
+bivariate normal,Two normally distributed vectors that have a specified correlation with each other.,https://psyteachr.github.io/glossary/b.html#bivariate-normal,PsyTeachR DSRR Ch. 10
+confidence interval,A type of interval estimate used to summarise a given statistic or measurement where a proportion of intervals calculated from the sample(s) will contain the true value of the statistic.,https://psyteachr.github.io/glossary/c.html#confidence-interval,PsyTeachR DSRR Ch. 10
+correlation,The relationship two vectors have to each other.,https://psyteachr.github.io/glossary/c.html#correlation,PsyTeachR DSRR Ch. 10
+covariance matrix,Parameters showing how a set of vectors vary and are correlated.,https://psyteachr.github.io/glossary/c.html#covariance-matrix,PsyTeachR DSRR Ch. 10
+discrete,"Data that can only take certain values, such as integers.",https://psyteachr.github.io/glossary/d.html#discrete,PsyTeachR DSRR Ch. 10
+effect,"Some measure of your data, such as the mean value, or the number of standard deviations the mean differs from a chance value.",https://psyteachr.github.io/glossary/e.html#effect,PsyTeachR DSRR Ch. 10
+effect size,The difference between the effect in your data and the null effect (usually a chance value),https://psyteachr.github.io/glossary/e.html#effect-size,PsyTeachR DSRR Ch. 10
+false negative,When a test concludes there is no effect when there really is an effect,https://psyteachr.github.io/glossary/f.html#false-negative,PsyTeachR DSRR Ch. 10
+false positive,When a test concludes there is an effect when there really is no effect,https://psyteachr.github.io/glossary/f.html#false-positive,PsyTeachR DSRR Ch. 10
+function,A named section of code that can be reused.,https://psyteachr.github.io/glossary/f.html#function,PsyTeachR DSRR Ch. 10
+NHST,Null Hypothesis Signficance Testing,https://psyteachr.github.io/glossary/n.html#nhst,PsyTeachR DSRR Ch. 10
+normal distribution,A symmetric distribution of data where values near the centre are most probable.,https://psyteachr.github.io/glossary/n.html#normal-distribution,PsyTeachR DSRR Ch. 10
+null effect,An outcome that does not show an otherwise expected effect.,https://psyteachr.github.io/glossary/n.html#null-effect,PsyTeachR DSRR Ch. 10
+p value,"The probability of seeing an effect at least as extreme as what you have, if the real effect was the value you are testing against (e.g., a null effect)",https://psyteachr.github.io/glossary/p.html#p-value,PsyTeachR DSRR Ch. 10
+parameter,A quantity characterizing a population.,https://psyteachr.github.io/glossary/p.html#parameter,PsyTeachR DSRR Ch. 10
+Poisson distribution,A distribution that models independent events happening over a unit of time,https://psyteachr.github.io/glossary/p.html#poisson-distribution,PsyTeachR DSRR Ch. 10
+power,The probability of rejecting the null hypothesis when it is false.,https://psyteachr.github.io/glossary/p.html#power,PsyTeachR DSRR Ch. 10
+probability,A number between 0 and 1 where 0 indicates impossibility of the event and 1 indicates certainty,https://psyteachr.github.io/glossary/p.html#probability,PsyTeachR DSRR Ch. 10
+SESOI,Smallest Effect Size of Interest: the smallest effect that is theoretically or practically meaningful,https://psyteachr.github.io/glossary/s.html#sesoi,PsyTeachR DSRR Ch. 10
+significant,The conclusion when the p-value is less than the critical alpha.,https://psyteachr.github.io/glossary/s.html#significant,PsyTeachR DSRR Ch. 10
+simulation,Generating data from summary parameters,https://psyteachr.github.io/glossary/s.html#simulation,PsyTeachR DSRR Ch. 10
+true positive,When a test concludes there is an effect when there is really is an effect,https://psyteachr.github.io/glossary/t.html#true-positive,PsyTeachR DSRR Ch. 10
+type I error,A false positive; When a test concludes there is an effect when there is really is no effect,https://psyteachr.github.io/glossary/t.html#type-i-error,PsyTeachR DSRR Ch. 10
+type II error,A false negative; When a test concludes there is no effect when there is really is an effect,https://psyteachr.github.io/glossary/t.html#type-ii-error,PsyTeachR DSRR Ch. 10
+uniform distribution,A distribution where all numbers in the range have an equal probability of being sampled,https://psyteachr.github.io/glossary/u.html#uniform-distribution,PsyTeachR DSRR Ch. 10
+univariate,Relating to a single variable.,https://psyteachr.github.io/glossary/u.html#univariate,PsyTeachR DSRR Ch. 10

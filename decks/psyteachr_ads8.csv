@@ -1,0 +1,9 @@
+term,description,url,title
+character,A data type representing strings of text.,https://psyteachr.github.io/glossary/c.html#character,PsyTeachR ADS Ch. 8
+data type,The kind of data represented by an object.,https://psyteachr.github.io/glossary/d.html#data-type,PsyTeachR ADS Ch. 8
+long,Data where each observation is on a separate row,https://psyteachr.github.io/glossary/l.html#long,PsyTeachR ADS Ch. 8
+observation,All of the data about a single trial or question.,https://psyteachr.github.io/glossary/o.html#observation,PsyTeachR ADS Ch. 8
+tidy data,A format for data that maps the meaning onto the structure.,https://psyteachr.github.io/glossary/t.html#tidy-data,PsyTeachR ADS Ch. 8
+value,A single number or piece of data.,https://psyteachr.github.io/glossary/v.html#value,PsyTeachR ADS Ch. 8
+variable,A word that identifies and stores the value of some data for later use.,https://psyteachr.github.io/glossary/v.html#variable,PsyTeachR ADS Ch. 8
+wide,Data where all of the observations about one subject are in the same row,https://psyteachr.github.io/glossary/w.html#wide,PsyTeachR ADS Ch. 8

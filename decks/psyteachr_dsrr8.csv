@@ -1,0 +1,13 @@
+term,description,url,title
+categorical,"Data that can only take certain values, such as types of pet.",https://psyteachr.github.io/glossary/c.html#categorical,PsyTeachR DSRR Ch. 8
+coding scheme,How to represent categorical variables with numbers for use in models,https://psyteachr.github.io/glossary/c.html#coding-scheme,PsyTeachR DSRR Ch. 8
+continuous,Data that can take on any values between other existing values.,https://psyteachr.github.io/glossary/c.html#continuous,PsyTeachR DSRR Ch. 8
+dependent variable,"The target variable that is being analyzed, whose value is assumed to depend on other variables.",https://psyteachr.github.io/glossary/d.html#dependent-variable,PsyTeachR DSRR Ch. 8
+effect code,A coding scheme for categorical variables that contrasts each group mean with the mean of all the group means.,https://psyteachr.github.io/glossary/e.html#effect-code,PsyTeachR DSRR Ch. 8
+error term,The term in a model that represents the difference between the actual and predicted values,https://psyteachr.github.io/glossary/e.html#error-term,PsyTeachR DSRR Ch. 8
+general linear model,A mathematical model comparing how one or more independent variables affect a continuous dependent variable,https://psyteachr.github.io/glossary/g.html#general-linear-model,PsyTeachR DSRR Ch. 8
+independent variable,A variable whose value is assumed to influence the value of a dependent variable.,https://psyteachr.github.io/glossary/i.html#independent-variable,PsyTeachR DSRR Ch. 8
+normal distribution,A symmetric distribution of data where values near the centre are most probable.,https://psyteachr.github.io/glossary/n.html#normal-distribution,PsyTeachR DSRR Ch. 8
+residual error,,https://psyteachr.github.io/glossary/r.html#residual-error,PsyTeachR DSRR Ch. 8
+simulation,Generating data from summary parameters,https://psyteachr.github.io/glossary/s.html#simulation,PsyTeachR DSRR Ch. 8
+standard deviation,A descriptive statistic that measures how spread out data are relative to the mean.,https://psyteachr.github.io/glossary/s.html#standard-deviation,PsyTeachR DSRR Ch. 8

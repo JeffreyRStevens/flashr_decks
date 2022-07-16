@@ -1,0 +1,18 @@
+term,description,url,title
+argument,A variable that provides input to a function.,https://psyteachr.github.io/glossary/a.html#argument,PsyTeachR ADS Ch. 4
+character,A data type representing strings of text.,https://psyteachr.github.io/glossary/c.html#character,PsyTeachR ADS Ch. 4
+console,The pane in RStudio where you can type in commands and view output messages.,https://psyteachr.github.io/glossary/c.html#console,PsyTeachR ADS Ch. 4
+data type,The kind of data represented by an object.,https://psyteachr.github.io/glossary/d.html#data-type,PsyTeachR ADS Ch. 4
+double,A data type representing a real decimal number,https://psyteachr.github.io/glossary/d.html#double,PsyTeachR ADS Ch. 4
+extension,"The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).",https://psyteachr.github.io/glossary/e.html#extension,PsyTeachR ADS Ch. 4
+global environment,The interactive workspace where your script runs,https://psyteachr.github.io/glossary/g.html#global-environment,PsyTeachR ADS Ch. 4
+integer,A data type representing whole numbers.,https://psyteachr.github.io/glossary/i.html#integer,PsyTeachR ADS Ch. 4
+logical,A data type representing TRUE or FALSE values.,https://psyteachr.github.io/glossary/l.html#logical,PsyTeachR ADS Ch. 4
+"NA","A missing value that is ""Not Available""",https://psyteachr.github.io/glossary/n.html#na,PsyTeachR ADS Ch. 4
+nominal,"Categorical variables that don't have an inherent order, such as types of animal.",https://psyteachr.github.io/glossary/n.html#nominal,PsyTeachR ADS Ch. 4
+numeric,A data type representing a real decimal number or integer.,https://psyteachr.github.io/glossary/n.html#numeric,PsyTeachR ADS Ch. 4
+panes,"RStudio is arranged with four window ""panes"".",https://psyteachr.github.io/glossary/p.html#panes,PsyTeachR ADS Ch. 4
+tabular data,"Data in a rectangular table format, where each row has an entry for each column.",https://psyteachr.github.io/glossary/t.html#tabular-data,PsyTeachR ADS Ch. 4
+tidyverse,A set of R packages that help you create and work with tidy data,https://psyteachr.github.io/glossary/t.html#tidyverse,PsyTeachR ADS Ch. 4
+URL,The address of a web page (uniform resource locator),https://psyteachr.github.io/glossary/u.html#url,PsyTeachR ADS Ch. 4
+vector,"A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.",https://psyteachr.github.io/glossary/v.html#vector,PsyTeachR ADS Ch. 4

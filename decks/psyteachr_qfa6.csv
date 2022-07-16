@@ -1,0 +1,10 @@
+term,description,url,title
+data wrangling,The process of preparing data for visualisation and statistical analysis.,https://psyteachr.github.io/glossary/d.html#data-wrangling,PsyTeachR QFA Ch. 6
+function,A named section of code that can be reused.,https://psyteachr.github.io/glossary/f.html#function,PsyTeachR QFA Ch. 6
+inner join,A mutating join that returns all the rows that have a match in the other table.,https://psyteachr.github.io/glossary/i.html#inner-join,PsyTeachR QFA Ch. 6
+long,Data where each observation is on a separate row,https://psyteachr.github.io/glossary/l.html#long,PsyTeachR QFA Ch. 6
+package,A group of R functions.,https://psyteachr.github.io/glossary/p.html#package,PsyTeachR QFA Ch. 6
+pipe,A way to order your code in a more readable format using the symbol %>%,https://psyteachr.github.io/glossary/p.html#pipe,PsyTeachR QFA Ch. 6
+tibble,A container for tabular data with some different properties to a data frame,https://psyteachr.github.io/glossary/t.html#tibble,PsyTeachR QFA Ch. 6
+tidy data,A format for data that maps the meaning onto the structure.,https://psyteachr.github.io/glossary/t.html#tidy-data,PsyTeachR QFA Ch. 6
+wide,Data where all of the observations about one subject are in the same row,https://psyteachr.github.io/glossary/w.html#wide,PsyTeachR QFA Ch. 6

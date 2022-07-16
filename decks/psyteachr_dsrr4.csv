@@ -1,0 +1,25 @@
+term,description,url,title
+base R,"The set of R functions that come with a basic installation of R, before you add external packages",https://psyteachr.github.io/glossary/b.html#base-r,PsyTeachR DSRR Ch. 4
+character,A data type representing strings of text.,https://psyteachr.github.io/glossary/c.html#character,PsyTeachR DSRR Ch. 4
+coercion,Changing the data type of values in a vector to a single compatible type.,https://psyteachr.github.io/glossary/c.html#coercion,PsyTeachR DSRR Ch. 4
+csv,Comma-separated variable: a file type for representing data where each variable is separated from the next by a comma.,https://psyteachr.github.io/glossary/c.html#csv,PsyTeachR DSRR Ch. 4
+data type,The kind of data represented by an object.,https://psyteachr.github.io/glossary/d.html#data-type,PsyTeachR DSRR Ch. 4
+deviation score,A score minus the mean,https://psyteachr.github.io/glossary/d.html#deviation-score,PsyTeachR DSRR Ch. 4
+double,A data type representing a real decimal number,https://psyteachr.github.io/glossary/d.html#double,PsyTeachR DSRR Ch. 4
+escape,"Include special characters like "" inside of a string by prefacing them with a backslash.",https://psyteachr.github.io/glossary/e.html#escape,PsyTeachR DSRR Ch. 4
+extension,"The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).",https://psyteachr.github.io/glossary/e.html#extension,PsyTeachR DSRR Ch. 4
+extract operator,"A symbol used to get values from a container object, such as [, [[, or $",https://psyteachr.github.io/glossary/e.html#extract-operator,PsyTeachR DSRR Ch. 4
+factor,A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter,https://psyteachr.github.io/glossary/f.html#factor,PsyTeachR DSRR Ch. 4
+global environment,The interactive workspace where your script runs,https://psyteachr.github.io/glossary/g.html#global-environment,PsyTeachR DSRR Ch. 4
+integer,A data type representing whole numbers.,https://psyteachr.github.io/glossary/i.html#integer,PsyTeachR DSRR Ch. 4
+list,A container data type that allows items with different data types to be grouped together.,https://psyteachr.github.io/glossary/l.html#list,PsyTeachR DSRR Ch. 4
+logical,A data type representing TRUE or FALSE values.,https://psyteachr.github.io/glossary/l.html#logical,PsyTeachR DSRR Ch. 4
+numeric,A data type representing a real decimal number or integer.,https://psyteachr.github.io/glossary/n.html#numeric,PsyTeachR DSRR Ch. 4
+object,A word that identifies and stores the value of some data for later use.,https://psyteachr.github.io/glossary/o.html#object,PsyTeachR DSRR Ch. 4
+operator,"A symbol that performs a mathematical operation, such as +, -, *, /",https://psyteachr.github.io/glossary/o.html#operator,PsyTeachR DSRR Ch. 4
+panes,"RStudio is arranged with four window ""panes"".",https://psyteachr.github.io/glossary/p.html#panes,PsyTeachR DSRR Ch. 4
+tabular data,"Data in a rectangular table format, where each row has an entry for each column.",https://psyteachr.github.io/glossary/t.html#tabular-data,PsyTeachR DSRR Ch. 4
+tidy data,A format for data that maps the meaning onto the structure.,https://psyteachr.github.io/glossary/t.html#tidy-data,PsyTeachR DSRR Ch. 4
+tidyverse,A set of R packages that help you create and work with tidy data,https://psyteachr.github.io/glossary/t.html#tidyverse,PsyTeachR DSRR Ch. 4
+vector,"A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.",https://psyteachr.github.io/glossary/v.html#vector,PsyTeachR DSRR Ch. 4
+vectorized,An operator or function that acts on each element in a vector,https://psyteachr.github.io/glossary/v.html#vectorized,PsyTeachR DSRR Ch. 4

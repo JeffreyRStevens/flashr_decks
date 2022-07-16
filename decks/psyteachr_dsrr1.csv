@@ -1,0 +1,23 @@
+term,description,url,title
+argument,A variable that provides input to a function.,https://psyteachr.github.io/glossary/a.html#argument,PsyTeachR DSRR Ch. 1
+assignment operator,The symbol,https://psyteachr.github.io/glossary/a.html#assignment-operator,PsyTeachR DSRR Ch. 1
+base R,"The set of R functions that come with a basic installation of R, before you add external packages",https://psyteachr.github.io/glossary/b.html#base-r,PsyTeachR DSRR Ch. 1
+console,The pane in RStudio where you can type in commands and view output messages.,https://psyteachr.github.io/glossary/c.html#console,PsyTeachR DSRR Ch. 1
+CRAN,"The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.",https://psyteachr.github.io/glossary/c.html#cran,PsyTeachR DSRR Ch. 1
+escape,"Include special characters like "" inside of a string by prefacing them with a backslash.",https://psyteachr.github.io/glossary/e.html#escape,PsyTeachR DSRR Ch. 1
+factor,A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter,https://psyteachr.github.io/glossary/f.html#factor,PsyTeachR DSRR Ch. 1
+function,A named section of code that can be reused.,https://psyteachr.github.io/glossary/f.html#function,PsyTeachR DSRR Ch. 1
+global environment,The interactive workspace where your script runs,https://psyteachr.github.io/glossary/g.html#global-environment,PsyTeachR DSRR Ch. 1
+IDE,"Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R.",https://psyteachr.github.io/glossary/i.html#ide,PsyTeachR DSRR Ch. 1
+normal distribution,A symmetric distribution of data where values near the centre are most probable.,https://psyteachr.github.io/glossary/n.html#normal-distribution,PsyTeachR DSRR Ch. 1
+object,A word that identifies and stores the value of some data for later use.,https://psyteachr.github.io/glossary/o.html#object,PsyTeachR DSRR Ch. 1
+package,A group of R functions.,https://psyteachr.github.io/glossary/p.html#package,PsyTeachR DSRR Ch. 1
+panes,"RStudio is arranged with four window ""panes"".",https://psyteachr.github.io/glossary/p.html#panes,PsyTeachR DSRR Ch. 1
+R markdown,"The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.",https://psyteachr.github.io/glossary/r.html#r-markdown,PsyTeachR DSRR Ch. 1
+reproducible research,Research that documents all of the steps between raw data and results in a way that can be verified.,https://psyteachr.github.io/glossary/r.html#reproducible-research,PsyTeachR DSRR Ch. 1
+script,"A plain-text file that contains commands in a coding language, such as R.",https://psyteachr.github.io/glossary/s.html#script,PsyTeachR DSRR Ch. 1
+standard deviation,A descriptive statistic that measures how spread out data are relative to the mean.,https://psyteachr.github.io/glossary/s.html#standard-deviation,PsyTeachR DSRR Ch. 1
+string,A piece of text inside of quotes.,https://psyteachr.github.io/glossary/s.html#string,PsyTeachR DSRR Ch. 1
+variable,A word that identifies and stores the value of some data for later use.,https://psyteachr.github.io/glossary/v.html#variable,PsyTeachR DSRR Ch. 1
+vector,"A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.",https://psyteachr.github.io/glossary/v.html#vector,PsyTeachR DSRR Ch. 1
+whitespace,"Spaces, tabs and line breaks",https://psyteachr.github.io/glossary/w.html#whitespace,PsyTeachR DSRR Ch. 1
