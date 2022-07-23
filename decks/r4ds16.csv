@@ -1,0 +1,24 @@
+term,description,url,package,title
+as_date(),convert object to date,https://lubridate.tidyverse.org/reference/as_date.html,lubridate,R4DS Chapter 16
+as_datetime(),convert object to date-time,https://lubridate.tidyverse.org/reference/as_date.html,lubridate,R4DS Chapter 16
+ceiling_date(),round data-time up to ceiling,https://lubridate.tidyverse.org/reference/round_date.html,lubridate,R4DS Chapter 16
+dmy(),"parse dates as day, month, year",https://lubridate.tidyverse.org/reference/ymd.html,lubridate,R4DS Chapter 16
+floor_date(),round date-time down to floor,https://lubridate.tidyverse.org/reference/round_date.html,lubridate,R4DS Chapter 16
+force_tz(),replace time zone to create new date-time,https://lubridate.tidyverse.org/reference/force_tz.html,lubridate,R4DS Chapter 16
+hour(),return or set hour component of a date-time,https://lubridate.tidyverse.org/reference/hour.html,lubridate,R4DS Chapter 16
+make_datetime(),create date-times from numeric representations,https://lubridate.tidyverse.org/reference/make_datetime.html,lubridate,R4DS Chapter 16
+mdy(),"parse dates as month, day, year",https://lubridate.tidyverse.org/reference/ymd.html,lubridate,R4DS Chapter 16
+mdy_hm(),"parse month, day, year and hour, minute",https://lubridate.tidyverse.org/reference/ymd_hms.html,lubridate,R4DS Chapter 16
+minute(),return or set minute component of a date-time,https://lubridate.tidyverse.org/reference/minute.html,lubridate,R4DS Chapter 16
+month(),return or set month component of a date-time,https://lubridate.tidyverse.org/reference/month.html,lubridate,R4DS Chapter 16
+now(),return current date and time,https://lubridate.tidyverse.org/reference/now.html,lubridate,R4DS Chapter 16
+OlsonNames(),return vector of all time zone names,https://rdrr.io/r/base/timezones.html,base,R4DS Chapter 16
+round_date(),round date-time,https://lubridate.tidyverse.org/reference/round_date.html,lubridate,R4DS Chapter 16
+second(),return or set second component of a date-time,https://lubridate.tidyverse.org/reference/second.html,lubridate,R4DS Chapter 16
+Sys.timezone(),return name of current time zone,https://rdrr.io/r/base/timezones.html,base,R4DS Chapter 16
+today(),return the current date,https://lubridate.tidyverse.org/reference/now.html,lubridate,R4DS Chapter 16
+update(),update and refit a model,https://rdrr.io/r/stats/update.html,stats,R4DS Chapter 16
+with_tz(),return date-time in a different time zone,https://lubridate.tidyverse.org/reference/with_tz.html,lubridate,R4DS Chapter 16
+year(),return or set year component of a date-time,https://lubridate.tidyverse.org/reference/year.html,lubridate,R4DS Chapter 16
+ymd(),"parse dates with year, month, and day components",https://lubridate.tidyverse.org/reference/ymd.html,lubridate,R4DS Chapter 16
+ymd_hms(),parse dates and time,https://lubridate.tidyverse.org/reference/ymd_hms.html,lubridate,R4DS Chapter 16

@@ -1,5 +1,5 @@
-"term","description","url","package","title"
-"::","export variable from package for use","https://rdrr.io/r/base/ns-dblcolon.html","base","R4DS Chapter 1"
-"install.packages()","installs R packages","https://rdrr.io/r/utils/install.packages.html","utils",
-"library()","loads R packages","https://rdrr.io/r/base/library.html","base",
-"session.info()","returns R session info and loaded packages","https://rdrr.io/pkg/sessioninfo/man/session_info.html","sessioninfo",
+term,description,url,package,title
+::,export variable from package for use,https://rdrr.io/r/base/ns-dblcolon.html,base,R4DS Chapter 1
+install.packages(),install R packages,https://rdrr.io/r/utils/install.packages.html,utils,R4DS Chapter 1
+library(),load R packages,https://rdrr.io/r/base/library.html,base,R4DS Chapter 1
+session.info(),return R session info and loaded packages,https://rdrr.io/pkg/sessioninfo/man/session_info.html,sessioninfo,R4DS Chapter 1

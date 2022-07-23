@@ -1,0 +1,7 @@
+term,description,url,package,title
+cut(),divide range of vector into intervals,https://rdrr.io/r/base/cut.html,base,R4DS Chapter 19
+ifelse(),conditionally set values,https://rdrr.io/r/base/ifelse.html,base,R4DS Chapter 19
+invisible(),return invisible copy of object,https://rdrr.io/r/base/invisible.html,base,R4DS Chapter 19
+return(),return value,https://rdrr.io/r/base/function.html,base,R4DS Chapter 19
+stopifnot(),test condition and produce error at first FALSE,https://rdrr.io/r/base/stopifnot.html,base,R4DS Chapter 19
+switch(),select one of a list of alternatives,https://rdrr.io/r/base/switch.html,base,R4DS Chapter 19

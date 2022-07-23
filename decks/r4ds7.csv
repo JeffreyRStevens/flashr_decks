@@ -1,6 +1,6 @@
-"term","description","url","package","title"
-"case_when()","conditionally set values across multiple conditions","https://dplyr.tidyverse.org/reference/case_when.html","dplyr","R4DS Chapter 7"
-"cut_number()","cut data into groups of equal numbers of observations","https://ggplot2.tidyverse.org/reference/cut_interval.html","ggplot2",
-"cut_width()","cut data into groups of a particular width","https://ggplot2.tidyverse.org/reference/cut_interval.html","ggplot2",
-"ifelse()","conditionally set values","https://rdrr.io/r/base/ifelse.html","base",
-"reorder()","reorder factor levels based on another variable","https://rdrr.io/r/stats/reorder.factor.html","stats",
+term,description,url,package,title
+case_when(),conditionally set values across multiple conditions,https://dplyr.tidyverse.org/reference/case_when.html,dplyr,R4DS Chapter 7
+cut_number(),cut data into groups of equal numbers of observations,https://ggplot2.tidyverse.org/reference/cut_interval.html,ggplot2,R4DS Chapter 7
+cut_width(),cut data into groups of a particular width,https://ggplot2.tidyverse.org/reference/cut_interval.html,ggplot2,R4DS Chapter 7
+ifelse(),conditionally set values,https://rdrr.io/r/base/ifelse.html,base,R4DS Chapter 7
+reorder(),reorder factor levels based on another variable,https://rdrr.io/r/stats/reorder.factor.html,stats,R4DS Chapter 7

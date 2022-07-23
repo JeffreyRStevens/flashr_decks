@@ -1,0 +1,36 @@
+term,description,url,package,title
+annotate(),annotate plot independent of data,https://ggplot2.tidyverse.org/reference/annotate.html,ggplot2,R4DS Chapter 28
+arrow(),plot arrows,https://rdrr.io/r/grid/arrow.html,grid,R4DS Chapter 28
+coord_cartesian(),use Cartesian coordinates,https://ggplot2.tidyverse.org/reference/coord_cartesian.html,ggplot2,R4DS Chapter 28
+cut(),divide range of vector into intervals,https://rdrr.io/r/base/cut.html,base,R4DS Chapter 28
+geom_hline(),plot horizontal reference line,https://ggplot2.tidyverse.org/reference/geom_abline.html,ggplot2,R4DS Chapter 28
+geom_label(),adds text in rectangle to plot,https://ggplot2.tidyverse.org/reference/geom_text.html,ggplot2,R4DS Chapter 28
+geom_label_repel(,adds text in rectangle to plot with labels repelling away from each other and the data,https://rdrr.io/cran/ggrepel/man/geom_text_repel.html,ggrepel,R4DS Chapter 28
+geom_rect(),plot rectangle,https://ggplot2.tidyverse.org/reference/geom_tile.html,ggplot2,R4DS Chapter 28
+geom_segment(),plot line segment,https://ggplot2.tidyverse.org/reference/geom_segment.html,ggplot2,R4DS Chapter 28
+geom_text(),adds text to plot,https://ggplot2.tidyverse.org/reference/geom_text.html,ggplot2,R4DS Chapter 28
+geom_vline(),plot vertical reference line,https://ggplot2.tidyverse.org/reference/geom_abline.html,ggplot2,R4DS Chapter 28
+ggsave(),save a ggplot,https://ggplot2.tidyverse.org/reference/ggsave.html,ggplot2,R4DS Chapter 28
+guide_colourbar(),control legend color bar,https://ggplot2.tidyverse.org/reference/guide_colourbar.html,ggplot2,R4DS Chapter 28
+guide_legend(),control legend formatting,https://ggplot2.tidyverse.org/reference/guide_legend.html,ggplot2,R4DS Chapter 28
+guides(),set guides for scale,https://ggplot2.tidyverse.org/reference/guides.html,ggplot2,R4DS Chapter 28
+labs(),"modify axis, legend, and plot labels",https://ggplot2.tidyverse.org/reference/labs.html,ggplot2,R4DS Chapter 28
+parse_datetime(),parse date/time,https://readr.tidyverse.org/reference/parse_datetime.html,readr,R4DS Chapter 28
+quote(),returns quoted expression,https://rdrr.io/r/base/substitute.html,base,R4DS Chapter 28
+scale_color_brewer(),map colors to data with ColorBrewer,https://ggplot2.tidyverse.org/reference/scale_brewer.html,ggplot2,R4DS Chapter 28
+scale_color_discrete(),scale color aesthetic to be discrete,https://ggplot2.tidyverse.org/reference/scale_colour_discrete.html,ggplot2,R4DS Chapter 28
+scale_color_gradient(),scale color aesthetic to continuous color gradient,https://ggplot2.tidyverse.org/reference/scale_gradient.html,ggplot2,R4DS Chapter 28
+scale_color_gradient2(),scale color aesthetic to diverging color gradient,https://ggplot2.tidyverse.org/reference/scale_gradient.html,ggplot2,R4DS Chapter 28
+scale_color_manual(),map colors to data manually,https://ggplot2.tidyverse.org/reference/scale_manual.html,ggplot2,R4DS Chapter 28
+scale_color_viridis(),scale color aesthetic to viridis color gradient,https://rdrr.io/cran/viridis/man/scale_viridis.html,viridis,R4DS Chapter 28
+scale_fill_gradient(),scale fill aesthetic to continuous color gradient,https://ggplot2.tidyverse.org/reference/scale_gradient.html,ggplot2,R4DS Chapter 28
+scale_x_continuous(),scale x axis to be continuous,https://ggplot2.tidyverse.org/reference/scale_continuous.html,ggplot2,R4DS Chapter 28
+scale_x_date(),scale x axis to be date,https://ggplot2.tidyverse.org/reference/scale_date.html,ggplot2,R4DS Chapter 28
+scale_x_log10(),scale x axis to be log base 10,https://ggplot2.tidyverse.org/reference/scale_continuous.html,ggplot2,R4DS Chapter 28
+scale_y_continuous(),scale y axis to be continuous,https://ggplot2.tidyverse.org/reference/scale_continuous.html,ggplot2,R4DS Chapter 28
+scale_y_log10(),scale y axis to be log base 10,https://ggplot2.tidyverse.org/reference/scale_continuous.html,ggplot2,R4DS Chapter 28
+str_wrap(),wrap strings into nicely formatted paragraphs,https://stringr.tidyverse.org/reference/str_wrap.html,stringr,R4DS Chapter 28
+theme(),customize non-data components of plot,https://ggplot2.tidyverse.org/reference/theme.html,ggplot2,R4DS Chapter 28
+limits,scale argument to limit data range,NA,ggplot2,R4DS Chapter 28
+xlim,coordinate argument to limit data range,NA,ggplot2,R4DS Chapter 28
+ylim,coordinate argument to limit data range,NA,ggplot2,R4DS Chapter 28
