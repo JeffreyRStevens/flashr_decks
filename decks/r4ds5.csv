@@ -1,17 +1,17 @@
 term,description,url,package,title
-any_of(),check if any any elements are found in vector,https://tidyselect.r-lib.org/reference/all_of.html,tidyselect,R4DS Chapter 5
-arrange(),change order of rows based on values of columns,https://dplyr.tidyverse.org/reference/arrange.html,dplyr,R4DS Chapter 5
-contains(),match column names that contain string,https://tidyselect.r-lib.org/reference/starts_with.html,tidyselect,R4DS Chapter 5
-count(),count unique values of variables,https://dplyr.tidyverse.org/reference/count.html,dplyr,R4DS Chapter 5
-desc(),order in descending order,https://dplyr.tidyverse.org/reference/desc.html,dplyr,R4DS Chapter 5
-ends_with(),match column names that end with string,https://tidyselect.r-lib.org/reference/starts_with.html,tidyselect,R4DS Chapter 5
-filter(),keep rows based on values of columns,https://dplyr.tidyverse.org/reference/filter.html,dplyr,R4DS Chapter 5
-group_by(),group data by levels of column,https://dplyr.tidyverse.org/reference/group_by.html,dplyr,R4DS Chapter 5
-mutate(),create or modify data columns,https://dplyr.tidyverse.org/reference/mutate.html,dplyr,R4DS Chapter 5
-n(),return current group size,https://dplyr.tidyverse.org/reference/context.html,dplyr,R4DS Chapter 5
-num_range(),match column names with number range,https://tidyselect.r-lib.org/reference/starts_with.html,tidyselect,R4DS Chapter 5
-rename(),rename columns,https://dplyr.tidyverse.org/reference/rename.html,dplyr,R4DS Chapter 5
-select(),keep specified columns,https://dplyr.tidyverse.org/reference/select.html,dplyr,R4DS Chapter 5
-starts_with(),match column names that begin with string,https://tidyselect.r-lib.org/reference/starts_with.html,tidyselect,R4DS Chapter 5
-summarize(),summarize data usually by grouping variable,https://dplyr.tidyverse.org/reference/summarise.html,dplyr,R4DS Chapter 5
-ungroup(),remove grouping,https://dplyr.tidyverse.org/reference/group_by.html,dplyr,R4DS Chapter 5
+any_of(),check if any any elements are found in vector,https://tidyselect.r-lib.org/reference/all_of.html,tidyselect,R4DS Ch. 5
+arrange(),change order of rows based on values of columns,https://dplyr.tidyverse.org/reference/arrange.html,dplyr,R4DS Ch. 5
+contains(),match column names that contain string,https://tidyselect.r-lib.org/reference/starts_with.html,tidyselect,R4DS Ch. 5
+count(),count unique values of variables,https://dplyr.tidyverse.org/reference/count.html,dplyr,R4DS Ch. 5
+desc(),order in descending order,https://dplyr.tidyverse.org/reference/desc.html,dplyr,R4DS Ch. 5
+ends_with(),match column names that end with string,https://tidyselect.r-lib.org/reference/starts_with.html,tidyselect,R4DS Ch. 5
+filter(),keep rows based on values of columns,https://dplyr.tidyverse.org/reference/filter.html,dplyr,R4DS Ch. 5
+group_by(),group data by levels of column,https://dplyr.tidyverse.org/reference/group_by.html,dplyr,R4DS Ch. 5
+mutate(),create or modify data columns,https://dplyr.tidyverse.org/reference/mutate.html,dplyr,R4DS Ch. 5
+n(),return current group size,https://dplyr.tidyverse.org/reference/context.html,dplyr,R4DS Ch. 5
+num_range(),match column names with number range,https://tidyselect.r-lib.org/reference/starts_with.html,tidyselect,R4DS Ch. 5
+rename(),rename columns,https://dplyr.tidyverse.org/reference/rename.html,dplyr,R4DS Ch. 5
+select(),keep specified columns,https://dplyr.tidyverse.org/reference/select.html,dplyr,R4DS Ch. 5
+starts_with(),match column names that begin with string,https://tidyselect.r-lib.org/reference/starts_with.html,tidyselect,R4DS Ch. 5
+summarize(),summarize data usually by grouping variable,https://dplyr.tidyverse.org/reference/summarise.html,dplyr,R4DS Ch. 5
+ungroup(),remove grouping,https://dplyr.tidyverse.org/reference/group_by.html,dplyr,R4DS Ch. 5

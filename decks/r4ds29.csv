@@ -1,14 +1,14 @@
 term,description,url,package,title
-beamer_presentation(),create beamer presentation from R markdown file,https://rdrr.io/cran/rmarkdown/man/beamer_presentation.html,rmarkdown,R4DS Chapter 29
-code_folding,YAML option to enable or disable code folding,NA,rmarkdown,R4DS Chapter 29
-html_document(),create HTML document from R markdown file,https://rdrr.io/pkg/rmarkdown/man/html_document.html,rmarkdown,R4DS Chapter 29
-ioslides_presentation(),create ioslides presentation from R markdown file,https://rdrr.io/cran/rmarkdown/man/ioslides_presentation.html,rmarkdown,R4DS Chapter 29
-numericInput(),allow numeric input in Shiny,https://shiny.rstudio.com/reference/shiny/latest/numericInput.html,shiny,R4DS Chapter 29
-opts_chunk(),set options for R code chunks,https://rdrr.io/pkg/knitr/man/opts_chunk.html,knitr,R4DS Chapter 29
-pdf_document(),create PDF document from R markdown file,https://rdrr.io/pkg/rmarkdown/man/pdf_document.html,rmarkdown,R4DS Chapter 29
-render(),convert R markdown document to another format,https://rdrr.io/pkg/rmarkdown/man/render.html,rmarkdown,R4DS Chapter 29
-render_site(),render R markdown documents into website,https://rdrr.io/pkg/rmarkdown/man/render_site.html,rmarkdown,R4DS Chapter 29
-revealjs_presentation(),create revealjs presentation from R markdown file,https://rdrr.io/cran/revealjs/man/revealjs_presentation.html,revealjs,R4DS Chapter 29
-slidy_presentation(),create Slidy presentation from R markdown file,https://rdrr.io/cran/rmarkdown/man/slidy_presentation.html,rmarkdown,R4DS Chapter 29
-textInput(),allow text input in Shiny,https://shiny.rstudio.com/reference/shiny/latest/textInput.html,shiny,R4DS Chapter 29
-word_document(),create Word document from R markdown file,https://rdrr.io/pkg/rmarkdown/man/word_document.html,rmarkdown,R4DS Chapter 29
+beamer_presentation(),create beamer presentation from R markdown file,https://rdrr.io/cran/rmarkdown/man/beamer_presentation.html,rmarkdown,R4DS Ch. 29
+code_folding,YAML option to enable or disable code folding,NA,rmarkdown,R4DS Ch. 29
+html_document(),create HTML document from R markdown file,https://rdrr.io/pkg/rmarkdown/man/html_document.html,rmarkdown,R4DS Ch. 29
+ioslides_presentation(),create ioslides presentation from R markdown file,https://rdrr.io/cran/rmarkdown/man/ioslides_presentation.html,rmarkdown,R4DS Ch. 29
+numericInput(),allow numeric input in Shiny,https://shiny.rstudio.com/reference/shiny/latest/numericInput.html,shiny,R4DS Ch. 29
+opts_chunk(),set options for R code chunks,https://rdrr.io/pkg/knitr/man/opts_chunk.html,knitr,R4DS Ch. 29
+pdf_document(),create PDF document from R markdown file,https://rdrr.io/pkg/rmarkdown/man/pdf_document.html,rmarkdown,R4DS Ch. 29
+render(),convert R markdown document to another format,https://rdrr.io/pkg/rmarkdown/man/render.html,rmarkdown,R4DS Ch. 29
+render_site(),render R markdown documents into website,https://rdrr.io/pkg/rmarkdown/man/render_site.html,rmarkdown,R4DS Ch. 29
+revealjs_presentation(),create revealjs presentation from R markdown file,https://rdrr.io/cran/revealjs/man/revealjs_presentation.html,revealjs,R4DS Ch. 29
+slidy_presentation(),create Slidy presentation from R markdown file,https://rdrr.io/cran/rmarkdown/man/slidy_presentation.html,rmarkdown,R4DS Ch. 29
+textInput(),allow text input in Shiny,https://shiny.rstudio.com/reference/shiny/latest/textInput.html,shiny,R4DS Ch. 29
+word_document(),create Word document from R markdown file,https://rdrr.io/pkg/rmarkdown/man/word_document.html,rmarkdown,R4DS Ch. 29
