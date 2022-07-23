@@ -1,0 +1,36 @@
+term,description,url,package,title
+apropros(),returns a character vector giving the names of objects in the search list matching (as a regular expression),https://rdrr.io/r/utils/apropos.html,utils,R4DS Chapter 14
+boundary(),match boundaries within strings,https://stringr.tidyverse.org/reference/modifiers.html,stringr,R4DS Chapter 14
+c(),"create vector of numbers, characters, etc.",https://rdrr.io/r/base/c.html,base,R4DS Chapter 14
+coll(),compare strings respecting standard collation rules,https://stringr.tidyverse.org/reference/modifiers.html,stringr,R4DS Chapter 14
+fixed(),compare literal bytes in a string,https://stringr.tidyverse.org/reference/modifiers.html,stringr,R4DS Chapter 14
+mean(),calculate mean of elements of vector,https://rdrr.io/r/base/mean.html,base,R4DS Chapter 14
+mutate(),create or modify data columns,https://dplyr.tidyverse.org/reference/mutate.html,dplyr,R4DS Chapter 14
+regex(),use regular expressions,https://rdrr.io/r/base/regex.html,base,R4DS Chapter 14
+str_c(),combines two or more strings,https://stringr.tidyverse.org/reference/str_c.html,stringr,R4DS Chapter 14
+str_count(),count number of matches in a string,https://stringr.tidyverse.org/reference/str_count.html,stringr,R4DS Chapter 14
+str_detect(),detect presence of pattern in string,https://stringr.tidyverse.org/reference/str_detect.html,stringr,R4DS Chapter 14
+str_extract(),extract first matching patterns in a string,https://stringr.tidyverse.org/reference/str_extract.html,stringr,R4DS Chapter 14
+str_extract_all(),extract all matching patterns in a string,https://stringr.tidyverse.org/reference/str_extract.html,stringr,R4DS Chapter 14
+str_length(),returns number of characters in a string,https://stringr.tidyverse.org/reference/str_length.html,stringr,R4DS Chapter 14
+str_locate(),locate first position of pattern in a string,https://stringr.tidyverse.org/reference/str_locate.html,stringr,R4DS Chapter 14
+str_locate_all(),locate all positions of pattern in a string,https://stringr.tidyverse.org/reference/str_locate.html,stringr,R4DS Chapter 14
+str_match(),extract first matched group from a string,https://stringr.tidyverse.org/reference/str_match.html,stringr,R4DS Chapter 14
+str_match_all(),extract all matched groups from a string,https://stringr.tidyverse.org/reference/str_subset.html,stringr,R4DS Chapter 14
+str_order(),return index of sorted vector,https://stringr.tidyverse.org/reference/str_order.html,stringr,R4DS Chapter 14
+str_replace(),replace first matched pattern in a string,https://stringr.tidyverse.org/reference/str_replace.html,stringr,R4DS Chapter 14
+str_replace_all(),replace all matched patterns in a  string,https://stringr.tidyverse.org/reference/str_replace.html,stringr,R4DS Chapter 14
+str_replace_na(),replace NAs with other characters,https://stringr.tidyverse.org/reference/str_replace_na.html,stringr,R4DS Chapter 14
+str_sort(),sort numeric or character vector,https://stringr.tidyverse.org/reference/str_order.html,stringr,R4DS Chapter 14
+str_split(),split string into pieces,https://stringr.tidyverse.org/reference/str_split.html,stringr,R4DS Chapter 14
+str_sub(),extract parts of a string,https://stringr.tidyverse.org/reference/str_sub.html,stringr,R4DS Chapter 14
+str_subset(),extract elements that match pattern,https://stringr.tidyverse.org/reference/str_subset.html,stringr,R4DS Chapter 14
+str_to_lower(),change text to lower case,https://stringr.tidyverse.org/reference/case.html,stringr,R4DS Chapter 14
+str_to_title(),change text to upper case,https://stringr.tidyverse.org/reference/case.html,stringr,R4DS Chapter 14
+str_to_upper(),change text to upper case,https://stringr.tidyverse.org/reference/case.html,stringr,R4DS Chapter 14
+str_trim(),trim whitespace from string,https://stringr.tidyverse.org/reference/str_trim.html,stringr,R4DS Chapter 14
+str_view(),view first regular expression match,https://stringr.tidyverse.org/reference/str_view.html,stringr,R4DS Chapter 14
+str_view_all(),view all regular expression matches,https://stringr.tidyverse.org/reference/str_view.html,stringr,R4DS Chapter 14
+str_wrap(),wrap strings into nicely formatted paragraphs,https://stringr.tidyverse.org/reference/str_wrap.html,stringr,R4DS Chapter 14
+sum(),sum elements of vector,https://rdrr.io/r/base/sum.html,base,R4DS Chapter 14
+writeLines(),write text lines to a connection,https://rdrr.io/r/base/writeLines.html,base,R4DS Chapter 14

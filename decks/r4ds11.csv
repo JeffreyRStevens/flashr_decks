@@ -1,0 +1,37 @@
+term,description,url,package,title
+charToRaw(),converts a length-one character string to raw bytes,https://rdrr.io/r/base/rawConversion.html,base,R4DS Chapter 11
+fread(),read delimited files,https://rdatatable.gitlab.io/data.table/reference/fread.html,data.table,R4DS Chapter 11
+fwf_positions(),specify fields by positions,https://readr.tidyverse.org/reference/read_fwf.html,readr,R4DS Chapter 11
+fwf_widths(),specify fields by widths,https://readr.tidyverse.org/reference/read_fwf.html,readr,R4DS Chapter 11
+guess_encoding(),guess encoding of file,https://readr.tidyverse.org/reference/encoding.html,readr,R4DS Chapter 11
+guess_parser(),return the name of the parser,https://readr.tidyverse.org/reference/parse_guess.html,readr,R4DS Chapter 11
+parse_character(),parse a character vector to characters,https://readr.tidyverse.org/reference/parse_atomic.html,readr,R4DS Chapter 11
+parse_date(),parse date,https://readr.tidyverse.org/reference/parse_datetime.html,readr,R4DS Chapter 11
+parse_datetime(),parse date/time,https://readr.tidyverse.org/reference/parse_datetime.html,readr,R4DS Chapter 11
+parse_double(),parse a character vector to doubles,https://readr.tidyverse.org/reference/parse_atomic.html,readr,R4DS Chapter 11
+parse_factor(),parse a character vector to factors,https://readr.tidyverse.org/reference/parse_atomic.html,readr,R4DS Chapter 11
+parse_guess(),parse the column based on the guessed type,https://readr.tidyverse.org/reference/parse_guess.html,readr,R4DS Chapter 11
+parse_integer(),parse a character vector to integers,https://readr.tidyverse.org/reference/parse_atomic.html,readr,R4DS Chapter 11
+parse_logical(),parse a character vector to logicals,https://readr.tidyverse.org/reference/parse_atomic.html,readr,R4DS Chapter 11
+parse_number(),parse a character vector to numbers,https://readr.tidyverse.org/reference/parse_atomic.html,readr,R4DS Chapter 11
+parse_time(),parse time,https://readr.tidyverse.org/reference/parse_datetime.html,readr,R4DS Chapter 11
+read_csv(),read comma delimited files,https://readr.tidyverse.org/reference/read_delim.html,readr,R4DS Chapter 11
+read_csv2(),read semicolon separated files,https://readr.tidyverse.org/reference/read_delim.html,readr,R4DS Chapter 11
+read_delim(),read any kind of delimited file,https://readr.tidyverse.org/reference/read_delim.html,readr,R4DS Chapter 11
+read_feather(),read feather files,https://www.rdocumentation.org/packages/feather/versions/0.3.5/topics/read_feather,feather,R4DS Chapter 11
+read_file(),read a complete file,https://readr.tidyverse.org/reference/read_file.html,readr,R4DS Chapter 11
+read_fwf(),read fixed width files,https://readr.tidyverse.org/reference/read_fwf.html,readr,R4DS Chapter 11
+read_lines(),read lines from a file,https://readr.tidyverse.org/reference/read_lines.html,readr,R4DS Chapter 11
+read_log(),read Apache style log files,https://readr.tidyverse.org/reference/read_log.html,readr,R4DS Chapter 11
+read_rds(),read RDS files,https://readr.tidyverse.org/reference/read_rds.html,readr,R4DS Chapter 11
+read_table(),read fixed width files separated by white space,https://readr.tidyverse.org/reference/read_table.html,readr,R4DS Chapter 11
+read_tsv(),read tab delimited files,https://readr.tidyverse.org/reference/read_delim.html,readr,R4DS Chapter 11
+readRDS(),read RDS files,https://rdrr.io/r/base/readRDS.html,base,R4DS Chapter 11
+saveRDS(),write RDS files,https://rdrr.io/r/base/readRDS.html,base,R4DS Chapter 11
+stop_for_problems(),throw error and stop script if any parsing problems,https://readr.tidyverse.org/reference/problems.html,readr,R4DS Chapter 11
+type_convert(),re-convert character columns in existing data frame,https://readr.tidyverse.org/reference/type_convert.html,readr,R4DS Chapter 11
+write_csv(),write a data frame to comma delimited files,https://readr.tidyverse.org/reference/write_delim.html,readr,R4DS Chapter 11
+write_excel_csv(),export a csv file to Excel,https://readr.tidyverse.org/reference/write_delim.html,readr,R4DS Chapter 11
+write_feature,write feather files,https://www.rdocumentation.org/packages/feather/versions/0.3.5/topics/read_feather,feather,R4DS Chapter 11
+write_rds(),write RDS files,https://readr.tidyverse.org/reference/read_rds.html,readr,R4DS Chapter 11
+write_tsv(),write a data frame to tab delimited files,https://readr.tidyverse.org/reference/write_delim.html,readr,R4DS Chapter 11

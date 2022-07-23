@@ -1,0 +1,3 @@
+term,description,url,package,title
+sessionInfo(),"return info about R version, operating system, and loaded packages",https://rdrr.io/r/utils/sessionInfo.html,utils,R4DS Chapter 30
+tribble(),create row-wise tibble,https://tibble.tidyverse.org/reference/tribble.html,tibble,R4DS Chapter 30
