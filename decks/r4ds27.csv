@@ -1,32 +1,32 @@
 term,description,url,package,title
 render(),convert R markdown document to another format,https://rdrr.io/pkg/rmarkdown/man/render.html,rmarkdown,R4DS Ch. 27
-*text* or _text_,markdown italics,NA,NA,R4DS Ch. 27
-**text** or __text__,markdown bold,NA,NA,R4DS Ch. 27
-`text`,markdown code formatting,NA,NA,R4DS Ch. 27
-^1^,markdown superscript,NA,NA,R4DS Ch. 27
-~2~,markdown subscript,NA,NA,R4DS Ch. 27
-# Text,markdown header 1,NA,NA,R4DS Ch. 27
-## Text,markdown header 2,NA,NA,R4DS Ch. 27
-### Text,markdown header 3,NA,NA,R4DS Ch. 27
-* text,markdown bulleted list,NA,NA,R4DS Ch. 27
-1. text,markdown numbered list,NA,NA,R4DS Ch. 27
-<text>,markdown linked URL,NA,NA,R4DS Ch. 27
-[text1](text2),markdown linked phrase,NA,NA,R4DS Ch. 27
-![text1](text2),markdown image and alt text,NA,NA,R4DS Ch. 27
-```{r} ```,R markdown code chunk,NA,NA,R4DS Ch. 27
-eval,code chunk option to run code and show output,NA,NA,R4DS Ch. 27
-echo,code chunk option to not show code,NA,NA,R4DS Ch. 27
-results,code chunk option to not show output,NA,NA,R4DS Ch. 27
+*text* or _text_,markdown italics,,,R4DS Ch. 27
+**text** or __text__,markdown bold,,,R4DS Ch. 27
+`text`,markdown code formatting,,,R4DS Ch. 27
+^1^,markdown superscript,,,R4DS Ch. 27
+~2~,markdown subscript,,,R4DS Ch. 27
+# Text,markdown header 1,,,R4DS Ch. 27
+## Text,markdown header 2,,,R4DS Ch. 27
+### Text,markdown header 3,,,R4DS Ch. 27
+* text,markdown bulleted list,,,R4DS Ch. 27
+1. text,markdown numbered list,,,R4DS Ch. 27
+<text>,markdown linked URL,,,R4DS Ch. 27
+[text1](text2),markdown linked phrase,,,R4DS Ch. 27
+![text1](text2),markdown image and alt text,,,R4DS Ch. 27
+```{r} ```,R markdown code chunk,,,R4DS Ch. 27
+eval,code chunk option to run code and show output,,,R4DS Ch. 27
+echo,code chunk option to not show code,,,R4DS Ch. 27
+results,code chunk option to not show output,,,R4DS Ch. 27
 kable(),create knitr table,https://rdrr.io/pkg/knitr/man/kable.html,knitr,R4DS Ch. 27
-cache,code chunk option to cache results,NA,NA,R4DS Ch. 27
+cache,code chunk option to cache results,,,R4DS Ch. 27
 file.info(),extract file information,https://rdrr.io/r/base/file.info.html,base,R4DS Ch. 27
 clean_cache(),clear out code chunk cache,https://rdrr.io/pkg/knitr/man/clean_cache.html,knitr,R4DS Ch. 27
 opts_chunk$set(),set knitr code chunk options,https://rdrr.io/pkg/knitr/man/opts_chunk.html,knitr,R4DS Ch. 27
-`r `,R markdown inline code,NA,NA,R4DS Ch. 27
+`r `,R markdown inline code,,,R4DS Ch. 27
 format(),format object for pretty printing,https://rdrr.io/r/base/format.html,base,R4DS Ch. 27
 now(),return current date and time,https://lubridate.tidyverse.org/reference/now.html,lubridate,R4DS Ch. 27
 print(),prints argument,https://rdrr.io/r/base/print.html,base,R4DS Ch. 27
-output:,YAML syntax for output type,NA,NA,R4DS Ch. 27
-params:,YAML syntax for document parameters,NA,NA,R4DS Ch. 27
-bibliography:,YAML syntax for bibliography file,NA,NA,R4DS Ch. 27
-csl:,YAML syntax for CSL file,NA,NA,R4DS Ch. 27
+output:,YAML syntax for output type,,,R4DS Ch. 27
+params:,YAML syntax for document parameters,,,R4DS Ch. 27
+bibliography:,YAML syntax for bibliography file,,,R4DS Ch. 27
+csl:,YAML syntax for CSL file,,,R4DS Ch. 27

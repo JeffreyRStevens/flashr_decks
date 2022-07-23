@@ -31,6 +31,6 @@ scale_y_continuous(),scale y axis to be continuous,https://ggplot2.tidyverse.org
 scale_y_log10(),scale y axis to be log base 10,https://ggplot2.tidyverse.org/reference/scale_continuous.html,ggplot2,R4DS Ch. 28
 str_wrap(),wrap strings into nicely formatted paragraphs,https://stringr.tidyverse.org/reference/str_wrap.html,stringr,R4DS Ch. 28
 theme(),customize non-data components of plot,https://ggplot2.tidyverse.org/reference/theme.html,ggplot2,R4DS Ch. 28
-limits,scale argument to limit data range,NA,ggplot2,R4DS Ch. 28
-xlim,coordinate argument to limit data range,NA,ggplot2,R4DS Ch. 28
-ylim,coordinate argument to limit data range,NA,ggplot2,R4DS Ch. 28
+limits,scale argument to limit data range,,ggplot2,R4DS Ch. 28
+xlim,coordinate argument to limit data range,,ggplot2,R4DS Ch. 28
+ylim,coordinate argument to limit data range,,ggplot2,R4DS Ch. 28

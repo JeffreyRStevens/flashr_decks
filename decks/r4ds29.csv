@@ -1,6 +1,6 @@
 term,description,url,package,title
 beamer_presentation(),create beamer presentation from R markdown file,https://rdrr.io/cran/rmarkdown/man/beamer_presentation.html,rmarkdown,R4DS Ch. 29
-code_folding,YAML option to enable or disable code folding,NA,rmarkdown,R4DS Ch. 29
+code_folding,YAML option to enable or disable code folding,,rmarkdown,R4DS Ch. 29
 html_document(),create HTML document from R markdown file,https://rdrr.io/pkg/rmarkdown/man/html_document.html,rmarkdown,R4DS Ch. 29
 ioslides_presentation(),create ioslides presentation from R markdown file,https://rdrr.io/cran/rmarkdown/man/ioslides_presentation.html,rmarkdown,R4DS Ch. 29
 numericInput(),allow numeric input in Shiny,https://shiny.rstudio.com/reference/shiny/latest/numericInput.html,shiny,R4DS Ch. 29
