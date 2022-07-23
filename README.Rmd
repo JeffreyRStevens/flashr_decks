@@ -15,6 +15,22 @@ This is the repository of flashcard decks for the [flashr](https://github.com/Je
 * Ch. 5 Data transformation: `r4ds5`
 * Ch. 7 Exploratory data analysis: `r4ds7`
 * Ch. 8 Workflow: projects: `r4ds8`
+* Ch. 10 Tibbles: `r4ds10`
+* Ch. 11 Data import: `r4ds11`
+* Ch. 12 Tidy data: `r4ds12`
+* Ch. 13 Relational data: `r4ds13`
+* Ch. 14 Strings: `r4ds14`
+* Ch. 15 Factors: `r4ds15`
+* Ch. 16 Dates and times: `r4ds16`
+* Ch. 18 Pipes: `r4ds18`
+* Ch. 20 Vectors: `r4ds20`
+* Ch. 21 Iteration: `r4ds21`
+* Ch. 23 Model basics: `r4ds23`
+* Ch. 25 Many models: `r4ds25`
+* Ch. 27 R Markdown: `r4ds27`
+* Ch. 28 Graphics for communication: `r4ds28`
+* Ch. 29 R Markdown formats: `r4ds29`
+* Ch. 30 R Markdown workflow: `r4ds30`
 </details>
 
 <details><summary><a href="https://psyteachr.github.io/quant-fun-v2/">PsyTeachR Fundamentals of Quantitative Analysis</a> decks</summary>
@@ -57,7 +73,7 @@ This is the repository of flashcard decks for the [flashr](https://github.com/Je
 * Ch. 4 Data import: `psyteachr_ads4`
 * Ch. 5 Data summaries: `psyteachr_ads5`
 * Ch. 6 Practice report: `psyteachr_ads6`
-* Ch. 7 Data replations: `psyteachr_ads7`
+* Ch. 7 Data relations: `psyteachr_ads7`
 * Ch. 8 Data tidying: `psyteachr_ads8`
 * Ch. 9 Data wrangling: `psyteachr_ads9`
 * Ch. 10 Customising visualisations & reports: `psyteachr_ads10`
