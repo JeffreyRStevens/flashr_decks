@@ -63,3 +63,9 @@ By participating in this project you agree to abide by its terms.
 
 This repository is licensed under the MIT license. See the
 [`LICENSE.md`](LICENSE.md) file for more details.
+
+## Acknowledgments
+
+Many thanks to Mengzhu Fu, Eisha Haque, Jay Schalk, Doug Schultz, London
+Wolff, and Josh Zosky for helping extract functions and URLs from R for
+Data Science!

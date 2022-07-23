@@ -30,6 +30,7 @@ dplyr
 DS
 DSRR
 edu
+Eisha
 enframe
 ethz
 eval
@@ -38,6 +39,7 @@ filepath
 flashr
 forcats
 fread
+Fu
 fwf
 gam
 generalise
@@ -50,6 +52,7 @@ github
 gitlab
 glm
 glmnet
+Haque
 hline
 hm
 hms
@@ -76,6 +79,7 @@ lubridate
 magrittr
 matmult
 mdy
+Mengzhu
 mgcv
 modelr
 na
@@ -124,6 +128,7 @@ rstudio
 RStudio
 runif
 saveRDS
+Schalk
 sesoi
 SESOI
 sessioninfo
@@ -170,3 +175,4 @@ yaml
 YAML
 ylim
 ymd
+Zosky
