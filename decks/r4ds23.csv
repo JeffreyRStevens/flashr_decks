@@ -1,20 +1,20 @@
 term,description,url,package,title
-add_predictions(),add predictions to a data frame,https://modelr.tidyverse.org/reference/add_predictions.html,modelr,R4DS Chapter 23
-add_residuals(),add residuals to a data frame,https://modelr.tidyverse.org/reference/add_residuals.html,modelr,R4DS Chapter 23
-data_grid(),generate a data grid,https://modelr.tidyverse.org/reference/data_grid.html,modelr,R4DS Chapter 23
-gam(),compute generalized additive model,https://rdrr.io/cran/mgcv/man/gam.html,mgcv,R4DS Chapter 23
-gather_predictions(),add predictions and pivot longer,https://modelr.tidyverse.org/reference/add_predictions.html,modelr,R4DS Chapter 23
-geom_ref_line(),add reference line to plot,https://modelr.tidyverse.org/reference/geom_ref_line.html,modelr,R4DS Chapter 23
-glm(),compute generalized linear model,https://rdrr.io/r/stats/glm.html,stats,R4DS Chapter 23
-glmnet(),compute generalized linear model via penalized maximum likelihood,https://glmnet.stanford.edu/articles/glmnet.html,glmnet,R4DS Chapter 23
-loess(),apply local polynomial regression fitting,https://rdrr.io/r/stats/loess.html,stats,R4DS Chapter 23
-model_matrix(),construct a design matrix,https://modelr.tidyverse.org/reference/model_matrix.html,modelr,R4DS Chapter 23
-ns(),generate basis matrix for natural cubic splines,https://rdrr.io/r/splines/ns.html,splines,R4DS Chapter 23
-optim(),apply optimization algorithm,https://rdrr.io/r/stats/optim.html,stats,R4DS Chapter 23
-poly(),compute orthogonal polynomials,https://rdrr.io/r/stats/poly.html,stats,R4DS Chapter 23
-randomForest(),compute random forest model,https://www.rdocumentation.org/packages/randomForest/versions/4.7-1.1/topics/randomForest,randomForest,R4DS Chapter 23
-rlm(),compute robust linear model,https://rdrr.io/cran/MASS/man/rlm.html,MASS,R4DS Chapter 23
-rpart(),compute recursive partitioning  and regression trees,https://rdrr.io/cran/rpart/man/rpart.html,rpart,R4DS Chapter 23
-seq_range(),return sequence over the range of a vector,https://modelr.tidyverse.org/reference/seq_range.html,modelr,R4DS Chapter 23
-spread_predictions(),add predictions and pivot wider,https://modelr.tidyverse.org/reference/add_predictions.html,modelr,R4DS Chapter 23
-xgboost(),computer gradient boosting models,https://xgboost.readthedocs.io/en/stable/,sgboost,R4DS Chapter 23
+add_predictions(),add predictions to a data frame,https://modelr.tidyverse.org/reference/add_predictions.html,modelr,R4DS Ch. 23
+add_residuals(),add residuals to a data frame,https://modelr.tidyverse.org/reference/add_residuals.html,modelr,R4DS Ch. 23
+data_grid(),generate a data grid,https://modelr.tidyverse.org/reference/data_grid.html,modelr,R4DS Ch. 23
+gam(),compute generalized additive model,https://rdrr.io/cran/mgcv/man/gam.html,mgcv,R4DS Ch. 23
+gather_predictions(),add predictions and pivot longer,https://modelr.tidyverse.org/reference/add_predictions.html,modelr,R4DS Ch. 23
+geom_ref_line(),add reference line to plot,https://modelr.tidyverse.org/reference/geom_ref_line.html,modelr,R4DS Ch. 23
+glm(),compute generalized linear model,https://rdrr.io/r/stats/glm.html,stats,R4DS Ch. 23
+glmnet(),compute generalized linear model via penalized maximum likelihood,https://glmnet.stanford.edu/articles/glmnet.html,glmnet,R4DS Ch. 23
+loess(),apply local polynomial regression fitting,https://rdrr.io/r/stats/loess.html,stats,R4DS Ch. 23
+model_matrix(),construct a design matrix,https://modelr.tidyverse.org/reference/model_matrix.html,modelr,R4DS Ch. 23
+ns(),generate basis matrix for natural cubic splines,https://rdrr.io/r/splines/ns.html,splines,R4DS Ch. 23
+optim(),apply optimization algorithm,https://rdrr.io/r/stats/optim.html,stats,R4DS Ch. 23
+poly(),compute orthogonal polynomials,https://rdrr.io/r/stats/poly.html,stats,R4DS Ch. 23
+randomForest(),compute random forest model,https://www.rdocumentation.org/packages/randomForest/versions/4.7-1.1/topics/randomForest,randomForest,R4DS Ch. 23
+rlm(),compute robust linear model,https://rdrr.io/cran/MASS/man/rlm.html,MASS,R4DS Ch. 23
+rpart(),compute recursive partitioning  and regression trees,https://rdrr.io/cran/rpart/man/rpart.html,rpart,R4DS Ch. 23
+seq_range(),return sequence over the range of a vector,https://modelr.tidyverse.org/reference/seq_range.html,modelr,R4DS Ch. 23
+spread_predictions(),add predictions and pivot wider,https://modelr.tidyverse.org/reference/add_predictions.html,modelr,R4DS Ch. 23
+xgboost(),computer gradient boosting models,https://xgboost.readthedocs.io/en/stable/,sgboost,R4DS Ch. 23

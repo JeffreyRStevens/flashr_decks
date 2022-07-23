@@ -1,14 +1,14 @@
 term,description,url,package,title
-anti_join(),join two data sets dropping all observations in x that have a match in y,https://dplyr.tidyverse.org/reference/filter-joins.html,dplyr,R4DS Chapter 13
-count(),count unique values of variables,https://dplyr.tidyverse.org/reference/count.html,plyr,R4DS Chapter 13
-full_join(),join two data sets keeping the observations in both,https://dplyr.tidyverse.org/reference/mutate-joins.html,dplyr,R4DS Chapter 13
-inner_join(),join two data sets keeping the observations that they have in common,https://dplyr.tidyverse.org/reference/mutate-joins.html,dplyr,R4DS Chapter 13
-intersect(),return only observations in both x and y,https://rdrr.io/r/base/sets.html,base,R4DS Chapter 13
-left_join(),join two data sets keeping the observations in the left one,https://dplyr.tidyverse.org/reference/mutate-joins.html,dplyr,R4DS Chapter 13
-merge(),join two data sets,https://rdrr.io/r/base/merge.html,base,R4DS Chapter 13
-mutate(),create or modify data columns,https://dplyr.tidyverse.org/reference/mutate.html,dplyr,R4DS Chapter 13
-right_join(),join two data sets keeping the observations in the right one,https://dplyr.tidyverse.org/reference/mutate-joins.html,dplyr,R4DS Chapter 13
-semi_join(),join two data sets keeping all observations in x that have a match in y,https://dplyr.tidyverse.org/reference/filter-joins.html,dplyr,R4DS Chapter 13
-setdiff(),return observations in x but not y,https://rdrr.io/r/base/sets.html,base,R4DS Chapter 13
-union(),return unique observations in x or y,https://rdrr.io/r/base/sets.html,base,R4DS Chapter 13
-View(),open spreadsheet view of matrix-like object,https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/View,utils,R4DS Chapter 13
+anti_join(),join two data sets dropping all observations in x that have a match in y,https://dplyr.tidyverse.org/reference/filter-joins.html,dplyr,R4DS Ch. 13
+count(),count unique values of variables,https://dplyr.tidyverse.org/reference/count.html,plyr,R4DS Ch. 13
+full_join(),join two data sets keeping the observations in both,https://dplyr.tidyverse.org/reference/mutate-joins.html,dplyr,R4DS Ch. 13
+inner_join(),join two data sets keeping the observations that they have in common,https://dplyr.tidyverse.org/reference/mutate-joins.html,dplyr,R4DS Ch. 13
+intersect(),return only observations in both x and y,https://rdrr.io/r/base/sets.html,base,R4DS Ch. 13
+left_join(),join two data sets keeping the observations in the left one,https://dplyr.tidyverse.org/reference/mutate-joins.html,dplyr,R4DS Ch. 13
+merge(),join two data sets,https://rdrr.io/r/base/merge.html,base,R4DS Ch. 13
+mutate(),create or modify data columns,https://dplyr.tidyverse.org/reference/mutate.html,dplyr,R4DS Ch. 13
+right_join(),join two data sets keeping the observations in the right one,https://dplyr.tidyverse.org/reference/mutate-joins.html,dplyr,R4DS Ch. 13
+semi_join(),join two data sets keeping all observations in x that have a match in y,https://dplyr.tidyverse.org/reference/filter-joins.html,dplyr,R4DS Ch. 13
+setdiff(),return observations in x but not y,https://rdrr.io/r/base/sets.html,base,R4DS Ch. 13
+union(),return unique observations in x or y,https://rdrr.io/r/base/sets.html,base,R4DS Ch. 13
+View(),open spreadsheet view of matrix-like object,https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/View,utils,R4DS Ch. 13

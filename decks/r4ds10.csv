@@ -1,6 +1,6 @@
 term,description,url,package,title
-as.data.frame(),coerce object into data frame,https://rdrr.io/r/base/as.data.frame.html,base,R4DS Chapter 10
-as_tibble(),coerce object into tibble,https://tibble.tidyverse.org/reference/as_tibble.html,tibble,R4DS Chapter 10
-data.frame(),create data frame,https://rdrr.io/r/base/data.frame.html,base,R4DS Chapter 10
-tibble(),create tibble,https://tibble.tidyverse.org/reference/tibble.html,tibble,R4DS Chapter 10
-tribble(),create row-wise tibble,https://tibble.tidyverse.org/reference/tribble.html,tibble,R4DS Chapter 10
+as.data.frame(),coerce object into data frame,https://rdrr.io/r/base/as.data.frame.html,base,R4DS Ch. 10
+as_tibble(),coerce object into tibble,https://tibble.tidyverse.org/reference/as_tibble.html,tibble,R4DS Ch. 10
+data.frame(),create data frame,https://rdrr.io/r/base/data.frame.html,base,R4DS Ch. 10
+tibble(),create tibble,https://tibble.tidyverse.org/reference/tibble.html,tibble,R4DS Ch. 10
+tribble(),create row-wise tibble,https://tibble.tidyverse.org/reference/tribble.html,tibble,R4DS Ch. 10

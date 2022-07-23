@@ -1,17 +1,17 @@
 term,description,url,package,title
-attr(),return or set individual attribute values,https://rdrr.io/r/base/attr.html,base,R4DS Chapter 20
-attributes(),"return all attributes of vector, matrix, <br> data frame, etc.",https://rdrr.io/r/base/attributes.html,base,R4DS Chapter 20
-data.frame(),create data frame,https://rdrr.io/r/base/data.frame.html,base,R4DS Chapter 20
-getS3method(),return a method for S3 generic function,https://rdrr.io/r/utils/getS3method.html,utils,R4DS Chapter 20
-is.finite(),determines if numeric is finite,https://rdrr.io/r/base/is.finite.html,base,R4DS Chapter 20
-length(),return or set number of elements in vector,https://rdrr.io/r/base/length.html,base,R4DS Chapter 20
-list(),create recursive vector (list),https://rdrr.io/r/base/list.html,base,R4DS Chapter 20
-methods(),return all available methods for function,https://rdrr.io/r/utils/methods.html,utils,R4DS Chapter 20
-object_size(),compute size of object,https://rdrr.io/cran/pryr/man/object_size.html,pryr,R4DS Chapter 20
-print(),prints argument,https://rdrr.io/r/base/print.html,base,R4DS Chapter 20
-rep(),"create repetitions of numbers, characters, etc.",https://rdrr.io/r/base/rep.html,base,R4DS Chapter 20
-runif(),generate random number from uniform distribution,https://rdrr.io/r/stats/Uniform.html,stats,R4DS Chapter 20
-set_names(),set names of object,https://magrittr.tidyverse.org/reference/aliases.html,magrittr,R4DS Chapter 20
-str(),return object structure,https://rdrr.io/r/utils/str.html,utils,R4DS Chapter 20
-tibble(),create tibble,https://tibble.tidyverse.org/reference/tibble.html,tibble,R4DS Chapter 20
-typeof(),return the type of object,https://rdrr.io/r/base/typeof.html,base,R4DS Chapter 20
+attr(),return or set individual attribute values,https://rdrr.io/r/base/attr.html,base,R4DS Ch. 20
+attributes(),"return all attributes of vector, matrix, <br> data frame, etc.",https://rdrr.io/r/base/attributes.html,base,R4DS Ch. 20
+data.frame(),create data frame,https://rdrr.io/r/base/data.frame.html,base,R4DS Ch. 20
+getS3method(),return a method for S3 generic function,https://rdrr.io/r/utils/getS3method.html,utils,R4DS Ch. 20
+is.finite(),determines if numeric is finite,https://rdrr.io/r/base/is.finite.html,base,R4DS Ch. 20
+length(),return or set number of elements in vector,https://rdrr.io/r/base/length.html,base,R4DS Ch. 20
+list(),create recursive vector (list),https://rdrr.io/r/base/list.html,base,R4DS Ch. 20
+methods(),return all available methods for function,https://rdrr.io/r/utils/methods.html,utils,R4DS Ch. 20
+object_size(),compute size of object,https://rdrr.io/cran/pryr/man/object_size.html,pryr,R4DS Ch. 20
+print(),prints argument,https://rdrr.io/r/base/print.html,base,R4DS Ch. 20
+rep(),"create repetitions of numbers, characters, etc.",https://rdrr.io/r/base/rep.html,base,R4DS Ch. 20
+runif(),generate random number from uniform distribution,https://rdrr.io/r/stats/Uniform.html,stats,R4DS Ch. 20
+set_names(),set names of object,https://magrittr.tidyverse.org/reference/aliases.html,magrittr,R4DS Ch. 20
+str(),return object structure,https://rdrr.io/r/utils/str.html,utils,R4DS Ch. 20
+tibble(),create tibble,https://tibble.tidyverse.org/reference/tibble.html,tibble,R4DS Ch. 20
+typeof(),return the type of object,https://rdrr.io/r/base/typeof.html,base,R4DS Ch. 20

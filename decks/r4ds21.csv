@@ -1,32 +1,32 @@
 term,description,url,package,title
-accumulate(),accumulate intermediate result of vector reduction,https://purrr.tidyverse.org/reference/accumulate.html,purrr,R4DS Chapter 21
-apply(),apply a function to multiple elements of an object in base R,https://rdrr.io/r/base/apply.html,base,R4DS Chapter 21
-bind_rows(),bind rows in dplyr,https://dplyr.tidyverse.org/reference/bind.html,dplyr,R4DS Chapter 21
-detect(),return value of first matching element,https://purrr.tidyverse.org/reference/detect.html,purrr,R4DS Chapter 21
-discard(),discard elements using a predicate function,https://purrr.tidyverse.org/reference/keep.html,purrr,R4DS Chapter 21
-every(),determine if all elements meet predicate function conditional,https://purrr.tidyverse.org/reference/every.html,purrr,R4DS Chapter 21
-flatten_dbl(),flatten a list into an atomic vector in purrr,https://purrr.tidyverse.org/reference/flatten.html,purrr,R4DS Chapter 21
-head_while(),find first elements that satisfy predicate,https://purrr.tidyverse.org/reference/head_while.html,purrr,R4DS Chapter 21
-keep(),keep elements using a predicate function,https://purrr.tidyverse.org/reference/keep.html,purrr,R4DS Chapter 21
-lapply(),apply a function to multiple elements of an object and return a list,https://rdrr.io/r/base/lapply.html,base,R4DS Chapter 21
-map(),"apply a function to multiple elements of an object in purrr, return a list",https://purrr.tidyverse.org/reference/map.html,purrr,R4DS Chapter 21
-map_chr(),"apply a function to multiple elements of an object in purrr, return a character vector",https://purrr.tidyverse.org/reference/map.html,purrr,R4DS Chapter 21
-map_dbl(),"apply a function to multiple elements of an object in purrr, return a double vector",https://purrr.tidyverse.org/reference/map.html,purrr,R4DS Chapter 21
-map_int(),"apply a function to multiple elements of an object in purrr, return a integer vector",https://purrr.tidyverse.org/reference/map.html,purrr,R4DS Chapter 21
-map_lgl(),"apply a function to multiple elements of an object in purrr, return a logical vector",https://purrr.tidyverse.org/reference/map.html,purrr,R4DS Chapter 21
-map2(),apply a function to multiple elements over two vectors in parallel,https://purrr.tidyverse.org/reference/map2.html,purrr,R4DS Chapter 21
-pmap(),apply a function to multiple elements over a list of vectors in parallel,https://purrr.tidyverse.org/reference/map2.html,purrr,R4DS Chapter 21
-possibly(),safely return result or default when there is an error,https://purrr.tidyverse.org/reference/safely.html,purrr,R4DS Chapter 21
-quietly(),"safely return result, messages, and warnings",https://purrr.tidyverse.org/reference/safely.html,purrr,R4DS Chapter 21
-rbind(),bind rows in base R,https://rdrr.io/r/base/cbind.html,base,R4DS Chapter 21
-reduce(),reduce list to single value by iteratively applying binary function,https://purrr.tidyverse.org/reference/reduce.html,purrr,R4DS Chapter 21
-safely(),safely return result and error,https://purrr.tidyverse.org/reference/safely.html,purrr,R4DS Chapter 21
-seq_along(),return a sequence along the length of an object,https://rdrr.io/r/base/seq.html,base,R4DS Chapter 21
-some(),determine if some of elements meet predicate function conditional,https://purrr.tidyverse.org/reference/every.html,purrr,R4DS Chapter 21
-summary(),return summary of model fitting functions,https://rdrr.io/r/base/summary.html,base,R4DS Chapter 21
-tail_while(),find last elements that satisfy predicate,https://purrr.tidyverse.org/reference/head_while.html,purrr,R4DS Chapter 21
-transpose(),turn list-of-lists 'inside out',https://purrr.tidyverse.org/reference/transpose.html,purrr,R4DS Chapter 21
-tribble(),create row-wise tibble,https://tibble.tidyverse.org/reference/tribble.html,tibble,R4DS Chapter 21
-try(),try an expression and allow errors,https://rdrr.io/r/base/try.html,base,R4DS Chapter 21
-unlist(),flatten a list into an atomic vector in base R,https://rdrr.io/r/base/unlist.html,base,R4DS Chapter 21
-walk(),apply a function to multiple elements of an object to obtain side effects,https://purrr.tidyverse.org/reference/map.html,purrr,R4DS Chapter 21
+accumulate(),accumulate intermediate result of vector reduction,https://purrr.tidyverse.org/reference/accumulate.html,purrr,R4DS Ch. 21
+apply(),apply a function to multiple elements of an object in base R,https://rdrr.io/r/base/apply.html,base,R4DS Ch. 21
+bind_rows(),bind rows in dplyr,https://dplyr.tidyverse.org/reference/bind.html,dplyr,R4DS Ch. 21
+detect(),return value of first matching element,https://purrr.tidyverse.org/reference/detect.html,purrr,R4DS Ch. 21
+discard(),discard elements using a predicate function,https://purrr.tidyverse.org/reference/keep.html,purrr,R4DS Ch. 21
+every(),determine if all elements meet predicate function conditional,https://purrr.tidyverse.org/reference/every.html,purrr,R4DS Ch. 21
+flatten_dbl(),flatten a list into an atomic vector in purrr,https://purrr.tidyverse.org/reference/flatten.html,purrr,R4DS Ch. 21
+head_while(),find first elements that satisfy predicate,https://purrr.tidyverse.org/reference/head_while.html,purrr,R4DS Ch. 21
+keep(),keep elements using a predicate function,https://purrr.tidyverse.org/reference/keep.html,purrr,R4DS Ch. 21
+lapply(),apply a function to multiple elements of an object and return a list,https://rdrr.io/r/base/lapply.html,base,R4DS Ch. 21
+map(),"apply a function to multiple elements of an object in purrr, return a list",https://purrr.tidyverse.org/reference/map.html,purrr,R4DS Ch. 21
+map_chr(),"apply a function to multiple elements of an object in purrr, return a character vector",https://purrr.tidyverse.org/reference/map.html,purrr,R4DS Ch. 21
+map_dbl(),"apply a function to multiple elements of an object in purrr, return a double vector",https://purrr.tidyverse.org/reference/map.html,purrr,R4DS Ch. 21
+map_int(),"apply a function to multiple elements of an object in purrr, return a integer vector",https://purrr.tidyverse.org/reference/map.html,purrr,R4DS Ch. 21
+map_lgl(),"apply a function to multiple elements of an object in purrr, return a logical vector",https://purrr.tidyverse.org/reference/map.html,purrr,R4DS Ch. 21
+map2(),apply a function to multiple elements over two vectors in parallel,https://purrr.tidyverse.org/reference/map2.html,purrr,R4DS Ch. 21
+pmap(),apply a function to multiple elements over a list of vectors in parallel,https://purrr.tidyverse.org/reference/map2.html,purrr,R4DS Ch. 21
+possibly(),safely return result or default when there is an error,https://purrr.tidyverse.org/reference/safely.html,purrr,R4DS Ch. 21
+quietly(),"safely return result, messages, and warnings",https://purrr.tidyverse.org/reference/safely.html,purrr,R4DS Ch. 21
+rbind(),bind rows in base R,https://rdrr.io/r/base/cbind.html,base,R4DS Ch. 21
+reduce(),reduce list to single value by iteratively applying binary function,https://purrr.tidyverse.org/reference/reduce.html,purrr,R4DS Ch. 21
+safely(),safely return result and error,https://purrr.tidyverse.org/reference/safely.html,purrr,R4DS Ch. 21
+seq_along(),return a sequence along the length of an object,https://rdrr.io/r/base/seq.html,base,R4DS Ch. 21
+some(),determine if some of elements meet predicate function conditional,https://purrr.tidyverse.org/reference/every.html,purrr,R4DS Ch. 21
+summary(),return summary of model fitting functions,https://rdrr.io/r/base/summary.html,base,R4DS Ch. 21
+tail_while(),find last elements that satisfy predicate,https://purrr.tidyverse.org/reference/head_while.html,purrr,R4DS Ch. 21
+transpose(),turn list-of-lists 'inside out',https://purrr.tidyverse.org/reference/transpose.html,purrr,R4DS Ch. 21
+tribble(),create row-wise tibble,https://tibble.tidyverse.org/reference/tribble.html,tibble,R4DS Ch. 21
+try(),try an expression and allow errors,https://rdrr.io/r/base/try.html,base,R4DS Ch. 21
+unlist(),flatten a list into an atomic vector in base R,https://rdrr.io/r/base/unlist.html,base,R4DS Ch. 21
+walk(),apply a function to multiple elements of an object to obtain side effects,https://purrr.tidyverse.org/reference/map.html,purrr,R4DS Ch. 21

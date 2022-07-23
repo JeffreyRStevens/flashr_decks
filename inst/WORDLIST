@@ -28,7 +28,9 @@ desc
 dmy
 dplyr
 DS
+ds
 DSRR
+dsrr
 edu
 Eisha
 enframe
@@ -104,6 +106,7 @@ psyteachr
 PsyTeachR
 purrr
 QFA
+qfa
 quickmap
 randomForest
 rawConversion

@@ -1,5 +1,5 @@
 term,description,url,package,title
-%>%,pipe operator,https://magrittr.tidyverse.org/reference/pipe.html,magrittr,R4DS Chapter 18
-%<>%,assignment pipe,https://magrittr.tidyverse.org/reference/compound.html,magrittr,R4DS Chapter 18
-%T>%,tee pipe,https://magrittr.tidyverse.org/reference/tee.html,magrittr,R4DS Chapter 18
-%$%,exposition pipe,https://magrittr.tidyverse.org/reference/exposition.html,magrittr,R4DS Chapter 18
+%>%,pipe operator,https://magrittr.tidyverse.org/reference/pipe.html,magrittr,R4DS Ch. 18
+%<>%,assignment pipe,https://magrittr.tidyverse.org/reference/compound.html,magrittr,R4DS Ch. 18
+%T>%,tee pipe,https://magrittr.tidyverse.org/reference/tee.html,magrittr,R4DS Ch. 18
+%$%,exposition pipe,https://magrittr.tidyverse.org/reference/exposition.html,magrittr,R4DS Ch. 18
