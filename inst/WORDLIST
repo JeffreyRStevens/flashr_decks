@@ -25,6 +25,7 @@ Customising
 datetime
 dblcolon
 decklabel
+defauly
 delim
 desc
 dmy
@@ -86,6 +87,7 @@ mdy
 Mengzhu
 mgcv
 modelr
+mutlitple
 na
 ncol
 nhst
@@ -97,6 +99,8 @@ numericInput
 OlsonNames
 optim
 organise
+other’
+out’
 params
 pearson
 pipeOp

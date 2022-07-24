@@ -45,7 +45,7 @@ repos:
     rev: v4.3.0
     hooks: 
     -   id: check-added-large-files
-        args: ['--maxkb=200']
+        args: ['--maxkb=2000']
     -   id: end-of-file-fixer
         exclude: '\.Rd'
 -   repo: https://github.com/pre-commit-ci/pre-commit-ci-config
