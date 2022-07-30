@@ -17,9 +17,11 @@ ColorBrewer
 colour
 colourbar
 coord
+cosmo
 cran
 csl
 CSL
+css
 csv
 Customising
 datetime
@@ -64,6 +66,7 @@ hms
 holm
 Holm
 homoscedasticity
+href
 https
 ide
 ifelse
@@ -72,6 +75,8 @@ inorder
 io
 ioslides
 iteratively
+jeffreyrstevens
+JeffreyRStevens
 jitter
 kable
 knitr
@@ -89,6 +94,7 @@ mgcv
 modelr
 mutlitple
 na
+navbar
 ncol
 nhst
 NHST
@@ -96,6 +102,7 @@ nrow
 ns
 num
 numericInput
+nz
 OlsonNames
 optim
 organise
@@ -113,6 +120,8 @@ PsyTeachR
 purrr
 QFA
 qfa
+qmd
+quant
 quickmap
 randomForest
 rawConversion
@@ -127,7 +136,9 @@ recode
 rect
 relevel
 replicability
+repo
 reproducibility
+reprores
 revealjs
 rlm
 rmarkdown
@@ -163,6 +174,7 @@ tidyr
 tidyselect
 tidyverse
 timezones
+toc
 tribble
 tsv
 twi

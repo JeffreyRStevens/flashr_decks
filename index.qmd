@@ -1,0 +1,7 @@
+---
+title: "flashr decks"
+---
+
+**Welcome to the flashcard deck repository for flashr**
+
+This is the repository of flashcard decks for the [flashr](https://github.com/JeffreyRStevens/flashr) R package. Check out the categories of [built-in decks](decks.html) to see what decks are available.
