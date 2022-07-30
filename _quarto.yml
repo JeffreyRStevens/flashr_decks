@@ -9,6 +9,8 @@ website:
         text: Home
       - decks.qmd
       - contribute.qmd
+      - href: functions.qmd
+        text: Functions
     right:
       - icon: "github"
         href: "https://github.com/jeffreyrstevens/flashr_decks"
