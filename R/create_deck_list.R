@@ -31,7 +31,7 @@ decks <- paste0(titles, " (", decklabels, ")") |>
 
 all_decks <- data.frame(deck = decks, title = titles, decklabel = decklabels)
 
-write.csv(all_decks, here("decks/00_all_decks.csv"), row.names = FALSE)
+write.csv(all_decks, here("data/all_decks.csv"), row.names = FALSE)
 
 
 # Create HTML decks for website ------------------------------------------------

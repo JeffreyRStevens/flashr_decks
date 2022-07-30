@@ -1,6 +1,6 @@
 term,description,url,package,title
 anti_join(),join two data sets dropping all observations in x that have a match in y,https://dplyr.tidyverse.org/reference/filter-joins.html,dplyr,R4DS Ch. 13
-count(),count unique values of variables,https://dplyr.tidyverse.org/reference/count.html,plyr,R4DS Ch. 13
+count(),count unique values of variables,https://dplyr.tidyverse.org/reference/count.html,dplyr,R4DS Ch. 13
 full_join(),join two data sets keeping the observations in both,https://dplyr.tidyverse.org/reference/mutate-joins.html,dplyr,R4DS Ch. 13
 inner_join(),join two data sets keeping the observations that they have in common,https://dplyr.tidyverse.org/reference/mutate-joins.html,dplyr,R4DS Ch. 13
 intersect(),return only observations in both x and y,https://rdrr.io/r/base/sets.html,base,R4DS Ch. 13
