@@ -2,7 +2,7 @@
 
 # Welcome to the flashcard deck repository for flashr
 
-This is the repository of flashcard decks for the [flashr](https://github.com/JeffreyRStevens/flashr) R package. Check out the categories of decks on the [website](https://jeffreyrstevens.github.io/flashr_decks/decks.html) or look in the `decks/` directory here for individual decks.
+This is the repository of flashcard decks for the [flashr](https://github.com/JeffreyRStevens/flashr) R package. You can check out the [available decks](https://jeffreyrstevens.github.io/flashr_decks/decks.html) to see what decks are already built or even [contribute your own decks](https://jeffreyrstevens.github.io/flashr_decks/contribute.html) to the repo for others to use!
 
 ## License
 
