@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.35">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>flashr decks – functions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">flashr decks</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./decks.html">Available decks</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contribute.html">Contributing decks</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./functions.html" aria-current="page">Functions</a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jeffreyrstevens/flashr_decks"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#functions-used-in-flashr-decks" id="toc-functions-used-in-flashr-decks" class="nav-link active" data-scroll-target="#functions-used-in-flashr-decks">Functions used in flashr decks</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeffreyrstevens/flashr_decks/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="functions-used-in-flashr-decks" class="level1">
+<h1>Functions used in flashr decks</h1>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: left;">package</th>
+<th style="text-align: left;">description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/Arithmetic.html"><code>-</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">subtraction</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/Colon.html"><code>:</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">sequence of integers</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/ns-dblcolon.html"><code>::</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">export variable from package for use</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/Logic.html"><code>!</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">logical NOT</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/Comparison.html"><code>!=</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">not equal to</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="NA"><code>[]</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">subset elements of vector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/Arithmetic.html"><code>*</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">multiplication</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/Arithmetic.html"><code>/</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">division</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/Logic.html"><code>&amp;</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">logical AND</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/matmult.html"><code>%*%</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">multiply matrix with its transpose</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/Arithmetic.html"><code>%/%</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">quotient</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/Arithmetic.html"><code>%%</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">remainder</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://magrittr.tidyverse.org/reference/compound.html"><code>%&lt;&gt;%</code></a></td>
+<td style="text-align: left;">magrittr</td>
+<td style="text-align: left;">assignment pipe</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://magrittr.tidyverse.org/reference/pipe.html"><code>%&gt;%</code></a></td>
+<td style="text-align: left;">magrittr</td>
+<td style="text-align: left;">pipe operator</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://magrittr.tidyverse.org/reference/exposition.html"><code>%$%</code></a></td>
+<td style="text-align: left;">magrittr</td>
+<td style="text-align: left;">exposition pipe</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/match.html"><code>%in%</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">identify if element is in vector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://magrittr.tidyverse.org/reference/tee.html"><code>%T&gt;%</code></a></td>
+<td style="text-align: left;">magrittr</td>
+<td style="text-align: left;">tee pipe</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/Arithmetic.html"><code>^</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">exponent</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/Arithmetic.html"><code>+</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">addition</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/Comparison.html"><code>&lt;</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">less than</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/assignOps.html"><code>&lt;-</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">assignment operator</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/assignOps.html"><code>&lt;&lt;-</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">assignment operator (in functions for global environment)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/Comparison.html"><code>&lt;=</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">less than or equal to</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/assignOps.html"><code>=</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">assignment operator</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/Comparison.html"><code>==</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">equal to</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/Comparison.html"><code>&gt;</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">greater than</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/Comparison.html"><code>&gt;=</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">greater than or equal to</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/Logic.html"><code>&amp;#124;</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">logical OR</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/pipeOp.html"><code>&amp;#124;&gt;</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">pipe operator (base R)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/accumulate.html"><code>accumulate()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">accumulate intermediate result of vector reduction</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://modelr.tidyverse.org/reference/add_predictions.html"><code>add_predictions()</code></a></td>
+<td style="text-align: left;">modelr</td>
+<td style="text-align: left;">add predictions to a data frame</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://modelr.tidyverse.org/reference/add_residuals.html"><code>add_residuals()</code></a></td>
+<td style="text-align: left;">modelr</td>
+<td style="text-align: left;">add residuals to a data frame</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/aes.html"><code>aes()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">create aesthetic mappings between data and plot</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/annotate.html"><code>annotate()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">annotate plot independent of data</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/filter-joins.html"><code>anti_join()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">join two data sets dropping all observations in x that have a match in y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://tidyselect.r-lib.org/reference/all_of.html"><code>any_of()</code></a></td>
+<td style="text-align: left;">tidyselect</td>
+<td style="text-align: left;">check if any any elements are found in vector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/apply.html"><code>apply()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">apply a function to multiple elements of an object in base R</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/utils/apropos.html"><code>apropros()</code></a></td>
+<td style="text-align: left;">utils</td>
+<td style="text-align: left;">returns a character vector giving the names of objects in the search list matching (as a regular expression)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/arrange.html"><code>arrange()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">change order of rows based on values of columns</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/grid/arrow.html"><code>arrow()</code></a></td>
+<td style="text-align: left;">grid</td>
+<td style="text-align: left;">plot arrows</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/as_date.html"><code>as_date()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">convert object to date</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/as_date.html"><code>as_datetime()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">convert object to date-time</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://tibble.tidyverse.org/reference/as_tibble.html"><code>as_tibble()</code></a></td>
+<td style="text-align: left;">tibble</td>
+<td style="text-align: left;">coerce object into tibble</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/character.html"><code>as.character()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">coerce object to character</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/as.data.frame.html"><code>as.data.frame()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">coerce object into data frame</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/factor.html"><code>as.factor()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">coerce object to factor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/numeric.html"><code>as.numeric()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">coerce object to numeric</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/attr.html"><code>attr()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return or set individual attribute values</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/attributes.html"><code>attributes()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return all attributes of vector, matrix, <br> data frame, etc.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://generics.r-lib.org/reference/augment.html"><code>augment()</code></a></td>
+<td style="text-align: left;">generics</td>
+<td style="text-align: left;">augment data with information from an object</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/cran/rmarkdown/man/beamer_presentation.html"><code>beamer_presentation()</code></a></td>
+<td style="text-align: left;">rmarkdown</td>
+<td style="text-align: left;">create beamer presentation from R markdown file</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/bind.html"><code>bind_rows()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">bind rows in dplyr</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/modifiers.html"><code>boundary()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">match boundaries within strings</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/c.html"><code>c()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">create vector of numbers, characters, etc.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/case_when.html"><code>case_when()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">conditionally set values across multiple conditions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/round_date.html"><code>ceiling_date()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">round data-time up to ceiling</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/rawConversion.html"><code>charToRaw()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">converts a length-one character string to raw bytes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/class.html"><code>class()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return object class</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/pkg/knitr/man/clean_cache.html"><code>clean_cache()</code></a></td>
+<td style="text-align: left;">knitr</td>
+<td style="text-align: left;">clear out code chunk cache</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/modifiers.html"><code>coll()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">compare strings respecting standard collation rules</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://tidyr.tidyverse.org/reference/complete.html"><code>complete()</code></a></td>
+<td style="text-align: left;">tidyr</td>
+<td style="text-align: left;">complete a data frame with missing combinations of data</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://tidyselect.r-lib.org/reference/starts_with.html"><code>contains()</code></a></td>
+<td style="text-align: left;">tidyselect</td>
+<td style="text-align: left;">match column names that contain string</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/coord_cartesian.html"><code>coord_cartesian()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">use Cartesian coordinates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/coord_fixed.html"><code>coord_fixed()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">force aspect ratio between data units on axes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html"><code>coord_flip()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">switch x and y axes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/coord_polar.html"><code>coord_polar()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">use polar coordinates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/coord_map.html"><code>coord_quickmap()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">set aspect ratio correctly for maps</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/count.html"><code>count()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">count unique values of variables</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/count.html"><code>count()</code></a></td>
+<td style="text-align: left;">plyr</td>
+<td style="text-align: left;">count unique values of variables</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html"><code>cut_number()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">cut data into groups of equal numbers of observations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html"><code>cut_width()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">cut data into groups of a particular width</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/cut.html"><code>cut()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">divide range of vector into intervals</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://modelr.tidyverse.org/reference/data_grid.html"><code>data_grid()</code></a></td>
+<td style="text-align: left;">modelr</td>
+<td style="text-align: left;">generate a data grid</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/data.frame.html"><code>data.frame()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">create data frame</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/desc.html"><code>desc()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">order in descending order</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/detect.html"><code>detect()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">return value of first matching element</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/dim.html"><code>dim()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return dimensions of matrix, data frame, etc.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/keep.html"><code>discard()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">discard elements using a predicate function</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/ymd.html"><code>dmy()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">parse dates as day, month, year</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://tidyselect.r-lib.org/reference/starts_with.html"><code>ends_with()</code></a></td>
+<td style="text-align: left;">tidyselect</td>
+<td style="text-align: left;">match column names that end with string</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://tibble.tidyverse.org/reference/enframe.html"><code>enframe()</code></a></td>
+<td style="text-align: left;">tibble</td>
+<td style="text-align: left;">convert vectors to data frame</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/every.html"><code>every()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">determine if all elements meet predicate function conditional</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html"><code>facet_grid()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">create grid of subplots from multiple variables</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html"><code>facet_wrap()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">create subplots from one variable</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/factor.html"><code>factor()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">encode vector as factor</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://forcats.tidyverse.org/reference/fct_collapse.html"><code>fct_collapse()</code></a></td>
+<td style="text-align: left;">forcats</td>
+<td style="text-align: left;">collapse factors into manually defined groups</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://forcats.tidyverse.org/reference/fct_inorder.html"><code>fct_infreq()</code></a></td>
+<td style="text-align: left;">forcats</td>
+<td style="text-align: left;">reorder factor levels in the order of most to least frequent</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://forcats.tidyverse.org/reference/fct_inorder.html"><code>fct_inorder()</code></a></td>
+<td style="text-align: left;">forcats</td>
+<td style="text-align: left;">reorder factor levels in the order that they first appear</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://forcats.tidyverse.org/reference/fct_lump.html"><code>fct_lump()</code></a></td>
+<td style="text-align: left;">forcats</td>
+<td style="text-align: left;">lump together factor levels into ‘other’</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://forcats.tidyverse.org/reference/fct_recode.html"><code>fct_recode()</code></a></td>
+<td style="text-align: left;">forcats</td>
+<td style="text-align: left;">change factor levels by hand</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://forcats.tidyverse.org/reference/fct_relevel.html"><code>fct_relevel()</code></a></td>
+<td style="text-align: left;">forcats</td>
+<td style="text-align: left;">reorder factor levels by hand</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://forcats.tidyverse.org/reference/fct_reorder.html"><code>fct_reorder()</code></a></td>
+<td style="text-align: left;">forcats</td>
+<td style="text-align: left;">reorder factor levels by sorting along another variable</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://forcats.tidyverse.org/reference/fct_reorder.html"><code>fct_reorder2()</code></a></td>
+<td style="text-align: left;">forcats</td>
+<td style="text-align: left;">reorder factor levels by sorting along another variable with two dimensions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://forcats.tidyverse.org/reference/fct_rev.html"><code>fct_rev()</code></a></td>
+<td style="text-align: left;">forcats</td>
+<td style="text-align: left;">reverse order of factor levels</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/file.info.html"><code>file.info()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">extract file information</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://tidyr.tidyverse.org/reference/fill.html"><code>fill()</code></a></td>
+<td style="text-align: left;">tidyr</td>
+<td style="text-align: left;">fill in missing values</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/filter.html"><code>filter()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">keep rows based on values of columns</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/modifiers.html"><code>fixed()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">compare literal bytes in a string</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/flatten.html"><code>flatten_dbl()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">flatten a list into an atomic vector in purrr</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/round_date.html"><code>floor_date()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">round date-time down to floor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/force_tz.html"><code>force_tz()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">replace time zone to create new date-time</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/format.html"><code>format()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">format object for pretty printing</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdatatable.gitlab.io/data.table/reference/fread.html"><code>fread()</code></a></td>
+<td style="text-align: left;">data.table</td>
+<td style="text-align: left;">read delimited files</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html"><code>full_join()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">join two data sets keeping the observations in both</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/read_fwf.html"><code>fwf_positions()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">specify fields by positions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/read_fwf.html"><code>fwf_widths()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">specify fields by widths</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/cran/mgcv/man/gam.html"><code>gam()</code></a></td>
+<td style="text-align: left;">mgcv</td>
+<td style="text-align: left;">compute generalized additive model</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://modelr.tidyverse.org/reference/add_predictions.html"><code>gather_predictions()</code></a></td>
+<td style="text-align: left;">modelr</td>
+<td style="text-align: left;">add predictions and pivot longer</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html"><code>geom_abline()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">add vertical, horizontal, or diagonal reference lines</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html"><code>geom_bar()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">create bar chart</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html"><code>geom_boxplot()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">add layer of boxplots to plot</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/geom_count.html"><code>geom_count()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">add layer of points sized by count of overlapping points to plot</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html"><code>geom_hline()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">plot horizontal reference line</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html"><code>geom_jitter()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">add layer of jittered points to plot</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html"><code>geom_label()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">adds text in rectangle to plot</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html"><code>geom_line()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">add layer of data lines to plot</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html"><code>geom_point()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">add layer of points to plot</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/geom_polygon.html"><code>geom_polygon()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">add layer of polygons to plot</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html"><code>geom_rect()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">plot rectangle</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://modelr.tidyverse.org/reference/geom_ref_line.html"><code>geom_ref_line()</code></a></td>
+<td style="text-align: left;">modelr</td>
+<td style="text-align: left;">add reference line to plot</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/geom_segment.html"><code>geom_segment()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">plot line segment</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html"><code>geom_smooth()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">create smoothed lines to plot</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html"><code>geom_text()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">adds text to plot</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html"><code>geom_vline()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">plot vertical reference line</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/utils/getS3method.html"><code>getS3method()</code></a></td>
+<td style="text-align: left;">utils</td>
+<td style="text-align: left;">return a method for S3 generic function</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/getwd.html"><code>getwd()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return working directory</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html"><code>ggplot()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">create a plotting area</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html"><code>ggsave()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">save a ggplot</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://generics.r-lib.org/reference/glance.html"><code>glance()</code></a></td>
+<td style="text-align: left;">generics</td>
+<td style="text-align: left;">glance at an object</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/stats/glm.html"><code>glm()</code></a></td>
+<td style="text-align: left;">stats</td>
+<td style="text-align: left;">compute generalized linear model</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://glmnet.stanford.edu/articles/glmnet.html"><code>glmnet()</code></a></td>
+<td style="text-align: left;">glmnet</td>
+<td style="text-align: left;">compute generalized linear model via penalized maximum likelihood</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/group_by.html"><code>group_by()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">group data by levels of column</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/encoding.html"><code>guess_encoding()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">guess encoding of file</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/parse_guess.html"><code>guess_parser()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">return the name of the parser</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/guide_colourbar.html"><code>guide_colourbar()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">control legend color bar</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/guide_legend.html"><code>guide_legend()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">control legend formatting</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/guides.html"><code>guides()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">set guides for scale</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/head_while.html"><code>head_while()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">find first elements that satisfy predicate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/utils/head.html"><code>head()</code></a></td>
+<td style="text-align: left;">utils</td>
+<td style="text-align: left;">return first rows of matrix, data frame, etc.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/hour.html"><code>hour()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">return or set hour component of a date-time</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/pkg/rmarkdown/man/html_document.html"><code>html_document()</code></a></td>
+<td style="text-align: left;">rmarkdown</td>
+<td style="text-align: left;">create HTML document from R markdown file</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/AsIs.html"><code>I()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">inhibit interpretation/conversion of objects</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/ifelse.html"><code>ifelse()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">conditionally set values</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html"><code>inner_join()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">join two data sets keeping the observations that they have in common</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/utils/install.packages.html"><code>install.packages()</code></a></td>
+<td style="text-align: left;">utils</td>
+<td style="text-align: left;">install R packages</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/sets.html"><code>intersect()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return only observations in both x and y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/invisible.html"><code>invisible()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return invisible copy of object</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/cran/rmarkdown/man/ioslides_presentation.html"><code>ioslides_presentation()</code></a></td>
+<td style="text-align: left;">rmarkdown</td>
+<td style="text-align: left;">create ioslides presentation from R markdown file</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/is.finite.html"><code>is.finite()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">determines if numeric is finite</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/vector.html"><code>is.vector()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">check if object is vector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/pkg/knitr/man/kable.html"><code>kable()</code></a></td>
+<td style="text-align: left;">knitr</td>
+<td style="text-align: left;">create knitr table</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/keep.html"><code>keep()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">keep elements using a predicate function</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/labs.html"><code>labs()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">modify axis, legend, and plot labels</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/lapply.html"><code>lapply()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">apply a function to multiple elements of an object and return a list</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html"><code>left_join()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">join two data sets keeping the observations in the left one</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/length.html"><code>length()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return number of elements in a vector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/lengths.html"><code>lengths()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return length of each element of a list or vector</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/levels.html"><code>levels()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">view and change factor levels</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/library.html"><code>library()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">load R packages</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/list.html"><code>list()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">create recursive vector (list)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/stats/loess.html"><code>loess()</code></a></td>
+<td style="text-align: left;">stats</td>
+<td style="text-align: left;">apply local polynomial regression fitting</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/make_datetime.html"><code>make_datetime()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">create date-times from numeric representations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/map.html"><code>map_chr()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">apply a function to multiple elements of an object in purrr, return a character vector</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/map.html"><code>map_dbl()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">apply a function to multiple elements of an object in purrr, return a double vector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/map.html"><code>map_int()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">apply a function to multiple elements of an object in purrr, return a integer vector</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/map.html"><code>map_lgl()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">apply a function to multiple elements of an object in purrr, return a logical vector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/map.html"><code>map()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">apply a function to multiple elements of an object in purrr, return a list</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/map2.html"><code>map2()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">apply a function to multiple elements over two vectors in parallel</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/matrix.html"><code>matrix()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">create matrix of numbers, characters, etc.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/ymd_hms.html"><code>mdy_hm()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">parse month, day, year and hour, minute</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/ymd.html"><code>mdy()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">parse dates as month, day, year</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/mean.html"><code>mean()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">calculate mean of elements of vector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/merge.html"><code>merge()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">join two data sets</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/utils/methods.html"><code>methods()</code></a></td>
+<td style="text-align: left;">utils</td>
+<td style="text-align: left;">return all available methods for function</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/minute.html"><code>minute()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">return or set minute component of a date-time</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://modelr.tidyverse.org/reference/model_matrix.html"><code>model_matrix()</code></a></td>
+<td style="text-align: left;">modelr</td>
+<td style="text-align: left;">construct a design matrix</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/month.html"><code>month()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">return or set month component of a date-time</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/mutate.html"><code>mutate()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">create or modify data columns</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/context.html"><code>n()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">return current group size</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/names.html"><code>names()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return (and can assign) column names</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/ncol.html"><code>ncol()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return number of columns in matrix, <br> data frame, etc.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://tidyr.tidyverse.org/reference/nest.html"><code>nest()</code></a></td>
+<td style="text-align: left;">tidyr</td>
+<td style="text-align: left;">creates nested list structure</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/now.html"><code>now()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">return current date and time</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/nrow.html"><code>nrow()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return number of rows in matrix, <br> data frame, etc.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/splines/ns.html"><code>ns()</code></a></td>
+<td style="text-align: left;">splines</td>
+<td style="text-align: left;">generate basis matrix for natural cubic splines</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://tidyselect.r-lib.org/reference/starts_with.html"><code>num_range()</code></a></td>
+<td style="text-align: left;">tidyselect</td>
+<td style="text-align: left;">match column names with number range</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://shiny.rstudio.com/reference/shiny/latest/numericInput.html"><code>numericInput()</code></a></td>
+<td style="text-align: left;">shiny</td>
+<td style="text-align: left;">allow numeric input in Shiny</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/cran/pryr/man/object_size.html"><code>object_size()</code></a></td>
+<td style="text-align: left;">pryr</td>
+<td style="text-align: left;">compute size of object</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/timezones.html"><code>OlsonNames()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return vector of all time zone names</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/stats/optim.html"><code>optim()</code></a></td>
+<td style="text-align: left;">stats</td>
+<td style="text-align: left;">apply optimization algorithm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html"><code>opts_chunk()</code></a></td>
+<td style="text-align: left;">knitr</td>
+<td style="text-align: left;">set options for R code chunks</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/parse_atomic.html"><code>parse_character()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">parse a character vector to characters</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/parse_datetime.html"><code>parse_date()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">parse date</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/parse_datetime.html"><code>parse_datetime()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">parse date/time</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/parse_atomic.html"><code>parse_double()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">parse a character vector to doubles</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/parse_atomic.html"><code>parse_factor()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">parse a character vector to factors</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/parse_guess.html"><code>parse_guess()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">parse the column based on the guessed type</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/parse_atomic.html"><code>parse_integer()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">parse a character vector to integers</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/parse_atomic.html"><code>parse_logical()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">parse a character vector to logicals</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/parse_atomic.html"><code>parse_number()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">parse a character vector to numbers</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/parse_datetime.html"><code>parse_time()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">parse time</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/pkg/rmarkdown/man/pdf_document.html"><code>pdf_document()</code></a></td>
+<td style="text-align: left;">rmarkdown</td>
+<td style="text-align: left;">create PDF document from R markdown file</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html"><code>pivot_longer()</code></a></td>
+<td style="text-align: left;">tidyr</td>
+<td style="text-align: left;">pivot data frame to be longer</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html"><code>pivot_wider()</code></a></td>
+<td style="text-align: left;">tidyr</td>
+<td style="text-align: left;">pivot data frame to be wider</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/map2.html"><code>pmap()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">apply a function to multiple elements over a list of vectors in parallel</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/stats/poly.html"><code>poly()</code></a></td>
+<td style="text-align: left;">stats</td>
+<td style="text-align: left;">compute orthogonal polynomials</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/safely.html"><code>possibly()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">safely return result or default when there is an error</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/print.html"><code>print()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">prints argument</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/stats/quantile.html"><code>quantile()</code></a></td>
+<td style="text-align: left;">stats</td>
+<td style="text-align: left;">calculate sample quantiles</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/safely.html"><code>quietly()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">safely return result, messages, and warnings</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/substitute.html"><code>quote()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">returns quoted expression</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://www.rdocumentation.org/packages/randomForest/versions/4.7-1.1/topics/randomForest"><code>randomForest()</code></a></td>
+<td style="text-align: left;">randomForest</td>
+<td style="text-align: left;">compute random forest model</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/cbind.html"><code>rbind()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">bind rows in base R</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/read_delim.html"><code>read_csv()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">read comma delimited files</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/read_delim.html"><code>read_csv2()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">read semicolon separated files</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/read_delim.html"><code>read_delim()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">read any kind of delimited file</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://www.rdocumentation.org/packages/feather/versions/0.3.5/topics/read_feather"><code>read_feather()</code></a></td>
+<td style="text-align: left;">feather</td>
+<td style="text-align: left;">read feather files</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/read_file.html"><code>read_file()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">read a complete file</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/read_fwf.html"><code>read_fwf()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">read fixed width files</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/read_lines.html"><code>read_lines()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">read lines from a file</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/read_log.html"><code>read_log()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">read Apache style log files</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/read_rds.html"><code>read_rds()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">read RDS files</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/read_table.html"><code>read_table()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">read fixed width files separated by white space</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/read_delim.html"><code>read_tsv()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">read tab delimited files</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/readRDS.html"><code>readRDS()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">read RDS files</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/reduce.html"><code>reduce()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">reduce list to single value by iteratively applying binary function</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/regex.html"><code>regex()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">use regular expressions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/rename.html"><code>rename()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">rename columns</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/pkg/rmarkdown/man/render_site.html"><code>render_site()</code></a></td>
+<td style="text-align: left;">rmarkdown</td>
+<td style="text-align: left;">render R markdown documents into website</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/pkg/rmarkdown/man/render.html"><code>render()</code></a></td>
+<td style="text-align: left;">rmarkdown</td>
+<td style="text-align: left;">convert R markdown document to another format</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/stats/reorder.factor.html"><code>reorder()</code></a></td>
+<td style="text-align: left;">stats</td>
+<td style="text-align: left;">reorder factor levels based on another variable</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/rep.html"><code>rep()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">create repetitions of numbers, characters, etc.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/function.html"><code>return()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return value</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/cran/revealjs/man/revealjs_presentation.html"><code>revealjs_presentation()</code></a></td>
+<td style="text-align: left;">revealjs</td>
+<td style="text-align: left;">create revealjs presentation from R markdown file</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html"><code>right_join()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">join two data sets keeping the observations in the right one</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/cran/MASS/man/rlm.html"><code>rlm()</code></a></td>
+<td style="text-align: left;">MASS</td>
+<td style="text-align: left;">compute robust linear model</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/round_date.html"><code>round_date()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">round date-time</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/cran/rpart/man/rpart.html"><code>rpart()</code></a></td>
+<td style="text-align: left;">rpart</td>
+<td style="text-align: left;">compute recursive partitioning and regression trees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/stats/Uniform.html"><code>runif()</code></a></td>
+<td style="text-align: left;">stats</td>
+<td style="text-align: left;">generate random number from uniform distribution</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/safely.html"><code>safely()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">safely return result and error</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/sample.html"><code>sample()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">randomly sample from vector</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/readRDS.html"><code>saveRDS()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">write RDS files</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html"><code>scale_color_brewer()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">map colors to data with ColorBrewer</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/scale_colour_discrete.html"><code>scale_color_discrete()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">scale color aesthetic to be discrete</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html"><code>scale_color_gradient()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">scale color aesthetic to continuous color gradient</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html"><code>scale_color_gradient2()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">scale color aesthetic to diverging color gradient</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html"><code>scale_color_manual()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">map colors to data manually</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/cran/viridis/man/scale_viridis.html"><code>scale_color_viridis()</code></a></td>
+<td style="text-align: left;">viridis</td>
+<td style="text-align: left;">scale color aesthetic to viridis color gradient</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html"><code>scale_fill_gradient()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">scale fill aesthetic to continuous color gradient</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html"><code>scale_x_continuous()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">scale x axis to be continuous</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html"><code>scale_x_date()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">scale x axis to be date</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html"><code>scale_x_log10()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">scale x axis to be log base 10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html"><code>scale_y_continuous()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">scale y axis to be continuous</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html"><code>scale_y_log10()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">scale y axis to be log base 10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/second.html"><code>second()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">return or set second component of a date-time</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/select.html"><code>select()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">keep specified columns</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/filter-joins.html"><code>semi_join()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">join two data sets keeping all observations in x that have a match in y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://tidyr.tidyverse.org/reference/separate_rows.html"><code>separate_rows()</code></a></td>
+<td style="text-align: left;">tidyr</td>
+<td style="text-align: left;">separate collapsed column into multiple rows</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://tidyr.tidyverse.org/reference/separate.html"><code>separate()</code></a></td>
+<td style="text-align: left;">tidyr</td>
+<td style="text-align: left;">split single column into multiple columns</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/seq.html"><code>seq_along()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return a sequence along the length of an object</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://modelr.tidyverse.org/reference/seq_range.html"><code>seq_range()</code></a></td>
+<td style="text-align: left;">modelr</td>
+<td style="text-align: left;">return sequence over the range of a vector</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/seq.html"><code>seq()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">create sequences of numbers</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/pkg/sessioninfo/man/session_info.html"><code>session.info()</code></a></td>
+<td style="text-align: left;">sessioninfo</td>
+<td style="text-align: left;">return R session info and loaded packages</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/utils/sessionInfo.html"><code>sessionInfo()</code></a></td>
+<td style="text-align: left;">utils</td>
+<td style="text-align: left;">return info about R version, operating system, and loaded packages</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://magrittr.tidyverse.org/reference/aliases.html"><code>set_names()</code></a></td>
+<td style="text-align: left;">magrittr</td>
+<td style="text-align: left;">set names of object</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/sets.html"><code>setdiff()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return observations in x but not y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/getwd.html"><code>setwd()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">set working directory</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/cran/rmarkdown/man/slidy_presentation.html"><code>slidy_presentation()</code></a></td>
+<td style="text-align: left;">rmarkdown</td>
+<td style="text-align: left;">create Slidy presentation from R markdown file</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/every.html"><code>some()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">determine if some of elements meet predicate function conditional</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://modelr.tidyverse.org/reference/add_predictions.html"><code>spread_predictions()</code></a></td>
+<td style="text-align: left;">modelr</td>
+<td style="text-align: left;">add predictions and pivot wider</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://tidyselect.r-lib.org/reference/starts_with.html"><code>starts_with()</code></a></td>
+<td style="text-align: left;">tidyselect</td>
+<td style="text-align: left;">match column names that begin with string</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/stat_summary.html"><code>stat_summary()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">summarize y values for each x value</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/problems.html"><code>stop_for_problems()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">throw error and stop script if any parsing problems</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/stopifnot.html"><code>stopifnot()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">test condition and produce error at first FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_c.html"><code>str_c()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">combines two or more strings</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_count.html"><code>str_count()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">count number of matches in a string</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_detect.html"><code>str_detect()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">detect presence of pattern in string</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_extract.html"><code>str_extract_all()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">extract all matching patterns in a string</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_extract.html"><code>str_extract()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">extract first matching patterns in a string</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_length.html"><code>str_length()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">returns number of characters in a string</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_locate.html"><code>str_locate_all()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">locate all positions of pattern in a string</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_locate.html"><code>str_locate()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">locate first position of pattern in a string</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_subset.html"><code>str_match_all()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">extract all matched groups from a string</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_match.html"><code>str_match()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">extract first matched group from a string</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_order.html"><code>str_order()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">return index of sorted vector</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_replace.html"><code>str_replace_all()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">replace all matched patterns in a string</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_replace_na.html"><code>str_replace_na()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">replace NAs with other characters</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_replace.html"><code>str_replace()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">replace first matched pattern in a string</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_order.html"><code>str_sort()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">sort numeric or character vector</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_split.html"><code>str_split()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">split string into pieces</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_sub.html"><code>str_sub()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">extract parts of a string</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_subset.html"><code>str_subset()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">extract elements that match pattern</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/case.html"><code>str_to_lower()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">change text to lower case</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/case.html"><code>str_to_title()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">change text to upper case</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/case.html"><code>str_to_upper()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">change text to upper case</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_trim.html"><code>str_trim()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">trim whitespace from string</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_view.html"><code>str_view_all()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">view all regular expression matches</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_view.html"><code>str_view()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">view first regular expression match</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://stringr.tidyverse.org/reference/str_wrap.html"><code>str_wrap()</code></a></td>
+<td style="text-align: left;">stringr</td>
+<td style="text-align: left;">wrap strings into nicely formatted paragraphs</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/utils/str.html"><code>str()</code></a></td>
+<td style="text-align: left;">utils</td>
+<td style="text-align: left;">return object structure</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/sum.html"><code>sum()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">sum elements of vector</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/summarise.html"><code>summarize()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">summarize data usually by grouping variable</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/summary.html"><code>summary()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return summary of model fitting functions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/switch.html"><code>switch()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">select one of a list of alternatives</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/timezones.html"><code>Sys.timezone()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return name of current time zone</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/head_while.html"><code>tail_while()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">find last elements that satisfy predicate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/utils/head.html"><code>tail()</code></a></td>
+<td style="text-align: left;">utils</td>
+<td style="text-align: left;">return last rows of matrix, data frame, etc.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://shiny.rstudio.com/reference/shiny/latest/textInput.html"><code>textInput()</code></a></td>
+<td style="text-align: left;">shiny</td>
+<td style="text-align: left;">allow text input in Shiny</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://ggplot2.tidyverse.org/reference/theme.html"><code>theme()</code></a></td>
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">customize non-data components of plot</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://tibble.tidyverse.org/reference/tibble.html"><code>tibble()</code></a></td>
+<td style="text-align: left;">tibble</td>
+<td style="text-align: left;">create tibble</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://generics.r-lib.org/reference/tidy.html"><code>tidy()</code></a></td>
+<td style="text-align: left;">generics</td>
+<td style="text-align: left;">turn object into tidy tibble</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/now.html"><code>today()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">return the current date</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/transpose.html"><code>transpose()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">turn list-of-lists ‘inside out’</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://tibble.tidyverse.org/reference/tribble.html"><code>tribble()</code></a></td>
+<td style="text-align: left;">tibble</td>
+<td style="text-align: left;">create row-wise tibble</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/try.html"><code>try()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">try an expression and allow errors</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/type_convert.html"><code>type_convert()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">re-convert character columns in existing data frame</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/typeof.html"><code>typeof()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return object type</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://dplyr.tidyverse.org/reference/group_by.html"><code>ungroup()</code></a></td>
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">remove grouping</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/sets.html"><code>union()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return unique observations in x or y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/unique.html"><code>unique()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">return vector with duplicate elements removed</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://tidyr.tidyverse.org/reference/unite.html"><code>unite()</code></a></td>
+<td style="text-align: left;">tidyr</td>
+<td style="text-align: left;">combine multiple columns into single column</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/unlist.html"><code>unlist()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">flatten a list into an atomic vector in base R</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://tidyr.tidyverse.org/reference/nest.html"><code>unnest()</code></a></td>
+<td style="text-align: left;">tidyr</td>
+<td style="text-align: left;">remove nested structure</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/r/stats/update.html"><code>update()</code></a></td>
+<td style="text-align: left;">stats</td>
+<td style="text-align: left;">update and refit a model</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/View"><code>View()</code></a></td>
+<td style="text-align: left;">utils</td>
+<td style="text-align: left;">open spreadsheet view of matrix-like object</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://purrr.tidyverse.org/reference/map.html"><code>walk()</code></a></td>
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">apply a function to multiple elements of an object to obtain side effects</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/with_tz.html"><code>with_tz()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">return date-time in a different time zone</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://rdrr.io/pkg/rmarkdown/man/word_document.html"><code>word_document()</code></a></td>
+<td style="text-align: left;">rmarkdown</td>
+<td style="text-align: left;">create Word document from R markdown file</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/write_delim.html"><code>write_csv()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">write a data frame to comma delimited files</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/write_delim.html"><code>write_excel_csv()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">export a csv file to Excel</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/read_rds.html"><code>write_rds()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">write RDS files</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://readr.tidyverse.org/reference/write_delim.html"><code>write_tsv()</code></a></td>
+<td style="text-align: left;">readr</td>
+<td style="text-align: left;">write a data frame to tab delimited files</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://rdrr.io/r/base/writeLines.html"><code>writeLines()</code></a></td>
+<td style="text-align: left;">base</td>
+<td style="text-align: left;">write text lines to a connection</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://xgboost.readthedocs.io/en/stable/"><code>xgboost()</code></a></td>
+<td style="text-align: left;">sgboost</td>
+<td style="text-align: left;">computer gradient boosting models</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/year.html"><code>year()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">return or set year component of a date-time</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/ymd_hms.html"><code>ymd_hms()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">parse dates and time</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://lubridate.tidyverse.org/reference/ymd.html"><code>ymd()</code></a></td>
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">parse dates with year, month, and day components</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2022, Jeffrey Stevens</div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jeffreyrstevens/flashr_decks">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
