@@ -5,8 +5,10 @@ all_functions <- read.csv("data/functions.csv") |>
   dplyr::filter(term != "opts_chunk$set()") |> 
   dplyr::mutate(term = paste0("`", term, "`"),
                 function_name = paste0("`", function_name, "`"),
-                term = paste0("[", term, "](", url, ")")) |> 
+                term = paste0("[", term, "](", url, ")"),
+                term = gsub("`\\|`", "\\|", term),
+                term = gsub("`\\|>`", "\\|>", term)
+                ) |> 
   dplyr::select(-function_name, -url)
 knitr::kable(all_functions)
 ```
-
