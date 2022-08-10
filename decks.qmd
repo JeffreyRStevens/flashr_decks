@@ -1,12 +1,12 @@
 # Available decks
 
-This has not only a list of the built-in decks available for the flashr package but also HTML examples of each deck that you can test out.
+This has not only a list of the built-in decks available for the flashr package (and the tags used in the [`flashr`](https://jeffreyrstevens.github.io/flashr/) package) but also HTML examples of each deck that you can test out.
 
 ## Functions
 
 <details>
 
-<summary><a href = "https://r4ds.had.co.nz">R for Data Science</a> (1st edition)</summary>
+<summary>R for Data Science (1st edition)</summary>
 
 -   <a href = "decks/r4ds1.html" target="_blank">Ch. 1 Introduction</a>: `r4ds1`
 -   <a href = "decks/r4ds3.html" target="_blank">Ch. 3 Data visualization</a>: `r4ds3`
@@ -46,7 +46,7 @@ This has not only a list of the built-in decks available for the flashr package 
 
 <details>
 
-<summary><a href="https://psyteachr.github.io/quant-fun-v2/">PsyTeachR Fundamentals of Quantitative Analysis</a></summary>
+<summary>PsyTeachR Fundamentals of Quantitative Analysis</summary>
 
 -   <a href = "decks/psyteachr_ads1.html" target="_blank">Ch. 1 Programming basics</a>: `psyteachr_ads1`
 -   <a href = "decks/psyteachr_ads2.html" target="_blank">Ch. 2 Intro to R</a>: `psyteachr_ads2`
@@ -70,7 +70,7 @@ This has not only a list of the built-in decks available for the flashr package 
 
 <details>
 
-<summary><a href="https://psyteachr.github.io/reprores-v2/">PsyTeachR Data Skills for Reproducible Research</a></summary>
+<summary>PsyTeachR Data Skills for Reproducible Research</summary>
 
 -   <a href = "decks/psyteachr_dsrr1.html" target="_blank">Ch. 1 Getting started: `psyteachr_dsrr1`
 -   <a href = "decks/psyteachr_dsrr2.html" target="_blank">Ch. 2 Reproducible workflows</a>: `psyteachr_dsrr2`
@@ -87,7 +87,7 @@ This has not only a list of the built-in decks available for the flashr package 
 
 <details>
 
-<summary><a href="https://psyteachr.github.io/ads-v1/">PsyTeachR Applied Data Skills</a></summary>
+<summary>PsyTeachR Applied Data Skills</summary>
 
 -   <a href = "decks/psyteachr_ads1.html" target="_blank">Ch. 1 Intro to R and RStudio</a>: `psyteachr_ads1`
 -   <a href = "decks/psyteachr_ads2.html" target="_blank">Ch. 2 Reports with R Markdown</a>: `psyteachr_ads2`
