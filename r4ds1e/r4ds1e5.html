@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.35">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>flashr decks – r4ds1e5</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">flashr decks</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../decks.html">Available decks</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../contribute.html">Contributing decks</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../functions.html">Functions</a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jeffreyrstevens/flashr_decks"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#transform" id="toc-transform" class="nav-link active" data-scroll-target="#transform">Data transformation</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#nycflights13" id="toc-nycflights13" class="nav-link" data-scroll-target="#nycflights13">nycflights13</a></li>
+  <li><a href="#dplyr-basics" id="toc-dplyr-basics" class="nav-link" data-scroll-target="#dplyr-basics">dplyr basics</a></li>
+  </ul></li>
+  <li><a href="#filter-rows-with-filter" id="toc-filter-rows-with-filter" class="nav-link" data-scroll-target="#filter-rows-with-filter">Filter rows with <code>filter()</code></a>
+  <ul class="collapse">
+  <li><a href="#comparisons" id="toc-comparisons" class="nav-link" data-scroll-target="#comparisons">Comparisons</a></li>
+  <li><a href="#logical-operators" id="toc-logical-operators" class="nav-link" data-scroll-target="#logical-operators">Logical operators</a></li>
+  <li><a href="#missing-values" id="toc-missing-values" class="nav-link" data-scroll-target="#missing-values">Missing values</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  </ul></li>
+  <li><a href="#arrange-rows-with-arrange" id="toc-arrange-rows-with-arrange" class="nav-link" data-scroll-target="#arrange-rows-with-arrange">Arrange rows with <code>arrange()</code></a>
+  <ul class="collapse">
+  <li><a href="#exercises-1" id="toc-exercises-1" class="nav-link" data-scroll-target="#exercises-1">Exercises</a></li>
+  </ul></li>
+  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select">Select columns with <code>select()</code></a>
+  <ul class="collapse">
+  <li><a href="#exercises-2" id="toc-exercises-2" class="nav-link" data-scroll-target="#exercises-2">Exercises</a></li>
+  </ul></li>
+  <li><a href="#add-new-variables-with-mutate" id="toc-add-new-variables-with-mutate" class="nav-link" data-scroll-target="#add-new-variables-with-mutate">Add new variables with <code>mutate()</code></a>
+  <ul class="collapse">
+  <li><a href="#mutate-funs" id="toc-mutate-funs" class="nav-link" data-scroll-target="#mutate-funs">Useful creation functions</a></li>
+  <li><a href="#exercises-3" id="toc-exercises-3" class="nav-link" data-scroll-target="#exercises-3">Exercises</a></li>
+  </ul></li>
+  <li><a href="#grouped-summaries-with-summarise" id="toc-grouped-summaries-with-summarise" class="nav-link" data-scroll-target="#grouped-summaries-with-summarise">Grouped summaries with <code>summarise()</code></a>
+  <ul class="collapse">
+  <li><a href="#combining-multiple-operations-with-the-pipe" id="toc-combining-multiple-operations-with-the-pipe" class="nav-link" data-scroll-target="#combining-multiple-operations-with-the-pipe">Combining multiple operations with the pipe</a></li>
+  <li><a href="#missing-values-1" id="toc-missing-values-1" class="nav-link" data-scroll-target="#missing-values-1">Missing values</a></li>
+  <li><a href="#counts" id="toc-counts" class="nav-link" data-scroll-target="#counts">Counts</a></li>
+  <li><a href="#summarise-funs" id="toc-summarise-funs" class="nav-link" data-scroll-target="#summarise-funs">Useful summary functions</a></li>
+  <li><a href="#grouping-by-multiple-variables" id="toc-grouping-by-multiple-variables" class="nav-link" data-scroll-target="#grouping-by-multiple-variables">Grouping by multiple variables</a></li>
+  <li><a href="#ungrouping" id="toc-ungrouping" class="nav-link" data-scroll-target="#ungrouping">Ungrouping</a></li>
+  <li><a href="#exercises-4" id="toc-exercises-4" class="nav-link" data-scroll-target="#exercises-4">Exercises</a></li>
+  </ul></li>
+  <li><a href="#grouped-mutates-and-filters" id="toc-grouped-mutates-and-filters" class="nav-link" data-scroll-target="#grouped-mutates-and-filters">Grouped mutates (and filters)</a>
+  <ul class="collapse">
+  <li><a href="#exercises-5" id="toc-exercises-5" class="nav-link" data-scroll-target="#exercises-5">Exercises</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeffreyrstevens/flashr_decks/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="transform" class="level1">
+<h1>Data transformation</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Visualisation is an important tool for insight generation, but it is rare that you get the data in exactly the right form you need. Often you’ll need to create some new variables or summaries, or maybe you just want to rename the variables or reorder the observations in order to make the data a little easier to work with. You’ll learn how to do all that (and more!) in this chapter, which will teach you how to transform your data using the dplyr package and a new dataset on flights departing New York City in 2013.</p>
+<section id="prerequisites" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisites">Prerequisites</h3>
+<p>In this chapter we’re going to focus on how to use the dplyr package, another core member of the tidyverse. We’ll illustrate the key ideas using data from the nycflights13 package, and use ggplot2 to help us understand the data.</p>
+<p>Take careful note of the conflicts message that’s printed when you load the tidyverse. It tells you that dplyr overwrites some functions in base R. If you want to use the base version of these functions after loading dplyr, you’ll need to use their full names: <code>stats::filter()</code> and <code>stats::lag()</code>.</p>
+</section>
+<section id="nycflights13" class="level3">
+<h3 class="anchored" data-anchor-id="nycflights13">nycflights13</h3>
+<p>To explore the basic data manipulation verbs of dplyr, we’ll use <code>nycflights13::flights</code>. This data frame contains all 336,776 flights that departed from New York City in 2013. The data comes from the US <a href="http://www.transtats.bts.gov/DatabaseInfo.asp?DB_ID=120&amp;Link=0">Bureau of Transportation Statistics</a>, and is documented in <code>?flights</code>.</p>
+<p>You might notice that this data frame prints a little differently from other data frames you might have used in the past: it only shows the first few rows and all the columns that fit on one screen. (To see the whole dataset, you can run <code>View(flights)</code> which will open the dataset in the RStudio viewer). It prints differently because it’s a <strong>tibble</strong>. Tibbles are data frames, but slightly tweaked to work better in the tidyverse. For now, you don’t need to worry about the differences; we’ll come back to tibbles in more detail in <a href="#wrangle-intro">wrangle</a>.</p>
+<p>You might also have noticed the row of three (or four) letter abbreviations under the column names. These describe the type of each variable:</p>
+<ul>
+<li><p><code>int</code> stands for integers.</p></li>
+<li><p><code>dbl</code> stands for doubles, or real numbers.</p></li>
+<li><p><code>chr</code> stands for character vectors, or strings.</p></li>
+<li><p><code>dttm</code> stands for date-times (a date + a time).</p></li>
+</ul>
+<p>There are three other common types of variables that aren’t used in this dataset but you’ll encounter later in the book:</p>
+<ul>
+<li><p><code>lgl</code> stands for logical, vectors that contain only <code>TRUE</code> or <code>FALSE</code>.</p></li>
+<li><p><code>fctr</code> stands for factors, which R uses to represent categorical variables with fixed possible values.</p></li>
+<li><p><code>date</code> stands for dates.</p></li>
+</ul>
+</section>
+<section id="dplyr-basics" class="level3">
+<h3 class="anchored" data-anchor-id="dplyr-basics">dplyr basics</h3>
+<p>In this chapter you are going to learn the five key dplyr functions that allow you to solve the vast majority of your data manipulation challenges:</p>
+<ul>
+<li>Pick observations by their values (<code>filter()</code>).</li>
+<li>Reorder the rows (<code>arrange()</code>).</li>
+<li>Pick variables by their names (<code>select()</code>).</li>
+<li>Create new variables with functions of existing variables (<code>mutate()</code>).</li>
+<li>Collapse many values down to a single summary (<code>summarise()</code>).</li>
+</ul>
+<p>These can all be used in conjunction with <code>group_by()</code> which changes the scope of each function from operating on the entire dataset to operating on it group-by-group. These six functions provide the verbs for a language of data manipulation.</p>
+<p>All verbs work similarly:</p>
+<ol type="1">
+<li><p>The first argument is a data frame.</p></li>
+<li><p>The subsequent arguments describe what to do with the data frame, using the variable names (without quotes).</p></li>
+<li><p>The result is a new data frame.</p></li>
+</ol>
+<p>Together these properties make it easy to chain together multiple simple steps to achieve a complex result. Let’s dive in and see how these verbs work.</p>
+</section>
+</section>
+<section id="filter-rows-with-filter" class="level2">
+<h2 class="anchored" data-anchor-id="filter-rows-with-filter">Filter rows with <code>filter()</code></h2>
+<p><code>filter()</code> allows you to subset observations based on their values. The first argument is the name of the data frame. The second and subsequent arguments are the expressions that filter the data frame. For example, we can select all flights on January 1st with:</p>
+<p>When you run that line of code, dplyr executes the filtering operation and returns a new data frame. dplyr functions never modify their inputs, so if you want to save the result, you’ll need to use the assignment operator, <code>&lt;-</code>:</p>
+<p>R either prints out the results, or saves them to a variable. If you want to do both, you can wrap the assignment in parentheses:</p>
+<section id="comparisons" class="level3">
+<h3 class="anchored" data-anchor-id="comparisons">Comparisons</h3>
+<p>To use filtering effectively, you have to know how to select the observations that you want using the comparison operators. R provides the standard suite: <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>!=</code> (not equal), and <code>==</code> (equal).</p>
+<p>When you’re starting out with R, the easiest mistake to make is to use <code>=</code> instead of <code>==</code> when testing for equality. When this happens you’ll get an informative error:</p>
+<p>There’s another common problem you might encounter when using <code>==</code>: floating point numbers. These results might surprise you!</p>
+<p>Computers use finite precision arithmetic (they obviously can’t store an infinite number of digits!) so remember that every number you see is an approximation. Instead of relying on <code>==</code>, use <code>near()</code>:</p>
+</section>
+<section id="logical-operators" class="level3">
+<h3 class="anchored" data-anchor-id="logical-operators">Logical operators</h3>
+<p>Multiple arguments to <code>filter()</code> are combined with “and”: every expression must be true in order for a row to be included in the output. For other types of combinations, you’ll need to use Boolean operators yourself: <code>&amp;</code> is “and”, <code>|</code> is “or”, and <code>!</code> is “not”. Figure @ref(fig:bool-ops) shows the complete set of Boolean operations.</p>
+<p>The following code finds all flights that departed in November or December:</p>
+<p>The order of operations doesn’t work like English. You can’t write <code>filter(flights, month == (11 | 12))</code>, which you might literally translate into “finds all flights that departed in November or December”. Instead it finds all months that equal <code>11 | 12</code>, an expression that evaluates to <code>TRUE</code>. In a numeric context (like here), <code>TRUE</code> becomes one, so this finds all flights in January, not November or December. This is quite confusing!</p>
+<p>A useful short-hand for this problem is <code>x %in% y</code>. This will select every row where <code>x</code> is one of the values in <code>y</code>. We could use it to rewrite the code above:</p>
+<p>Sometimes you can simplify complicated subsetting by remembering De Morgan’s law: <code>!(x &amp; y)</code> is the same as <code>!x | !y</code>, and <code>!(x | y)</code> is the same as <code>!x &amp; !y</code>. For example, if you wanted to find flights that weren’t delayed (on arrival or departure) by more than two hours, you could use either of the following two filters:</p>
+<p>As well as <code>&amp;</code> and <code>|</code>, R also has <code>&amp;&amp;</code> and <code>||</code>. Don’t use them here! You’ll learn when you should use them in [conditional execution].</p>
+<p>Whenever you start using complicated, multipart expressions in <code>filter()</code>, consider making them explicit variables instead. That makes it much easier to check your work. You’ll learn how to create new variables shortly.</p>
+</section>
+<section id="missing-values" class="level3">
+<h3 class="anchored" data-anchor-id="missing-values">Missing values</h3>
+<p>One important feature of R that can make comparison tricky are missing values, or <code>NA</code>s (“not availables”). <code>NA</code> represents an unknown value so missing values are “contagious”: almost any operation involving an unknown value will also be unknown.</p>
+<p>The most confusing result is this one:</p>
+<p>It’s easiest to understand why this is true with a bit more context:</p>
+<p>If you want to determine if a value is missing, use <code>is.na()</code>:</p>
+<p><code>filter()</code> only includes rows where the condition is <code>TRUE</code>; it excludes both <code>FALSE</code> and <code>NA</code> values. If you want to preserve missing values, ask for them explicitly:</p>
+</section>
+<section id="exercises" class="level3">
+<h3 class="anchored" data-anchor-id="exercises">Exercises</h3>
+<ol type="1">
+<li><p>Find all flights that</p>
+<ol type="1">
+<li>Had an arrival delay of two or more hours</li>
+<li>Flew to Houston (<code>IAH</code> or <code>HOU</code>)</li>
+<li>Were operated by United, American, or Delta</li>
+<li>Departed in summer (July, August, and September)</li>
+<li>Arrived more than two hours late, but didn’t leave late</li>
+<li>Were delayed by at least an hour, but made up over 30 minutes in flight</li>
+<li>Departed between midnight and 6am (inclusive)</li>
+</ol></li>
+<li><p>Another useful dplyr filtering helper is <code>between()</code>. What does it do? Can you use it to simplify the code needed to answer the previous challenges?</p></li>
+<li><p>How many flights have a missing <code>dep_time</code>? What other variables are missing? What might these rows represent?</p></li>
+<li><p>Why is <code>NA ^ 0</code> not missing? Why is <code>NA | TRUE</code> not missing? Why is <code>FALSE &amp; NA</code> not missing? Can you figure out the general rule? (<code>NA * 0</code> is a tricky counterexample!)</p></li>
+</ol>
+</section>
+</section>
+<section id="arrange-rows-with-arrange" class="level2">
+<h2 class="anchored" data-anchor-id="arrange-rows-with-arrange">Arrange rows with <code>arrange()</code></h2>
+<p><code>arrange()</code> works similarly to <code>filter()</code> except that instead of selecting rows, it changes their order. It takes a data frame and a set of column names (or more complicated expressions) to order by. If you provide more than one column name, each additional column will be used to break ties in the values of preceding columns:</p>
+<p>Use <code>desc()</code> to re-order by a column in descending order:</p>
+<p>Missing values are always sorted at the end:</p>
+<section id="exercises-1" class="level3">
+<h3 class="anchored" data-anchor-id="exercises-1">Exercises</h3>
+<ol type="1">
+<li><p>How could you use <code>arrange()</code> to sort all missing values to the start? (Hint: use <code>is.na()</code>).</p></li>
+<li><p>Sort <code>flights</code> to find the most delayed flights. Find the flights that left earliest.</p></li>
+<li><p>Sort <code>flights</code> to find the fastest (highest speed) flights.</p></li>
+<li><p>Which flights travelled the farthest? Which travelled the shortest?</p></li>
+</ol>
+</section>
+</section>
+<section id="select" class="level2">
+<h2 class="anchored" data-anchor-id="select">Select columns with <code>select()</code></h2>
+<p>It’s not uncommon to get datasets with hundreds or even thousands of variables. In this case, the first challenge is often narrowing in on the variables you’re actually interested in. <code>select()</code> allows you to rapidly zoom in on a useful subset using operations based on the names of the variables.</p>
+<p><code>select()</code> is not terribly useful with the flights data because we only have 19 variables, but you can still get the general idea:</p>
+<p>There are a number of helper functions you can use within <code>select()</code>:</p>
+<ul>
+<li><p><code>starts_with("abc")</code>: matches names that begin with “abc”.</p></li>
+<li><p><code>ends_with("xyz")</code>: matches names that end with “xyz”.</p></li>
+<li><p><code>contains("ijk")</code>: matches names that contain “ijk”.</p></li>
+<li><p><code>matches("(.)\\1")</code>: selects variables that match a regular expression. This one matches any variables that contain repeated characters. You’ll learn more about regular expressions in [strings].</p></li>
+<li><p><code>num_range("x", 1:3)</code>: matches <code>x1</code>, <code>x2</code> and <code>x3</code>.</p></li>
+</ul>
+<p>See <code>?select</code> for more details.</p>
+<p><code>select()</code> can be used to rename variables, but it’s rarely useful because it drops all of the variables not explicitly mentioned. Instead, use <code>rename()</code>, which is a variant of <code>select()</code> that keeps all the variables that aren’t explicitly mentioned:</p>
+<p>Another option is to use <code>select()</code> in conjunction with the <code>everything()</code> helper. This is useful if you have a handful of variables you’d like to move to the start of the data frame.</p>
+<section id="exercises-2" class="level3">
+<h3 class="anchored" data-anchor-id="exercises-2">Exercises</h3>
+<ol type="1">
+<li><p>Brainstorm as many ways as possible to select <code>dep_time</code>, <code>dep_delay</code>, <code>arr_time</code>, and <code>arr_delay</code> from <code>flights</code>.</p></li>
+<li><p>What happens if you include the name of a variable multiple times in a <code>select()</code> call?</p></li>
+<li><p>What does the <code>any_of()</code> function do? Why might it be helpful in conjunction with this vector?</p></li>
+<li><p>Does the result of running the following code surprise you? How do the select helpers deal with case by default? How can you change that default?</p></li>
+</ol>
+</section>
+</section>
+<section id="add-new-variables-with-mutate" class="level2">
+<h2 class="anchored" data-anchor-id="add-new-variables-with-mutate">Add new variables with <code>mutate()</code></h2>
+<p>Besides selecting sets of existing columns, it’s often useful to add new columns that are functions of existing columns. That’s the job of <code>mutate()</code>.</p>
+<p><code>mutate()</code> always adds new columns at the end of your dataset so we’ll start by creating a narrower dataset so we can see the new variables. Remember that when you’re in RStudio, the easiest way to see all the columns is <code>View()</code>.</p>
+<p>Note that you can refer to columns that you’ve just created:</p>
+<p>If you only want to keep the new variables, use <code>transmute()</code>:</p>
+<section id="mutate-funs" class="level3">
+<h3 class="anchored" data-anchor-id="mutate-funs">Useful creation functions</h3>
+<p>There are many functions for creating new variables that you can use with <code>mutate()</code>. The key property is that the function must be vectorised: it must take a vector of values as input, return a vector with the same number of values as output. There’s no way to list every possible function that you might use, but here’s a selection of functions that are frequently useful:</p>
+<ul>
+<li><p>Arithmetic operators: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>^</code>. These are all vectorised, using the so called “recycling rules”. If one parameter is shorter than the other, it will be automatically extended to be the same length. This is most useful when one of the arguments is a single number: <code>air_time / 60</code>, <code>hours * 60 + minute</code>, etc.</p>
+<p>Arithmetic operators are also useful in conjunction with the aggregate functions you’ll learn about later. For example, <code>x / sum(x)</code> calculates the proportion of a total, and <code>y - mean(y)</code> computes the difference from the mean.</p></li>
+<li><p>Modular arithmetic: <code>%/%</code> (integer division) and <code>%%</code> (remainder), where <code>x == y * (x %/% y) + (x %% y)</code>. Modular arithmetic is a handy tool because it allows you to break integers up into pieces. For example, in the flights dataset, you can compute <code>hour</code> and <code>minute</code> from <code>dep_time</code> with:</p></li>
+<li><p>Logs: <code>log()</code>, <code>log2()</code>, <code>log10()</code>. Logarithms are an incredibly useful transformation for dealing with data that ranges across multiple orders of magnitude. They also convert multiplicative relationships to additive, a feature we’ll come back to in modelling.</p>
+<p>All else being equal, I recommend using <code>log2()</code> because it’s easy to interpret: a difference of 1 on the log scale corresponds to doubling on the original scale and a difference of -1 corresponds to halving.</p></li>
+<li><p>Offsets: <code>lead()</code> and <code>lag()</code> allow you to refer to leading or lagging values. This allows you to compute running differences (e.g.&nbsp;<code>x - lag(x)</code>) or find when values change (<code>x != lag(x)</code>). They are most useful in conjunction with <code>group_by()</code>, which you’ll learn about shortly.</p></li>
+<li><p>Cumulative and rolling aggregates: R provides functions for running sums, products, mins and maxes: <code>cumsum()</code>, <code>cumprod()</code>, <code>cummin()</code>, <code>cummax()</code>; and dplyr provides <code>cummean()</code> for cumulative means. If you need rolling aggregates (i.e.&nbsp;a sum computed over a rolling window), try the RcppRoll package.</p></li>
+<li><p>Logical comparisons, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>!=</code>, and <code>==</code>, which you learned about earlier. If you’re doing a complex sequence of logical operations it’s often a good idea to store the interim values in new variables so you can check that each step is working as expected.</p></li>
+<li><p>Ranking: there are a number of ranking functions, but you should start with <code>min_rank()</code>. It does the most usual type of ranking (e.g.&nbsp;1st, 2nd, 2nd, 4th). The default gives smallest values the small ranks; use <code>desc(x)</code> to give the largest values the smallest ranks.</p>
+<p>If <code>min_rank()</code> doesn’t do what you need, look at the variants <code>row_number()</code>, <code>dense_rank()</code>, <code>percent_rank()</code>, <code>cume_dist()</code>, <code>ntile()</code>. See their help pages for more details.</p></li>
+</ul>
+</section>
+<section id="exercises-3" class="level3">
+<h3 class="anchored" data-anchor-id="exercises-3">Exercises</h3>
+<ol type="1">
+<li><p>Currently <code>dep_time</code> and <code>sched_dep_time</code> are convenient to look at, but hard to compute with because they’re not really continuous numbers. Convert them to a more convenient representation of number of minutes since midnight.</p></li>
+<li><p>Compare <code>air_time</code> with <code>arr_time - dep_time</code>. What do you expect to see? What do you see? What do you need to do to fix it?</p></li>
+<li><p>Compare <code>dep_time</code>, <code>sched_dep_time</code>, and <code>dep_delay</code>. How would you expect those three numbers to be related?</p></li>
+<li><p>Find the 10 most delayed flights using a ranking function. How do you want to handle ties? Carefully read the documentation for <code>min_rank()</code>.</p></li>
+<li><p>What does <code>1:3 + 1:10</code> return? Why?</p></li>
+<li><p>What trigonometric functions does R provide?</p></li>
+</ol>
+</section>
+</section>
+<section id="grouped-summaries-with-summarise" class="level2">
+<h2 class="anchored" data-anchor-id="grouped-summaries-with-summarise">Grouped summaries with <code>summarise()</code></h2>
+<p>The last key verb is <code>summarise()</code>. It collapses a data frame to a single row:</p>
+<p>(We’ll come back to what that <code>na.rm = TRUE</code> means very shortly.)</p>
+<p><code>summarise()</code> is not terribly useful unless we pair it with <code>group_by()</code>. This changes the unit of analysis from the complete dataset to individual groups. Then, when you use the dplyr verbs on a grouped data frame they’ll be automatically applied “by group”. For example, if we applied exactly the same code to a data frame grouped by date, we get the average delay per date:</p>
+<p>Together <code>group_by()</code> and <code>summarise()</code> provide one of the tools that you’ll use most commonly when working with dplyr: grouped summaries. But before we go any further with this, we need to introduce a powerful new idea: the pipe.</p>
+<section id="combining-multiple-operations-with-the-pipe" class="level3">
+<h3 class="anchored" data-anchor-id="combining-multiple-operations-with-the-pipe">Combining multiple operations with the pipe</h3>
+<p>Imagine that we want to explore the relationship between the distance and average delay for each location. Using what you know about dplyr, you might write code like this:</p>
+<p>There are three steps to prepare this data:</p>
+<ol type="1">
+<li><p>Group flights by destination.</p></li>
+<li><p>Summarise to compute distance, average delay, and number of flights.</p></li>
+<li><p>Filter to remove noisy points and Honolulu airport, which is almost twice as far away as the next closest airport.</p></li>
+</ol>
+<p>This code is a little frustrating to write because we have to give each intermediate data frame a name, even though we don’t care about it. Naming things is hard, so this slows down our analysis.</p>
+<p>There’s another way to tackle the same problem with the pipe, <code>%&gt;%</code>:</p>
+<p>This focuses on the transformations, not what’s being transformed, which makes the code easier to read. You can read it as a series of imperative statements: group, then summarise, then filter. As suggested by this reading, a good way to pronounce <code>%&gt;%</code> when reading code is “then”.</p>
+<p>Behind the scenes, <code>x %&gt;% f(y)</code> turns into <code>f(x, y)</code>, and <code>x %&gt;% f(y) %&gt;% g(z)</code> turns into <code>g(f(x, y), z)</code> and so on. You can use the pipe to rewrite multiple operations in a way that you can read left-to-right, top-to-bottom. We’ll use piping frequently from now on because it considerably improves the readability of code, and we’ll come back to it in more detail in [pipes].</p>
+<p>Working with the pipe is one of the key criteria for belonging to the tidyverse. The only exception is ggplot2: it was written before the pipe was discovered. Unfortunately, the next iteration of ggplot2, ggvis, which does use the pipe, isn’t quite ready for prime time yet.</p>
+</section>
+<section id="missing-values-1" class="level3">
+<h3 class="anchored" data-anchor-id="missing-values-1">Missing values</h3>
+<p>You may have wondered about the <code>na.rm</code> argument we used above. What happens if we don’t set it?</p>
+<p>We get a lot of missing values! That’s because aggregation functions obey the usual rule of missing values: if there’s any missing value in the input, the output will be a missing value. Fortunately, all aggregation functions have an <code>na.rm</code> argument which removes the missing values prior to computation:</p>
+<p>In this case, where missing values represent cancelled flights, we could also tackle the problem by first removing the cancelled flights. We’ll save this dataset so we can reuse it in the next few examples.</p>
+</section>
+<section id="counts" class="level3">
+<h3 class="anchored" data-anchor-id="counts">Counts</h3>
+<p>Whenever you do any aggregation, it’s always a good idea to include either a count (<code>n()</code>), or a count of non-missing values (<code>sum(!is.na(x))</code>). That way you can check that you’re not drawing conclusions based on very small amounts of data. For example, let’s look at the planes (identified by their tail number) that have the highest average delays:</p>
+<p>Wow, there are some planes that have an <em>average</em> delay of 5 hours (300 minutes)!</p>
+<p>The story is actually a little more nuanced. We can get more insight if we draw a scatterplot of number of flights vs.&nbsp;average delay:</p>
+<p>Not surprisingly, there is much greater variation in the average delay when there are few flights. The shape of this plot is very characteristic: whenever you plot a mean (or other summary) vs.&nbsp;group size, you’ll see that the variation decreases as the sample size increases.</p>
+<p>When looking at this sort of plot, it’s often useful to filter out the groups with the smallest numbers of observations, so you can see more of the pattern and less of the extreme variation in the smallest groups. This is what the following code does, as well as showing you a handy pattern for integrating ggplot2 into dplyr flows. It’s a bit painful that you have to switch from <code>%&gt;%</code> to <code>+</code>, but once you get the hang of it, it’s quite convenient.</p>
+<hr>
+<p>RStudio tip: a useful keyboard shortcut is Cmd/Ctrl + Shift + P. This resends the previously sent chunk from the editor to the console. This is very convenient when you’re (e.g.) exploring the value of <code>n</code> in the example above. You send the whole block once with Cmd/Ctrl + Enter, then you modify the value of <code>n</code> and press Cmd/Ctrl + Shift + P to resend the complete block.</p>
+<hr>
+<p>There’s another common variation of this type of pattern. Let’s look at how the average performance of batters in baseball is related to the number of times they’re at bat. Here I use data from the <strong>Lahman</strong> package to compute the batting average (number of hits / number of attempts) of every major league baseball player.</p>
+<p>When I plot the skill of the batter (measured by the batting average, <code>ba</code>) against the number of opportunities to hit the ball (measured by at bat, <code>ab</code>), you see two patterns:</p>
+<ol type="1">
+<li><p>As above, the variation in our aggregate decreases as we get more data points.</p></li>
+<li><p>There’s a positive correlation between skill (<code>ba</code>) and opportunities to hit the ball (<code>ab</code>). This is because teams control who gets to play, and obviously they’ll pick their best players.</p></li>
+</ol>
+<p>This also has important implications for ranking. If you naively sort on <code>desc(ba)</code>, the people with the best batting averages are clearly lucky, not skilled:</p>
+<p>You can find a good explanation of this problem at <a href="http://varianceexplained.org/r/empirical_bayes_baseball/" class="uri">http://varianceexplained.org/r/empirical_bayes_baseball/</a> and <a href="http://www.evanmiller.org/how-not-to-sort-by-average-rating.html" class="uri">http://www.evanmiller.org/how-not-to-sort-by-average-rating.html</a>.</p>
+</section>
+<section id="summarise-funs" class="level3">
+<h3 class="anchored" data-anchor-id="summarise-funs">Useful summary functions</h3>
+<p>Just using means, counts, and sum can get you a long way, but R provides many other useful summary functions:</p>
+<ul>
+<li><p>Measures of location: we’ve used <code>mean(x)</code>, but <code>median(x)</code> is also useful. The mean is the sum divided by the length; the median is a value where 50% of <code>x</code> is above it, and 50% is below it.</p>
+<p>It’s sometimes useful to combine aggregation with logical subsetting. We haven’t talked about this sort of subsetting yet, but you’ll learn more about it in [subsetting].</p></li>
+<li><p>Measures of spread: <code>sd(x)</code>, <code>IQR(x)</code>, <code>mad(x)</code>. The root mean squared deviation, or standard deviation <code>sd(x)</code>, is the standard measure of spread. The interquartile range <code>IQR(x)</code> and median absolute deviation <code>mad(x)</code> are robust equivalents that may be more useful if you have outliers.</p></li>
+<li><p>Measures of rank: <code>min(x)</code>, <code>quantile(x, 0.25)</code>, <code>max(x)</code>. Quantiles are a generalisation of the median. For example, <code>quantile(x, 0.25)</code> will find a value of <code>x</code> that is greater than 25% of the values, and less than the remaining 75%.</p></li>
+<li><p>Measures of position: <code>first(x)</code>, <code>nth(x, 2)</code>, <code>last(x)</code>. These work similarly to <code>x[1]</code>, <code>x[2]</code>, and <code>x[length(x)]</code> but let you set a default value if that position does not exist (i.e.&nbsp;you’re trying to get the 3rd element from a group that only has two elements). For example, we can find the first and last departure for each day:</p>
+<p>These functions are complementary to filtering on ranks. Filtering gives you all variables, with each observation in a separate row:</p></li>
+<li><p>Counts: You’ve seen <code>n()</code>, which takes no arguments, and returns the size of the current group. To count the number of non-missing values, use <code>sum(!is.na(x))</code>. To count the number of distinct (unique) values, use <code>n_distinct(x)</code>.</p>
+<p>Counts are so useful that dplyr provides a simple helper if all you want is a count:</p>
+<p>You can optionally provide a weight variable. For example, you could use this to “count” (sum) the total number of miles a plane flew:</p></li>
+<li><p>Counts and proportions of logical values: <code>sum(x &gt; 10)</code>, <code>mean(y == 0)</code>. When used with numeric functions, <code>TRUE</code> is converted to 1 and <code>FALSE</code> to 0. This makes <code>sum()</code> and <code>mean()</code> very useful: <code>sum(x)</code> gives the number of <code>TRUE</code>s in <code>x</code>, and <code>mean(x)</code> gives the proportion.</p></li>
+</ul>
+</section>
+<section id="grouping-by-multiple-variables" class="level3">
+<h3 class="anchored" data-anchor-id="grouping-by-multiple-variables">Grouping by multiple variables</h3>
+<p>When you group by multiple variables, each summary peels off one level of the grouping. That makes it easy to progressively roll up a dataset:</p>
+<p>Be careful when progressively rolling up summaries: it’s OK for sums and counts, but you need to think about weighting means and variances, and it’s not possible to do it exactly for rank-based statistics like the median. In other words, the sum of groupwise sums is the overall sum, but the median of groupwise medians is not the overall median.</p>
+</section>
+<section id="ungrouping" class="level3">
+<h3 class="anchored" data-anchor-id="ungrouping">Ungrouping</h3>
+<p>If you need to remove grouping, and return to operations on ungrouped data, use <code>ungroup()</code>.</p>
+</section>
+<section id="exercises-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercises-4">Exercises</h3>
+<ol type="1">
+<li><p>Brainstorm at least 5 different ways to assess the typical delay characteristics of a group of flights. Consider the following scenarios:</p>
+<ul>
+<li><p>A flight is 15 minutes early 50% of the time, and 15 minutes late 50% of the time.</p></li>
+<li><p>A flight is always 10 minutes late.</p></li>
+<li><p>A flight is 30 minutes early 50% of the time, and 30 minutes late 50% of the time.</p></li>
+<li><p>99% of the time a flight is on time. 1% of the time it’s 2 hours late.</p></li>
+</ul>
+<p>Which is more important: arrival delay or departure delay?</p></li>
+<li><p>Come up with another approach that will give you the same output as <code>not_cancelled %&gt;% count(dest)</code> and <code>not_cancelled %&gt;% count(tailnum, wt = distance)</code> (without using <code>count()</code>).</p></li>
+<li><p>Our definition of cancelled flights (<code>is.na(dep_delay) | is.na(arr_delay)</code> ) is slightly suboptimal. Why? Which is the most important column?</p></li>
+<li><p>Look at the number of cancelled flights per day. Is there a pattern? Is the proportion of cancelled flights related to the average delay?</p></li>
+<li><p>Which carrier has the worst delays? Challenge: can you disentangle the effects of bad airports vs.&nbsp;bad carriers? Why/why not? (Hint: think about <code>flights %&gt;% group_by(carrier, dest) %&gt;% summarise(n())</code>)</p></li>
+<li><p>What does the <code>sort</code> argument to <code>count()</code> do. When might you use it?</p></li>
+</ol>
+</section>
+</section>
+<section id="grouped-mutates-and-filters" class="level2">
+<h2 class="anchored" data-anchor-id="grouped-mutates-and-filters">Grouped mutates (and filters)</h2>
+<p>Grouping is most useful in conjunction with <code>summarise()</code>, but you can also do convenient operations with <code>mutate()</code> and <code>filter()</code>:</p>
+<ul>
+<li><p>Find the worst members of each group:</p></li>
+<li><p>Find all groups bigger than a threshold:</p></li>
+<li><p>Standardise to compute per group metrics:</p></li>
+</ul>
+<p>A grouped filter is a grouped mutate followed by an ungrouped filter. I generally avoid them except for quick and dirty manipulations: otherwise it’s hard to check that you’ve done the manipulation correctly.</p>
+<p>Functions that work most naturally in grouped mutates and filters are known as window functions (vs.&nbsp;the summary functions used for summaries). You can learn more about useful window functions in the corresponding vignette: <code>vignette("window-functions")</code>.</p>
+<section id="exercises-5" class="level3">
+<h3 class="anchored" data-anchor-id="exercises-5">Exercises</h3>
+<ol type="1">
+<li><p>Refer back to the lists of useful mutate and filtering functions. Describe how each operation changes when you combine it with grouping.</p></li>
+<li><p>Which plane (<code>tailnum</code>) has the worst on-time record?</p></li>
+<li><p>What time of day should you fly if you want to avoid delays as much as possible?</p></li>
+<li><p>For each destination, compute the total minutes of delay. For each flight, compute the proportion of the total delay for its destination.</p></li>
+<li><p>Delays are typically temporally correlated: even once the problem that caused the initial delay has been resolved, later flights are delayed to allow earlier flights to leave. Using <code>lag()</code>, explore how the delay of a flight is related to the delay of the immediately preceding flight.</p></li>
+<li><p>Look at each destination. Can you find flights that are suspiciously fast? (i.e.&nbsp;flights that represent a potential data entry error). Compute the air time of a flight relative to the shortest flight to that destination. Which flights were most delayed in the air?</p></li>
+<li><p>Find all destinations that are flown by at least two carriers. Use that information to rank the carriers.</p></li>
+<li><p>For each plane, count the number of flights before the first delay of greater than 1 hour.</p></li>
+</ol>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2022, Jeffrey Stevens</div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jeffreyrstevens/flashr_decks">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
