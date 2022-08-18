@@ -1,4 +1,4 @@
-# Functions used in flashr decks
+# Glossary of functions used in flashr decks
 
 ```{r echo = FALSE}
 all_functions <- read.csv("data/functions.csv") |> 

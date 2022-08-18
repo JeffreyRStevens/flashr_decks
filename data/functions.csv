@@ -1,339 +1,529 @@
-term,package,function_name,description,url
--,base,-,subtraction,https://rdrr.io/r/base/Arithmetic.html
-:,base,:,sequence of integers,https://rdrr.io/r/base/Colon.html
-::,base,::,export variable from package for use,https://rdrr.io/r/base/ns-dblcolon.html
-!,base,!,logical NOT,https://rdrr.io/r/base/Logic.html
-!=,base,!=,not equal to,https://rdrr.io/r/base/Comparison.html
-[],base,[],subset elements of vector,NA
-*,base,*,multiplication,https://rdrr.io/r/base/Arithmetic.html
-/,base,/,division,https://rdrr.io/r/base/Arithmetic.html
-&,base,&,logical AND,https://rdrr.io/r/base/Logic.html
-%*%,base,%*%,multiply matrix with its transpose,https://rdrr.io/r/base/matmult.html
-%/%,base,%/%,quotient,https://rdrr.io/r/base/Arithmetic.html
-%%,base,%%,remainder,https://rdrr.io/r/base/Arithmetic.html
-%<>%,magrittr,%<>%,assignment pipe,https://magrittr.tidyverse.org/reference/compound.html
-%>%,magrittr,%>%,pipe operator,https://magrittr.tidyverse.org/reference/pipe.html
-%$%,magrittr,%$%,exposition pipe,https://magrittr.tidyverse.org/reference/exposition.html
-%in%,base,%in%,identify if element is in vector,https://rdrr.io/r/base/match.html
-%T>%,magrittr,%T>%,tee pipe,https://magrittr.tidyverse.org/reference/tee.html
-^,base,^,exponent,https://rdrr.io/r/base/Arithmetic.html
-+,base,+,addition,https://rdrr.io/r/base/Arithmetic.html
-<,base,<,less than,https://rdrr.io/r/base/Comparison.html
-<-,base,<-,assignment operator,https://rdrr.io/r/base/assignOps.html
-<<-,base,<<-,assignment operator (in functions for global environment),https://rdrr.io/r/base/assignOps.html
-<=,base,<=,less than or equal to,https://rdrr.io/r/base/Comparison.html
-=,base,=,assignment operator,https://rdrr.io/r/base/assignOps.html
-==,base,==,equal to,https://rdrr.io/r/base/Comparison.html
->,base,>,greater than,https://rdrr.io/r/base/Comparison.html
->=,base,>=,greater than or equal to,https://rdrr.io/r/base/Comparison.html
-|,base,|,logical OR,https://rdrr.io/r/base/Logic.html
-|>,base,|>,pipe operator (base R),https://rdrr.io/r/base/pipeOp.html
-accumulate(),purrr,purrr::accumulate(),accumulate intermediate result of vector reduction,https://purrr.tidyverse.org/reference/accumulate.html
-add_predictions(),modelr,modelr::add_predictions(),add predictions to a data frame,https://modelr.tidyverse.org/reference/add_predictions.html
-add_residuals(),modelr,modelr::add_residuals(),add residuals to a data frame,https://modelr.tidyverse.org/reference/add_residuals.html
-aes(),ggplot2,ggplot2::aes(),create aesthetic mappings between data and plot,https://ggplot2.tidyverse.org/reference/aes.html
-annotate(),ggplot2,ggplot2::annotate(),annotate plot independent of data,https://ggplot2.tidyverse.org/reference/annotate.html
-anti_join(),dplyr,dplyr::anti_join(),join two data sets dropping all observations in x that have a match in y,https://dplyr.tidyverse.org/reference/filter-joins.html
-any_of(),tidyselect,tidyselect::any_of(),check if any any elements are found in vector,https://tidyselect.r-lib.org/reference/all_of.html
-apply(),base,base::apply(),apply a function to multiple elements of an object in base R,https://rdrr.io/r/base/apply.html
-apropros(),utils,utils::apropros(),returns a character vector giving the names of objects in the search list matching (as a regular expression),https://rdrr.io/r/utils/apropos.html
-arrange(),dplyr,dplyr::arrange(),change order of rows based on values of columns,https://dplyr.tidyverse.org/reference/arrange.html
-arrow(),grid,grid::arrow(),plot arrows,https://rdrr.io/r/grid/arrow.html
-as_date(),lubridate,lubridate::as_date(),convert object to date,https://lubridate.tidyverse.org/reference/as_date.html
-as_datetime(),lubridate,lubridate::as_datetime(),convert object to date-time,https://lubridate.tidyverse.org/reference/as_date.html
-as_tibble(),tibble,tibble::as_tibble(),coerce object into tibble,https://tibble.tidyverse.org/reference/as_tibble.html
-as.character(),base,base::as.character(),coerce object to character,https://rdrr.io/r/base/character.html
-as.data.frame(),base,base::as.data.frame(),coerce object into data frame,https://rdrr.io/r/base/as.data.frame.html
-as.factor(),base,base::as.factor(),coerce object to factor,https://rdrr.io/r/base/factor.html
-as.numeric(),base,base::as.numeric(),coerce object to numeric,https://rdrr.io/r/base/numeric.html
-attr(),base,base::attr(),return or set individual attribute values,https://rdrr.io/r/base/attr.html
-attributes(),base,base::attributes(),"return all attributes of vector, matrix, <br> data frame, etc.",https://rdrr.io/r/base/attributes.html
-augment(),generics,generics::augment(),augment data with information from an object,https://generics.r-lib.org/reference/augment.html
-beamer_presentation(),rmarkdown,rmarkdown::beamer_presentation(),create beamer presentation from R markdown file,https://rdrr.io/cran/rmarkdown/man/beamer_presentation.html
-bind_rows(),dplyr,dplyr::bind_rows(),bind rows in dplyr,https://dplyr.tidyverse.org/reference/bind.html
-boundary(),stringr,stringr::boundary(),match boundaries within strings,https://stringr.tidyverse.org/reference/modifiers.html
-c(),base,base::c(),"create vector of numbers, characters, etc.",https://rdrr.io/r/base/c.html
-case_when(),dplyr,dplyr::case_when(),conditionally set values across multiple conditions,https://dplyr.tidyverse.org/reference/case_when.html
-ceiling_date(),lubridate,lubridate::ceiling_date(),round data-time up to ceiling,https://lubridate.tidyverse.org/reference/round_date.html
-charToRaw(),base,base::charToRaw(),converts a length-one character string to raw bytes,https://rdrr.io/r/base/rawConversion.html
-class(),base,base::class(),return object class,https://rdrr.io/r/base/class.html
-clean_cache(),knitr,knitr::clean_cache(),clear out code chunk cache,https://rdrr.io/pkg/knitr/man/clean_cache.html
-coll(),stringr,stringr::coll(),compare strings respecting standard collation rules,https://stringr.tidyverse.org/reference/modifiers.html
-complete(),tidyr,tidyr::complete(),complete a data frame with missing combinations of data,https://tidyr.tidyverse.org/reference/complete.html
-contains(),tidyselect,tidyselect::contains(),match column names that contain string,https://tidyselect.r-lib.org/reference/starts_with.html
-coord_cartesian(),ggplot2,ggplot2::coord_cartesian(),use Cartesian coordinates,https://ggplot2.tidyverse.org/reference/coord_cartesian.html
-coord_fixed(),ggplot2,ggplot2::coord_fixed(),force aspect ratio between data units on axes,https://ggplot2.tidyverse.org/reference/coord_fixed.html
-coord_flip(),ggplot2,ggplot2::coord_flip(),switch x and y axes,https://ggplot2.tidyverse.org/reference/coord_flip.html
-coord_polar(),ggplot2,ggplot2::coord_polar(),use polar coordinates,https://ggplot2.tidyverse.org/reference/coord_polar.html
-coord_quickmap(),ggplot2,ggplot2::coord_quickmap(),set aspect ratio correctly for maps,https://ggplot2.tidyverse.org/reference/coord_map.html
-count(),dplyr,dplyr::count(),count unique values of variables,https://dplyr.tidyverse.org/reference/count.html
-count(),plyr,plyr::count(),count unique values of variables,https://dplyr.tidyverse.org/reference/count.html
-cut_number(),ggplot2,ggplot2::cut_number(),cut data into groups of equal numbers of observations,https://ggplot2.tidyverse.org/reference/cut_interval.html
-cut_width(),ggplot2,ggplot2::cut_width(),cut data into groups of a particular width,https://ggplot2.tidyverse.org/reference/cut_interval.html
-cut(),base,base::cut(),divide range of vector into intervals,https://rdrr.io/r/base/cut.html
-data_grid(),modelr,modelr::data_grid(),generate a data grid,https://modelr.tidyverse.org/reference/data_grid.html
-data.frame(),base,base::data.frame(),create data frame,https://rdrr.io/r/base/data.frame.html
-desc(),dplyr,dplyr::desc(),order in descending order,https://dplyr.tidyverse.org/reference/desc.html
-detect(),purrr,purrr::detect(),return value of first matching element,https://purrr.tidyverse.org/reference/detect.html
-dim(),base,base::dim(),"return dimensions of matrix, data frame, etc.",https://rdrr.io/r/base/dim.html
-discard(),purrr,purrr::discard(),discard elements using a predicate function,https://purrr.tidyverse.org/reference/keep.html
-dmy(),lubridate,lubridate::dmy(),"parse dates as day, month, year",https://lubridate.tidyverse.org/reference/ymd.html
-ends_with(),tidyselect,tidyselect::ends_with(),match column names that end with string,https://tidyselect.r-lib.org/reference/starts_with.html
-enframe(),tibble,tibble::enframe(),convert vectors to data frame,https://tibble.tidyverse.org/reference/enframe.html
-every(),purrr,purrr::every(),determine if all elements meet predicate function conditional,https://purrr.tidyverse.org/reference/every.html
-facet_grid(),ggplot2,ggplot2::facet_grid(),create grid of subplots from multiple variables,https://ggplot2.tidyverse.org/reference/facet_grid.html
-facet_wrap(),ggplot2,ggplot2::facet_wrap(),create subplots from one variable,https://ggplot2.tidyverse.org/reference/facet_wrap.html
-factor(),base,base::factor(),encode vector as factor,https://rdrr.io/r/base/factor.html
-fct_collapse(),forcats,forcats::fct_collapse(),collapse factors into manually defined groups,https://forcats.tidyverse.org/reference/fct_collapse.html
-fct_infreq(),forcats,forcats::fct_infreq(),reorder factor levels in the order of most to least frequent,https://forcats.tidyverse.org/reference/fct_inorder.html
-fct_inorder(),forcats,forcats::fct_inorder(),reorder factor levels in the order that they first appear,https://forcats.tidyverse.org/reference/fct_inorder.html
-fct_lump(),forcats,forcats::fct_lump(),lump together factor levels into 'other',https://forcats.tidyverse.org/reference/fct_lump.html
-fct_recode(),forcats,forcats::fct_recode(),change factor levels by hand,https://forcats.tidyverse.org/reference/fct_recode.html
-fct_relevel(),forcats,forcats::fct_relevel(),reorder factor levels by hand,https://forcats.tidyverse.org/reference/fct_relevel.html
-fct_reorder(),forcats,forcats::fct_reorder(),reorder factor levels by sorting along another variable,https://forcats.tidyverse.org/reference/fct_reorder.html
-fct_reorder2(),forcats,forcats::fct_reorder2(),reorder factor levels by sorting along another variable with two dimensions,https://forcats.tidyverse.org/reference/fct_reorder.html
-fct_rev(),forcats,forcats::fct_rev(),reverse order of factor levels,https://forcats.tidyverse.org/reference/fct_rev.html
-file.info(),base,base::file.info(),extract file information,https://rdrr.io/r/base/file.info.html
-fill(),tidyr,tidyr::fill(),fill in missing values,https://tidyr.tidyverse.org/reference/fill.html
-filter(),dplyr,dplyr::filter(),keep rows based on values of columns,https://dplyr.tidyverse.org/reference/filter.html
-fixed(),stringr,stringr::fixed(),compare literal bytes in a string,https://stringr.tidyverse.org/reference/modifiers.html
-flatten_dbl(),purrr,purrr::flatten_dbl(),flatten a list into an atomic vector in purrr,https://purrr.tidyverse.org/reference/flatten.html
-floor_date(),lubridate,lubridate::floor_date(),round date-time down to floor,https://lubridate.tidyverse.org/reference/round_date.html
-force_tz(),lubridate,lubridate::force_tz(),replace time zone to create new date-time,https://lubridate.tidyverse.org/reference/force_tz.html
-format(),base,base::format(),format object for pretty printing,https://rdrr.io/r/base/format.html
-fread(),data.table,data.table::fread(),read delimited files,https://rdatatable.gitlab.io/data.table/reference/fread.html
-full_join(),dplyr,dplyr::full_join(),join two data sets keeping the observations in both,https://dplyr.tidyverse.org/reference/mutate-joins.html
-fwf_positions(),readr,readr::fwf_positions(),specify fields by positions,https://readr.tidyverse.org/reference/read_fwf.html
-fwf_widths(),readr,readr::fwf_widths(),specify fields by widths,https://readr.tidyverse.org/reference/read_fwf.html
-gam(),mgcv,mgcv::gam(),compute generalized additive model,https://rdrr.io/cran/mgcv/man/gam.html
-gather_predictions(),modelr,modelr::gather_predictions(),add predictions and pivot longer,https://modelr.tidyverse.org/reference/add_predictions.html
-geom_abline(),ggplot2,ggplot2::geom_abline(),"add vertical, horizontal, or diagonal reference lines",https://ggplot2.tidyverse.org/reference/geom_abline.html
-geom_bar(),ggplot2,ggplot2::geom_bar(),create bar chart,https://ggplot2.tidyverse.org/reference/geom_bar.html
-geom_boxplot(),ggplot2,ggplot2::geom_boxplot(),add layer of boxplots to plot,https://ggplot2.tidyverse.org/reference/geom_boxplot.html
-geom_count(),ggplot2,ggplot2::geom_count(),add layer of points sized by count of overlapping points to plot,https://ggplot2.tidyverse.org/reference/geom_count.html
-geom_hline(),ggplot2,ggplot2::geom_hline(),plot horizontal reference line,https://ggplot2.tidyverse.org/reference/geom_abline.html
-geom_jitter(),ggplot2,ggplot2::geom_jitter(),add layer of jittered points to plot,https://ggplot2.tidyverse.org/reference/geom_jitter.html
-geom_label(),ggplot2,ggplot2::geom_label(),adds text in rectangle to plot,https://ggplot2.tidyverse.org/reference/geom_text.html
-geom_line(),ggplot2,ggplot2::geom_line(),add layer of data lines to plot,https://ggplot2.tidyverse.org/reference/geom_path.html
-geom_point(),ggplot2,ggplot2::geom_point(),add layer of points to plot,https://ggplot2.tidyverse.org/reference/geom_point.html
-geom_polygon(),ggplot2,ggplot2::geom_polygon(),add layer of polygons to plot,https://ggplot2.tidyverse.org/reference/geom_polygon.html
-geom_rect(),ggplot2,ggplot2::geom_rect(),plot rectangle,https://ggplot2.tidyverse.org/reference/geom_tile.html
-geom_ref_line(),modelr,modelr::geom_ref_line(),add reference line to plot,https://modelr.tidyverse.org/reference/geom_ref_line.html
-geom_segment(),ggplot2,ggplot2::geom_segment(),plot line segment,https://ggplot2.tidyverse.org/reference/geom_segment.html
-geom_smooth(),ggplot2,ggplot2::geom_smooth(),create smoothed lines to plot,https://ggplot2.tidyverse.org/reference/geom_smooth.html
-geom_text(),ggplot2,ggplot2::geom_text(),adds text to plot,https://ggplot2.tidyverse.org/reference/geom_text.html
-geom_vline(),ggplot2,ggplot2::geom_vline(),plot vertical reference line,https://ggplot2.tidyverse.org/reference/geom_abline.html
-getS3method(),utils,utils::getS3method(),return a method for S3 generic function,https://rdrr.io/r/utils/getS3method.html
-getwd(),base,base::getwd(),return working directory,https://rdrr.io/r/base/getwd.html
-ggplot(),ggplot2,ggplot2::ggplot(),create a plotting area,https://ggplot2.tidyverse.org/reference/ggplot.html
-ggsave(),ggplot2,ggplot2::ggsave(),save a ggplot,https://ggplot2.tidyverse.org/reference/ggsave.html
-glance(),generics,generics::glance(),glance at an object,https://generics.r-lib.org/reference/glance.html
-glm(),stats,stats::glm(),compute generalized linear model,https://rdrr.io/r/stats/glm.html
-glmnet(),glmnet,glmnet::glmnet(),compute generalized linear model via penalized maximum likelihood,https://glmnet.stanford.edu/articles/glmnet.html
-group_by(),dplyr,dplyr::group_by(),group data by levels of column,https://dplyr.tidyverse.org/reference/group_by.html
-guess_encoding(),readr,readr::guess_encoding(),guess encoding of file,https://readr.tidyverse.org/reference/encoding.html
-guess_parser(),readr,readr::guess_parser(),return the name of the parser,https://readr.tidyverse.org/reference/parse_guess.html
-guide_colourbar(),ggplot2,ggplot2::guide_colourbar(),control legend color bar,https://ggplot2.tidyverse.org/reference/guide_colourbar.html
-guide_legend(),ggplot2,ggplot2::guide_legend(),control legend formatting,https://ggplot2.tidyverse.org/reference/guide_legend.html
-guides(),ggplot2,ggplot2::guides(),set guides for scale,https://ggplot2.tidyverse.org/reference/guides.html
-head_while(),purrr,purrr::head_while(),find first elements that satisfy predicate,https://purrr.tidyverse.org/reference/head_while.html
-head(),utils,utils::head(),"return first rows of matrix, data frame, etc.",https://rdrr.io/r/utils/head.html
-hour(),lubridate,lubridate::hour(),return or set hour component of a date-time,https://lubridate.tidyverse.org/reference/hour.html
-html_document(),rmarkdown,rmarkdown::html_document(),create HTML document from R markdown file,https://rdrr.io/pkg/rmarkdown/man/html_document.html
-I(),base,base::I(),inhibit interpretation/conversion of objects,https://rdrr.io/r/base/AsIs.html
-ifelse(),base,base::ifelse(),conditionally set values,https://rdrr.io/r/base/ifelse.html
-inner_join(),dplyr,dplyr::inner_join(),join two data sets keeping the observations that they have in common,https://dplyr.tidyverse.org/reference/mutate-joins.html
-install.packages(),utils,utils::install.packages(),install R packages,https://rdrr.io/r/utils/install.packages.html
-intersect(),base,base::intersect(),return only observations in both x and y,https://rdrr.io/r/base/sets.html
-invisible(),base,base::invisible(),return invisible copy of object,https://rdrr.io/r/base/invisible.html
-ioslides_presentation(),rmarkdown,rmarkdown::ioslides_presentation(),create ioslides presentation from R markdown file,https://rdrr.io/cran/rmarkdown/man/ioslides_presentation.html
-is.finite(),base,base::is.finite(),determines if numeric is finite,https://rdrr.io/r/base/is.finite.html
-is.vector(),base,base::is.vector(),check if object is vector,https://rdrr.io/r/base/vector.html
-kable(),knitr,knitr::kable(),create knitr table,https://rdrr.io/pkg/knitr/man/kable.html
-keep(),purrr,purrr::keep(),keep elements using a predicate function,https://purrr.tidyverse.org/reference/keep.html
-labs(),ggplot2,ggplot2::labs(),"modify axis, legend, and plot labels",https://ggplot2.tidyverse.org/reference/labs.html
-lapply(),base,base::lapply(),apply a function to multiple elements of an object and return a list,https://rdrr.io/r/base/lapply.html
-left_join(),dplyr,dplyr::left_join(),join two data sets keeping the observations in the left one,https://dplyr.tidyverse.org/reference/mutate-joins.html
-length(),base,base::length(),return number of elements in a vector,https://rdrr.io/r/base/length.html
-lengths(),base,base::lengths(),return length of each element of a list or vector,https://rdrr.io/r/base/lengths.html
-levels(),base,base::levels(),view and change factor levels,https://rdrr.io/r/base/levels.html
-library(),base,base::library(),load R packages,https://rdrr.io/r/base/library.html
-list(),base,base::list(),create recursive vector (list),https://rdrr.io/r/base/list.html
-loess(),stats,stats::loess(),apply local polynomial regression fitting,https://rdrr.io/r/stats/loess.html
-make_datetime(),lubridate,lubridate::make_datetime(),create date-times from numeric representations,https://lubridate.tidyverse.org/reference/make_datetime.html
-map_chr(),purrr,purrr::map_chr(),"apply a function to multiple elements of an object in purrr, return a character vector",https://purrr.tidyverse.org/reference/map.html
-map_dbl(),purrr,purrr::map_dbl(),"apply a function to multiple elements of an object in purrr, return a double vector",https://purrr.tidyverse.org/reference/map.html
-map_int(),purrr,purrr::map_int(),"apply a function to multiple elements of an object in purrr, return a integer vector",https://purrr.tidyverse.org/reference/map.html
-map_lgl(),purrr,purrr::map_lgl(),"apply a function to multiple elements of an object in purrr, return a logical vector",https://purrr.tidyverse.org/reference/map.html
-map(),purrr,purrr::map(),"apply a function to multiple elements of an object in purrr, return a list",https://purrr.tidyverse.org/reference/map.html
-map2(),purrr,purrr::map2(),apply a function to multiple elements over two vectors in parallel,https://purrr.tidyverse.org/reference/map2.html
-matrix(),base,base::matrix(),"create matrix of numbers, characters, etc.",https://rdrr.io/r/base/matrix.html
-mdy_hm(),lubridate,lubridate::mdy_hm(),"parse month, day, year and hour, minute",https://lubridate.tidyverse.org/reference/ymd_hms.html
-mdy(),lubridate,lubridate::mdy(),"parse dates as month, day, year",https://lubridate.tidyverse.org/reference/ymd.html
-mean(),base,base::mean(),calculate mean of elements of vector,https://rdrr.io/r/base/mean.html
-merge(),base,base::merge(),join two data sets,https://rdrr.io/r/base/merge.html
-methods(),utils,utils::methods(),return all available methods for function,https://rdrr.io/r/utils/methods.html
-minute(),lubridate,lubridate::minute(),return or set minute component of a date-time,https://lubridate.tidyverse.org/reference/minute.html
-model_matrix(),modelr,modelr::model_matrix(),construct a design matrix,https://modelr.tidyverse.org/reference/model_matrix.html
-month(),lubridate,lubridate::month(),return or set month component of a date-time,https://lubridate.tidyverse.org/reference/month.html
-mutate(),dplyr,dplyr::mutate(),create or modify data columns,https://dplyr.tidyverse.org/reference/mutate.html
-n(),dplyr,dplyr::n(),return current group size,https://dplyr.tidyverse.org/reference/context.html
-names(),base,base::names(),return (and can assign) column names,https://rdrr.io/r/base/names.html
-ncol(),base,base::ncol(),"return number of columns in matrix, <br> data frame, etc.",https://rdrr.io/r/base/ncol.html
-nest(),tidyr,tidyr::nest(),creates nested list structure,https://tidyr.tidyverse.org/reference/nest.html
-now(),lubridate,lubridate::now(),return current date and time,https://lubridate.tidyverse.org/reference/now.html
-nrow(),base,base::nrow(),"return number of rows in matrix, <br> data frame, etc.",https://rdrr.io/r/base/nrow.html
-ns(),splines,splines::ns(),generate basis matrix for natural cubic splines,https://rdrr.io/r/splines/ns.html
-num_range(),tidyselect,tidyselect::num_range(),match column names with number range,https://tidyselect.r-lib.org/reference/starts_with.html
-numericInput(),shiny,shiny::numericInput(),allow numeric input in Shiny,https://shiny.rstudio.com/reference/shiny/latest/numericInput.html
-object_size(),pryr,pryr::object_size(),compute size of object,https://rdrr.io/cran/pryr/man/object_size.html
-OlsonNames(),base,base::OlsonNames(),return vector of all time zone names,https://rdrr.io/r/base/timezones.html
-optim(),stats,stats::optim(),apply optimization algorithm,https://rdrr.io/r/stats/optim.html
-opts_chunk(),knitr,knitr::opts_chunk(),set options for R code chunks,https://rdrr.io/pkg/knitr/man/opts_chunk.html
-opts_chunk$set(),knitr,knitr::opts_chunk$set(),set knitr code chunk options,https://rdrr.io/pkg/knitr/man/opts_chunk.html
-parse_character(),readr,readr::parse_character(),parse a character vector to characters,https://readr.tidyverse.org/reference/parse_atomic.html
-parse_date(),readr,readr::parse_date(),parse date,https://readr.tidyverse.org/reference/parse_datetime.html
-parse_datetime(),readr,readr::parse_datetime(),parse date/time,https://readr.tidyverse.org/reference/parse_datetime.html
-parse_double(),readr,readr::parse_double(),parse a character vector to doubles,https://readr.tidyverse.org/reference/parse_atomic.html
-parse_factor(),readr,readr::parse_factor(),parse a character vector to factors,https://readr.tidyverse.org/reference/parse_atomic.html
-parse_guess(),readr,readr::parse_guess(),parse the column based on the guessed type,https://readr.tidyverse.org/reference/parse_guess.html
-parse_integer(),readr,readr::parse_integer(),parse a character vector to integers,https://readr.tidyverse.org/reference/parse_atomic.html
-parse_logical(),readr,readr::parse_logical(),parse a character vector to logicals,https://readr.tidyverse.org/reference/parse_atomic.html
-parse_number(),readr,readr::parse_number(),parse a character vector to numbers,https://readr.tidyverse.org/reference/parse_atomic.html
-parse_time(),readr,readr::parse_time(),parse time,https://readr.tidyverse.org/reference/parse_datetime.html
-pdf_document(),rmarkdown,rmarkdown::pdf_document(),create PDF document from R markdown file,https://rdrr.io/pkg/rmarkdown/man/pdf_document.html
-pivot_longer(),tidyr,tidyr::pivot_longer(),pivot data frame to be longer,https://tidyr.tidyverse.org/reference/pivot_longer.html
-pivot_wider(),tidyr,tidyr::pivot_wider(),pivot data frame to be wider,https://tidyr.tidyverse.org/reference/pivot_wider.html
-pmap(),purrr,purrr::pmap(),apply a function to multiple elements over a list of vectors in parallel,https://purrr.tidyverse.org/reference/map2.html
-poly(),stats,stats::poly(),compute orthogonal polynomials,https://rdrr.io/r/stats/poly.html
-possibly(),purrr,purrr::possibly(),safely return result or default when there is an error,https://purrr.tidyverse.org/reference/safely.html
-print(),base,base::print(),prints argument,https://rdrr.io/r/base/print.html
-quantile(),stats,stats::quantile(),calculate sample quantiles,https://rdrr.io/r/stats/quantile.html
-quietly(),purrr,purrr::quietly(),"safely return result, messages, and warnings",https://purrr.tidyverse.org/reference/safely.html
-quote(),base,base::quote(),returns quoted expression,https://rdrr.io/r/base/substitute.html
-randomForest(),randomForest,randomForest::randomForest(),compute random forest model,https://www.rdocumentation.org/packages/randomForest/versions/4.7-1.1/topics/randomForest
-rbind(),base,base::rbind(),bind rows in base R,https://rdrr.io/r/base/cbind.html
-read_csv(),readr,readr::read_csv(),read comma delimited files,https://readr.tidyverse.org/reference/read_delim.html
-read_csv2(),readr,readr::read_csv2(),read semicolon separated files,https://readr.tidyverse.org/reference/read_delim.html
-read_delim(),readr,readr::read_delim(),read any kind of delimited file,https://readr.tidyverse.org/reference/read_delim.html
-read_feather(),feather,feather::read_feather(),read feather files,https://www.rdocumentation.org/packages/feather/versions/0.3.5/topics/read_feather
-read_file(),readr,readr::read_file(),read a complete file,https://readr.tidyverse.org/reference/read_file.html
-read_fwf(),readr,readr::read_fwf(),read fixed width files,https://readr.tidyverse.org/reference/read_fwf.html
-read_lines(),readr,readr::read_lines(),read lines from a file,https://readr.tidyverse.org/reference/read_lines.html
-read_log(),readr,readr::read_log(),read Apache style log files,https://readr.tidyverse.org/reference/read_log.html
-read_rds(),readr,readr::read_rds(),read RDS files,https://readr.tidyverse.org/reference/read_rds.html
-read_table(),readr,readr::read_table(),read fixed width files separated by white space,https://readr.tidyverse.org/reference/read_table.html
-read_tsv(),readr,readr::read_tsv(),read tab delimited files,https://readr.tidyverse.org/reference/read_delim.html
-readRDS(),base,base::readRDS(),read RDS files,https://rdrr.io/r/base/readRDS.html
-reduce(),purrr,purrr::reduce(),reduce list to single value by iteratively applying binary function,https://purrr.tidyverse.org/reference/reduce.html
-regex(),base,base::regex(),use regular expressions,https://rdrr.io/r/base/regex.html
-rename(),dplyr,dplyr::rename(),rename columns,https://dplyr.tidyverse.org/reference/rename.html
-render_site(),rmarkdown,rmarkdown::render_site(),render R markdown documents into website,https://rdrr.io/pkg/rmarkdown/man/render_site.html
-render(),rmarkdown,rmarkdown::render(),convert R markdown document to another format,https://rdrr.io/pkg/rmarkdown/man/render.html
-reorder(),stats,stats::reorder(),reorder factor levels based on another variable,https://rdrr.io/r/stats/reorder.factor.html
-rep(),base,base::rep(),"create repetitions of numbers, characters, etc.",https://rdrr.io/r/base/rep.html
-return(),base,base::return(),return value,https://rdrr.io/r/base/function.html
-revealjs_presentation(),revealjs,revealjs::revealjs_presentation(),create revealjs presentation from R markdown file,https://rdrr.io/cran/revealjs/man/revealjs_presentation.html
-right_join(),dplyr,dplyr::right_join(),join two data sets keeping the observations in the right one,https://dplyr.tidyverse.org/reference/mutate-joins.html
-rlm(),MASS,MASS::rlm(),compute robust linear model,https://rdrr.io/cran/MASS/man/rlm.html
-round_date(),lubridate,lubridate::round_date(),round date-time,https://lubridate.tidyverse.org/reference/round_date.html
-rpart(),rpart,rpart::rpart(),compute recursive partitioning  and regression trees,https://rdrr.io/cran/rpart/man/rpart.html
-runif(),stats,stats::runif(),generate random number from uniform distribution,https://rdrr.io/r/stats/Uniform.html
-safely(),purrr,purrr::safely(),safely return result and error,https://purrr.tidyverse.org/reference/safely.html
-sample(),base,base::sample(),randomly sample from vector,https://rdrr.io/r/base/sample.html
-saveRDS(),base,base::saveRDS(),write RDS files,https://rdrr.io/r/base/readRDS.html
-scale_color_brewer(),ggplot2,ggplot2::scale_color_brewer(),map colors to data with ColorBrewer,https://ggplot2.tidyverse.org/reference/scale_brewer.html
-scale_color_discrete(),ggplot2,ggplot2::scale_color_discrete(),scale color aesthetic to be discrete,https://ggplot2.tidyverse.org/reference/scale_colour_discrete.html
-scale_color_gradient(),ggplot2,ggplot2::scale_color_gradient(),scale color aesthetic to continuous color gradient,https://ggplot2.tidyverse.org/reference/scale_gradient.html
-scale_color_gradient2(),ggplot2,ggplot2::scale_color_gradient2(),scale color aesthetic to diverging color gradient,https://ggplot2.tidyverse.org/reference/scale_gradient.html
-scale_color_manual(),ggplot2,ggplot2::scale_color_manual(),map colors to data manually,https://ggplot2.tidyverse.org/reference/scale_manual.html
-scale_color_viridis(),viridis,viridis::scale_color_viridis(),scale color aesthetic to viridis color gradient,https://rdrr.io/cran/viridis/man/scale_viridis.html
-scale_fill_gradient(),ggplot2,ggplot2::scale_fill_gradient(),scale fill aesthetic to continuous color gradient,https://ggplot2.tidyverse.org/reference/scale_gradient.html
-scale_x_continuous(),ggplot2,ggplot2::scale_x_continuous(),scale x axis to be continuous,https://ggplot2.tidyverse.org/reference/scale_continuous.html
-scale_x_date(),ggplot2,ggplot2::scale_x_date(),scale x axis to be date,https://ggplot2.tidyverse.org/reference/scale_date.html
-scale_x_log10(),ggplot2,ggplot2::scale_x_log10(),scale x axis to be log base 10,https://ggplot2.tidyverse.org/reference/scale_continuous.html
-scale_y_continuous(),ggplot2,ggplot2::scale_y_continuous(),scale y axis to be continuous,https://ggplot2.tidyverse.org/reference/scale_continuous.html
-scale_y_log10(),ggplot2,ggplot2::scale_y_log10(),scale y axis to be log base 10,https://ggplot2.tidyverse.org/reference/scale_continuous.html
-second(),lubridate,lubridate::second(),return or set second component of a date-time,https://lubridate.tidyverse.org/reference/second.html
-select(),dplyr,dplyr::select(),keep specified columns,https://dplyr.tidyverse.org/reference/select.html
-semi_join(),dplyr,dplyr::semi_join(),join two data sets keeping all observations in x that have a match in y,https://dplyr.tidyverse.org/reference/filter-joins.html
-separate_rows(),tidyr,tidyr::separate_rows(),separate collapsed column into multiple rows,https://tidyr.tidyverse.org/reference/separate_rows.html
-separate(),tidyr,tidyr::separate(),split single column into multiple columns,https://tidyr.tidyverse.org/reference/separate.html
-seq_along(),base,base::seq_along(),return a sequence along the length of an object,https://rdrr.io/r/base/seq.html
-seq_range(),modelr,modelr::seq_range(),return sequence over the range of a vector,https://modelr.tidyverse.org/reference/seq_range.html
-seq(),base,base::seq(),create sequences of numbers,https://rdrr.io/r/base/seq.html
-session.info(),sessioninfo,sessioninfo::session.info(),return R session info and loaded packages,https://rdrr.io/pkg/sessioninfo/man/session_info.html
-sessionInfo(),utils,utils::sessionInfo(),"return info about R version, operating system, and loaded packages",https://rdrr.io/r/utils/sessionInfo.html
-set_names(),magrittr,magrittr::set_names(),set names of object,https://magrittr.tidyverse.org/reference/aliases.html
-setdiff(),base,base::setdiff(),return observations in x but not y,https://rdrr.io/r/base/sets.html
-setwd(),base,base::setwd(),set working directory,https://rdrr.io/r/base/getwd.html
-slidy_presentation(),rmarkdown,rmarkdown::slidy_presentation(),create Slidy presentation from R markdown file,https://rdrr.io/cran/rmarkdown/man/slidy_presentation.html
-some(),purrr,purrr::some(),determine if some of elements meet predicate function conditional,https://purrr.tidyverse.org/reference/every.html
-spread_predictions(),modelr,modelr::spread_predictions(),add predictions and pivot wider,https://modelr.tidyverse.org/reference/add_predictions.html
-starts_with(),tidyselect,tidyselect::starts_with(),match column names that begin with string,https://tidyselect.r-lib.org/reference/starts_with.html
-stat_summary(),ggplot2,ggplot2::stat_summary(),summarize y values for each x value,https://ggplot2.tidyverse.org/reference/stat_summary.html
-stop_for_problems(),readr,readr::stop_for_problems(),throw error and stop script if any parsing problems,https://readr.tidyverse.org/reference/problems.html
-stopifnot(),base,base::stopifnot(),test condition and produce error at first FALSE,https://rdrr.io/r/base/stopifnot.html
-str_c(),stringr,stringr::str_c(),combines two or more strings,https://stringr.tidyverse.org/reference/str_c.html
-str_count(),stringr,stringr::str_count(),count number of matches in a string,https://stringr.tidyverse.org/reference/str_count.html
-str_detect(),stringr,stringr::str_detect(),detect presence of pattern in string,https://stringr.tidyverse.org/reference/str_detect.html
-str_extract_all(),stringr,stringr::str_extract_all(),extract all matching patterns in a string,https://stringr.tidyverse.org/reference/str_extract.html
-str_extract(),stringr,stringr::str_extract(),extract first matching patterns in a string,https://stringr.tidyverse.org/reference/str_extract.html
-str_length(),stringr,stringr::str_length(),returns number of characters in a string,https://stringr.tidyverse.org/reference/str_length.html
-str_locate_all(),stringr,stringr::str_locate_all(),locate all positions of pattern in a string,https://stringr.tidyverse.org/reference/str_locate.html
-str_locate(),stringr,stringr::str_locate(),locate first position of pattern in a string,https://stringr.tidyverse.org/reference/str_locate.html
-str_match_all(),stringr,stringr::str_match_all(),extract all matched groups from a string,https://stringr.tidyverse.org/reference/str_subset.html
-str_match(),stringr,stringr::str_match(),extract first matched group from a string,https://stringr.tidyverse.org/reference/str_match.html
-str_order(),stringr,stringr::str_order(),return index of sorted vector,https://stringr.tidyverse.org/reference/str_order.html
-str_replace_all(),stringr,stringr::str_replace_all(),replace all matched patterns in a  string,https://stringr.tidyverse.org/reference/str_replace.html
-str_replace_na(),stringr,stringr::str_replace_na(),replace NAs with other characters,https://stringr.tidyverse.org/reference/str_replace_na.html
-str_replace(),stringr,stringr::str_replace(),replace first matched pattern in a string,https://stringr.tidyverse.org/reference/str_replace.html
-str_sort(),stringr,stringr::str_sort(),sort numeric or character vector,https://stringr.tidyverse.org/reference/str_order.html
-str_split(),stringr,stringr::str_split(),split string into pieces,https://stringr.tidyverse.org/reference/str_split.html
-str_sub(),stringr,stringr::str_sub(),extract parts of a string,https://stringr.tidyverse.org/reference/str_sub.html
-str_subset(),stringr,stringr::str_subset(),extract elements that match pattern,https://stringr.tidyverse.org/reference/str_subset.html
-str_to_lower(),stringr,stringr::str_to_lower(),change text to lower case,https://stringr.tidyverse.org/reference/case.html
-str_to_title(),stringr,stringr::str_to_title(),change text to upper case,https://stringr.tidyverse.org/reference/case.html
-str_to_upper(),stringr,stringr::str_to_upper(),change text to upper case,https://stringr.tidyverse.org/reference/case.html
-str_trim(),stringr,stringr::str_trim(),trim whitespace from string,https://stringr.tidyverse.org/reference/str_trim.html
-str_view_all(),stringr,stringr::str_view_all(),view all regular expression matches,https://stringr.tidyverse.org/reference/str_view.html
-str_view(),stringr,stringr::str_view(),view first regular expression match,https://stringr.tidyverse.org/reference/str_view.html
-str_wrap(),stringr,stringr::str_wrap(),wrap strings into nicely formatted paragraphs,https://stringr.tidyverse.org/reference/str_wrap.html
-str(),utils,utils::str(),return object structure,https://rdrr.io/r/utils/str.html
-sum(),base,base::sum(),sum elements of vector,https://rdrr.io/r/base/sum.html
-summarize(),dplyr,dplyr::summarize(),summarize data usually by grouping variable,https://dplyr.tidyverse.org/reference/summarise.html
-summary(),base,base::summary(),return summary of model fitting functions,https://rdrr.io/r/base/summary.html
-switch(),base,base::switch(),select one of a list of alternatives,https://rdrr.io/r/base/switch.html
-Sys.timezone(),base,base::Sys.timezone(),return name of current time zone,https://rdrr.io/r/base/timezones.html
-tail_while(),purrr,purrr::tail_while(),find last elements that satisfy predicate,https://purrr.tidyverse.org/reference/head_while.html
-tail(),utils,utils::tail(),"return last rows of matrix, data frame, etc.",https://rdrr.io/r/utils/head.html
-textInput(),shiny,shiny::textInput(),allow text input in Shiny,https://shiny.rstudio.com/reference/shiny/latest/textInput.html
-theme(),ggplot2,ggplot2::theme(),customize non-data components of plot,https://ggplot2.tidyverse.org/reference/theme.html
-tibble(),tibble,tibble::tibble(),create tibble,https://tibble.tidyverse.org/reference/tibble.html
-tidy(),generics,generics::tidy(),turn object into tidy tibble,https://generics.r-lib.org/reference/tidy.html
-today(),lubridate,lubridate::today(),return the current date,https://lubridate.tidyverse.org/reference/now.html
-transpose(),purrr,purrr::transpose(),turn list-of-lists 'inside out',https://purrr.tidyverse.org/reference/transpose.html
-tribble(),tibble,tibble::tribble(),create row-wise tibble,https://tibble.tidyverse.org/reference/tribble.html
-try(),base,base::try(),try an expression and allow errors,https://rdrr.io/r/base/try.html
-type_convert(),readr,readr::type_convert(),re-convert character columns in existing data frame,https://readr.tidyverse.org/reference/type_convert.html
-typeof(),base,base::typeof(),return object type,https://rdrr.io/r/base/typeof.html
-ungroup(),dplyr,dplyr::ungroup(),remove grouping,https://dplyr.tidyverse.org/reference/group_by.html
-union(),base,base::union(),return unique observations in x or y,https://rdrr.io/r/base/sets.html
-unique(),base,base::unique(),return vector with duplicate elements removed,https://rdrr.io/r/base/unique.html
-unite(),tidyr,tidyr::unite(),combine multiple columns into single column,https://tidyr.tidyverse.org/reference/unite.html
-unlist(),base,base::unlist(),flatten a list into an atomic vector in base R,https://rdrr.io/r/base/unlist.html
-unnest(),tidyr,tidyr::unnest(),remove nested structure,https://tidyr.tidyverse.org/reference/nest.html
-update(),stats,stats::update(),update and refit a model,https://rdrr.io/r/stats/update.html
-View(),utils,utils::View(),open spreadsheet view of matrix-like object,https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/View
-walk(),purrr,purrr::walk(),apply a function to multiple elements of an object to obtain side effects,https://purrr.tidyverse.org/reference/map.html
-with_tz(),lubridate,lubridate::with_tz(),return date-time in a different time zone,https://lubridate.tidyverse.org/reference/with_tz.html
-word_document(),rmarkdown,rmarkdown::word_document(),create Word document from R markdown file,https://rdrr.io/pkg/rmarkdown/man/word_document.html
-write_csv(),readr,readr::write_csv(),write a data frame to comma delimited files,https://readr.tidyverse.org/reference/write_delim.html
-write_excel_csv(),readr,readr::write_excel_csv(),export a csv file to Excel,https://readr.tidyverse.org/reference/write_delim.html
-write_rds(),readr,readr::write_rds(),write RDS files,https://readr.tidyverse.org/reference/read_rds.html
-write_tsv(),readr,readr::write_tsv(),write a data frame to tab delimited files,https://readr.tidyverse.org/reference/write_delim.html
-writeLines(),base,base::writeLines(),write text lines to a connection,https://rdrr.io/r/base/writeLines.html
-xgboost(),sgboost,sgboost::xgboost(),computer gradient boosting models,https://xgboost.readthedocs.io/en/stable/
-year(),lubridate,lubridate::year(),return or set year component of a date-time,https://lubridate.tidyverse.org/reference/year.html
-ymd_hms(),lubridate,lubridate::ymd_hms(),parse dates and time,https://lubridate.tidyverse.org/reference/ymd_hms.html
-ymd(),lubridate,lubridate::ymd(),"parse dates with year, month, and day components",https://lubridate.tidyverse.org/reference/ymd.html
+"term","package","function_name","description","url"
+"-","base","-","subtraction","https://rdrr.io/r/base/Arithmetic.html"
+":","base",":","sequence of integers","https://rdrr.io/r/base/Colon.html"
+"::","base","::","export variable from package for use","https://rdrr.io/r/base/ns-dblcolon.html"
+"!","base","!","logical NOT","https://rdrr.io/r/base/Logic.html"
+"!=","base","!=","not equal to","https://rdrr.io/r/base/Comparison.html"
+"[]","base","[]","subset elements of vector","NA"
+"*","base","*","multiplication","https://rdrr.io/r/base/Arithmetic.html"
+"/","base","/","division","https://rdrr.io/r/base/Arithmetic.html"
+"&","base","&","logical AND","https://rdrr.io/r/base/Logic.html"
+"%*%","base","%*%","multiply matrix with its transpose","https://rdrr.io/r/base/matmult.html"
+"%/%","base","%/%","quotient","https://rdrr.io/r/base/Arithmetic.html"
+"%%","base","%%","remainder","https://rdrr.io/r/base/Arithmetic.html"
+"%<>%","magrittr","%<>%","assignment pipe","https://magrittr.tidyverse.org/reference/compound.html"
+"%>%","magrittr","%>%","pipe operator","https://magrittr.tidyverse.org/reference/pipe.html"
+"%$%","magrittr","%$%","exposition pipe","https://magrittr.tidyverse.org/reference/exposition.html"
+"%in%","base","%in%","identify if element is in vector","https://rdrr.io/r/base/match.html"
+"%T>%","magrittr","%T>%","tee pipe","https://magrittr.tidyverse.org/reference/tee.html"
+"^","base","^","exponent","https://rdrr.io/r/base/Arithmetic.html"
+"+","base","+","addition","https://rdrr.io/r/base/Arithmetic.html"
+"<","base","<","less than","https://rdrr.io/r/base/Comparison.html"
+"<-","base","<-","assignment operator","https://rdrr.io/r/base/assignOps.html"
+"<<-","base","<<-","assignment operator (in functions for global environment)","https://rdrr.io/r/base/assignOps.html"
+"<=","base","<=","less than or equal to","https://rdrr.io/r/base/Comparison.html"
+"=","base","=","assignment operator","https://rdrr.io/r/base/assignOps.html"
+"==","base","==","equal to","https://rdrr.io/r/base/Comparison.html"
+">","base",">","greater than","https://rdrr.io/r/base/Comparison.html"
+">=","base",">=","greater than or equal to","https://rdrr.io/r/base/Comparison.html"
+"|","base","|","logical OR","https://rdrr.io/r/base/Logic.html"
+"|>","base","|>","pipe operator (base R)","https://rdrr.io/r/base/pipeOp.html"
+"abs()","base","base::abs()","calculate absolute value","https://rdrr.io/r/base/MathFun.html"
+"accumulate()","purrr","purrr::accumulate()","accumulate intermediate result of vector reduction","https://purrr.tidyverse.org/reference/accumulate.html"
+"across()","dplyr","dplyr::across()","apply transformation across multiple columns","https://dplyr.tidyverse.org/reference/across.html"
+"add_predictions()","modelr","modelr::add_predictions()","add predictions to a data frame","https://modelr.tidyverse.org/reference/add_predictions.html"
+"add_residuals()","modelr","modelr::add_residuals()","add residuals to a data frame","https://modelr.tidyverse.org/reference/add_residuals.html"
+"aes()","ggplot2","ggplot2::aes()","create aesthetic mappings between data and plot","https://ggplot2.tidyverse.org/reference/aes.html"
+"after_stat()","ggplot2","ggplot2::after_stat()","evaluate aesthetic mapping after statistical transformation","https://ggplot2.tidyverse.org/reference/aes_eval.html"
+"all()","base","base::all()","assess whether conditional is true for all elements of a vector","https://rdrr.io/r/base/all.html"
+"annotate()","ggplot2","ggplot2::annotate()","annotate plot independent of data","https://ggplot2.tidyverse.org/reference/annotate.html"
+"anti_join()","dplyr","dplyr::anti_join()","join two data sets dropping all observations in x that have a match in y","https://dplyr.tidyverse.org/reference/filter-joins.html"
+"any_of()","tidyselect","tidyselect::any_of()","check if any any elements are found in vector","https://tidyselect.r-lib.org/reference/all_of.html"
+"any()","base","base::any()","assess whether conditional is true for any elements of a vector","https://rdrr.io/r/base/any.html"
+"apply()","base","base::apply()","apply a function to multiple elements of an object in base R","https://rdrr.io/r/base/apply.html"
+"apropos()","utils","utils::apropos()","return vector of object names matching pattern","https://rdrr.io/r/utils/apropos.html"
+"apropros()","utils","utils::apropros()","returns a character vector giving the names of objects in the search list matching (as a regular expression)","https://rdrr.io/r/utils/apropos.html"
+"arrange()","dplyr","dplyr::arrange()","change order of rows based on values of columns","https://dplyr.tidyverse.org/reference/arrange.html"
+"arrow()","grid","grid::arrow()","plot arrows","https://rdrr.io/r/grid/arrow.html"
+"as_date()","lubridate","lubridate::as_date()","convert object to date","https://lubridate.tidyverse.org/reference/as_date.html"
+"as_datetime()","lubridate","lubridate::as_datetime()","convert object to date-time","https://lubridate.tidyverse.org/reference/as_date.html"
+"as_tibble()","tibble","tibble::as_tibble()","coerce object into tibble","https://tibble.tidyverse.org/reference/as_tibble.html"
+"as.character()","base","base::as.character()","coerce object to character","https://rdrr.io/r/base/character.html"
+"as.data.frame()","base","base::as.data.frame()","coerce object into data frame","https://rdrr.io/r/base/as.data.frame.html"
+"as.Date.character()","base","base::as.Date.character()","convert from character to date","https://rdrr.io/r/base/as.Date.html"
+"as.Date.factor()","base","base::as.Date.factor()","convert from factor to date","https://rdrr.io/r/base/as.Date.html"
+"as.Date()","base","base::as.Date()","convert to date","https://rdrr.io/r/base/as.Date.html"
+"as.double()","base","base::as.double()","coerce to double","https://rdrr.io/r/base/double.html"
+"as.factor()","base","base::as.factor()","coerce object to factor","https://rdrr.io/r/base/factor.html"
+"as.integer()","base","base::as.integer()","coerce to integer","https://rdrr.io/r/base/integer.html"
+"as.logical()","base","base::as.logical()","coerce to logical","https://rdrr.io/r/base/logical.html"
+"as.numeric()","base","base::as.numeric()","coerce object to numeric","https://rdrr.io/r/base/numeric.html"
+"assign()","base","base::assign()","assign a value to a name","https://rdrr.io/r/base/assign.html"
+"attr()","base","base::attr()","return or set individual attribute values","https://rdrr.io/r/base/attr.html"
+"attributes()","base","base::attributes()","return all attributes of vector, matrix, <br> data frame, etc.","https://rdrr.io/r/base/attributes.html"
+"augment()","generics","generics::augment()","augment data with information from an object","https://generics.r-lib.org/reference/augment.html"
+"beamer_presentation()","rmarkdown","rmarkdown::beamer_presentation()","create beamer presentation from R markdown file","https://rdrr.io/cran/rmarkdown/man/beamer_presentation.html"
+"between()","dplyr","dplyr::between()","determine if values in a numeric vector fall in specified range","https://dplyr.tidyverse.org/reference/between.html"
+"bind_rows()","dplyr","dplyr::bind_rows()","bind rows in dplyr","https://dplyr.tidyverse.org/reference/bind.html"
+"boundary()","stringr","stringr::boundary()","match boundaries within strings","https://stringr.tidyverse.org/reference/modifiers.html"
+"c()","base","base::c()","create vector of numbers, characters, etc.","https://rdrr.io/r/base/c.html"
+"case_when()","dplyr","dplyr::case_when()","conditionally set values across multiple conditions","https://dplyr.tidyverse.org/reference/case_when.html"
+"ceiling_date()","lubridate","lubridate::ceiling_date()","round data-time up to ceiling","https://lubridate.tidyverse.org/reference/round_date.html"
+"ceiling()","base","base::ceiling()","round up to nearest integer","https://rdrr.io/r/base/Round.html"
+"charToRaw()","base","base::charToRaw()","converts a length-one character string to raw bytes","https://rdrr.io/r/base/rawConversion.html"
+"class()","base","base::class()","return object class","https://rdrr.io/r/base/class.html"
+"clean_cache()","knitr","knitr::clean_cache()","clear out code chunk cache","https://rdrr.io/pkg/knitr/man/clean_cache.html"
+"clean_names()","janitor","janitor::clean_names()","clean data frame column names to be unique and consistent of only characters, numbers and `_`","https://rdrr.io/cran/janitor/man/clean_names.html"
+"coalesce()","dplyr","dplyr::coalesce()","combine vectors by returning the first non-missing value at each position","https://dplyr.tidyverse.org/reference/coalesce.html"
+"coef()","stats","stats::coef()","extract model coefficients from object","https://rdrr.io/r/stats/coef.html"
+"coll()","stringr","stringr::coll()","compare strings respecting standard collation rules","https://stringr.tidyverse.org/reference/modifiers.html"
+"collect()","dplyr","dplyr::collect()","retrieve data from a database into a local tibble","https://dplyr.tidyverse.org/reference/compute.html"
+"colors()","grDevices","grDevices::colors()","returns vector of color names in R","https://rdrr.io/r/grDevices/colors.html"
+"column_to_rowname()","tibble","tibble::column_to_rowname()","convert a column of data to row names","https://tibble.tidyverse.org/reference/rownames.html"
+"complete()","tidyr","tidyr::complete()","complete a data frame with missing combinations of data","https://tidyr.tidyverse.org/reference/complete.html"
+"consecutive_id()","dplyr","dplyr::consecutive_id()","generate a unique identifier for consecutive combinations","https://dplyr.tidyverse.org/reference/consecutive_id.html"
+"contains()","tidyselect","tidyselect::contains()","match column names that contain string","https://tidyselect.r-lib.org/reference/starts_with.html"
+"coord_cartesian()","ggplot2","ggplot2::coord_cartesian()","use Cartesian coordinates","https://ggplot2.tidyverse.org/reference/coord_cartesian.html"
+"coord_fixed()","ggplot2","ggplot2::coord_fixed()","force aspect ratio between data units on axes","https://ggplot2.tidyverse.org/reference/coord_fixed.html"
+"coord_flip()","ggplot2","ggplot2::coord_flip()","switch x and y axes","https://ggplot2.tidyverse.org/reference/coord_flip.html"
+"coord_map()","ggplot2","ggplot2::coord_map()","project a map of a portion of the earth onto a flat 2D plane","https://ggplot2.tidyverse.org/reference/coord_map.html"
+"coord_polar()","ggplot2","ggplot2::coord_polar()","use polar coordinates","https://ggplot2.tidyverse.org/reference/coord_polar.html"
+"coord_quickmap()","ggplot2","ggplot2::coord_quickmap()","set aspect ratio correctly for maps","https://ggplot2.tidyverse.org/reference/coord_map.html"
+"cor()","stats","stats::cor()","compute the correlation of two vectors","https://rdrr.io/r/stats/cor.html"
+"count()","dplyr","dplyr::count()","count unique values of variables","https://dplyr.tidyverse.org/reference/count.html"
+"count()","plyr","plyr::count()","count unique values of variables","https://dplyr.tidyverse.org/reference/count.html"
+"cume_dist()","dplyr","dplyr::cume_dist()","cumulative distribution function giving proportion of all values less than or equal to the current rank","https://dplyr.tidyverse.org/reference/ranking.html"
+"cummax()","base","base::cummax()","calculate the cumulative maxima of a vector","https://rdrr.io/r/base/cumsum.html"
+"cummean()","dplyr","dplyr::cummean()","calculate cumulative means for a vector","https://dplyr.tidyverse.org/reference/cumall.html"
+"cummin()","base","base::cummin()","calculate the cumulative minima of a vector","https://rdrr.io/r/base/cumsum.html"
+"cumprod()","base","base::cumprod()","calculate the cumulative products of a vector","https://rdrr.io/r/base/cumsum.html"
+"cumsum()","base","base::cumsum()","calculate the cumulative sums of a vector","https://rdrr.io/r/base/cumsum.html"
+"cut_interval()","ggplot2","ggplot2::cut_interval()","create n groups with equal range","https://ggplot2.tidyverse.org/reference/cut_interval.html"
+"cut_number()","ggplot2","ggplot2::cut_number()","cut data into groups of equal numbers of observations","https://ggplot2.tidyverse.org/reference/cut_interval.html"
+"cut_width()","ggplot2","ggplot2::cut_width()","cut data into groups of a particular width","https://ggplot2.tidyverse.org/reference/cut_interval.html"
+"cut()","base","base::cut()","divide range of vector into intervals","https://rdrr.io/r/base/cut.html"
+"data_grid()","modelr","modelr::data_grid()","generate a data grid","https://modelr.tidyverse.org/reference/data_grid.html"
+"data.frame()","base","base::data.frame()","create data frame","https://rdrr.io/r/base/data.frame.html"
+"data()","utils","utils::data()","load specific data set","https://rdrr.io/r/utils/data.html"
+"date_names_langs()","readr","readr::date_names_langs()","retrieve weekdays and months of a specific language","https://readr.tidyverse.org/reference/date_names.html"
+"date_names()","readr","readr::date_names()","specify how weekdays and months are represented","https://readr.tidyverse.org/reference/date_names.html"
+"days()","lubridate","lubridate::days()","specify the number of days to be used in dates","https://lubridate.tidyverse.org/reference/period.html"
+"dbConnect()","DBI","DBI::dbConnect()","create connection to database","https://dbi.r-dbi.org/reference/dbconnect"
+"dbFetch()","DBI","DBI::dbFetch()","fetch the next n elements from a database results set and return as data frame","https://dbi.r-dbi.org/reference/dbfetch"
+"dbGetQuery()","DBI","DBI::dbGetQuery()","return results of database query as data frame","https://dbi.r-dbi.org/reference/dbgetquery"
+"dbHasCompleted()","DBI","DBI::dbHasCompleted()","return if database operation has completed","https://dbi.r-dbi.org/reference/dbhascompleted"
+"dbReadTable()","DBI","DBI::dbReadTable()","read database table to data frame","https://dbi.r-dbi.org/reference/dbreadtable"
+"dbSendQuery()","DBI","DBI::dbSendQuery()","submit and execute SQL query to database engine","https://dbi.r-dbi.org/reference/dbsendquery"
+"dbWriteTable()","DBI","DBI::dbWriteTable()","write a data frame to database table","https://dbi.r-dbi.org/reference/dbwritetable"
+"dense_rank()","dplyr","dplyr::dense_rank()","rank vector elements with no gaps between ranks","https://dplyr.tidyverse.org/reference/ranking.html"
+"desc()","dplyr","dplyr::desc()","order in descending order","https://dplyr.tidyverse.org/reference/desc.html"
+"detect_index()","purrr","purrr::detect_index()","find the position of the first match","https://purrr.tidyverse.org/reference/detect.html"
+"detect()","purrr","purrr::detect()","return value of first matching element","https://purrr.tidyverse.org/reference/detect.html"
+"dim()","base","base::dim()","return dimensions of matrix, data frame, etc.","https://rdrr.io/r/base/dim.html"
+"dir_ls()","fs","fs::dir_ls()","return filenames and directories in named directory","https://rdrr.io/cran/fs/man/dir_ls.html"
+"dir()","base","base::dir()","return directories in named directory","https://rdrr.io/r/base/list.files.html"
+"discard()","purrr","purrr::discard()","discard elements using a predicate function","https://purrr.tidyverse.org/reference/keep.html"
+"distinct()","dplyr","dplyr::distinct()","select only unique/distinct rows from data frame","https://dplyr.tidyverse.org/reference/distinct.html"
+"dmonths()","lubridate","lubridate::dmonths()","calculate duration of months in seconds and weeks","https://lubridate.tidyverse.org/reference/duration.html"
+"dmy()","lubridate","lubridate::dmy()","parse dates as day, month, year","https://lubridate.tidyverse.org/reference/ymd.html"
+"dnorm()","stats","stats::dnorm()","generate density for normal distribution","https://rdrr.io/r/stats/Normal.html"
+"double()","base","base::double()","create a double-precision vector","https://rdrr.io/r/base/double.html"
+"dput()","base","base::dput()","write an ASCII text representation of object","https://rdrr.io/r/base/dput.html"
+"duckdb_read_csv()","duckdb","duckdb::duckdb_read_csv()","read a CSV file into DuckDB","https://rdrr.io/cran/duckdb/man/duckdb_read_csv.html"
+"duckdb_register_arrow()","duckdb","duckdb::duckdb_register_arrow()","register an Arrow data source as a virtual table in a DuckDB connection","https://rdrr.io/cran/duckdb/man/duckdb_register_arrow.html"
+"Encoding()","base","base::Encoding()","read the declared encodings for character vector","https://rdrr.io/r/base/Encoding.html"
+"ends_with()","tidyselect","tidyselect::ends_with()","match column names that end with string","https://tidyselect.r-lib.org/reference/starts_with.html"
+"enframe()","tibble","tibble::enframe()","convert vectors to data frame","https://tibble.tidyverse.org/reference/enframe.html"
+"every()","purrr","purrr::every()","determine if all elements meet predicate function conditional","https://purrr.tidyverse.org/reference/every.html"
+"everything()","tidyselect","tidyselect::everything()","select all variables","https://tidyselect.r-lib.org/reference/everything.html"
+"excel_sheets()","readxl","readxl::excel_sheets()","return the sheet names from an Excel spreadsheet","https://readxl.tidyverse.org/reference/excel_sheets.html"
+"exp()","base","base::exp()","compute exponential function","https://rdrr.io/r/base/Log.html"
+"facet_grid()","ggplot2","ggplot2::facet_grid()","create grid of subplots from multiple variables","https://ggplot2.tidyverse.org/reference/facet_grid.html"
+"facet_wrap()","ggplot2","ggplot2::facet_wrap()","create subplots from one variable","https://ggplot2.tidyverse.org/reference/facet_wrap.html"
+"factor()","base","base::factor()","encode vector as factor","https://rdrr.io/r/base/factor.html"
+"fct_collapse()","forcats","forcats::fct_collapse()","collapse factors into manually defined groups","https://forcats.tidyverse.org/reference/fct_collapse.html"
+"fct_infreq()","forcats","forcats::fct_infreq()","reorder factor levels in the order of most to least frequent","https://forcats.tidyverse.org/reference/fct_inorder.html"
+"fct_inorder()","forcats","forcats::fct_inorder()","reorder factor levels in the order that they first appear","https://forcats.tidyverse.org/reference/fct_inorder.html"
+"fct_lump_lowfreq()","forcats","forcats::fct_lump_lowfreq()","lump together least frequent levels of a factor","https://forcats.tidyverse.org/reference/fct_lump.html"
+"fct_lump_min()","forcats","forcats::fct_lump_min()","lump factor levels that appear fewer than a certain number of times","https://forcats.tidyverse.org/reference/fct_lump.html"
+"fct_lump_n()","forcats","forcats::fct_lump_n()","lump all factor levels except the most frequent","https://forcats.tidyverse.org/reference/fct_lump.html"
+"fct_lump_prop()","forcats","forcats::fct_lump_prop()","lump factor levels that appear fewer than a certain proportion of times","https://forcats.tidyverse.org/reference/fct_lump.html"
+"fct_lump()","forcats","forcats::fct_lump()","lump together factor levels into 'other'","https://forcats.tidyverse.org/reference/fct_lump.html"
+"fct_recode()","forcats","forcats::fct_recode()","change factor levels by hand","https://forcats.tidyverse.org/reference/fct_recode.html"
+"fct_relevel()","forcats","forcats::fct_relevel()","reorder factor levels by hand","https://forcats.tidyverse.org/reference/fct_relevel.html"
+"fct_reorder()","forcats","forcats::fct_reorder()","reorder factor levels by sorting along another variable","https://forcats.tidyverse.org/reference/fct_reorder.html"
+"fct_reorder2()","forcats","forcats::fct_reorder2()","reorder factor levels by sorting along another variable with two dimensions","https://forcats.tidyverse.org/reference/fct_reorder.html"
+"fct_rev()","forcats","forcats::fct_rev()","reverse order of factor levels","https://forcats.tidyverse.org/reference/fct_rev.html"
+"file.info()","base","base::file.info()","extract file information","https://rdrr.io/r/base/file.info.html"
+"fill()","tidyr","tidyr::fill()","fill in missing values","https://tidyr.tidyverse.org/reference/fill.html"
+"filter()","dplyr","dplyr::filter()","keep rows based on values of columns","https://dplyr.tidyverse.org/reference/filter.html"
+"fixed()","stringr","stringr::fixed()","compare literal bytes in a string","https://stringr.tidyverse.org/reference/modifiers.html"
+"flatten_dbl()","purrr","purrr::flatten_dbl()","flatten a list into an atomic vector in purrr","https://purrr.tidyverse.org/reference/flatten.html"
+"floor_date()","lubridate","lubridate::floor_date()","round date-time down to floor","https://lubridate.tidyverse.org/reference/round_date.html"
+"floor()","base","base::floor()","round down to nearest integer","https://rdrr.io/r/base/Round.html"
+"force_tz()","lubridate","lubridate::force_tz()","replace time zone to create new date-time","https://lubridate.tidyverse.org/reference/force_tz.html"
+"format()","base","base::format()","format object for pretty printing","https://rdrr.io/r/base/format.html"
+"fread()","data.table","data.table::fread()","read delimited files","https://rdatatable.gitlab.io/data.table/reference/fread.html"
+"fromJSON()","jsonlite","jsonlite::fromJSON()","convert JSON data to R object","https://rdrr.io/cran/jsonlite/man/fromJSON.html"
+"full_join()","dplyr","dplyr::full_join()","join two data sets keeping the observations in both","https://dplyr.tidyverse.org/reference/mutate-joins.html"
+"fwf_positions()","readr","readr::fwf_positions()","specify fields by positions","https://readr.tidyverse.org/reference/read_fwf.html"
+"fwf_widths()","readr","readr::fwf_widths()","specify fields by widths","https://readr.tidyverse.org/reference/read_fwf.html"
+"gam()","mgcv","mgcv::gam()","compute generalized additive model","https://rdrr.io/cran/mgcv/man/gam.html"
+"gather_predictions()","modelr","modelr::gather_predictions()","add predictions and pivot longer","https://modelr.tidyverse.org/reference/add_predictions.html"
+"geom_abline()","ggplot2","ggplot2::geom_abline()","add vertical, horizontal, or diagonal reference lines","https://ggplot2.tidyverse.org/reference/geom_abline.html"
+"geom_bar()","ggplot2","ggplot2::geom_bar()","create bar chart based on counts in data","https://ggplot2.tidyverse.org/reference/geom_bar.html"
+"geom_bin_2d()","ggplot2","ggplot2::geom_bin_2d()","create heatmap of two dimensional bin counts","https://ggplot2.tidyverse.org/reference/geom_bin_2d.html"
+"geom_boxplot()","ggplot2","ggplot2::geom_boxplot()","add layer of boxplots to plot","https://ggplot2.tidyverse.org/reference/geom_boxplot.html"
+"geom_col()","ggplot2","ggplot2::geom_col()","create bar chart based on values in data","https://ggplot2.tidyverse.org/reference/geom_bar.html"
+"geom_count()","ggplot2","ggplot2::geom_count()","add layer of points sized by count of overlapping points to plot","https://ggplot2.tidyverse.org/reference/geom_count.html"
+"geom_freqpoly()","ggplot2","ggplot2::geom_freqpoly()","create frequency polygon","https://ggplot2.tidyverse.org/reference/geom_histogram.html"
+"geom_hex()","ggplot2","ggplot2::geom_hex()","create heatmap of bin counts using hexagons","https://ggplot2.tidyverse.org/reference/geom_hex.html"
+"geom_histogram()","ggplot2","ggplot2::geom_histogram()","create histogram of counts as bars","https://ggplot2.tidyverse.org/reference/geom_histogram.html"
+"geom_hline()","ggplot2","ggplot2::geom_hline()","plot horizontal reference line","https://ggplot2.tidyverse.org/reference/geom_abline.html"
+"geom_jitter()","ggplot2","ggplot2::geom_jitter()","add layer of jittered points to plot","https://ggplot2.tidyverse.org/reference/geom_jitter.html"
+"geom_label()","ggplot2","ggplot2::geom_label()","adds text in rectangle to plot","https://ggplot2.tidyverse.org/reference/geom_text.html"
+"geom_line()","ggplot2","ggplot2::geom_line()","add layer of data lines to plot","https://ggplot2.tidyverse.org/reference/geom_path.html"
+"geom_lv()","lvplot","lvplot::geom_lv()","create letter value box plot","https://rdrr.io/cran/lvplot/man/geom_lv.html"
+"geom_point()","ggplot2","ggplot2::geom_point()","add layer of points to plot","https://ggplot2.tidyverse.org/reference/geom_point.html"
+"geom_polygon()","ggplot2","ggplot2::geom_polygon()","add layer of polygons to plot","https://ggplot2.tidyverse.org/reference/geom_polygon.html"
+"geom_rect()","ggplot2","ggplot2::geom_rect()","plot rectangle","https://ggplot2.tidyverse.org/reference/geom_tile.html"
+"geom_ref_line()","modelr","modelr::geom_ref_line()","add reference line to plot","https://modelr.tidyverse.org/reference/geom_ref_line.html"
+"geom_segment()","ggplot2","ggplot2::geom_segment()","plot line segment","https://ggplot2.tidyverse.org/reference/geom_segment.html"
+"geom_smooth()","ggplot2","ggplot2::geom_smooth()","create smoothed lines to plot","https://ggplot2.tidyverse.org/reference/geom_smooth.html"
+"geom_text()","ggplot2","ggplot2::geom_text()","adds text to plot","https://ggplot2.tidyverse.org/reference/geom_text.html"
+"geom_tile()","ggplot2","ggplot2::geom_tile()","create tile plot using center of rectangle and size","https://ggplot2.tidyverse.org/reference/geom_tile.html"
+"geom_violin()","ggplot2","ggplot2::geom_violin()","create violin plot","https://ggplot2.tidyverse.org/reference/geom_violin.html"
+"geom_vline()","ggplot2","ggplot2::geom_vline()","plot vertical reference line","https://ggplot2.tidyverse.org/reference/geom_abline.html"
+"get()","base","base::get()","search by name for an object","https://rdrr.io/r/base/get.html"
+"getS3method()","utils","utils::getS3method()","return a method for S3 generic function","https://rdrr.io/r/utils/getS3method.html"
+"getwd()","base","base::getwd()","return working directory","https://rdrr.io/r/base/getwd.html"
+"ggplot()","ggplot2","ggplot2::ggplot()","create a plotting area","https://ggplot2.tidyverse.org/reference/ggplot.html"
+"ggsave()","ggplot2","ggplot2::ggsave()","save a ggplot","https://ggplot2.tidyverse.org/reference/ggsave.html"
+"glance()","generics","generics::glance()","glance at an object","https://generics.r-lib.org/reference/glance.html"
+"glm()","stats","stats::glm()","compute generalized linear model","https://rdrr.io/r/stats/glm.html"
+"glmnet()","glmnet","glmnet::glmnet()","compute generalized linear model via penalized maximum likelihood","https://glmnet.stanford.edu/articles/glmnet.html"
+"glob2rx()","utils","utils::glob2rx()","change wildcard/globbing patterns into regular expressions","https://rdrr.io/r/utils/glob2rx.html"
+"glue()","glue","glue::glue()","combine expressions into character string","https://glue.tidyverse.org/reference/glue.html"
+"grepl()","base","base::grepl()","search for all matches of pattern within each element of a character vector","https://rdrr.io/r/base/grep.html"
+"group_by()","dplyr","dplyr::group_by()","group data by levels of column","https://dplyr.tidyverse.org/reference/group_by.html"
+"gsub()","base","base::gsub()","replace all matches of pattern within each element of a character vector","https://rdrr.io/r/base/grep.html"
+"guess_encoding()","readr","readr::guess_encoding()","guess encoding of file","https://readr.tidyverse.org/reference/encoding.html"
+"guess_parser()","readr","readr::guess_parser()","return the name of the parser","https://readr.tidyverse.org/reference/parse_guess.html"
+"guide_colourbar()","ggplot2","ggplot2::guide_colourbar()","control legend color bar","https://ggplot2.tidyverse.org/reference/guide_colourbar.html"
+"guide_legend()","ggplot2","ggplot2::guide_legend()","control legend formatting","https://ggplot2.tidyverse.org/reference/guide_legend.html"
+"guides()","ggplot2","ggplot2::guides()","set guides for scale","https://ggplot2.tidyverse.org/reference/guides.html"
+"head_while()","purrr","purrr::head_while()","find first elements that satisfy predicate","https://purrr.tidyverse.org/reference/head_while.html"
+"head()","utils","utils::head()","return first rows of matrix, data frame, etc.","https://rdrr.io/r/utils/head.html"
+"hoist()","tidyr","tidyr::hoist()","pull components of a list-column out into their own top-level columns","https://tidyr.tidyverse.org/reference/hoist.html"
+"hour()","lubridate","lubridate::hour()","return or set hour component of a date-time","https://lubridate.tidyverse.org/reference/hour.html"
+"html_document()","rmarkdown","rmarkdown::html_document()","create HTML document from R markdown file","https://rdrr.io/pkg/rmarkdown/man/html_document.html"
+"I()","base","base::I()","inhibit interpretation/conversion of objects","https://rdrr.io/r/base/AsIs.html"
+"identical()","base","base::identical()","safe and reliable way to test if two objects are exactly equal","https://rdrr.io/r/base/identical.html"
+"if_else()","dplyr","dplyr::if_else()","vectorized if statement that checks conditionals and returns different outputs based on answer","https://dplyr.tidyverse.org/reference/if_else.html"
+"ifelse()","base","base::ifelse()","conditionally set values","https://rdrr.io/r/base/ifelse.html"
+"inner_join()","dplyr","dplyr::inner_join()","join two data sets keeping the observations that they have in common","https://dplyr.tidyverse.org/reference/mutate-joins.html"
+"install.packages()","utils","utils::install.packages()","install R packages","https://rdrr.io/r/utils/install.packages.html"
+"intersect()","base","base::intersect()","return only observations in both x and y","https://rdrr.io/r/base/sets.html"
+"invisible()","base","base::invisible()","return invisible copy of object","https://rdrr.io/r/base/invisible.html"
+"invoke_map()","purrr","purrr::invoke_map()","makes it easier to call lists of functions with lists of parameters","https://purrr.tidyverse.org/reference/invoke.html"
+"ioslides_presentation()","rmarkdown","rmarkdown::ioslides_presentation()","create ioslides presentation from R markdown file","https://rdrr.io/cran/rmarkdown/man/ioslides_presentation.html"
+"IQR()","stats","stats::IQR()","computes interquartile range","https://rdrr.io/r/stats/IQR.html"
+"is_character()","rlang","rlang::is_character()","tidyverse way to determine whether object is of type character","https://rlang.r-lib.org/reference/type-predicates.html"
+"is_double()","rlang","rlang::is_double()","tidyverse way to determine whether object is of type double","https://rlang.r-lib.org/reference/type-predicates.html"
+"is_integer()","rlang","rlang::is_integer()","tidyverse way to determine whether object is of type integer","https://rlang.r-lib.org/reference/type-predicates.html"
+"is_list()","rlang","rlang::is_list()","tidyverse way to determine whether object is of type list","https://rlang.r-lib.org/reference/type-predicates.html"
+"is_logical()","rlang","rlang::is_logical()","tidyverse way to determine whether object is of type logical","https://rlang.r-lib.org/reference/type-predicates.html"
+"is_vector()","rlang","rlang::is_vector()","tidyverse way to determine whether object is of type vector","https://rlang.r-lib.org/reference/type-predicates.html"
+"is.finite()","base","base::is.finite()","determines if numeric is finite","https://rdrr.io/r/base/is.finite.html"
+"is.infinite()","base","base::is.infinite()","determine whether elements of vector are infinite","https://rdrr.io/r/base/is.finite.html"
+"is.na()","base","base::is.na()","determine whether elements of vector are missing","https://rdrr.io/r/base/NA.html"
+"is.nan()","base","base::is.nan()","determine whether elements of vector are not a number","https://rdrr.io/r/base/is.finite.html"
+"is.vector()","base","base::is.vector()","check if object is vector","https://rdrr.io/r/base/vector.html"
+"join_by()","dplyr","dplyr::join_by()","NA","https://dplyr.tidyverse.org/reference/join_by.html"
+"kable()","knitr","knitr::kable()","create knitr table","https://rdrr.io/pkg/knitr/man/kable.html"
+"keep()","purrr","purrr::keep()","keep elements using a predicate function","https://purrr.tidyverse.org/reference/keep.html"
+"kmeans()","stats","stats::kmeans()","perform k-means clustering on data matrix","https://rdrr.io/r/stats/kmeans.html"
+"labs()","ggplot2","ggplot2::labs()","modify axis, legend, and plot labels","https://ggplot2.tidyverse.org/reference/labs.html"
+"lag()","dplyr","dplyr::lag()","find the previous values in a vector","https://dplyr.tidyverse.org/reference/lead-lag.html"
+"lapply()","base","base::lapply()","apply a function to multiple elements of an object and return a list","https://rdrr.io/r/base/lapply.html"
+"lead()","dplyr","dplyr::lead()","find the next values in a vector","https://dplyr.tidyverse.org/reference/lead-lag.html"
+"left_join()","dplyr","dplyr::left_join()","join two data sets keeping the observations in the left one","https://dplyr.tidyverse.org/reference/mutate-joins.html"
+"length()","base","base::length()","return number of elements in a vector","https://rdrr.io/r/base/length.html"
+"lengths()","base","base::lengths()","return length of each element of a list or vector","https://rdrr.io/r/base/lengths.html"
+"levels()","base","base::levels()","view and change factor levels","https://rdrr.io/r/base/levels.html"
+"library()","base","base::library()","load R packages","https://rdrr.io/r/base/library.html"
+"list()","base","base::list()","create recursive vector (list)","https://rdrr.io/r/base/list.html"
+"lm()","stats","stats::lm()","fit linear model","https://rdrr.io/r/stats/lm.html"
+"load()","base","base::load()","load data sets written with save()","https://rdrr.io/r/base/load.html"
+"locale()","readr","readr::locale()","capture or set default values for a country","https://readr.tidyverse.org/reference/locale.html"
+"loess()","stats","stats::loess()","apply local polynomial regression fitting","https://rdrr.io/r/stats/loess.html"
+"log()","base","base::log()","compute natural logarithm","https://rdrr.io/r/base/Log.html"
+"log10()","base","base::log10()","compute base 10 logarithm","https://rdrr.io/r/base/Log.html"
+"log2()","base","base::log2()","compute base 2 logarithm","https://rdrr.io/r/base/Log.html"
+"make_clean_names()","janitor","janitor::make_clean_names()","clean vector of text to be unique and consistent of only characters, numbers and `_`","https://rdrr.io/cran/janitor/man/make_clean_names.html"
+"make_date()","lubridate","lubridate::make_date()","create object of class Date","https://lubridate.tidyverse.org/reference/make_datetime.html"
+"make_datetime()","lubridate","lubridate::make_datetime()","create date-times from numeric representations","https://lubridate.tidyverse.org/reference/make_datetime.html"
+"map_chr()","purrr","purrr::map_chr()","apply a function to multiple elements of an object in purrr, return a character vector","https://purrr.tidyverse.org/reference/map.html"
+"map_dbl()","purrr","purrr::map_dbl()","apply a function to multiple elements of an object in purrr, return a double vector","https://purrr.tidyverse.org/reference/map.html"
+"map_int()","purrr","purrr::map_int()","apply a function to multiple elements of an object in purrr, return a integer vector","https://purrr.tidyverse.org/reference/map.html"
+"map_lgl()","purrr","purrr::map_lgl()","apply a function to multiple elements of an object in purrr, return a logical vector","https://purrr.tidyverse.org/reference/map.html"
+"map()","purrr","purrr::map()","apply a function to multiple elements of an object in purrr, return a list","https://purrr.tidyverse.org/reference/map.html"
+"map2()","purrr","purrr::map2()","apply a function to multiple elements over two vectors in parallel","https://purrr.tidyverse.org/reference/map2.html"
+"match()","base","base::match()","return vector of positions of first matches of pattern","https://rdrr.io/r/base/match.html"
+"matches()","tidyselect","tidyselect::matches()","select helper that matches a regular expression","https://tidyselect.r-lib.org/reference/starts_with.html"
+"matrix()","base","base::matrix()","create matrix of numbers, characters, etc.","https://rdrr.io/r/base/matrix.html"
+"max()","base","base::max()","compute maxima of input values","https://rdrr.io/r/base/Extremes.html"
+"mday()","lubridate","lubridate::mday()","extract day number of month","https://lubridate.tidyverse.org/reference/day.html"
+"mdy_hm()","lubridate","lubridate::mdy_hm()","parse month, day, year and hour, minute","https://lubridate.tidyverse.org/reference/ymd_hms.html"
+"mdy()","lubridate","lubridate::mdy()","parse dates as month, day, year","https://lubridate.tidyverse.org/reference/ymd.html"
+"mean()","base","base::mean()","calculate mean of elements of vector","https://rdrr.io/r/base/mean.html"
+"median()","stats","stats::median()","compute sample median","https://rdrr.io/r/stats/median.html"
+"merge()","base","base::merge()","join two data sets","https://rdrr.io/r/base/merge.html"
+"methods()","utils","utils::methods()","return all available methods for function","https://rdrr.io/r/utils/methods.html"
+"min_rank()","dplyr","dplyr::min_rank()","rank vector elements with ties set to minimum","https://dplyr.tidyverse.org/reference/ranking.html"
+"min()","base","base::min()","compute minima of input values","https://rdrr.io/r/base/Extremes.html"
+"minute()","lubridate","lubridate::minute()","return or set minute component of a date-time","https://lubridate.tidyverse.org/reference/minute.html"
+"mode()","base","base::mode()","get or set the storage mode of an object","https://rdrr.io/r/base/mode.html"
+"model_matrix()","modelr","modelr::model_matrix()","construct a design matrix","https://modelr.tidyverse.org/reference/model_matrix.html"
+"month()","lubridate","lubridate::month()","return or set month component of a date-time","https://lubridate.tidyverse.org/reference/month.html"
+"months()","lubridate","lubridate::months()","specify the number of months to be used in dates","https://lubridate.tidyverse.org/reference/period.html"
+"mutate()","dplyr","dplyr::mutate()","create or modify data columns","https://dplyr.tidyverse.org/reference/mutate.html"
+"mvrnorm()","MASS","MASS::mvrnorm()","produce samples from multivariate normal distribution","https://rdrr.io/cran/MASS/man/mvrnorm.html"
+"n()","dplyr","dplyr::n()","return current group size","https://dplyr.tidyverse.org/reference/context.html"
+"na_if()","dplyr","dplyr::na_if()","replace values with NA","https://dplyr.tidyverse.org/reference/na_if.html"
+"names()","base","base::names()","return (and can assign) column names","https://rdrr.io/r/base/names.html"
+"ncol()","base","base::ncol()","return number of columns in matrix, data frame, etc.","https://rdrr.io/r/base/ncol.html"
+"near()","dplyr","dplyr::near()","compare if two vectors of floating point numbers are equal (with a built-in tolerance)","https://dplyr.tidyverse.org/reference/near.html"
+"nest()","tidyr","tidyr::nest()","creates nested list structure","https://tidyr.tidyverse.org/reference/nest.html"
+"nobs()","stats","stats::nobs()","extract number of observations from model fit","https://rdrr.io/r/stats/nobs.html"
+"now()","lubridate","lubridate::now()","return current date and time","https://lubridate.tidyverse.org/reference/now.html"
+"nrow()","base","base::nrow()","return number of rows in matrix, data frame, etc.","https://rdrr.io/r/base/nrow.html"
+"ns()","splines","splines::ns()","generate basis matrix for natural cubic splines","https://rdrr.io/r/splines/ns.html"
+"ntile()","dplyr","dplyr::ntile()","rough rank, which breaks vector into buckets","https://dplyr.tidyverse.org/reference/ranking.html"
+"num_range()","tidyselect","tidyselect::num_range()","match column names with number range","https://tidyselect.r-lib.org/reference/starts_with.html"
+"numericInput()","shiny","shiny::numericInput()","allow numeric input in Shiny","https://shiny.rstudio.com/reference/shiny/latest/numericInput.html"
+"obj_size()","lobstr","lobstr::obj_size()","compute the size of an object","https://lobstr.r-lib.org/reference/obj_size.html"
+"object_size()","pryr","pryr::object_size()","compute size of object","https://rdrr.io/cran/pryr/man/object_size.html"
+"object.size()","utils","utils::object.size()","estimate memory required to store an object","https://rdrr.io/r/utils/object.size.html"
+"OlsonNames()","base","base::OlsonNames()","return vector of all time zone names","https://rdrr.io/r/base/timezones.html"
+"optim()","stats","stats::optim()","apply optimization algorithm","https://rdrr.io/r/stats/optim.html"
+"opts_chunk()","knitr","knitr::opts_chunk()","set options for R code chunks","https://rdrr.io/pkg/knitr/man/opts_chunk.html"
+"opts_chunk$set()","knitr","knitr::opts_chunk$set()","set knitr code chunk options","https://rdrr.io/pkg/knitr/man/opts_chunk.html"
+"order_by()","dplyr","dplyr::order_by()","control ordering of window functions","https://dplyr.tidyverse.org/reference/order_by.html"
+"order()","base","base::order()","return index of sorted vector (base R)","https://rdrr.io/r/base/order.html"
+"ordered()","base","base::ordered()","created ordered factor","https://rdrr.io/r/base/factor.html"
+"parse_character()","readr","readr::parse_character()","parse a character vector to characters","https://readr.tidyverse.org/reference/parse_atomic.html"
+"parse_date()","readr","readr::parse_date()","parse date","https://readr.tidyverse.org/reference/parse_datetime.html"
+"parse_datetime()","readr","readr::parse_datetime()","parse date/time","https://readr.tidyverse.org/reference/parse_datetime.html"
+"parse_double()","readr","readr::parse_double()","parse a character vector to doubles","https://readr.tidyverse.org/reference/parse_atomic.html"
+"parse_factor()","readr","readr::parse_factor()","parse a character vector to factors","https://readr.tidyverse.org/reference/parse_atomic.html"
+"parse_guess()","readr","readr::parse_guess()","parse the column based on the guessed type","https://readr.tidyverse.org/reference/parse_guess.html"
+"parse_integer()","readr","readr::parse_integer()","parse a character vector to integers","https://readr.tidyverse.org/reference/parse_atomic.html"
+"parse_json()","jsonlite","jsonlite::parse_json()","create JSON file from string","https://rdrr.io/cran/jsonlite/man/read_json.html"
+"parse_logical()","readr","readr::parse_logical()","parse a character vector to logicals","https://readr.tidyverse.org/reference/parse_atomic.html"
+"parse_number()","readr","readr::parse_number()","parse a character vector to numbers","https://readr.tidyverse.org/reference/parse_atomic.html"
+"parse_time()","readr","readr::parse_time()","parse time","https://readr.tidyverse.org/reference/parse_datetime.html"
+"paste()","base","base::paste()","concatenate character vectors with space between elements","https://rdrr.io/r/base/paste.html"
+"paste0()","base","base::paste0()","concatenate character vectors with no space between elements","https://rdrr.io/r/base/paste.html"
+"pdf_document()","rmarkdown","rmarkdown::pdf_document()","create PDF document from R markdown file","https://rdrr.io/pkg/rmarkdown/man/pdf_document.html"
+"percent_rank()","dplyr","dplyr::percent_rank()","rescale rank between 0 and 1","https://dplyr.tidyverse.org/reference/ranking.html"
+"pivot_longer()","tidyr","tidyr::pivot_longer()","pivot data frame to be longer","https://tidyr.tidyverse.org/reference/pivot_longer.html"
+"pivot_wider()","tidyr","tidyr::pivot_wider()","pivot data frame to be wider","https://tidyr.tidyverse.org/reference/pivot_wider.html"
+"pmap()","purrr","purrr::pmap()","apply a function to multiple elements over a list of vectors in parallel","https://purrr.tidyverse.org/reference/map2.html"
+"pmax()","base","base::pmax()","compute parallel maxima for one or more vectors","https://rdrr.io/r/base/Extremes.html"
+"pmin()","base","base::pmin()","compute parallel minima for one or more vectors","https://rdrr.io/r/base/Extremes.html"
+"poly()","stats","stats::poly()","compute orthogonal polynomials","https://rdrr.io/r/stats/poly.html"
+"possibly()","purrr","purrr::possibly()","safely return result or default when there is an error","https://purrr.tidyverse.org/reference/safely.html"
+"print()","base","base::print()","prints argument","https://rdrr.io/r/base/print.html"
+"problems()","readr","readr::problems()","retrieve parsing problems","https://readr.tidyverse.org/reference/problems.html"
+"prod()","base","base::prod()","return product of all values in arguments","https://rdrr.io/r/base/prod.html"
+"pull()","dplyr","dplyr::pull()","extract a single column","https://dplyr.tidyverse.org/reference/pull.html"
+"pwalk()","purrr","purrr::pwalk()","apply multiple functions over multiple arguments in parallel, only for side effects","https://purrr.tidyverse.org/reference/map2.html"
+"quantile()","stats","stats::quantile()","calculate sample quantiles","https://rdrr.io/r/stats/quantile.html"
+"quietly()","purrr","purrr::quietly()","safely return result, messages, and warnings","https://purrr.tidyverse.org/reference/safely.html"
+"quote()","base","base::quote()","returns quoted expression","https://rdrr.io/r/base/substitute.html"
+"randomForest()","randomForest","randomForest::randomForest()","compute random forest model","https://www.rdocumentation.org/packages/randomForest/versions/4.7-1.1/topics/randomForest"
+"range_read()","googlesheets4","googlesheets4::range_read()","import a Google sheet (function name matches googlesheets4 conventions)","https://googlesheets4.tidyverse.org/reference/range_read.html"
+"rank()","base","base::rank()","return sample ranks of the values in a vector","https://rdrr.io/r/base/rank.html"
+"rbind()","base","base::rbind()","bind rows in base R","https://rdrr.io/r/base/cbind.html"
+"read_csv()","readr","readr::read_csv()","read comma delimited files","https://readr.tidyverse.org/reference/read_delim.html"
+"read_csv2()","readr","readr::read_csv2()","read semicolon separated files","https://readr.tidyverse.org/reference/read_delim.html"
+"read_delim()","readr","readr::read_delim()","read any kind of delimited file","https://readr.tidyverse.org/reference/read_delim.html"
+"read_excel()","readxl","readxl::read_excel()","import either xls or xlsx Excel files","https://readxl.tidyverse.org/reference/read_excel.html"
+"read_feather()","feather","feather::read_feather()","read feather files","https://www.rdocumentation.org/packages/feather/versions/0.3.5/topics/read_feather"
+"read_file()","readr","readr::read_file()","read a complete file","https://readr.tidyverse.org/reference/read_file.html"
+"read_fwf()","readr","readr::read_fwf()","read fixed width files","https://readr.tidyverse.org/reference/read_fwf.html"
+"read_json()","jsonlite","jsonlite::read_json()","read JSON file from disk","https://rdrr.io/cran/jsonlite/man/read_json.html"
+"read_lines()","readr","readr::read_lines()","read lines from a file","https://readr.tidyverse.org/reference/read_lines.html"
+"read_log()","readr","readr::read_log()","read Apache style log files","https://readr.tidyverse.org/reference/read_log.html"
+"read_rds()","readr","readr::read_rds()","read RDS files","https://readr.tidyverse.org/reference/read_rds.html"
+"read_sheet()","googlesheets4","googlesheets4::read_sheet()","import a Google sheet (function name matches readr conventions)","https://googlesheets4.tidyverse.org/reference/range_read.html"
+"read_table()","readr","readr::read_table()","read fixed width files separated by white space","https://readr.tidyverse.org/reference/read_table.html"
+"read_tsv()","readr","readr::read_tsv()","read tab delimited files","https://readr.tidyverse.org/reference/read_delim.html"
+"read_xls()","readxl","readxl::read_xls()","import xls Excel files","https://readxl.tidyverse.org/reference/read_excel.html"
+"read_xlsx()","readxl","readxl::read_xlsx()","import xlsx Excel files","https://readxl.tidyverse.org/reference/read_excel.html"
+"read.csv()","utils","utils::read.csv()","import CSV file (base R)","https://rdrr.io/r/utils/read.table.html"
+"readr_example()","readr","readr::readr_example()","get path to readr example","https://readr.tidyverse.org/reference/readr_example.html"
+"readRDS()","base","base::readRDS()","read RDS files","https://rdrr.io/r/base/readRDS.html"
+"readxl_example()","readxl","readxl::readxl_example()","get path to readxl example","https://readxl.tidyverse.org/reference/readxl_example.html"
+"reduce()","purrr","purrr::reduce()","reduce list to single value by iteratively applying binary function","https://purrr.tidyverse.org/reference/reduce.html"
+"regex()","base","base::regex()","use regular expressions","https://rdrr.io/r/base/regex.html"
+"regmatches()","base","base::regmatches()","extract or replace matched substrings","https://rdrr.io/r/base/regmatches.html"
+"relocate()","dplyr","dplyr::relocate()","change column order","https://dplyr.tidyverse.org/reference/relocate.html"
+"rename_with()","dplyr","dplyr::rename_with()","rename columns with function","https://dplyr.tidyverse.org/reference/rename.html"
+"rename()","dplyr","dplyr::rename()","rename columns","https://dplyr.tidyverse.org/reference/rename.html"
+"render_site()","rmarkdown","rmarkdown::render_site()","render R markdown documents into website","https://rdrr.io/pkg/rmarkdown/man/render_site.html"
+"render()","rmarkdown","rmarkdown::render()","convert R markdown document to another format","https://rdrr.io/pkg/rmarkdown/man/render.html"
+"reorder()","stats","stats::reorder()","reorder factor levels based on another variable","https://rdrr.io/r/stats/reorder.factor.html"
+"rep()","base","base::rep()","create repetitions of numbers, characters, etc.","https://rdrr.io/r/base/rep.html"
+"reprex()","reprex","reprex::reprex()","render a reproducible example","https://reprex.tidyverse.org/reference/"
+"return()","base","base::return()","return value","https://rdrr.io/r/base/function.html"
+"revealjs_presentation()","revealjs","revealjs::revealjs_presentation()","create revealjs presentation from R markdown file","https://rdrr.io/cran/revealjs/man/revealjs_presentation.html"
+"right_join()","dplyr","dplyr::right_join()","join two data sets keeping the observations in the right one","https://dplyr.tidyverse.org/reference/mutate-joins.html"
+"rlm()","MASS","MASS::rlm()","compute robust linear model","https://rdrr.io/cran/MASS/man/rlm.html"
+"rnorm()","stats","stats::rnorm()","generate random sample from normal distribution","https://rdrr.io/r/stats/Normal.html"
+"round_date()","lubridate","lubridate::round_date()","round date-time","https://lubridate.tidyverse.org/reference/round_date.html"
+"round()","base","base::round()","round values to specified number of digits","https://rdrr.io/r/base/Round.html"
+"row_number()","dplyr","dplyr::row_number()","rank vector elements with ties set to first","https://dplyr.tidyverse.org/reference/ranking.html"
+"rpart()","rpart","rpart::rpart()","compute recursive partitioning  and regression trees","https://rdrr.io/cran/rpart/man/rpart.html"
+"runif()","stats","stats::runif()","generate random number from uniform distribution","https://rdrr.io/r/stats/Uniform.html"
+"safely()","purrr","purrr::safely()","safely return result and error","https://purrr.tidyverse.org/reference/safely.html"
+"sample()","base","base::sample()","randomly sample from vector","https://rdrr.io/r/base/sample.html"
+"sapply()","base","base::sapply()","apply a function to multiple elements of an object and return a vector, matrix, or array","https://rdrr.io/r/base/lapply.html"
+"saveRDS()","base","base::saveRDS()","write RDS files","https://rdrr.io/r/base/readRDS.html"
+"saveWorkbook()","openxlsx","openxlsx::saveWorkbook()","write a Workbook object to a file","https://rdrr.io/cran/openxlsx/man/saveWorkbook.html"
+"scale_color_brewer()","ggplot2","ggplot2::scale_color_brewer()","map colors to data with ColorBrewer","https://ggplot2.tidyverse.org/reference/scale_brewer.html"
+"scale_color_discrete()","ggplot2","ggplot2::scale_color_discrete()","scale color aesthetic to be discrete","https://ggplot2.tidyverse.org/reference/scale_colour_discrete.html"
+"scale_color_gradient()","ggplot2","ggplot2::scale_color_gradient()","scale color aesthetic to continuous color gradient","https://ggplot2.tidyverse.org/reference/scale_gradient.html"
+"scale_color_gradient2()","ggplot2","ggplot2::scale_color_gradient2()","scale color aesthetic to diverging color gradient","https://ggplot2.tidyverse.org/reference/scale_gradient.html"
+"scale_color_manual()","ggplot2","ggplot2::scale_color_manual()","map colors to data manually","https://ggplot2.tidyverse.org/reference/scale_manual.html"
+"scale_color_viridis()","viridis","viridis::scale_color_viridis()","scale color aesthetic to viridis color gradient","https://rdrr.io/cran/viridis/man/scale_viridis.html"
+"scale_fill_gradient()","ggplot2","ggplot2::scale_fill_gradient()","scale fill aesthetic to continuous color gradient","https://ggplot2.tidyverse.org/reference/scale_gradient.html"
+"scale_fill_viridis()","viridis","ggplot2::scale_fill_viridis()","scale fill aesthetic to viridis gradient","https://rdrr.io/cran/viridis/man/scale_viridis.html"
+"scale_x_continuous()","ggplot2","ggplot2::scale_x_continuous()","scale x axis to be continuous","https://ggplot2.tidyverse.org/reference/scale_continuous.html"
+"scale_x_date()","ggplot2","ggplot2::scale_x_date()","scale x axis to be date","https://ggplot2.tidyverse.org/reference/scale_date.html"
+"scale_x_log10()","ggplot2","ggplot2::scale_x_log10()","scale x axis to be log base 10","https://ggplot2.tidyverse.org/reference/scale_continuous.html"
+"scale_y_continuous()","ggplot2","ggplot2::scale_y_continuous()","scale y axis to be continuous","https://ggplot2.tidyverse.org/reference/scale_continuous.html"
+"scale_y_log10()","ggplot2","ggplot2::scale_y_log10()","scale y axis to be log base 10","https://ggplot2.tidyverse.org/reference/scale_continuous.html"
+"sd()","stats","stats::sd()","compute standard deviation","https://rdrr.io/r/stats/sd.html"
+"second()","lubridate","lubridate::second()","return or set second component of a date-time","https://lubridate.tidyverse.org/reference/second.html"
+"select()","dplyr","dplyr::select()","keep specified columns","https://dplyr.tidyverse.org/reference/select.html"
+"semi_join()","dplyr","dplyr::semi_join()","join two data sets keeping all observations in x that have a match in y","https://dplyr.tidyverse.org/reference/filter-joins.html"
+"separate_rows()","tidyr","tidyr::separate_rows()","separate collapsed column into multiple rows","https://tidyr.tidyverse.org/reference/separate_rows.html"
+"separate()","tidyr","tidyr::separate()","split single column into multiple columns","https://tidyr.tidyverse.org/reference/separate.html"
+"seq_along()","base","base::seq_along()","return a sequence along the length of an object","https://rdrr.io/r/base/seq.html"
+"seq_range()","modelr","modelr::seq_range()","return sequence over the range of a vector","https://modelr.tidyverse.org/reference/seq_range.html"
+"seq()","base","base::seq()","create sequences of numbers","https://rdrr.io/r/base/seq.html"
+"session.info()","sessioninfo","sessioninfo::session.info()","return R session info and loaded packages","https://rdrr.io/pkg/sessioninfo/man/session_info.html"
+"sessionInfo()","utils","utils::sessionInfo()","return info about R version, operating system, and loaded packages","https://rdrr.io/r/utils/sessionInfo.html"
+"set_names()","magrittr","magrittr::set_names()","set names of object","https://magrittr.tidyverse.org/reference/aliases.html"
+"setdiff()","base","base::setdiff()","return observations in x but not y","https://rdrr.io/r/base/sets.html"
+"setNames()","stats","stats::setNames()","set the name of an object and return the object","https://rdrr.io/r/stats/setNames.html"
+"setwd()","base","base::setwd()","set working directory","https://rdrr.io/r/base/getwd.html"
+"show_query()","dplyr","dplyr::show_query()","give details about database table object","https://dplyr.tidyverse.org/reference/explain.html"
+"slice_head()","dplyr","dplyr::slice_head()","select the first (specified) number of rows","https://dplyr.tidyverse.org/reference/slice.html"
+"slice_min()","dplyr","dplyr::slice_min()","select the rows with the lowest values of a variable","https://dplyr.tidyverse.org/reference/slice.html"
+"slidy_presentation()","rmarkdown","rmarkdown::slidy_presentation()","create Slidy presentation from R markdown file","https://rdrr.io/cran/rmarkdown/man/slidy_presentation.html"
+"some()","purrr","purrr::some()","determine if some of elements meet predicate function conditional","https://purrr.tidyverse.org/reference/every.html"
+"sort()","base","base::sort()","sort a vector or factor into ascending or descending order (base R)","https://rdrr.io/r/base/sort.html"
+"spread_predictions()","modelr","modelr::spread_predictions()","add predictions and pivot wider","https://modelr.tidyverse.org/reference/add_predictions.html"
+"starts_with()","tidyselect","tidyselect::starts_with()","match column names that begin with string","https://tidyselect.r-lib.org/reference/starts_with.html"
+"stat_count()","ggplot2","ggplot2::stat_count()","statistical transformation that counts numbers of instances","https://ggplot2.tidyverse.org/reference/geom_bar.html"
+"stat_smooth()","ggplot2","ggplot2::stat_smooth()","statistical transformation that computes smoothed conditional means","https://ggplot2.tidyverse.org/reference/geom_smooth.html"
+"stat_summary()","ggplot2","ggplot2::stat_summary()","summarize y values for each x value","https://ggplot2.tidyverse.org/reference/stat_summary.html"
+"stop_for_problems()","readr","readr::stop_for_problems()","throw error and stop script if any parsing problems","https://readr.tidyverse.org/reference/problems.html"
+"stop()","base","base::stop()","stop execution of current expression and return an error","https://rdrr.io/r/base/stop.html"
+"stopifnot()","base","base::stopifnot()","test condition and produce error at first FALSE","https://rdrr.io/r/base/stopifnot.html"
+"str_c()","stringr","stringr::str_c()","combines two or more strings","https://stringr.tidyverse.org/reference/str_c.html"
+"str_count()","stringr","stringr::str_count()","count number of matches in a string","https://stringr.tidyverse.org/reference/str_count.html"
+"str_detect()","stringr","stringr::str_detect()","detect presence of pattern in string","https://stringr.tidyverse.org/reference/str_detect.html"
+"str_dup()","stringr","stringr::str_dup()","duplicate and concatenate strings within a character vector","https://stringr.tidyverse.org/reference/str_dup.html"
+"str_equal()","stringr","stringr::str_equal()","compare if two strings are equal","NA"
+"str_escape()","stringr","stringr::str_escape()","add escape \ to special characters","NA"
+"str_extract_all()","stringr","stringr::str_extract_all()","extract all matching patterns in a string","https://stringr.tidyverse.org/reference/str_extract.html"
+"str_extract()","stringr","stringr::str_extract()","extract first matching patterns in a string","https://stringr.tidyverse.org/reference/str_extract.html"
+"str_flatten()","stringr","stringr::str_flatten()","flatten a string","https://stringr.tidyverse.org/reference/str_flatten.html"
+"str_glue()","stringr","stringr::str_glue()","format and interpolate a string with glue","https://stringr.tidyverse.org/reference/str_glue.html"
+"str_length()","stringr","stringr::str_length()","returns number of characters in a string","https://stringr.tidyverse.org/reference/str_length.html"
+"str_locate_all()","stringr","stringr::str_locate_all()","locate all positions of pattern in a string","https://stringr.tidyverse.org/reference/str_locate.html"
+"str_locate()","stringr","stringr::str_locate()","locate first position of pattern in a string","https://stringr.tidyverse.org/reference/str_locate.html"
+"str_match_all()","stringr","stringr::str_match_all()","extract all matched groups from a string","https://stringr.tidyverse.org/reference/str_subset.html"
+"str_match()","stringr","stringr::str_match()","extract first matched group from a string","https://stringr.tidyverse.org/reference/str_match.html"
+"str_order()","stringr","stringr::str_order()","return index of sorted vector (stringr version)","https://stringr.tidyverse.org/reference/str_order.html"
+"str_remove_all()","stringr","stringr::str_remove_all()","remove all instances of a pattern in a string","https://stringr.tidyverse.org/reference/str_remove.html"
+"str_replace_all()","stringr","stringr::str_replace_all()","replace all matched patterns in a  string","https://stringr.tidyverse.org/reference/str_replace.html"
+"str_replace_na()","stringr","stringr::str_replace_na()","replace NAs with other characters","https://stringr.tidyverse.org/reference/str_replace_na.html"
+"str_replace()","stringr","stringr::str_replace()","replace first matched pattern in a string","https://stringr.tidyverse.org/reference/str_replace.html"
+"str_sort()","stringr","stringr::str_sort()","sort numeric or character vector (stringr version)","https://stringr.tidyverse.org/reference/str_order.html"
+"str_split()","stringr","stringr::str_split()","split string into pieces","https://stringr.tidyverse.org/reference/str_split.html"
+"str_sub()","stringr","stringr::str_sub()","extract parts of a string","https://stringr.tidyverse.org/reference/str_sub.html"
+"str_subset()","stringr","stringr::str_subset()","extract elements that match pattern","https://stringr.tidyverse.org/reference/str_subset.html"
+"str_to_lower()","stringr","stringr::str_to_lower()","change text to lower case","https://stringr.tidyverse.org/reference/case.html"
+"str_to_title()","stringr","stringr::str_to_title()","change text to upper case","https://stringr.tidyverse.org/reference/case.html"
+"str_to_upper()","stringr","stringr::str_to_upper()","change text to upper case","https://stringr.tidyverse.org/reference/case.html"
+"str_trim()","stringr","stringr::str_trim()","trim whitespace from string","https://stringr.tidyverse.org/reference/str_trim.html"
+"str_view_all()","stringr","stringr::str_view_all()","view all regular expression matches","https://stringr.tidyverse.org/reference/str_view.html"
+"str_view()","stringr","stringr::str_view()","view first regular expression match","https://stringr.tidyverse.org/reference/str_view.html"
+"str_wrap()","stringr","stringr::str_wrap()","wrap strings into nicely formatted paragraphs","https://stringr.tidyverse.org/reference/str_wrap.html"
+"str()","utils","utils::str()","return object structure","https://rdrr.io/r/utils/str.html"
+"stri_locale_list()","stringi","stringi::stri_locale_list()","create character vector with all available locale identities","https://rdrr.io/cran/stringi/man/stri_locale_list.html"
+"stri_sort()","stringi","stringi::stri_sort()","sort character vector in lexicographic order","https://rdrr.io/cran/stringi/man/stri_sort.html"
+"sum()","base","base::sum()","sum elements of vector","https://rdrr.io/r/base/sum.html"
+"summarize()","dplyr","dplyr::summarize()","summarize data usually by grouping variable","https://dplyr.tidyverse.org/reference/summarise.html"
+"summary()","base","base::summary()","return summary of model fitting functions","https://rdrr.io/r/base/summary.html"
+"suppressMessages()","base","base::suppressMessages()","suppress the printing of messages","https://rdrr.io/r/base/conditions.html"
+"suppressWarnings()","base","base::suppressWarnings()","suppress the printing of warnings","https://rdrr.io/r/base/conditions.html"
+"switch()","base","base::switch()","select one of a list of alternatives","https://rdrr.io/r/base/switch.html"
+"Sys.timezone()","base","base::Sys.timezone()","return name of current time zone","https://rdrr.io/r/base/timezones.html"
+"t.test()","stats","stats::t.test()","computer one and two sample Student’s t-test on vectors of data","https://rdrr.io/r/stats/t.test.html"
+"tail_while()","purrr","purrr::tail_while()","find last elements that satisfy predicate","https://purrr.tidyverse.org/reference/head_while.html"
+"tail()","utils","utils::tail()","return last rows of matrix, data frame, etc.","https://rdrr.io/r/utils/head.html"
+"tapply()","base","base::tapply()","apply a function to each cell of a ragged array","https://rdrr.io/r/base/tapply.html"
+"tbl()","dplyr","dplyr::tbl()","create a database table from data source","https://dplyr.tidyverse.org/reference/tbl.html"
+"textInput()","shiny","shiny::textInput()","allow text input in Shiny","https://shiny.rstudio.com/reference/shiny/latest/textInput.html"
+"theme()","ggplot2","ggplot2::theme()","customize non-data components of plot","https://ggplot2.tidyverse.org/reference/theme.html"
+"tibble()","tibble","tibble::tibble()","create tibble","https://tibble.tidyverse.org/reference/tibble.html"
+"tidy()","generics","generics::tidy()","turn object into tidy tibble","https://generics.r-lib.org/reference/tidy.html"
+"tidyverse_update()","tidyverse","tidyverse::tidyverse_update()","update tidyverse packages","https://tidyverse.tidyverse.org/reference/tidyverse_update.html"
+"today()","lubridate","lubridate::today()","return the current date","https://lubridate.tidyverse.org/reference/now.html"
+"transmute()","dplyr","dplyr::transmute()","creates new data column and dropping existing ones","https://dplyr.tidyverse.org/reference/mutate.html"
+"transpose()","purrr","purrr::transpose()","turn list-of-lists 'inside out'","https://purrr.tidyverse.org/reference/transpose.html"
+"tribble()","tibble","tibble::tribble()","create row-wise tibble","https://tibble.tidyverse.org/reference/tribble.html"
+"trim()","glue","glue::trim()","trim a character vector","https://glue.tidyverse.org/reference/trim.html"
+"try()","base","base::try()","try an expression and allow errors","https://rdrr.io/r/base/try.html"
+"tryCatch()","base","base::tryCatch()","evaluates an expression with the possibility to catch exceptions","https://rdrr.io/r/base/conditions.html"
+"type_convert()","readr","readr::type_convert()","re-convert character columns in existing data frame","https://readr.tidyverse.org/reference/type_convert.html"
+"typeof()","base","base::typeof()","return object type","https://rdrr.io/r/base/typeof.html"
+"ungroup()","dplyr","dplyr::ungroup()","remove grouping","https://dplyr.tidyverse.org/reference/group_by.html"
+"union()","base","base::union()","return unique observations in x or y","https://rdrr.io/r/base/sets.html"
+"unique()","base","base::unique()","return vector with duplicate elements removed","https://rdrr.io/r/base/unique.html"
+"unite()","tidyr","tidyr::unite()","combine multiple columns into single column","https://tidyr.tidyverse.org/reference/unite.html"
+"unlist()","base","base::unlist()","flatten a list into an atomic vector in base R","https://rdrr.io/r/base/unlist.html"
+"unnest_auto()","tidyr","tidyr::unnest_auto()","turn each element of a list-column into a row or column","https://tidyr.tidyverse.org/reference/hoist.html"
+"unnest_longer()","tidyr","tidyr::unnest_longer()","turn each element of a list-column into a row","https://tidyr.tidyverse.org/reference/hoist.html"
+"unnest_wider()","tidyr","tidyr::unnest_wider()","turn each element of a list-column into a column","https://tidyr.tidyverse.org/reference/hoist.html"
+"unnest()","tidyr","tidyr::unnest()","remove nested structure","https://tidyr.tidyverse.org/reference/nest.html"
+"update()","stats","stats::update()","update and refit a model","https://rdrr.io/r/stats/update.html"
+"vapply()","base","base::vapply()","apply a function to multiple elements of an object and return a vector","https://rdrr.io/r/base/lapply.html"
+"vector()","base","base::vector()","create a vector","https://rdrr.io/r/base/vector.html"
+"View()","utils","utils::View()","open spreadsheet view of matrix-like object","https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/View"
+"walk()","purrr","purrr::walk()","apply a function to multiple elements of an object to obtain side effects","https://purrr.tidyverse.org/reference/map.html"
+"walk2()","purrr","purrr::walk2()","apply multiple functions over two arguments in parallel, only for side effects","https://purrr.tidyverse.org/reference/map2.html"
+"wday()","lubridate","lubridate::wday()","extract day number of week","https://lubridate.tidyverse.org/reference/day.html"
+"with_tz()","lubridate","lubridate::with_tz()","return date-time in a different time zone","https://lubridate.tidyverse.org/reference/with_tz.html"
+"word_document()","rmarkdown","rmarkdown::word_document()","create Word document from R markdown file","https://rdrr.io/pkg/rmarkdown/man/word_document.html"
+"write_csv()","readr","readr::write_csv()","write a data frame to comma delimited files","https://readr.tidyverse.org/reference/write_delim.html"
+"write_excel_csv()","readr","readr::write_excel_csv()","export a csv file to Excel","https://readr.tidyverse.org/reference/write_delim.html"
+"write_rds()","readr","readr::write_rds()","write RDS files","https://readr.tidyverse.org/reference/read_rds.html"
+"write_tsv()","readr","readr::write_tsv()","write a data frame to tab delimited files","https://readr.tidyverse.org/reference/write_delim.html"
+"write_xlsx()","writexl","writexl::write_xlsx()","write object to xlsx Excel file (writexl)","https://docs.ropensci.org/writexl/reference/write_xlsx.html"
+"write.xlsx()","openxlsx","openxlsx::write.xlsx()","write object to xlsx Excel file (openxlsx )","https://rdrr.io/cran/openxlsx/man/write.xlsx.html"
+"writeLines()","base","base::writeLines()","write text lines to a connection","https://rdrr.io/r/base/writeLines.html"
+"xgboost()","sgboost","sgboost::xgboost()","computer gradient boosting models","https://xgboost.readthedocs.io/en/stable/"
+"xlim()","ggplot2","ggplot2::xlim()","specify limits of x axis","https://ggplot2.tidyverse.org/reference/lims.html"
+"xor()","base","base::xor()","apply elementwise exclusive OR","https://rdrr.io/r/base/Logic.html"
+"yday()","lubridate","lubridate::yday()","extract day number of year","https://lubridate.tidyverse.org/reference/day.html"
+"year()","lubridate","lubridate::year()","return or set year component of a date-time","https://lubridate.tidyverse.org/reference/year.html"
+"ylim()","ggplot2","ggplot2::ylim()","specify limits of y axis","https://ggplot2.tidyverse.org/reference/lims.html"
+"ymd_hms()","lubridate","lubridate::ymd_hms()","parse dates and time","https://lubridate.tidyverse.org/reference/ymd_hms.html"
+"ymd()","lubridate","lubridate::ymd()","parse dates with year, month, and day components","https://lubridate.tidyverse.org/reference/ymd.html"
