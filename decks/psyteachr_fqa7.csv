@@ -1,10 +1,10 @@
 term,description,url,title
-barplot,A plot showing counts of categorical data where the height of each bar represents the count of that particular variable,https://psyteachr.github.io/glossary/b.html#barplot,PsyTeachR QFA Ch. 7
-boxplot,"A plot summarising distributions using five key values: the median, the upper and lower interquartile values, and the max and min value not considered and outlier. The length of the box represents the interquartile range.",https://psyteachr.github.io/glossary/b.html#boxplot,PsyTeachR QFA Ch. 7
-data visualisation,Data Visualisation is the skill of creating and interpreting plots and figures from data.,https://psyteachr.github.io/glossary/d.html#data-visualisation,PsyTeachR QFA Ch. 7
-descriptive,"Statistics that describe an aspect of data (e.g., mean, median, mode, variance, range)",https://psyteachr.github.io/glossary/d.html#descriptive,PsyTeachR QFA Ch. 7
-double,A data type representing a real decimal number,https://psyteachr.github.io/glossary/d.html#double,PsyTeachR QFA Ch. 7
-factor data type,A data type where a specific set of values are stored with labels,https://psyteachr.github.io/glossary/f.html#factor-data-type,PsyTeachR QFA Ch. 7
-inferential,"Statistics that allow you to make predictions about or comparisons between data (e.g., t-value, F-value, rho)",https://psyteachr.github.io/glossary/i.html#inferential,PsyTeachR QFA Ch. 7
-numeric,A data type representing a real decimal number or integer.,https://psyteachr.github.io/glossary/n.html#numeric,PsyTeachR QFA Ch. 7
-violin,A plot showing the probability density of data with a smoothed kernel function and look like a rotated and mirrored histogram,https://psyteachr.github.io/glossary/v.html#violin,PsyTeachR QFA Ch. 7
+barplot,A plot showing counts of categorical data where the height of each bar represents the count of that particular variable,https://psyteachr.github.io/glossary/b.html#barplot,PsyTeachR FQA Ch. 7
+boxplot,"A plot summarising distributions using five key values: the median, the upper and lower interquartile values, and the max and min value not considered and outlier. The length of the box represents the interquartile range.",https://psyteachr.github.io/glossary/b.html#boxplot,PsyTeachR FQA Ch. 7
+data visualisation,Data Visualisation is the skill of creating and interpreting plots and figures from data.,https://psyteachr.github.io/glossary/d.html#data-visualisation,PsyTeachR FQA Ch. 7
+descriptive,"Statistics that describe an aspect of data (e.g., mean, median, mode, variance, range)",https://psyteachr.github.io/glossary/d.html#descriptive,PsyTeachR FQA Ch. 7
+double,A data type representing a real decimal number,https://psyteachr.github.io/glossary/d.html#double,PsyTeachR FQA Ch. 7
+factor data type,A data type where a specific set of values are stored with labels,https://psyteachr.github.io/glossary/f.html#factor-data-type,PsyTeachR FQA Ch. 7
+inferential,"Statistics that allow you to make predictions about or comparisons between data (e.g., t-value, F-value, rho)",https://psyteachr.github.io/glossary/i.html#inferential,PsyTeachR FQA Ch. 7
+numeric,A data type representing a real decimal number or integer.,https://psyteachr.github.io/glossary/n.html#numeric,PsyTeachR FQA Ch. 7
+violin,A plot showing the probability density of data with a smoothed kernel function and look like a rotated and mirrored histogram,https://psyteachr.github.io/glossary/v.html#violin,PsyTeachR FQA Ch. 7
