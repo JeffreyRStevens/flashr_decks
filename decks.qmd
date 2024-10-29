@@ -48,7 +48,7 @@ This has not only a list of the built-in decks available for the flashr package 
 
 <summary>PsyTeachR Fundamentals of Quantitative Analysis</summary>
 
--   <a href = "decks/psyteachr_1.html" target="_blank">Ch. 1 Programming basics</a>: `psyteachr_fqa1`
+-   <a href = "decks/psyteachr_fqa1.html" target="_blank">Ch. 1 Programming basics</a>: `psyteachr_fqa1`
 -   <a href = "decks/psyteachr_fqa2.html" target="_blank">Ch. 2 Intro to R</a>: `psyteachr_fqa2`
 -   <a href = "decks/psyteachr_fqa3.html" target="_blank">Ch. 3 Starting with data</a>: `psyteachr_fqa3`
 -   <a href = "decks/psyteachr_fqa4.html" target="_blank">Ch. 4 Data wrangling 1</a>: `psyteachr_fqa4`
