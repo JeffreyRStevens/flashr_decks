@@ -17,7 +17,7 @@ website:
   repo-url: https://github.com/jeffreyrstevens/flashr_decks
   repo-actions: [issue]
   page-footer: 
-    left: "Copyright 2022, Jeffrey Stevens" 
+    left: "Copyright 2024, Jeffrey Stevens" 
     right: 
       - icon: github
         href: https://github.com/jeffreyrstevens/flashr_decks
