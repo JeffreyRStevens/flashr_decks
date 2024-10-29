@@ -59,12 +59,12 @@ This has not only a list of the built-in decks available for the flashr package 
 -   <a href = "decks/psyteachr_fqa9.html" target="_blank">Ch. 9 Correlations</a>: `psyteachr_fqa9`
 -   <a href = "decks/psyteachr_fqa10.html" target="_blank">Ch. 10 t-tests</a>: `psyteachr_fqa10`
 -   <a href = "decks/psyteachr_fqa11.html" target="_blank">Ch. 11 Power and effect sizes</a>: `psyteachr_fqa11`
--   <a href = "decks/psyteachr_fqa12.html" target="_blank">Ch. 12 Screening data</a>: `psyteachr_fqa12`
--   <a href = "decks/psyteachr_fqa13.html" target="_blank">Ch. 13 Visualisation</a>: `psyteachr_fqa13`
--   <a href = "decks/psyteachr_fqa14.html" target="_blank">Ch. 14 One-way ANOVA</a>: `psyteachr_fqa14`
--   <a href = "decks/psyteachr_fqa15.html" target="_blank">Ch. 15 Factorial ANOVA</a>: `psyteachr_fqa15`
--   <a href = "decks/psyteachr_fqa16.html" target="_blank">Ch. 16 Regression</a>: `psyteachr_fqa16`
--   <a href = "decks/psyteachr_fqa17.html" target="_blank">Ch. 17 Multiple regression</a>: `psyteachr_fqa17`
+<!-- -   <a href = "decks/psyteachr_fqa12.html" target="_blank">Ch. 12 Screening data</a>: `psyteachr_fqa12` -->
+<!-- -   <a href = "decks/psyteachr_fqa13.html" target="_blank">Ch. 13 Visualisation</a>: `psyteachr_fqa13` -->
+<!-- -   <a href = "decks/psyteachr_fqa14.html" target="_blank">Ch. 14 One-way ANOVA</a>: `psyteachr_fqa14` -->
+<!-- -   <a href = "decks/psyteachr_fqa15.html" target="_blank">Ch. 15 Factorial ANOVA</a>: `psyteachr_fqa15` -->
+<!-- -   <a href = "decks/psyteachr_fqa16.html" target="_blank">Ch. 16 Regression</a>: `psyteachr_fqa16` -->
+<!-- -   <a href = "decks/psyteachr_fqa17.html" target="_blank">Ch. 17 Multiple regression</a>: `psyteachr_fqa17` -->
 
 </details>
 
