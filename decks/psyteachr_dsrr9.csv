@@ -1,7 +1,0 @@
-term,description,url,title
-argument,A variable that provides input to a function.,https://psyteachr.github.io/glossary/a.html#argument,PsyTeachR DSRR Ch. 9
-data type,The kind of data represented by an object.,https://psyteachr.github.io/glossary/d.html#data-type,PsyTeachR DSRR Ch. 9
-double,A data type representing a real decimal number,https://psyteachr.github.io/glossary/d.html#double,PsyTeachR DSRR Ch. 9
-function,A named section of code that can be reused.,https://psyteachr.github.io/glossary/f.html#function,PsyTeachR DSRR Ch. 9
-iteration,Repeating a process or function,https://psyteachr.github.io/glossary/i.html#iteration,PsyTeachR DSRR Ch. 9
-matrix,A container data type consisting of numbers arranged into a fixed number of rows and columns,https://psyteachr.github.io/glossary/m.html#matrix,PsyTeachR DSRR Ch. 9

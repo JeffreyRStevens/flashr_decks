@@ -1,6 +1,0 @@
-term,description,url,title
-mean,A descriptive statistic that measures the average value of a set of numbers.,https://psyteachr.github.io/glossary/m.html#mean,PsyTeachR ADS Ch. 5
-median,The middle number in a distribution where half of the values are larger and half are smaller.,https://psyteachr.github.io/glossary/m.html#median,PsyTeachR ADS Ch. 5
-pipe,A way to order your code in a more readable format using the symbol %>%,https://psyteachr.github.io/glossary/p.html#pipe,PsyTeachR ADS Ch. 5
-quantile,Cutoffs dividing the range of a distribution into continuous intervals with equal probabilities.,https://psyteachr.github.io/glossary/q.html#quantile,PsyTeachR ADS Ch. 5
-vector,"A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.",https://psyteachr.github.io/glossary/v.html#vector,PsyTeachR ADS Ch. 5

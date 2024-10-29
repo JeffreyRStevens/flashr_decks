@@ -1,7 +1,0 @@
-term,description,url,title
-between subjects,"Not varying within unit of observation, such that each has only one value",https://psyteachr.github.io/glossary/b.html#between-subjects,PsyTeachR QFA Ch. 10
-categorical,"Data that can only take certain values, such as types of pet.",https://psyteachr.github.io/glossary/c.html#categorical,PsyTeachR QFA Ch. 10
-mixed design,An experimental design that has both within-subject and between-subject factors.,https://psyteachr.github.io/glossary/m.html#mixed-design,PsyTeachR QFA Ch. 10
-numeric,A data type representing a real decimal number or integer.,https://psyteachr.github.io/glossary/n.html#numeric,PsyTeachR QFA Ch. 10
-one sample,A study to compare the mean and spread of one group against a known value or population norm.,https://psyteachr.github.io/glossary/o.html#one-sample,PsyTeachR QFA Ch. 10
-within subjects,Varying such that each unit of observation has more than one value,https://psyteachr.github.io/glossary/w.html#within-subjects,PsyTeachR QFA Ch. 10

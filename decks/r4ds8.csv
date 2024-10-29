@@ -1,3 +1,0 @@
-term,description,url,package,title
-getwd(),return working directory,https://rdrr.io/r/base/getwd.html,base,R4DS Ch. 8
-setwd(),set working directory,https://rdrr.io/r/base/getwd.html,base,R4DS Ch. 8

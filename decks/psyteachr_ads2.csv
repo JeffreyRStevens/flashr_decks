@@ -1,8 +1,0 @@
-term,description,url,title
-extension,"The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).",https://psyteachr.github.io/glossary/e.html#extension,PsyTeachR ADS Ch. 2
-knit,"To create an HTML, PDF, or Word document from an R Markdown (Rmd) document",https://psyteachr.github.io/glossary/k.html#knit,PsyTeachR ADS Ch. 2
-markdown,"A way to specify formatting, such as headers, paragraphs, lists, bolding, and links.",https://psyteachr.github.io/glossary/m.html#markdown,PsyTeachR ADS Ch. 2
-project,A way to organise related files in RStudio,https://psyteachr.github.io/glossary/p.html#project,PsyTeachR ADS Ch. 2
-R markdown,"The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.",https://psyteachr.github.io/glossary/r.html#r-markdown,PsyTeachR ADS Ch. 2
-working directory,The filepath where R is currently reading and writing files.,https://psyteachr.github.io/glossary/w.html#working-directory,PsyTeachR ADS Ch. 2
-YAML,A structured format for information,https://psyteachr.github.io/glossary/y.html#yaml,PsyTeachR ADS Ch. 2

@@ -1,5 +1,0 @@
-term,description,url,package,title
-::,export variable from package for use,https://rdrr.io/r/base/ns-dblcolon.html,base,R4DS Ch. 1
-install.packages(),install R packages,https://rdrr.io/r/utils/install.packages.html,utils,R4DS Ch. 1
-library(),load R packages,https://rdrr.io/r/base/library.html,base,R4DS Ch. 1
-session.info(),return R session info and loaded packages,https://rdrr.io/pkg/sessioninfo/man/session_info.html,sessioninfo,R4DS Ch. 1
