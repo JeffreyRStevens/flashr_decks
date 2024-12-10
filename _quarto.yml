@@ -9,7 +9,6 @@ project:
   - "html/*.html"
 
 
-
 website:
   title: "flashr decks"
   navbar:
