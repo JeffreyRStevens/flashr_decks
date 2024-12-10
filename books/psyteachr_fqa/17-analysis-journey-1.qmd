@@ -1,0 +1,655 @@
+# Analysis Journey 1: Data Wrangling {#journey-01-wrangling}
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+# Load the tidyverse package below
+library(tidyverse)
+
+# Load the data files
+# This should be the Bartlett_demographics.csv file 
+demog <- read_csv("data/Bartlett_demographics.csv")
+
+# This should be the Bartlett_trials.csv file 
+trials <- read_csv("data/Bartlett_trials.csv")
+```
+
+
+Welcome to the first data analysis journey. We have designed these chapters as a bridge between the structured learning in the core chapters and your assessments. We present you with a new data set, show you what the end product should look like, and see if you can apply your data wrangling, visualisation, and/or analysis skills to get there. 
+
+As you gain independence, this is the crucial skill. Data analysis is all about seeing the data you have available to you and identifying what the end product needs to be to apply your visualisation and analysis techniques. You can then mentally (or physically) create a checklist of tasks to work backwards to get there. There might be a lot of trial and error as you try one thing, it does not quite work, so you go back and try something else. If you get stuck though, we have a range of hints and task lists you can unhide, then the solution to check your attempts against. 
+
+In this first data analysis journey, we focus on data wrangling to apply all the skills you developed from Chapter 1 to Chapter 6. 
+
+## Task preparation
+
+### Introduction to the data set 
+
+For this task, we are using open data from @bartlett_no_2022. The abstract of their article is:
+
+> Both daily and non-daily smokers find it difficult to quit smoking long-term. One factor associated with addictive behaviour is attentional bias, but previous research in daily and non-daily smokers found inconsistent results and did not report the reliability of their cognitive tasks. Using an online sample, we compared daily (n = 106) and non-daily (n = 60) smokers in their attentional bias towards smoking pictures. Participants completed a visual probe task with two picture presentation times: 200ms and 500ms. In confirmatory analyses, there were no significant effects of interest, and in exploratory analyses, equivalence testing showed the effects were statistically equivalent to zero. The reliability of the visual probe task was poor, meaning it should not be used for repeated testing or investigating individual differences. The results can be interpreted in line with contemporary theories of attentional bias where there are unlikely to be stable trait-like differences between smoking groups. Future research in attentional bias should focus on state-level differences using more reliable measures than the visual probe task.
+
+To summarise, they compared two daily and non-daily smokers on something called attentional bias. This is the idea that when people use drugs often, things associated with those drugs grab people's attention. 
+
+To measure attentional bias, participants completed a dot probe task. This is a computer task where participants see two pictures side-by-side: one related to smoking like someone holding a cigarette and one unrelated to smoking like someone holding a fork. Both the images disappear and a small dot appears in the location of one of the images. Participants must press left or right on the keyboard to identify where the dot appeared. This process is repeated many times for different images, different locations of the dot, and different durations of showing the images. The idea is if smoking images grab people's attention, they will be able to identify the dot location faster on average when it appears in the location of the smoking images compared to when it appears in the location of the the non-smoking images. 
+
+Response time tasks like this are incredibly common in psychology and cognitive neuroscience, and being able to wrangle hundreds of trials is a great demonstration of your new data skills. After setting up your files and project for the chapter, we will outline the kind of problems you are trying to solve. 
+
+### Organising your files and project for the task
+
+Before we can get started, you need to organise your files and project for the task, so your working directory is in order.
+
+1. In your folder for research methods and the book `ResearchMethods1_2/Quant_Fundamentals`, create a new folder for the data analysis journey called `Journey_01_wrangling`. Within `Journey_01_wrangling`, create two new folders called `data` and `figures`.
+
+2. Create an R Project for `Journey_01_wrangling` as an existing directory for your chapter folder. This should now be your working directory.
+
+3. Create a new R Markdown document and give it a sensible title describing the chapter, such as `Analysis Journey 1 - Data Wrangling`. Delete everything below line 10 so you have a blank file to work with and save the file in your `Journey_01_wrangling` folder. 
+
+4. We are working with data separated into two files. The links are data file one ([Bartlett_demographics.csv](data/Bartlett_demographics.csv)) and data file two ([Bartlett_trials.csv](data/Bartlett_trials.csv)). Right click the links and select "save link as", or clicking the links will save the files to your Downloads. Make sure that both files are saved as ".csv". Save or copy the file to your `data/` folder within `Journey_01_wrangling`.
+
+You are now ready to start working on the task! 
+
+## Overview
+
+### Load <pkg>tidyverse</pkg> and read the data files
+
+Before we explore what wrangling we need to do, load <pkg>tidyverse</pkg> and read the two data files. As a prompt, save the data files to these object names to be consistent with the activities below, but you can check the solution if you are stuck. 
+
+```{r eval=FALSE}
+# Load the tidyverse package below
+library(tidyverse)
+
+# Load the data files
+# This should be the Bartlett_demographics.csv file 
+demog <- ?
+
+# This should be the Bartlett_trials.csv file 
+trials <- ?
+```
+
+::: {.callout-tip collapse="true"}
+#### Show me the solution
+You should have the following in a code chunk: 
+
+```{r eval=FALSE}
+# Load the tidyverse package below
+library(tidyverse)
+
+# Load the data files
+# This should be the Bartlett_demographics.csv file 
+demog <- read_csv("data/Bartlett_demographics.csv")
+
+# This should be the Bartlett_trials.csv file 
+trials <- read_csv("data/Bartlett_trials.csv")
+```
+:::
+
+### Explore `demog` and `trials`
+
+The data from @bartlett_no_2022 is split into two data files. In `demog`, we have the participant ID (`participant_private_id`) and several demographic variables. 
+
+```{r echo=FALSE}
+glimpse(demog)
+```
+
+The columns (variables) we have in the data set are:
+
+| Variable       |       Type                       |           Description          |
+|:--------------:|:---------------------------------|:-------------------------------|
+| participant_private_id | `r typeof(demog$participant_private_id)`| Participant number. |
+| consent_given | `r typeof(demog$consent_given)`| 1 = informed consent, 2 = no consent. |
+| age | `r typeof(demog$age)`| Age in Years. |
+| cigarettes_per_week | `r typeof(demog$cigarettes_per_week)`| Do you smoke every week? Yes or No. |
+| smoke_everyday | `r typeof(demog$smoke_everyday)`| Do you smoke everyday? Yes or No. |
+| past_four_weeks | `r typeof(demog$past_four_weeks)`|  Have you smoked in the past four weeks? Yes or No. |
+| age_started_smoking | `r typeof(demog$age_started_smoking)`| Age started smoking in years. |
+| country_of_origin | `r typeof(demog$country_of_origin)`| Country of origin. |
+| cpd | `r typeof(demog$cpd)`| How many cigarettes do you smoke per day? |
+| ethnicity | `r typeof(demog$ethnicity)`| What is your ethniciity? |
+| gender | `r typeof(demog$gender)`| What is your gender?  |
+| last_cigarette | `r typeof(demog$last_cigarette)`| How long in minutes since your last cigarette? |
+| level_education | `r typeof(demog$level_education)`| What is your highest level of education? |
+| technical_issues | `r typeof(demog$technical_issues)`| Did you experience any technical issues? Yes or No |
+| FTND_1 to FTND_6 | `r typeof(demog$FTND_1)`| Six items of the Fagerstrom Test for Nicotine Dependence |
+
+In `trials`, we then have the participant ID (`participant_private_id`) and trial-by-trial information from the software Gorilla (an online experiment service). This is probably the biggest data set you have come across so far as we have hundreds of trials per participant. 
+
+```{r echo=FALSE}
+glimpse(trials)
+```
+
+The columns (variables) we have in the data set are:
+
+| Variable       |       Type                       |           Description          |
+|:--------------:|:---------------------------------|:-------------------------------|
+| participant_private_id | `r typeof(trials$participant_private_id)`| Participant number. |
+| trial_number | `r typeof(trials$trial_number)`| Trial number as an integer, plus start and end task. |
+| reaction_time | `r typeof(trials$reaction_time)`| Participant response time in milliseconds (ms) |
+| response | `r typeof(trials$response)`| Keyboard response from participant. Left or Right. |
+| correct | `r typeof(trials$correct)`| Was the response correct? 1 = correct, 0 = incorrect. |
+| display | `r typeof(trials$display)`| Trial display: e.g., practice, trials, instructions, breaks. |
+| answer | `r typeof(trials$answer)`| What is the correct answer? Left or Right. |
+| soa | `r typeof(trials$soa)`| Stimulus onset asynchrony. How long the images were shown for: 200ms or 500ms. |
+| screen_name | `r typeof(trials$screen_name)`| Name of the screen: e.g., screen 1, fixation, stimuli, response. |
+| image_left | `r typeof(trials$image_left)`| Name of the image file in the left area. |
+| image_right | `r typeof(trials$image_right)`| Name of the image file in the right area. |
+| dot_left | `r typeof(trials$dot_left)`| Name of the dot image file in the left area. |
+| dot_right | `r typeof(trials$dot_right)`| Name of the dot image file in the right area. |
+| trial_type | `r typeof(trials$trial_type)`| Category of the trial: practice, neutral, nonsmoking, smoking. |
+| block | `r typeof(trials$block)`| Number of the trial block. |
+
+::: {.callout-tip}
+#### Try this
+Now we have introduced the two data sets, explore them using different methods we introduced. For example, opening the data objects as a tab to scroll around, explore with `glimpse()`, or even try plotting some of the variables to see what they look like using visualisation skills from Chapter 3. 
+
+Do you notice any variables that look the wrong type? Can you see any responses in there that are going to cause problems? 
+:::
+
+## Wrangling demographics
+
+```{r, warning=FALSE, echo=FALSE}
+demog_tidy <- demog %>% 
+  mutate(age_started_smoking = as.integer(age_started_smoking),
+         cpd = as.integer(cpd),
+         country_of_origin = as.factor(country_of_origin),
+         ethnicity = as.factor(ethnicity),
+         gender = as.factor(gender),
+         last_cigarette = as.double(last_cigarette),
+         level_education = as.factor(level_education),
+         daily_smoker = as.factor(case_match(smoke_everyday,
+                                             "Yes" ~ "Daily Smoker",
+                                             "No" ~ "Non-daily Smoker")))
+
+FTND_sum <- demog_tidy %>% 
+  pivot_longer(cols = FTND_1:FTND_6,
+               names_to = "Item",
+               values_to = "Response") %>% 
+  group_by(participant_private_id) %>% 
+  summarise(FTND_sum = sum(Response))
+
+demog_tidy <- demog_tidy %>% 
+  inner_join(y = FTND_sum,
+             by = "participant_private_id")
+```
+
+
+For this kind of data, we recommend wrangling each file first, before joining them together. Starting with the demographics file, there are a few wrangling steps before the data are ready to summarise. We are going to show you a preview of the starting data set and the end product we are aiming for.
+
+::: {.panel-tabset}
+#### Raw data
+
+```{r echo=FALSE}
+glimpse(demog)
+```
+
+#### Wrangled data
+
+```{r echo=FALSE}
+glimpse(demog_tidy)
+```
+:::
+
+::: {.callout-tip}
+#### Try this
+
+Before we give you a task list, try and switch between the raw data and the wrangled data. Make a list of all the differences you can see between the two data objects. 
+
+1. What type is each variable? Has it changed from the raw data? 
+
+2. Do we have any new variables? How could you create these from the variables available to you? 
+
+For the variable `daily_smoker`, this has two levels which you cannot see in the preview: "Daily Smoker" and "Non-daily Smoker". Which variable could this be based on? 
+
+Try and wrangle the data based on all the differences you notice to create a new object `demog_tidy`. 
+
+When you get as far as you can, check the task list which explains all the steps we applied, but not how to do them. Then, you can check the solution for our code. 
+
+:::
+
+### Task list
+
+::: {.callout-note collapse="true"} 
+#### Show me the task list
+
+These are all the steps we applied to create the wrangled data object:
+
+1. Convert `age_started_smoking` to an integer (as age is a round number).
+
+2. Convert `cpd` to an integer (as cigarettes per day is a round number). You will notice a warning about introducing an NA as some nonsense responses cannot be converted to a number.  
+
+3. Convert `country_of_origin` to a factor (as we have distinct categories).
+
+4. Convert `ethnicity` to a factor (as we have distinct categories). 
+
+5. Convert `gender` to a factor (as we have distinct categories). 
+
+6. Convert `last_cigarette` to an integer (as time since last cigarette in minutes is a round number). You will notice a warning about introducing an NA as some nonsense responses cannot be converted to a number.
+
+7. Convert `level_education` to a factor (as we have distinct categories). 
+8. Create a new variable `daily_smoker` by recoding an existing variable. The new variable should have two levels: "Daily Smoker" and "Non-daily Smoker". In the process, convert `daily_smoker` to a factor (as we have distinct categories).
+
+9. Create a new variable `FTND_sum` by taking the sum of the six items `FTND_1` to `FTND_6` per participant. 
+
+For some advice, think of everything we covered in Chapters 4 to 6. How could you complete these steps as efficiently as possible? Could you string together functions using pipes, or do you need some intermediary objects? If it's easier for you to complete steps with longer but accurate code, there is nothing wrong with that. You recognise ways to make your code more efficient over time. 
+
+:::
+
+### Solution
+
+::: {.callout-caution collapse="true"} 
+#### Show me the solution
+
+This is the code we used to create the new object `demog_tidy` using the original object `demog`. As long as you get the same end result, the exact code is not important. In coding, there are multiple ways of getting to the same end result. Maybe you found a more efficient way to complete some of the steps compared to us. Maybe your code was a little longer. As long as it worked, that is the most important thing.
+
+```{r eval=FALSE}
+# Using demog, create a new object demog_tidy
+# apply mutate to convert or create variables
+demog_tidy <- demog %>% 
+  mutate(age_started_smoking = as.integer(age_started_smoking),
+         cpd = as.integer(cpd),
+         country_of_origin = as.factor(country_of_origin),
+         ethnicity = as.factor(ethnicity),
+         gender = as.factor(gender),
+         last_cigarette = as.integer(last_cigarette),
+         level_education = as.factor(level_education),
+         # we used smoke_everyday to create our daily_smoker variable
+         daily_smoker = as.factor(case_match(smoke_everyday,
+                                             "Yes" ~ "Daily Smoker",
+                                             "No" ~ "Non-daily Smoker")))
+# To calculate the sum of the 6 FTND items, 
+# pivot longer, group by ID, then sum responses. 
+FTND_sum <- demog_tidy %>% 
+  pivot_longer(cols = FTND_1:FTND_6,
+               names_to = "Item",
+               values_to = "Response") %>% 
+  group_by(participant_private_id) %>% 
+  summarise(FTND_sum = sum(Response))
+
+# Join this new column back to demog_tidy
+demog_tidy <- demog_tidy %>% 
+  inner_join(y = FTND_sum,
+             by = "participant_private_id")
+
+```
+:::
+
+## Wrangling trials
+
+```{r, warning=FALSE, echo=FALSE, message=FALSE}
+# filter trials to focus on correct responses and key trials
+trials_tidy <- trials %>% 
+  filter(screen_name == "response",
+         trial_type %in% c("nonsmoking", "smoking"),
+         correct == 1)
+
+# Calculate median RT per ID, SOA, and trial type
+average_trials <- trials_tidy %>% 
+  group_by(participant_private_id, soa, trial_type) %>% 
+  summarise(median_RT = median(reaction_time)) %>% 
+  mutate(condition = paste0(trial_type, soa)) %>% 
+  ungroup()
+
+# Create wide data by making a new condition variable
+# remove soa and trial type
+# pivot wider for four columns per participant
+RT_wide <- average_trials %>% 
+  select(-soa, -trial_type) %>% 
+  pivot_wider(names_from = condition,
+              values_from = median_RT)
+
+```
+
+Turning to the trials file, there are a few wrangling steps and you will probably need the task list more for this part than you did for demographics. Some of the steps might not be as obvious but it is still important to compare the objects and see if you can identify the changes. We are going to show you a preview of the starting data set, and the end product we are aiming for in step 3.
+
+::: {.panel-tabset}
+#### Original raw data
+
+```{r echo=FALSE}
+glimpse(trials)
+```
+
+#### Step 1
+
+```{r echo=FALSE}
+glimpse(trials_tidy)
+```
+
+#### Step 2
+
+```{r echo=FALSE}
+glimpse(average_trials)
+```
+
+#### Step 3
+
+```{r echo=FALSE}
+glimpse(RT_wide)
+```
+:::
+
+::: {.callout-tip}
+#### Try this
+
+Before we give you a task list, try and switch between the raw data and the three steps we took for wrangling the data. Make a list of all the differences you can see across the steps. 
+
+This part of the data wrangling is quite difficult if you are unfamiliar with dealing with response time tasks as you need to know what the end product should look like to work with later. Essentially, we want the median response time per participant per condition (across trial type and soa). There are rows we do not need, variables to create, and data to restructure. So, it takes all your wrangling skills you have learnt so far. 
+
+1. In step 1, how many observations do we have compared to the raw data? Knowing the design is important here, so look at the columns `correct`, `screen_name`, and `trial_type`. What function might reduce the number of observations like this?  
+
+2. In step 2, how many observations do we have compared to step 1? How many observations do we have per participant ID? What new variables do we have and how could you make them? Hint: for `condition`, we have not covered this, so look up a function called `paste0()`.
+
+3. In step 3, how many observations do we have compared to step 2? Have we removed any columns compared to step 2? Have the data been restructured? 
+
+Try and wrangle the data based on all the differences you notice to create a new object `RT_wide` shown in step 3. 
+
+When you get as far as you can, check the task list which explains all the steps we applied, but not how to do them. Then, you can check the solution for our code. 
+
+:::
+
+### Task list
+
+For this part, we will separate the task list into the three steps in case you want to test yourself at each stage. 
+
+::: {.callout-note collapse="true"} 
+#### Show me the step 1 task list
+
+These are all the steps we applied to create the wrangled data object:
+
+1. Create an object `trials_tidy` using the original `trials` data. 
+
+2. Filter observations using three variables: 
+
+    - `screen_name` should only include "response".
+    
+    - `trial_type` should only include "nonsmoking" and "smoking".
+    
+    - `correct` should only include 1 (correct responses). 
+
+:::
+
+::: {.callout-note collapse="true"} 
+#### Show me the step 2 task list
+
+These are all the steps we applied to create the wrangled data object:
+
+1. Create an object `average_trials` using the `trials_tidy` object from step 1. 
+
+2. Group observations by three variables: `participant_private_id`, `soa`, and `trial_type`.
+
+3. Summarise the data to create a new variable `median_RT` by calculating the median `reaction_time`. 
+
+4. Create a new variable called `condition` by combining the names of the `trial_type` and `soa` columns. Hint: this is a new concept, so try this `paste0(trial_type, soa)`. There are a few ways of dealing with this problem, but we are trying to avoid turning `soa` into variable names, as R does not like having variable names start with or be completely numbers.
+
+5. Ungroup to avoid the groups carrying over into future objects. 
+
+:::
+
+::: {.callout-note collapse="true"} 
+#### Show me the step 3 task list
+
+These are all the steps we applied to create the wrangled data object:
+
+1. Create an object `RT_wide` using the `average_trials` object from step 2.
+
+2. Remove the variables `soa` and `trial_type` to avoid problems with restructuring. You could use the argument, 
+
+3. Restructure the data so your `condition` variable is spread across columns.
+
+:::
+
+### Solution
+
+::: {.callout-caution collapse="true"} 
+#### Show me the solution
+
+This is the code we used to create the new object `RT_wide` by following three steps. You could do it in two to combine the first two steps, but we wanted to make the change between filtering and grouping/summarising more obvious before showing you the task list. 
+
+Remember: As long as you get the same end result, the exact code is not important. In coding, there are multiple ways of getting to the same end result.
+
+```{r eval=FALSE}
+# filter trials to focus on correct responses and key trials
+trials_tidy <- trials %>% 
+  filter(screen_name == "response",
+         trial_type %in% c("nonsmoking", "smoking"),
+         correct == 1)
+
+# Calculate median RT per ID, SOA, and trial type
+average_trials <- trials_tidy %>% 
+  group_by(participant_private_id, soa, trial_type) %>% 
+  summarise(median_RT = median(reaction_time)) %>% 
+  mutate(condition = paste0(trial_type, soa)) %>% 
+  ungroup() # ungroup to avoid it carrying over
+
+# Create wide data by making a new condition variable
+# remove soa and trial type
+# pivot wider for four columns per participant
+RT_wide <- average_trials %>% 
+  select(-soa, -trial_type) %>% 
+  pivot_wider(names_from = condition,
+              values_from = median_RT)
+
+```
+:::
+
+## Combining objects and exclusion criteria
+
+```{r, warning=FALSE, echo=FALSE}
+# create full_data by joining the two objects
+# filter data by four criteria
+full_data <- demog_tidy %>% 
+  inner_join(y = RT_wide,
+             by = "participant_private_id") %>% 
+  filter(consent_given == 1,
+         age >= 18 & age <= 60,
+         past_four_weeks == "Yes",
+         technical_issues == "No")
+```
+
+Great work so far! You should now have two wrangled objects: `demog_tidy` and `RT_wide`. The next step is combining them and applying exclusion criteria from the study. 
+
+We are going to give you the task list immediately for this as you need to understand the methods to know what criteria to use. We still challenge you to complete the tasks though, before checking your answers against the code we used. 
+
+::: {.callout-note}
+#### Task list
+
+Complete the following tasks to apply the final data wrangling steps: 
+
+1. Create a new object called `full_data` by joining your two data objects`demog_tidy` and `RT_wide` using a common identifier. 
+
+2.  Filter observations using the following criteria:
+
+    - `consent_given` should only include 1. We only want people who consented. 
+    
+    - `age` range only between 18 and 60. We do not want people younger or older than this range. 
+    
+    - `past_four_weeks` should only include "Yes". We do not want people who have not smoked in the past four weeks. 
+    
+    - `technical_issues` should only include "No". We do not want people who experienced technical issues during the study. 
+:::
+
+### Solution
+
+::: {.callout-caution collapse="true"} 
+#### Show me the solution
+
+This is the code we used to create the new object `full_data` by joining `demog_tidy` and `RT_wide`, and filtering observations based on our four criteria. 
+
+As long as you get the same end result, the exact code is not important. In coding, there are multiple ways of getting to the same end result.
+
+```{r eval=FALSE}
+# create full_data by joining the two objects
+# filter data by four criteria
+full_data <- demog_tidy %>% 
+  inner_join(y = RT_wide,
+             by = "participant_private_id") %>% 
+  filter(consent_given == 1,
+         age >= 18 & age <= 60,
+         past_four_weeks == "Yes",
+         technical_issues == "No")
+```
+:::
+
+## Summarising/visualising your data
+
+```{r echo=FALSE}
+write_csv(full_data, "data/Bartlett_full_data.csv")
+```
+
+That is all the wrangling complete! Hopefully, this reinforces the role of reproducibility and data skills. If you did this in other software like Excel, you might not have a paper trail of all the steps. Like this, you have the full code to apply all the wrangling steps from raw data which you can run every time you need to, and edit it if you found a mistake or wanted to add something new. You can also come back to the file later to add more code (such as after Chapter 7 to plot more of the data, or Chapter 13 for some inferential statistics).
+
+To finish the journey, we have some practice tasks for summarising and visualising the data. The whole purpose of @bartlett_no_2022 was to compare daily and non-daily smokers, so we will explore some of the key variables. 
+
+All of the questions are based on the final `full_data` object. If your answers differ, check the wrangling steps above. If you are really struggling to identify the difference, or you just wanted to complete these tasks, you can download a spreadsheet version of `full_data` here: [Bartlett_full_data.csv](data/Bartlett_full_data.csv).
+
+### Demographics
+
+1. How many daily and non-daily smokers were there? There were `r fitb(115)` daily smokers and `r fitb(63)` non-daily smokers. 
+
+::: {.callout-caution collapse="true"} 
+#### Show me the solution
+
+```{r}
+full_data %>% 
+  count(daily_smoker)
+```
+:::
+
+2. To 2 decimal places, the mean age of **all** the participants was `r fitb(31.07)` (*SD* = `r fitb(9.22)`).
+
+::: {.callout-caution collapse="true"} 
+#### Show me the solution
+
+```{r}
+full_data %>% 
+  summarise(mean_age = round(mean(age), 2),
+            sd_age = round(sd(age), 2))
+```
+:::
+
+3. A histogram of all the participants' ages looks like: 
+
+```{r warning=FALSE, message=FALSE, echo=FALSE}
+full_data %>% 
+  ggplot(aes(x = age)) + 
+  geom_histogram() + 
+  scale_x_continuous(name = "Age") + 
+  scale_y_continuous(name = "Frequency") + 
+  theme_classic()
+```
+
+::: {.callout-caution collapse="true"} 
+#### Show me the solution
+
+```{r warning=FALSE, message=FALSE, eval=FALSE}
+full_data %>% 
+  ggplot(aes(x = age)) + 
+  geom_histogram() + 
+  scale_x_continuous(name = "Age") + 
+  scale_y_continuous(name = "Frequency") + 
+  theme_classic()
+```
+:::
+
+4. A bar plot of the gender breakdown of the sample would look like: 
+
+```{r echo=FALSE}
+full_data %>% 
+  ggplot(aes(x = gender)) + 
+  geom_bar() +
+  scale_x_discrete(name = "Gender") + 
+  scale_y_continuous(name = "Frequency") + 
+  theme_classic()
+```
+
+::: {.callout-caution collapse="true"} 
+#### Show me the solution
+
+```{r eval=FALSE}
+full_data %>% 
+  ggplot(aes(x = gender)) + 
+  geom_bar() +
+  scale_x_discrete(name = "Gender") + 
+  scale_y_continuous(name = "Frequency") + 
+  theme_classic()
+```
+:::
+
+### Measures of smoking dependence 
+
+5. To 2 decimal places, for daily smokers the mean number of cigarettes per day was `r fitb(8.85)` (*SD* = `r fitb(6.51)`) and for non-daily smokers the mean number of cigarettes per day was `r fitb(2.32)` (*SD* = `r fitb(2.69)`).
+
+::: {.callout-caution collapse="true"} 
+#### Show me the solution
+
+```{r}
+full_data %>% 
+  group_by(daily_smoker) %>% 
+  summarise(mean_cpd = round(mean(cpd, na.rm = TRUE), 2),
+            sd_cpd = round(sd(cpd, na.rm = TRUE), 2))
+```
+:::
+
+6. To 2 decimal places, for daily smokers the mean FTND sum score was `r fitb(2.61)` (*SD* = `r fitb(2.20)`) and for non-daily smokers the mean number of cigarettes per day was `r fitb(0.49)` (*SD* = `r fitb(1.28)`).
+
+::: {.callout-caution collapse="true"} 
+#### Show me the solution
+
+```{r}
+full_data %>% 
+  group_by(daily_smoker) %>% 
+  summarise(mean_FTND = round(mean(FTND_sum, na.rm = TRUE), 2),
+            sd_FTND = round(sd(FTND_sum, na.rm = TRUE), 2))
+```
+:::
+
+### Attentional bias
+
+7. Before answering the following questions, complete one extra data wrangling step to create difference scores where positive values mean attentional bias towards smoking images (faster responses to smoking compared to non-smoking stimuli):
+
+    - Create a new variable called `difference_200` by calculating `nonsmoking200` - `smoking200`. 
+    
+    - Create a new variable called `difference_500` by by calculating `nonsmoking500` - `smoking500`. 
+    
+::: {.callout-caution collapse="true"} 
+#### Show me the solution
+
+```{r}
+full_data <- full_data %>% 
+  mutate(difference_200 = nonsmoking200 - smoking200,
+         difference_500 = nonsmoking500 - smoking500)
+```
+:::
+
+8. To 2 decimal places, the mean difference in attentional bias in the 200ms condition was `r fitb(1.25)` (*SD* = `r fitb(23.91)`) for daily smokers and `r fitb(-2.74)` (*SD* = `r fitb(21.27)`) for non-daily smokers.
+
+::: {.callout-caution collapse="true"} 
+#### Show me the solution
+
+```{r}
+full_data %>% 
+  group_by(daily_smoker) %>% 
+  summarise(mean_bias_200 = round(mean(difference_200, na.rm = TRUE), 2),
+            sd_bias_200 = round(sd(difference_200, na.rm = TRUE), 2))
+```
+:::
+
+9. To 2 decimal places, the mean difference in attentional bias in the 500ms condition was `r fitb(0.76)` (*SD* = `r fitb(21.66)`) for daily smokers and `r fitb(-1.19)` (*SD* = `r fitb(14.51)`) for non-daily smokers.
+
+::: {.callout-caution collapse="true"} 
+#### Show me the solution
+
+```{r}
+full_data %>% 
+  group_by(daily_smoker) %>% 
+  summarise(mean_bias_500 = round(mean(difference_500, na.rm = TRUE), 2),
+            sd_bias_500 = round(sd(difference_500, na.rm = TRUE), 2))
+```
+:::
+
+If you are currently completing this after Chapter 6, we have not covered visualising continuous data or inferential statistics yet. Try coming back to these tasks to compare these measures when you have finished Chapter 7 for more advanced visualisation and Chapter 13 for factorial ANOVA. 
+
+A difference score of 0 means no bias towards smoking or non-smoking images. So, you can see the paper did not find either group showed much attentional bias towards smoking images nor much difference between the groups, hence why it was published in the *Journal of Trial and Error*. 
+
+## Conclusion
+
+Well done! Hopefully you recognised how far your skills have come to be able to do this independently, regardless of how many hints you needed. 
+
+These are real skills people use in research. If you are curious, @bartlett_no_2022 shared their code as a reproducible manuscrupt, so you can see all the wrangling steps they completed by looking at [this file on the Open Science Framework](https://osf.io/xpgt3){target="_blank"}. We did not include all of them here as there are concepts like outliers we had not covered by Chapter 6. 

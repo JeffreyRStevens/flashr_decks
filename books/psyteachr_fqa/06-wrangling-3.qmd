@@ -1,0 +1,1034 @@
+# Data Wrangling 3: Pivots and Pipes {#06-wrangling-03}
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Load the tidyverse package below
+library(tidyverse)
+
+# Load the data files
+# This should be the Alter_2024_demographics.csv file 
+demog <- read_csv("data/Alter_2024_demographics.csv")
+
+# This should be the Alter_2024_scales.csv file 
+scales <- read_csv("data/Alter_2024_scales.csv")
+
+```
+
+In the last chapter, we added two more functions to your data wrangling toolkit. You learnt how to filter data to retain or remove observations and summarise data to calculate different summary statistics. 
+
+In this chapter, we start with another recap of all your data wrangling skills so far on a new data set. There is no substitute for practice when it comes to data skills. By applying your skills to new data, you can transfer your knowledge to novel scenarios and develop independence. We then add two more sets of data wrangling functions. First, we demonstrate pivots to restructure your data from wide format into long format, and vice versa. Second, we show how you can string together multiple functions from the <pkg>tidyverse</pkg> using pipes. These help streamline your code to avoid creating lots of intermediary objects. 
+
+After this chapter, you will be ready for the first data analysis journey chapter: [Analysis Journey 1: Data Wrangling](#journey-01-wrangling). This is where you can test the skills you have developed so far on a more independent task as a bridge between the core chapters and your assessments. 
+
+**Chapter Intended Learning Outcomes (ILOs)**
+
+By the end of this chapter, you will be able to: 
+
+- Apply all your data wrangling skills to a new data set. 
+
+- Restructure data into different formats, such as long and wide form. 
+
+- Understand the tidy data structure for how most of the <pkg>tidyverse</pkg> functions expect your data to look. 
+
+- String together multiple functions using pipes. 
+
+## Chapter preparation
+
+### Introduction to the data set 
+
+For this chapter, we are using open data from @alter_vssl_2024. The abstract of their article is:
+
+> The biggest difference in statistical training from previous decades is the increased use of software. However, little research examines how software impacts learning statistics. Assessing the value of software to statistical learning demands appropriate, valid, and reliable measures. The present study expands the arsenal of tools by reporting on the psychometric properties of the Value of Software to Statistical Learning (VSSL) scale in an undergraduate student sample. We propose a brief measure with strong psychometric support to assess students' perceived value of software in an educational setting. We provide data from a course using SPSS, given its wide use and popularity in the social sciences. However, the VSSL is adaptable to any statistical software, and we provide instructions for customizing it to suit alternative packages. Recommendations for administering, scoring, and interpreting the VSSL are provided to aid statistics instructors and education researchers understand how software influences students' statistical learning.
+
+To summarise, they developed a new scale to measure students' perceived value of software to learning statistics - Value of Software to Statistical Learning (VSSL). The authors wanted to develop this scale in a way that could be adapted to different software, from SPSS in their article (which some of you may have used in the past), to perhaps R in future. Alongside data from their new scale, they collected data from other scales measuring a similar kind of construct (e.g., Students' Attitudes toward Statistics and Technology) and related constructs (e.g., Quantitative Attitudes). 
+
+In this chapter, we will wrangle their data to reinforce skills from Chapter 4 and 5. Scale data is extremely common to work with in psychology and there is a high likelihood you will use one or more in your dissertation or future careers. After recapping skills from the past two chapters on this new data set, we will add more data wrangling functions to your toolkit. 
+
+### Organising your files and project for the chapter
+
+Before we can get started, you need to organise your files and project for the chapter, so your working directory is in order.
+
+1. In your folder for research methods and the book `ResearchMethods1_2/Quant_Fundamentals`, you should have a folder from chapter 4 called `Chapter_04_06_datawrangling` where you created an R Project. 
+
+2. Create a new R Markdown document and give it a sensible title describing the chapter, such as `06 Data Wrangling 3`. Delete everything below line 10 so you have a blank file to work with and save the file in your `Chapter_04_06_datawrangling` folder. 
+
+4. We are working with a new data set separated into two files. The links are data file one ([Alter_2024_demographics.csv](data/Alter_2024_demographics.csv)) and data file two ([Alter_2024_scales.csv](data/Alter_2024_scales.csv)). Right click the links and select "save link as", or clicking the links will save the files to your Downloads. Make sure that both files are saved as ".csv". Save or copy the file to your `data/` folder within `Chapter_04_06_datawrangling`.
+
+You are now ready to start working on the chapter! 
+
+## Recapping all the previous <pkg>dplyr</pkg> functions
+
+In this first section, we will prepare the data for some analysis later by practicing the data wrangling skills you learnt in Chapters 4 and 5 on this new data set. 
+
+### Activity 1 - Load <pkg>tidyverse</pkg> and read the data files
+
+As the first activity, load <pkg>tidyverse</pkg> and read the two data files. As a prompt, save the data files to these object names to be consistent with the activities below, but you can check your answer below if you are stuck. 
+
+```{r eval=FALSE}
+# Load the tidyverse package below
+?
+
+# Load the data files
+# This should be the Alter_2024_demographics.csv file 
+demog <- ?
+
+# This should be the Alter_2024_scales.csv file 
+scales <- ?
+```
+
+::: {.callout-tip collapse="true"}
+#### Show me the solution
+You should have the following in a code chunk: 
+
+```{r eval=FALSE}
+# Load the tidyverse package below
+library(tidyverse)
+
+# Load the data files
+# This should be the Alter_2024_demographics.csv file 
+demog <- read_csv("data/Alter_2024_demographics.csv")
+
+# This should be the Alter_2024_scales.csv file 
+scales <- read_csv("data/Alter_2024_scales.csv")
+```
+
+:::
+
+### Activity 2 - Explore `demog` and `scales`
+
+The data from @alter_vssl_2024 is split into two data files. In `demog`, we have the participant ID (`StudentIDE`) and several demographic variables. The columns (variables) we have in the data set are:
+
+| Variable       |       Type                       |           Description          |
+|:--------------:|:---------------------------------|:-------------------------------|
+| StudentIDE    | `r typeof(demog$StudentIDE)`| Participant number             |
+| GenderE    | `r typeof(demog$GenderE)`| Gender: 1 = Female, 2 = Male, 3 = Non-Binary |
+| RaceEthE    | `r typeof(demog$RaceEthE)`| Race: 1 = Black/African American, 2 = Hispanic/Other Latinx, 3 = White, 4 = Multiracial, 5 = Asian/Pacific Islander, 6 = Native American/Alaska Native, 7 = South/Central American |
+| GradeE    | `r typeof(demog$GradeE)`| Expected grade: 1 = A,	2 = B,	3 = C, 4 = D,	5 = F |
+| StuStaE    | `r typeof(demog$StuStaE)`| Student status: 1 = Freshman, 2 = Sophomore,	3 = Junior,	4 = Senior or Higher |
+| GPAE    | `r typeof(demog$GPAE)`| Expected Grade Point Average (GPA) |
+| MajorE    | `r typeof(demog$MajorE)`| Degree major |
+| AgeE    | `r typeof(demog$AgeE)`| Age in years |
+
+In `scales`, we then have the participant ID (`StudentIDE`) and all the individual scale items. The columns (variables) we have in the data set are:
+
+| Variable       |       Type                       |           Description          |
+|:--------------:|:---------------------------------|:-------------------------------|
+| StudentIDE    | `r typeof(demog$StudentIDE)`| Participant number             |
+| MA1E to MA8E    | `r typeof(scales$MA1E)`| **Enjoyment of Mathematics and statistics**, not analysed in this study. |
+| QANX1E to QANX4E    | `r typeof(scales$QANX1E)`| **Quantitative anxiety**: four items scored on a 5-point Likert scale ranging from 1 (Not at all Anxious) to 5 (Extremely Anxious) |
+| QINFL1E to QINFL7E    | `r typeof(scales$QINFL1E)`| **Quantitative attitudes**: seven items scored on a 5-point Likert scale ranging from 1 (Strongly Disagree) to 5 (Strongly Agree) |
+| QSF1E to QSF4E    | `r typeof(scales$QSF1E)`| **Study motivation**, not analysed in this study. |
+| QHIND1E to QHIND5E    | `r typeof(scales$QHIND1E)`| **Quantitative hindrances**: five items scored on a 5-point Likert scale ranging from 1 (Strongly Disagree) to 5 (Strongly Agree) |
+| QSC1E to QSC4E    | `r typeof(scales$QSC1E)`| **Mathematical self-efficacy**, not analysed in this study. |
+| QSE1E to QSE6E    | `r typeof(scales$QSE1E)`| **Mathematical ability**, not analysed in this study. |
+| SPSS1E to SPSS10E    | `r typeof(scales$SPSS1E)`| **VSSL scale on SPSS**: 10 items scored on a 5-point Likert scale ranging from 1 (Never True) to 5 (Always True) |
+
+::: {.callout-tip}
+#### Try this
+Now we have introduced the two data sets, explore them using different methods we introduced. For example, opening the data objects as a tab to scroll around, explore with `glimpse()`, or even try plotting some of the variables to see what they look like using visualisation skills from Chapter 3. 
+:::
+
+### Activity 3 - Joining the two data sets using `inner_join()`
+
+At the moment, we have two separate data sets, but it will make things easier to join them together so we have both demographic information and the participants' responses to the scales. 
+
+We did not recap joining data sets in the last chapter, so you might need to revisit Chapter 4 - [Joining two data frames](#04-joins)  - for a recap. 
+
+Create a new data object called `full_data` and see if you can spot a common variable between both data sets that you can use an identifier. 
+
+```{r eval=FALSE}
+# join demog and scales by a common identifier 
+full_data <- ?
+```
+
+::: {.callout-tip collapse="true"}
+#### Show me the solution
+You should have the following in a code chunk: 
+
+```{r}
+# join demog and scales by a common identifier 
+full_data <- inner_join(x = demog,
+                        y = scales,
+                        by = "StudentIDE")
+```
+:::
+
+### Activity 4 - Selecting a range of columns using `select()`
+
+There are some scales in the data that @alter_vssl_2024 did not analyse, so we can get rid of them to declutter. Furthermore, the purpose of their study was to validate the new VSSL scale and they found some items did not make the cut. Create a new object called `full_data_select` and retain the following variables from your new `full_data` object:
+
+- `StudentIDE`
+
+- `GenderE`
+
+- `RaceEthE`
+
+- `AgeE` 
+
+- `QANX1E` to `QINFL7E`
+
+- `QHIND1E` to `QHIND5E`
+
+- `SPSS1E`, `SPSS4E`, `SPSS5E`, `SPSS6E`, `SPSS7E`, `SPSS8E`, `SPSS9E`. 
+
+Remember: you can select variables either by **retaining** the variables you want to keep, or **removing** the variables you want to remove. You should have **27** columns remaining. 
+
+```{r eval=FALSE}
+# select the key variables listed above
+full_data_select <- ?
+```
+
+::: {.callout-tip collapse="true"}
+#### Show me the solution
+You should have the following in a code chunk if you chose to retain: 
+
+```{r}
+# select the key variables listed above
+full_data_select <- select(full_data,
+                           StudentIDE, 
+                           GenderE,
+                           RaceEthE, 
+                           AgeE, 
+                           QANX1E:QINFL7E, 
+                           QHIND1E:QHIND5E, 
+                           SPSS1E, SPSS4E, SPSS5E, SPSS6E, SPSS7E, SPSS8E, SPSS9E)
+```
+
+or the following if you chose to remove: 
+
+```{r eval=FALSE}
+# select the key variables listed above
+full_data_select <- select(full_data,
+                           -GradeE, 
+                           -StuStaE, 
+                           -GPAE, 
+                           -MajorE, 
+                           -MA1E:-MA8E,
+                           -QSF1E:-QSF4E,
+                           -QSC1E:-QSE6E,
+                           -SPSS2E, -SPSS3E, -SPSS10E)
+```
+
+There are a similar number to retain or remove, so there is no real time saving one way or the other. 
+:::
+
+### Activity 5 - Reorder observations using `arrange()` 
+
+For a quick check of the data, order the values of `AgeE` using the object `full_data_select` and answer the following questions:
+
+1. The youngest participant is `r fitb(18)` years old. 
+
+2. The old participant is `r fitb(39)` years old. 
+
+```{r eval=FALSE}
+# youngest participants
+?
+
+# oldest participants
+?
+```
+
+::: {.callout-tip collapse="true"}
+#### Show me the solution
+You should have the following in a code chunk: 
+
+```{r eval=FALSE}
+# youngest participants
+arrange(full_data_select, 
+        AgeE)
+
+# oldest participants
+arrange(full_data_select, 
+        desc(AgeE))
+```
+:::
+
+### Activity 6 - Modifying or creating variables using `mutate()`
+
+At the moment, we have categorical variables such gender (`GenderE`) and race (`RaceEthE`) which have numerical codes. When it comes to summarising or plotting later, this would not be the easiest to understand. 
+
+Using the `full_data_select` object, use `mutate()` to recode these two existing variables and replace the numbers with labels and create a new object `full_data_mutate`. As a reminder of what each number refers to: 
+
+`GenderE`
+
+- 1 = Female
+
+- 2 = Male
+
+- 3 = Non-binary
+
+`RaceEthE`
+
+- 1 = Black/African American
+
+- 2 = Hispanic/Other Latinx
+
+- 3 = White
+
+- 4 = Multiracial
+
+- 5 = Asian/Pacific Islander
+
+- 6 = Native American/Alaska Native
+
+- 7 = South/Central American
+
+```{r eval=FALSE}
+# recode gender and race to labels
+full_data_mutate <- ?
+```
+
+::: {.callout-tip collapse="true"}
+#### Show me the solution
+You should have the following in a code chunk (some lines wrap due to being quite long, but it will look right if you copy and paste it to your RStudio): 
+
+```{r}
+# recode gender and race to labels
+full_data_mutate <- mutate(full_data_select,
+                           GenderE = case_match(GenderE,
+                                                1 ~ "Female",
+                                                2 ~ "Male",
+                                                3 ~ "Non-binary"),
+                           RaceEthE = case_match(RaceEthE,
+                                                 1 ~ "Black/African American",
+                                                 2 ~ "Hispanic/Other Latinx",
+                                                 3 ~ "White",
+                                                 4 ~ "Multiracial",
+                                                 5 ~ "Asian/Pacific Islander",
+                                                 6 ~ "Native American/Alaska Native",
+                                                 7 ~ "South/Central American"))
+```
+:::
+
+#### Bonus activity - reverse coding scales {#06-reverse-coding}
+
+For a bonus activity, we want to demonstrate a super common task when working with scale data. Often, scales will **`r glossary("reverse code", def = "Having two similar questions, one expressed in a positive way, and another expressed in a negative way.")`** some items to express the same idea in opposite ways: one positive and one negative. If the scale is measuring a consistent construct, the responses should be more positive in one and more negative in the other. If you analysed this immediately, you would get two opposing answers, so a key data wrangling step is reverse coding some items so all the numbers mean a similar thing. 
+
+In @alter_vssl_2024, the three VSSL items we removed were the ones which needed to be reverse coded, but it is a good excuse to practice. Using the `scales` object, what function could you use to recode existing responses? Hint: we want to recode 1 to 5, 2 to 4, etc. 
+
+```{r eval=FALSE}
+# recode items 2, 3, and 10
+scales_reverse <- mutate(scales,
+                         SPSS2_R = ?,
+                         SPSS3_R = ?,
+                         SPSS10_R = ?)
+```
+
+::: {.callout-tip collapse="true"}
+#### Show me the solution
+Based on what we covered before, we expect you will have completed a perfectly accurate but long process of recoding each item one by one: 
+
+```{r eval=FALSE}
+# recode items 2, 3, and 10
+scales_reverse <- mutate(scales,
+                         SPSS2_R = case_match(SPSS2E,
+                                              1 ~ 5,
+                                              2 ~ 4,
+                                              3 ~ 3,
+                                              4 ~ 2,
+                                              5 ~ 1),
+                         SPSS3_R = case_match(SPSS3E,
+                                              1 ~ 5,
+                                              2 ~ 4,
+                                              3 ~ 3,
+                                              4 ~ 2,
+                                              5 ~ 1),
+                         SPSS10_R = case_match(SPSS10E,
+                                              1 ~ 5,
+                                              2 ~ 4,
+                                              3 ~ 3,
+                                              4 ~ 2,
+                                              5 ~ 1))
+```
+
+However, there is a neat shortcut where you can subtract the response from the biggest scale unit plus 1. For example, if you have a 5-point scale, you would subtract the response from 6, if you have a 7-point scale, from 8 etc. 
+
+```{r eval=FALSE}
+# Reverse code by subtracting responses from 6
+scales_reverse <- mutate(scales,
+                         SPSS2_R = 6 - SPSS2E,
+                         SPSS3_R = 6 - SPSS3E,
+                         SPSS10_R = 6 - SPSS10E)
+```
+
+Explore your new data object to see what the new reverse coded variables look like. 
+:::
+
+### Activity 7 - Removing or retaining observations using `filter()`
+
+To practice filtering data to retain specific participants, imagine we wanted to focus on two specific groups of people. 
+
+First, we just want to explore the data of "Non-binary" participants. Second, we want to explore the data of "Female", "Asian/Pacific Islander" participants. Use `filter()` on the `full_data_mutate` object to create two objects: `NB_participants` and `F_asian_participants`. 
+
+```{r eval=FALSE}
+# non-binary participants
+NB_participants <- ?
+
+# female, Asian/Pacific Islander participants
+F_asian_participants <- ?
+```
+
+After creating the objects, answer the following questions: 
+
+1. We have `r fitb(1)` non-binary participant(s) in the data set.  
+
+2. We have `r fitb(9)` female, Asian/Pacific Islander participant(s) in the data set.
+
+::: {.callout-tip collapse="true"}
+#### Show me the solution
+You should have the following in a code chunk: 
+
+```{r}
+# non-binary participants
+NB_participants <- filter(full_data_mutate,
+                          GenderE == "Non-binary")
+
+# female, Asian/Pacific Islander participants
+F_asian_participants <- filter(full_data_mutate,
+                          GenderE == "Female",
+                          RaceEthE == "Asian/Pacific Islander")
+```
+:::
+
+#### Bonus activity - Removing NAs with `drop_na()` {#06-drop-NAs}
+
+One concept we will spend more time on in [Chapter 11 - Screening Data]() - is removing participants who do not provide an answer. We delve more into the decision making in the course materials, but there is a handy function in <pkg>tidyr</pkg> called `drop_na()`. You could do this using filter, but the standalone function streamlines things. If you run the function on your whole data set, it will remove observations with one or more NAs in all their variables: 
+
+```{r}
+# remove observations with any NAs
+no_NAs <- drop_na(full_data_mutate)
+```
+
+However, often you do not want to remove all variables with an NA as there might be valuable information elsewhere. You can add one or more variables to ask `drop_na()` to only remove NAs present in those specific variables: 
+
+```{r}
+# remove observations with any NAs
+age_NAs <- drop_na(full_data_mutate,
+                   AgeE)
+```
+
+This impacts the number of participants we remove as we had **171** when we removed all NAs, but **179** when we only removed NAs in age. 
+
+### Activity 8 - Summarising data using `count()` and `summarise()`
+
+#### Counting observations
+
+As the final recap activity, it is time to calculate some summary statistics to understand our data set. First, use `count()` on the `full_data_mutate` object to answer the following questions: 
+
+1. How many observations do we have of each gender? `r fitb(29)` males, `r fitb(149)` females, and `r fitb(1)` non-binary. 
+
+2. How many observations do we have of each race? `r fitb(131)` white, `r fitb(13)` Black/African American, and `r fitb(1)` NA with missing data. 
+
+```{r eval=FALSE}
+# count each group in GenderE
+?
+
+# count each group in RaceE
+?
+```
+
+::: {.callout-tip collapse="true"}
+#### Show me the solution
+You should have the following in a code chunk: 
+
+```{r eval=FALSE}
+# count each group in GenderE
+count(full_data_mutate,
+      GenderE)
+
+# count each group in RaceE
+count(full_data_mutate,
+      RaceEthE)
+```
+:::
+
+#### Summarising observations
+
+One useful demographic summary is the mean and standard deviation (*SD*) of participant ages. We have covered the function for the mean (`mean()`) several times, but a key part of coding is knowing what you want, but not the function to do it. So, in the process of the next answer, try and find the function for the standard deviation on your own. If you are really stuck though, you can see the hint below. 
+
+::: {.callout-note collapse="true"}
+#### Give me a hint for the SD function
+
+```{r eval=FALSE}
+# Function for the standard deviation
+sd()
+```
+:::
+
+```{r eval=FALSE}
+# Mean and SD age
+mean_age <- summarise(full_data_mutate,
+                      mean_age = ?,
+                      SD_age = ?)
+```
+
+::: {.callout-tip collapse="true"}
+#### Show me the solution
+You should have the following in a code chunk: 
+```{r eval=FALSE}
+# Mean and SD age
+mean_age <- summarise(full_data_mutate,
+                      mean_age = mean(AgeE, na.rm = TRUE),
+                      SD_age = sd(AgeE, na.rm = TRUE))
+```
+
+Remember, if there are NAs present in the data like this, you need to add `na.rm = TRUE` or handle NAs prior to applying the function. 
+:::
+
+::: {.callout-important}
+#### Error mode
+
+As a transition point to restructuring data, imagine we wanted to calculate the sum score of the items to calculate a number for the whole scale per participant. Based on how we have used `mutate()` or `summarise()` before, you might try:
+
+```{r}
+sum_VSSL <- mutate(full_data_mutate,
+                      VSSL = sum(c(SPSS1E, SPSS4E, SPSS5E, SPSS6E, SPSS7E, SPSS8E, SPSS9E), na.rm = TRUE))
+```
+
+However, if you look at the object, the VSSL column is the same for every participant (4413) which does not look right? This is due to how functions work within `mutate()`. It is essentially applying the `sum()` function to all the columns first and adding them together, rather than summing the values of each column within each participant. 
+
+We can fix this problem by restructuring the data. 
+:::
+
+## Restructuring data using `pivot_longer()` and `pivot_wider()`
+
+Apart from joining two data sets, we have pretty much just worked with the data files as they come to us where each row represents one observation/participant and each column represents one variable. That is great but there are scenarios where you get data sets in messier formats that do not follow this pattern. Furthermore, you might need to restructure your data to perform certain functions, like taking the mean/sum of many columns per participant or visualising multiple elements. Before we work on the data wrangling side, we need a brief explanation of data formats. 
+
+### Tidy data 
+
+For most of this book, we use a type of data organisation known as `r glossary("tidy data")`. Any data in this format is easily processed through the <pkg>tidyverse</pkg> family of packages. However, the data you work with will not always be formatted in the most efficient way possible. If that happens, then our first step is to put it into a tidy data format. There are two fundamental principles defining tidy data:
+
+1. Each variable must have its own column.
+
+2. Each observation must have its own row.
+
+@wickham_tidy_2014 adds the following principle:
+
+3. Each type of observation unit forms a table. 
+
+[Grolemund and Wickham (2023)](https://r4ds.hadley.nz/data-tidy.html){target="_blank"} restate this third principle as: "Each value must have its own cell (i.e. no grouping two variables together, e.g. time/date in one cell)" where a cell is where any specific row and column meet. A single data point in a data frame / tibble is a cell for example. The Grolemund and Wickham (2023) book is a very useful source for further reading and it is free, but browsing the chapter on tidy data will help you visualise how you want to arrange data.
+
+::: {.callout-note}
+If you have worked with any kind of data before, particularly if you have used Excel, it is likely that you will have used **wide format** or **long format** data. In wide format, each participant's data is all in one row with multiple columns for different data points. This means that the data set tends to be very wide and you will have as many rows as you have participants. 
+
+Long format is where each **row** is a single observation, typically a single trial in an experiment or a response to a single item on a questionnaire. When you have multiple trials per participant, you will have multiple rows for the same participant. To identify participants, you would need a variable with some kind of participant id, which can be as simple as a distinct integer value for each participant. In addition to the participant identifier, you would have any measurements taken during each observation (e.g., response time) and what experimental condition the observation was taken under.
+
+In wide format data, each **row** corresponds to a single participant, with multiple observations for that participant spread across columns. So for instance, with survey data, you would have a separate column for each survey question.
+
+Tidy data is a mix of both of these approaches and most functions in the <pkg>tidyverse</pkg> assume the tidy format, so typically the first thing you need to do when you get data is think about what format you need your data to perform the functions and analyses you want. For some functions, you need your data in wide format, and in others you need your data in long format. This means being able to quickly restructure your data is a key skill. 
+:::
+
+### Activity 9: Gathering with `pivot_longer()`
+
+In it's current format, we have wide data where each row is a separate participant and each column is a separate variable. We can use the function `r glossary("pivot_longer()", def = "Gather data by increasing the number of rows and decreasing the number of columns.")` from the <pkg>tidyr</pkg> package within <pkg>tidyverse</pkg>. 
+
+The pivot functions can be easier to show than explain first, so type and run the following code using the `full_data_mutate` object:
+
+```{r}
+full_data_long <- pivot_longer(data = full_data_mutate,
+                      cols = SPSS1E:SPSS9E,
+                      names_to = "Question", 
+                      values_to = "Response")
+```
+
+To break down the code:
+
+- We create a new data object called `full_data_long` by applying the `pivot_longer()` function to `full_data_mutate`. 
+
+- In the `cols` argument, we specify the columns we want to gather. We use the colon method here like `select()` to choose the 7 columns for the VSSL items. If the columns are not in order, you could use the `c()` method instead (e.g., `cols = c(SPSS1E, SPSS9E)`). 
+
+- The `names_to` argument is what your first new column will be called. All the column names you selected in `cols` will be pivoted into this new column, so call it something sensible you will remember later. Here, we call the new column "Question". 
+
+- The `values_to` argument is what your second new column will be called. For all the columns you gather, the response of each participant will be in one column stacked on top of each other next to its label in "Question". You also need to call this something memorable, like "Response" here. 
+
+Now, explore the new `full_data_long` object you just created and compare it to `full_data_mutate`. Instead of **181** rows, we now have **1267** rows. Instead of 27 variables, we now have 22 variables. We have 181 participants who responded to 7 VSSL items, so we pivot the data into long format to get 181 * 7 = **1267** rows. 
+
+Visually, you can see the difference with a preview of just the participant ID and VSSL items here: 
+
+::: {.panel-tabset}
+#### Original wide format
+
+```{r echo=FALSE}
+full_data_mutate %>% 
+  select(StudentIDE, SPSS1E:SPSS9E) %>% 
+  head(n = 10)
+```
+
+#### New long format
+
+```{r echo=FALSE}
+full_data_long %>% 
+  select(StudentIDE, Question, Response) %>% 
+  head(n = 10)
+```
+:::
+
+Now we have our data in long form, we can calculate summary statistics for participants using `group_by()` and `summarise()`. First, we group the data by the participant ID, as we want one value per participant:
+
+```{r}
+# group full_data_long by StudentIDE
+longdata_grouped <- group_by(full_data_long, 
+                             StudentIDE)
+```
+
+Second, we create a new variable using `summarise()` to take the sum of all the items. This will create the VSSL scale score consistent with @alter_vssl_2024: 
+
+```{r}
+# Calculate the sum of VSSL items by taking the sum of Response
+VSSL_sum <- summarise(longdata_grouped,
+                      VSSL_sum = sum(Response))
+```
+
+Our new object goes from 1267 rows back to 181 as we grouped by the participant ID and took the sum of `Response`. This means we apply the function we provide `summarise()` to all the rows we want to group by, in this case across all 7 VSSL items. Your new object has just two columns: `StudentIDE` and `VSSL_sum` and should look like the following extract: 
+
+```{r echo=FALSE}
+head(VSSL_sum)
+```
+
+At this point, you could join the object to `full_data_mutate` to add the scale score to all the other variables. 
+
+::: {.callout-tip}
+#### Try this
+
+We calculated the VSSL scale score by pivoting longer, grouping the data, and taking the sum of the 7 items. To test your understanding, complete the same steps to calculate the scale score of **Quantitative anxiety** using the four columns `QANX1E` to `QANX4E`. The scale score here also involves taking the sum of the columns. Use the `full_data_mutate` object as your starting point for the data. 
+
+Check your attempt with the solution below when you have tried on your own. 
+
+```{r eval=FALSE}
+# gather the four quant anxiety items to long form
+quant_anxiety_long <- ?
+
+# group the long data by participant ID
+quant_anxiety_group <- ?
+
+# calculate the sum quant anxiety per participant
+sum_quant_anxiety <- ?
+```
+
+To check your answers: 
+
+1. Participant 1 has a sum quantitative anxiety score of  `r fitb(6)`
+
+2. Participant 5 has a sum quantitative anxiety score of  `r fitb(16)`
+
+:::
+
+::: {.callout-caution collapse="true"} 
+#### Solution
+
+We complete the task in three steps. First, we pivot longer using the four columns QANX1E to QANX4E to create the new `quant_anxiety_long` object. Second, we group that new long data object by the participant ID. Third, we calculate the sum quantitative anxiety score by taking the sum of the responses per participant ID. 
+
+```{r}
+# gather the four quant anxiety items to long form
+quant_anxiety_long <- pivot_longer(data = full_data_mutate,
+                                   cols = QANX1E:QANX4E,
+                                   names_to = "Question",
+                                   values_to = "Response")
+
+# group the long data by participant ID
+quant_anxiety_group <- group_by(quant_anxiety_long, 
+                                StudentIDE)
+
+# calculate the sum quant anxiety per participant
+sum_quant_anxiety <- summarise(quant_anxiety_group,
+                               sum_quant_anxiety = sum(Response))
+```
+
+:::
+
+### Spreading with `pivot_wider()`
+
+You might also find yourself in situations where you must restructure data in the opposite direction: from long to wide. There is a complementary function called `r glossary("pivot_wider()", def = "Spread data by decreasing the number of rows and increasing the number of columns.")` where you can spread values from one column to multiple columns. You need two columns in your long form data set, one for the variable names which will be your new column names, then one for the responses which will be the values in each cell. 
+
+To demonstrate this function, we will transform `full_data_long` back to wide format so we have 7 columns of VSSL items: 
+
+```{r}
+full_data_wide <- pivot_wider(data = full_data_long,
+                              names_from = "Question",
+                              values_from = "Response")
+```
+
+To break down the code: 
+
+- We create a new object `full_data_wide` by applying the function `pivot_wider()` to `full_data_long`.
+
+- In the `names_from` argument, we add the column name "Question" which contains the names of the variables you want as your new column names. 
+
+- In the `values_from` argument, we add the column name "Response" which contains the values of the variables which will be the cells of your data frame. 
+
+The new object `full_data_wide` should now look exactly the same as the `full_data_mutate` object we started with. 
+
+::: {.callout-note}
+#### Do I need to add quotes to the column names?
+
+You might have noticed we added quotes around the column names to specify the `names_from` and `values_from` arguments. When we specify columns in <pkg>tidyverse</pkg> functions, we do not need to add the quotes, we can just type the name and it will work (`names_from = "Question"` and `names_from = Question` would both work here). However, in other functions outside the <pkg>tidyverse</pkg>, you normally need to add the quotes around column names. When to add quotes or not can take a while to get used to, so this is just a note to highlight you might try one method and it does not work, but you can try the other method if you get an error. 
+:::
+
+::: {.callout-tip}
+#### Try this
+
+In the `pivot_longer()` section, you should have created a new object `quant_anxiety_long` if you completed the "Try this" activity. To test your understanding of `pivot_wider()`, spread the four items and responses of **Quantitative anxiety** back to wide format. Use the `quant_anxiety_long` object as your starting point and create a new object called `quant_anxiety_wide`. 
+
+Check your attempt with the solution below when you have tried on your own. 
+
+```{r eval=FALSE}
+# spread the quant anxiety items back to wide form
+quant_anxiety_wide <- ?
+
+```
+
+:::
+
+::: {.callout-caution collapse="true"} 
+#### Solution
+
+This task follows the exact format as `full_data_wide` if you named your variables the same as ours. It is just important the `names_from` and `values_from` columns are the same as those you used in `quant_anxiety_long`.
+
+```{r}
+# spread the quant anxiety items back to wide form
+quant_anxiety_wide <- pivot_wider(quant_anxiety_long, 
+                                  names_from = "Question",
+                                  values_from = "Response")
+```
+
+:::
+
+## Combining several functions with pipes 
+
+In this final section on data wrangling, we are not covering new functions, but a new way of working. So far, we have created lots of new objects by applying individual <pkg>tidyverse</pkg> functions, but there is a way to string together several functions and streamline your code. We wanted to introduce you to the individual functions first to develop your fundamentals skills and understanding of what the functions do, but now we can be a little more efficient.  
+
+Instead of creating several objects, you can use `r glossary("pipe", display = "pipes")`. We write pipes as `%>%` and you can read them as "and then". Pipes allow you to string together 'sentences' of code into 'paragraphs' so that you do not need to create intermediary objects. 
+
+This is another one of those concepts that is initially easier to show than tell: 
+
+```{r}
+# Create an object starting with demog 
+full_data_pipe <-  demog %>%
+  # Join with scales
+  inner_join(y = scales,
+             by = "StudentIDE") %>%
+  # Select key columns
+  select(StudentIDE, 
+         GenderE,
+         RaceEthE, 
+         AgeE, 
+         QANX1E:QINFL7E, 
+         QHIND1E:QHIND5E, 
+         SPSS1E, SPSS4E, SPSS5E, SPSS6E, SPSS7E, SPSS8E, SPSS9E) %>% 
+  # Recode variables with labels
+  mutate(GenderE = case_match(GenderE,
+                              1 ~ "Female",
+                              2 ~ "Male",
+                              3 ~ "Non-binary"),
+         RaceEthE = case_match(RaceEthE,
+                               1 ~ "Black/African American",
+                               2 ~ "Hispanic/Other Latinx",
+                               3 ~ "White",
+                               4 ~ "Multiracial",
+                               5 ~ "Asian/Pacific Islander",
+                               6 ~ "Native American/Alaska Native",
+                               7 ~ "South/Central American"))
+  
+```
+
+Instead of creating all the intermediary objects, we go straight from joining the two data sets to recoding the variables in mutate, all in one object. Side by side, you can see the difference in the process we had to go through: 
+
+::: {.panel-tabset}
+#### Creating separate objects
+
+```{r eval=FALSE}
+# join demog and scales by a common identifier 
+full_data <- inner_join(x = demog,
+                        y = scales,
+                        by = "StudentIDE")
+
+# select the key variables listed above
+full_data_select <- select(full_data,
+                           StudentIDE, 
+                           GenderE,
+                           RaceEthE, 
+                           AgeE, 
+                           QANX1E:QINFL7E, 
+                           QHIND1E:QHIND5E, 
+                           SPSS1E, SPSS4E:SPSS9E)
+
+# recode gender and race to labels
+full_data_mutate <- mutate(full_data_select,
+                           GenderE = case_match(GenderE,
+                                                1 ~ "Female",
+                                                2 ~ "Male",
+                                                3 ~ "Non-binary"),
+                           RaceEthE = case_match(RaceEthE,
+                                                 1 ~ "Black...",
+                                                 2 ~ "Hispanic...",
+                                                 3 ~ "White",
+                                                 4 ~ "Multiracial",
+                                                 5 ~ "Asian...",
+                                                 6 ~ "Native American...",
+                                                 7 ~ "South..."))
+```
+
+#### Combining functions using pipes
+
+```{r eval=FALSE}
+# Create an object starting with demog 
+full_data_pipe <-  demog %>%
+  # Join with scales
+  inner_join(y = scales,
+             by = "StudentIDE") %>%
+  # Select key columns
+  select(StudentIDE, 
+         GenderE,
+         RaceEthE, 
+         AgeE, 
+         QANX1E:QINFL7E, 
+         QHIND1E:QHIND5E, 
+         SPSS1E, SPSS4E:SPSS9E) %>% 
+  # Recode variables with labels
+  mutate(GenderE = case_match(GenderE,
+                              1 ~ "Female",
+                              2 ~ "Male",
+                              3 ~ "Non-binary"),
+         RaceEthE = case_match(RaceEthE,
+                               1 ~ "Black...",
+                               2 ~ "Hispanic...",
+                               3 ~ "White",
+                               4 ~ "Multiracial",
+                               5 ~ "Asian...",
+                               6 ~ "Native American...",
+                               7 ~ "South..."))
+```
+:::
+
+As you get used to using pipes, remember you can interpret them as "and then". So, we could explain the function of the code to ourselves as: 
+
+- Create `full_data_pipe` by starting with `demog` data, **and then**
+
+- Join with the `scales` data using `StudentIDE` as an identifier, **and then**,
+
+- Select our key columns, **and then**
+
+- Mutate to recode gender and race.
+
+It can be tricky at first to understand what pipes are doing from a conceptual point of view, but it is well worth learning to use them. When your code starts getting longer, they are much more efficient and you write less code which is always a good thing to debug and find errors. You also have fewer objects in your environment as we created one object instead of three, tidying your workspace. 
+
+::: {.callout-important}
+#### Error mode
+
+One key difference that can trip people up is we no longer specify the data object as the first argument in each function. The reason that this function - the `%>%` - is called a pipe is because it 'pipes' the data through to the next function. When you wrote the code previously, the first argument of each function was the dataset you wanted to work on. When you use pipes, it will automatically take the data from the previous line of code so you do not need to specify it again. 
+
+For example, if we tried to specify `demog` again in `select()`, we would just receive an error.  
+
+```{r eval=FALSE}
+# Create an object starting with demog 
+full_data_pipe <-  demog %>%
+  # Join with scales
+  inner_join(y = scales,
+             by = "StudentIDE") %>%
+  # Select key columns
+  select(.data = demog,
+         StudentIDE, 
+         GenderE,
+         RaceEthE, 
+         AgeE, 
+         QANX1E:QINFL7E, 
+         QHIND1E:QHIND5E, 
+         SPSS1E, SPSS4E:SPSS9E)
+```
+
+:::
+
+::: {.callout-tip}
+#### Try this
+
+Pipes also work with other functions like `filter()`, `group_by()` and `summarise()`. If you start with the object `full_data_mutate`, try and express the following instructions in code: 
+
+1. Create a new object `age_groups` using `full_data_mutate` as your starting point, **and then** 
+
+2. Filter to only include "White" and "Black/African American" participants using `RaceEthE`, **and then**,
+
+3. Group the observations by `RaceEthE`, **and then**,
+
+4. Summarise the data to calculate the mean and standard deviation `AgeE`. 
+
+Check your attempt with the solution below when you have tried on your own. 
+
+```{r eval=FALSE}
+# create age_groups by filtering, grouping, and summarising
+age_groups <- full_data_mutate %>% 
+  ?
+
+```
+
+:::
+
+::: {.callout-caution collapse="true"} 
+#### Solution
+
+We complete this task in three steps. First, we filter `full_data_mutate` to just focus on White and Black/African American participants. Second, we group the data by `RaceEthE` so our summary statistics are split into two groups. Third, we calculate the mean and SD age.
+
+```{r}
+# create age_groups by filtering, grouping, and summarising
+age_groups <- full_data_mutate %>% 
+  filter(RaceEthE %in% c("White", "Black/African American")) %>% 
+  group_by(RaceEthE) %>% 
+  summarise(mean_age = mean(AgeE, na.rm = TRUE),
+            SD_age = sd(AgeE, na.rm = TRUE))
+```
+
+:::
+
+## Test yourself
+
+To end the chapter, we have some knowledge check questions to test your understanding of the concepts we covered in the chapter. We then have some error mode tasks to see if you can find the solution to some common errors in the concepts we covered in this chapter. 
+
+### Knowledge check
+
+Which function(s) would you use to approach each of the following problems?
+
+**Question 1**. We have a data set of 400 adults but we want to remove anyone with an age of 50 years or more. To do this, we could use:
+
+`r longmcq(sample(c("select()", answer="filter()", "mutate()", "arrange()", "group_by()", "summarise()")))`
+
+**Question 2**. We are interested in overall summary statistics for our data, such as the mean and total number of observations for a variable. To do this, we could use:
+
+`r longmcq(sample(c("select()", "filter()", "mutate()", "arrange()", "group_by()", answer="summarise()")))`
+
+**Question 3**. Our data set has a column with the number of cats a person has and a column with the number of dogs. We want to calculate a new column which contains the total number of pets each participant has. To do this, we could use:
+
+`r longmcq(sample(c("select()", "filter()", answer="mutate()", "arrange()", "group_by()", "summarise()")))`
+
+**Question 4**. We want to calculate the mean value of a column for several groups in our data set. To do this, we could use:
+
+`r longmcq(sample(c(answer="group_by() and summarise()", "filter() and select()", "group_by() and arrange()", "arrange() and mutate()")))` 
+
+**Question 5**. If we wanted to apply the following wrangling steps with pipes, which series of functions would work? With the object `wide_data`, select several columns **and then**, pivot three columns longer **and then**, group by a participant ID **and then**, calculate the sum of responses. 
+
+`r longmcq(sample(c(answer = "wide_data %>% select() %>% pivot_longer() %>% group_by() %>% summarise()", "long_data %>% select() %>% pivot__longer_wider() %>% group_by() %>% summarise()", "wide_data %>% pivot_longer() %>% select() %>% summarise() %>% group_by()", "select() %>% pivot_longer() %>% group_by() %>% summarise() %>% wide_data")))`
+
+### Error mode
+
+The following questions are designed to introduce you to making and fixing errors. For this topic, we focus on data wrangling using past functions, `pivot_longer()`, and pipes (`%>%`). Remember to keep a note of what kind of error messages you receive and how you fixed them, so you have a bank of solutions when you tackle errors independently. 
+
+Create and save a new R Markdown file for these activities. Delete the example code, so your file is blank from line 10. Create a new code chunk to load <pkg>tidyverse</pkg> and the data files: 
+
+```{r eval=FALSE}
+# Load the tidyverse package below
+library(tidyverse)
+
+# Load the data files
+# This should be the Alter_2024_demographics.csv file 
+demog <- read_csv("data/Alter_2024_demographics.csv")
+
+# This should be the Alter_2024_scales.csv file 
+scales <- read_csv("data/Alter_2024_scales.csv")
+```
+
+Below, we have several variations of a code chunk error or misspecification. Copy and paste them into your R Markdown file below the code chunk to load <pkg>tidyverse</pkg> and the data files. Once you have copied the activities, click knit and look at the error message you receive. See if you can fix the error and get it working before checking the answer.
+
+**Question 6**. Copy the following code chunk into your R Markdown file and press knit. In this code chunk, we want to calculate the mean and SD age of all participants using `demog`. There are two errors/omissions here to try and fix: 
+
+1. One causes the document not to knit. You should receive an error like `Caused by error in "SD()": ! could not find function "SD"`.  
+
+2. The other looks like we just get NA values?
+
+````{verbatim, lang = "markdown"}
+```{r}
+# calculate the mean and SD age
+demog %>% 
+  summarise(mean_age = mean(AgeE),
+            SD_age = SD(AgeE))
+```
+````
+
+::: {.callout-caution collapse="true"} 
+#### Explain the solution
+
+The first error is using the wrong function name for SD. Because we always abbreviate standard deviation to SD, it is tempting to try and use that as the function name. However, the function is lowercase: `sd()`. 
+
+The second error is not including the `na.rm = TRUE` argument. There are NAs in the data, so you either need to address them before running the function, or ignoring the NAs with `na.rm = TRUE`. 
+
+```{r eval = FALSE}
+# calculate the mean and SD age
+demog %>% 
+  summarise(mean_age = mean(AgeE, na.rm = TRUE),
+            SD_age = sd(AgeE, na.rm = TRUE))
+```
+:::
+
+**Question 7**. Copy the following code chunk into your R Markdown file and press knit. We want to calculate the sum of the five quantitative hindrances items per participant. This code... works, but does it look like it fits in the possible 5-25 range? 
+
+````{verbatim, lang = "markdown"}
+```{r}
+# sum quant hindrances items per participant
+sum_quant_hindrance <- scales %>% 
+  mutate(sum_quant_hindrance = sum(c(QHIND1E, QHIND2E, QHIND3E, QHIND4E, QHIND5E), na.rm = TRUE))
+```
+````
+
+::: {.callout-caution collapse="true"} 
+#### Explain the solution
+
+This is the main of warning we flagged in the opening section to `pivot_longer()`. Intuitively, it is the right idea to try and calculate the sum in a new column. However, in `mutate()`, it sums all the columns, not the observations for each participant. 
+
+Instead, we can pivot longer focusing on the quantitative hindrance items, group by participant ID, and summarise.
+
+```{r eval = FALSE}
+# sum quant hindrances items per participant
+sum_quant_hindrance <- scales %>% 
+  # pivot longer on 5 quant hindrances items
+  pivot_longer(cols = QHIND1E:QHIND5E,
+               names_to = "Question",
+               values_to = "Response") %>% 
+  # group by student ID
+  group_by(StudentIDE) %>% 
+  # summarise for sum of new long column 
+  summarise(sum_quant_hindrance = sum(Response, na.rm = TRUE))
+```
+:::
+
+**Question 8**. Copy the following code chunk into your R Markdown file and press knit. We want to filter `demog` to focus on female participant and calculate the mean age of the female participants. You should receive an error containing `Caused by error:! "..1$StudentIDE" must be a logical vector, not a double vector` which is not the most helpful error for diagnosing the problem. 
+
+````{verbatim, lang = "markdown"}
+```{r}
+# filter for females then calculate mean age
+demog %>% 
+  filter(.data = demog, 
+         GenderE == 2) %>% 
+  summarise(.data = demog,
+            mean_age = mean(AgeE, na.rm = TRUE))
+```
+````
+
+::: {.callout-caution collapse="true"} 
+#### Explain the solution
+
+We are using pipes but we tried adding in the `.data` argument in each line. Remember `%>%` "pipes" the previous line into the next line, so you do not need to specify an object for it to work with. If you try and specify the .data argument with pipes, it thinks you are trying to set the next argument in the list. 
+
+```{r eval = FALSE}
+# filter for females then calculate mean age
+demog %>% 
+  filter(GenderE == 2) %>% 
+  summarise(mean_age = mean(AgeE, na.rm = TRUE))
+```
+:::
+
+## Words from this Chapter
+
+Below you will find a list of words that were used in this chapter that might be new to you in case it helps to have somewhere to refer back to what they mean. The links in this table take you to the entry for the words in the [PsyTeachR Glossary](https://psyteachr.github.io/glossary/){target="_blank"}. Note that the Glossary is written by numerous members of the team and as such may use slightly different terminology from that shown in the chapter.
+
+```{r gloss, echo=FALSE, results='asis'}
+glossary_table()
+```
+
+## End of chapter
+
+Brilliant work again! You recapped data wrangling functions from the past two chapters to a new data set, and added two more concepts to your arsenal: pivots and pipes. There really is no substitute for practicing on new data to transfer your knowledge and understanding. As you work with more and more data, you will see how far these data wrangling functions take you. They will your foundational skills for any new data set and give you the confidence to search for new functions when there is a new problem to solve. 
+
+This is a key milestone, so remember to go over anything you are unsure of. If you have any questions about data wrangling, please post them on Teams, visit the GTA support sessions, or pop into office hours. 
+
+At this point, we direct you to the first data analysis journey chapter: [Analysis Journey 1: Data Wrangling](#journey-01-wrangling). This is a bridge between the structured learning in these chapters and your assessments. We present you with a new data set, show you what the end product should look like, and see if you can apply your data wrangling skills to get there. If you get stuck, we have a range of hints and steps you can unhide, then the solution to check your attempts against. 
+
+In the next core chapter though, we turn to more advanced data visualisation to demonstrate how to create scatterplots, boxplots, and violin-boxplots. 
+
