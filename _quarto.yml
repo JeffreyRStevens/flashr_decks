@@ -1,9 +1,13 @@
 project:
   type: website
+  output-dir: docs
   render:
   - "*.qmd"
   - "*.Rmd"
   - "!books/"
+  resources:
+  - "html/*.html"
+
 
 
 website:
