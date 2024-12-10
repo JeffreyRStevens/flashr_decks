@@ -1,0 +1,3 @@
+"","term","description","package","title"
+"1","c()","create vector of numbers, characters, etc.","base","R4DS-2e Ch. 2"
+"3","seq()","create sequences of numbers","base","R4DS-2e Ch. 2"

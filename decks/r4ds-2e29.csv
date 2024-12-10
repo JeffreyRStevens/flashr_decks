@@ -1,0 +1,3 @@
+"","term","description","package","title"
+"6","library()","load R packages","base","R4DS-2e Ch. 29"
+"7","read_file()","read a complete file","readr","R4DS-2e Ch. 29"
