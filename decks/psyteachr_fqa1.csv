@@ -1,0 +1,17 @@
+term,description,url,title
+argument,A variable that provides input to a function.,https://psyteachr.github.io/glossary/a.html#argument,PsyTeachR FQA Ch. 1
+assignment operator,"The symbol <-, which functions like = and assigns the value on the right to the object on the left",https://psyteachr.github.io/glossary/a.html#assignment-operator,PsyTeachR FQA Ch. 1
+base R,"The set of R functions that come with a basic installation of R, before you add external packages",https://psyteachr.github.io/glossary/b.html#base-r,PsyTeachR FQA Ch. 1
+console,The pane in RStudio where you can type in commands and view output messages.,https://psyteachr.github.io/glossary/c.html#console,PsyTeachR FQA Ch. 1
+default value,A value that a function uses for an argument if it is skipped.,https://psyteachr.github.io/glossary/d.html#default-value,PsyTeachR FQA Ch. 1
+environment,A data structure that contains R objects such as variables and functions,https://psyteachr.github.io/glossary/e.html#environment,PsyTeachR FQA Ch. 1
+function,A named section of code that can be reused.,https://psyteachr.github.io/glossary/f.html#function,PsyTeachR FQA Ch. 1
+mean,A descriptive statistic that measures the average value of a set of numbers.,https://psyteachr.github.io/glossary/m.html#mean,PsyTeachR FQA Ch. 1
+normal distribution,A symmetric distribution of data where values near the centre are most probable.,https://psyteachr.github.io/glossary/n.html#normal-distribution,PsyTeachR FQA Ch. 1
+object,A word that identifies and stores the value of some data for later use.,https://psyteachr.github.io/glossary/o.html#object,PsyTeachR FQA Ch. 1
+package,A group of R functions.,https://psyteachr.github.io/glossary/p.html#package,PsyTeachR FQA Ch. 1
+R markdown,"The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.",https://psyteachr.github.io/glossary/r.html#r-markdown,PsyTeachR FQA Ch. 1
+RStudio,An integrated development environment (IDE) that helps you process R code.,https://psyteachr.github.io/glossary/r.html#rstudio,PsyTeachR FQA Ch. 1
+script,"A plain-text file that contains commands in a coding language, such as R.",https://psyteachr.github.io/glossary/s.html#script,PsyTeachR FQA Ch. 1
+standard deviation,A descriptive statistic that measures how spread out data are relative to the mean.,https://psyteachr.github.io/glossary/s.html#standard-deviation,PsyTeachR FQA Ch. 1
+tidyverse,A set of R packages that help you create and work with tidy data,https://psyteachr.github.io/glossary/t.html#tidyverse,PsyTeachR FQA Ch. 1

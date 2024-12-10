@@ -1,0 +1,18 @@
+term,description,url,title
+character,A data type representing strings of text.,https://psyteachr.github.io/glossary/c.html#character,PsyTeachR FQA Ch. 5
+chunk,A section of code in an R Markdown file,https://psyteachr.github.io/glossary/c.html#chunk,PsyTeachR FQA Ch. 5
+console,The pane in RStudio where you can type in commands and view output messages.,https://psyteachr.github.io/glossary/c.html#console,PsyTeachR FQA Ch. 5
+data type,The kind of data represented by an object.,https://psyteachr.github.io/glossary/d.html#data-type,PsyTeachR FQA Ch. 5
+data wrangling,The process of preparing data for visualisation and statistical analysis.,https://psyteachr.github.io/glossary/d.html#data-wrangling,PsyTeachR FQA Ch. 5
+descriptive,"Statistics that describe an aspect of data (e.g., mean, median, mode, variance, range)",https://psyteachr.github.io/glossary/d.html#descriptive,PsyTeachR FQA Ch. 5
+double,A data type representing a real decimal number,https://psyteachr.github.io/glossary/d.html#double,PsyTeachR FQA Ch. 5
+environment,A data structure that contains R objects such as variables and functions,https://psyteachr.github.io/glossary/e.html#environment,PsyTeachR FQA Ch. 5
+factor,A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter,https://psyteachr.github.io/glossary/f.html#factor,PsyTeachR FQA Ch. 5
+function,A named section of code that can be reused.,https://psyteachr.github.io/glossary/f.html#function,PsyTeachR FQA Ch. 5
+integer,A data type representing whole numbers.,https://psyteachr.github.io/glossary/i.html#integer,PsyTeachR FQA Ch. 5
+numeric,A data type representing a real decimal number or integer.,https://psyteachr.github.io/glossary/n.html#numeric,PsyTeachR FQA Ch. 5
+package,A group of R functions.,https://psyteachr.github.io/glossary/p.html#package,PsyTeachR FQA Ch. 5
+participant,the word used to describe someone who has taken part in a study. Note that subject is outdated and no longer used.,https://psyteachr.github.io/glossary/p.html#participant,PsyTeachR FQA Ch. 5
+pipe,A way to order your code in a more readable format using the symbol %>%,https://psyteachr.github.io/glossary/p.html#pipe,PsyTeachR FQA Ch. 5
+tibble,A container for tabular data with some different properties to a data frame,https://psyteachr.github.io/glossary/t.html#tibble,PsyTeachR FQA Ch. 5
+working directory,The filepath where R is currently reading and writing files.,https://psyteachr.github.io/glossary/w.html#working-directory,PsyTeachR FQA Ch. 5

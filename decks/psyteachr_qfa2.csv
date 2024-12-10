@@ -1,7 +1,0 @@
-term,description,url,title
-chunk,A section of code in an R Markdown file,https://psyteachr.github.io/glossary/c.html#chunk,PsyTeachR QFA Ch. 2
-HTML,Hyper-Text Markup Language: A system for semantically tagging structure and information on web pages.,https://psyteachr.github.io/glossary/h.html#html,PsyTeachR QFA Ch. 2
-knit,"To create an HTML, PDF, or Word document from an R Markdown (Rmd) document",https://psyteachr.github.io/glossary/k.html#knit,PsyTeachR QFA Ch. 2
-R markdown,"The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.",https://psyteachr.github.io/glossary/r.html#r-markdown,PsyTeachR QFA Ch. 2
-reproducible research,Research that documents all of the steps between raw data and results in a way that can be verified.,https://psyteachr.github.io/glossary/r.html#reproducible-research,PsyTeachR QFA Ch. 2
-working directory,The filepath where R is currently loading files from and saving files to.,https://psyteachr.github.io/glossary/w.html#working-directory,PsyTeachR QFA Ch. 2

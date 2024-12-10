@@ -1,0 +1,19 @@
+term,description,url,title
+binomial distribution,"The distribution of data where each observation can have one of two outcomes, like success/failure, yes/no or head/tails.",https://psyteachr.github.io/glossary/b.html#binomial-distribution,PsyTeachR FQA Ch. 8
+Chi square,An inferential test used to compare observed frequencies with expected frequencies in categorical conditions,https://psyteachr.github.io/glossary/c.html#chi-square,PsyTeachR FQA Ch. 8
+continuous,Data that can take on any values between other existing values.,https://psyteachr.github.io/glossary/c.html#continuous,PsyTeachR FQA Ch. 8
+discrete,"Data that can only take certain values, such as integers.",https://psyteachr.github.io/glossary/d.html#discrete,PsyTeachR FQA Ch. 8
+distribution,A way to describe the shape of data,https://psyteachr.github.io/glossary/d.html#distribution,PsyTeachR FQA Ch. 8
+inferential,"Statistics that allow you to make predictions about or comparisons between data (e.g., t-value, F-value, rho)",https://psyteachr.github.io/glossary/i.html#inferential,PsyTeachR FQA Ch. 8
+integer,A data type representing whole numbers.,https://psyteachr.github.io/glossary/i.html#integer,PsyTeachR FQA Ch. 8
+interval,data which comes in the form of a numerical value where the difference between points is standardised and meaningful,https://psyteachr.github.io/glossary/i.html#interval,PsyTeachR FQA Ch. 8
+likert,A rating scale with a small number of discrete points in order,https://psyteachr.github.io/glossary/l.html#likert,PsyTeachR FQA Ch. 8
+nominal,"Categorical variables that don&#39;t have an inherent order, such as types of animal.",https://psyteachr.github.io/glossary/n.html#nominal,PsyTeachR FQA Ch. 8
+normal distribution,A symmetric distribution of data where values near the centre are most probable.,https://psyteachr.github.io/glossary/n.html#normal-distribution,PsyTeachR FQA Ch. 8
+ordinal,"Discrete variables that have an inherent order, such as number of legs",https://psyteachr.github.io/glossary/o.html#ordinal,PsyTeachR FQA Ch. 8
+population,All members of a group that we wish to generalise our findings to. E.g. all students taking Psychology at the University of Glasgow. We draw our testing sample from the population.,https://psyteachr.github.io/glossary/p.html#population,PsyTeachR FQA Ch. 8
+probability,A number between 0 and 1 where 0 indicates impossibility of the event and 1 indicates certainty,https://psyteachr.github.io/glossary/p.html#probability,PsyTeachR FQA Ch. 8
+ratio,data which comes in the form of a numerical value where the difference between points is standardised and meaningful but has a meaningful zero,https://psyteachr.github.io/glossary/r.html#ratio,PsyTeachR FQA Ch. 8
+sample,A subset of the population that you wish to make an inference about through your test.,https://psyteachr.github.io/glossary/s.html#sample,PsyTeachR FQA Ch. 8
+simulation,"Generating data, as opposed to collecting data, from summary parameters such as the mean and standard deviation",https://psyteachr.github.io/glossary/s.html#simulation,PsyTeachR FQA Ch. 8
+uniform distribution,A distribution where all numbers in the range have an equal probability of being sampled,https://psyteachr.github.io/glossary/u.html#uniform-distribution,PsyTeachR FQA Ch. 8

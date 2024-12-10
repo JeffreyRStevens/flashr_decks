@@ -1,0 +1,15 @@
+term,description,url,title
+assignment operator,"The symbol <-, which functions like = and assigns the value on the right to the object on the left",https://psyteachr.github.io/glossary/a.html#assignment-operator,PsyTeachR FQA Ch. 4
+chunk,A section of code in an R Markdown file,https://psyteachr.github.io/glossary/c.html#chunk,PsyTeachR FQA Ch. 4
+console,The pane in RStudio where you can type in commands and view output messages.,https://psyteachr.github.io/glossary/c.html#console,PsyTeachR FQA Ch. 4
+data type,The kind of data represented by an object.,https://psyteachr.github.io/glossary/d.html#data-type,PsyTeachR FQA Ch. 4
+data wrangling,The process of preparing data for visualisation and statistical analysis.,https://psyteachr.github.io/glossary/d.html#data-wrangling,PsyTeachR FQA Ch. 4
+function,A named section of code that can be reused.,https://psyteachr.github.io/glossary/f.html#function,PsyTeachR FQA Ch. 4
+object,A word that identifies and stores the value of some data for later use.,https://psyteachr.github.io/glossary/o.html#object,PsyTeachR FQA Ch. 4
+outlier,A data point that is extremely distant from most of the other data points,https://psyteachr.github.io/glossary/o.html#outlier,PsyTeachR FQA Ch. 4
+package,A group of R functions.,https://psyteachr.github.io/glossary/p.html#package,PsyTeachR FQA Ch. 4
+pipe,A way to order your code in a more readable format using the symbol %>%,https://psyteachr.github.io/glossary/p.html#pipe,PsyTeachR FQA Ch. 4
+reproducible research,Research that documents all of the steps between raw data and results in a way that can be verified.,https://psyteachr.github.io/glossary/r.html#reproducible-research,PsyTeachR FQA Ch. 4
+tabular data,"Data in a rectangular table format, where each row has an entry for each column.",https://psyteachr.github.io/glossary/t.html#tabular-data,PsyTeachR FQA Ch. 4
+tibble,A container for tabular data with some different properties to a data frame,https://psyteachr.github.io/glossary/t.html#tibble,PsyTeachR FQA Ch. 4
+vector,"A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.",https://psyteachr.github.io/glossary/v.html#vector,PsyTeachR FQA Ch. 4

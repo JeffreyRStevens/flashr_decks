@@ -32,11 +32,14 @@ decks <- paste0(titles, " (", decklabels, ")") |>
 all_decks <- data.frame(deck = decks, title = titles, decklabel = decklabels)
 
 write.csv(all_decks, here("data/all_decks.csv"), row.names = FALSE)
+write.csv(all_decks, here("decks/00_all_decks.csv"), row.names = FALSE)
 
 
 # Create HTML decks for website ------------------------------------------------
 
 for (i in seq_along(all_decks$decklabel)) {
   deck <- all_decks$decklabel[i]
-  flashcard(deck, file = here(paste0("_site/decks/", deck, ".html")))
+  flashcard(deck, file = here(paste0("html/", deck, ".html")))
 }
+
+# Run quarto render then copy slides from html to _site/decks (may have to create directory)
