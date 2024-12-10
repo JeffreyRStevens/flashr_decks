@@ -1,3 +1,4 @@
-"","term","description","package","title"
-"1","c()","create vector of numbers, characters, etc.","base","R4DS-2e Ch. 2"
-"3","seq()","create sequences of numbers","base","R4DS-2e Ch. 2"
+"","term","description","url","package","title"
+"1","sin()",NA,NA,NA,"R4DS-2e Ch. 02"
+"2","c()","create vector of numbers, characters, etc.","https://rdrr.io/r/base/c.html","base","R4DS-2e Ch. 02"
+"3","seq()","create sequences of numbers","https://rdrr.io/r/base/seq.html","base","R4DS-2e Ch. 02"

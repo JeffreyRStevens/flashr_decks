@@ -1,0 +1,4 @@
+"","term","description","url","package","title"
+"1","Sys.Date()","return system date","https://rdrr.io/r/base/Sys.time.html","base","psyteachr_fqa Ch. 02"
+"2","as.Date()","convert to date","https://rdrr.io/r/base/as.Date.html","base","psyteachr_fqa Ch. 02"
+"3","today()","return the current date","https://lubridate.tidyverse.org/reference/now.html","lubridate","psyteachr_fqa Ch. 02"

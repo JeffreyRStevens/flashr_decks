@@ -1,0 +1,1119 @@
+# Reports {#sec-reports}
+
+::: {.meme .right}
+![](images/memes/repro_reports.jpg){fig-alt="Top left: young spongebob; top right: Using Base R for your analysis and copy pasting your results into tables in Word; middle left: older angry spongebob in workout clothes; middle right: learning how to use dplyr visualize data with ggplot2 and report your analysis in rmarkdown documents; bottom left: muscular spongebob shirtless in a boxing ring; bottom right: wielding the entire might of the tidyverse (with 50 hex stickers)"}
+:::
+
+
+## Intended Learning Outcomes {#sec-ilo-reports - .ilo}
+
+- [ ] Structure a project
+- [ ] Render a simple reproducible report with quarto
+- [ ] Create code chunks, tables, images, and inline R
+- [ ] Add a bibliography and citations
+
+
+## Functions used {#functions-reports -}
+
+```{r, include = FALSE}
+# load tidyverse packages separately so auto-links work in `func()` notation
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(tinytex)
+library(quarto)
+```
+
+* built-in (you can always use these without loading any packages)
+    * base:: `max()`, `min()`, `nrow()`, `str()`, `summary()`
+    * utils:: `View()`
+* tidyverse (you can use all these with `library(tidyverse)`)
+    * readr:: `readr::read_csv()`, `readr::row_spec()`
+    * dplyr:: `dplyr::count()`, `dplyr::filter()`
+    * ggplot2:: `ggplot2::aes()`, `ggplot2::geom_point()`, `ggplot2::ggplot()`, `ggplot2::labs()`
+* other (you need to load each package to use these)
+    * tinytex:: `tinytex::install_tinytex()`  
+    
+
+
+
+Download the [Quarto Cheat Sheet](https://rstudio.github.io/cheatsheets/html/quarto.html) and [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/).
+
+## Setup {#sec-setup-reports -}
+
+For reference, here are the packages we will use in this chapter. You may need to install them, as explained in @sec-install-package, if running the code below in the console pane gives you the error `Error in library(package_name) : there is no package called ‘package_name’`. 
+
+```{r setup-reports, message=FALSE, filename="Chapter packages"}
+library(tidyverse) # various data manipulation functions
+library(quarto)    # for rendering a report from a script
+```
+
+## Why use reproducible reports? {#sec-reproducibility}
+
+Have you ever worked on a report, creating a summary table for the demographics, making beautiful plots, getting the analysis just right, and copying all the relevant numbers into your manuscript, only to find out that you forgot to exclude a test run and have to redo everything?
+
+A `r glossary("reproducibility", "reproducible")` report fixes this problem. Although this requires a bit of extra effort at the start, it will more than pay you back by allowing you to update your entire report with the push of a button whenever anything changes.
+
+Additionally, studies show that many, if not most, papers in the scientific literature have reporting errors. For example, more than half of over 250,000 psychology papers published between 1985 and 2013 have at least one value that is statistically incompatible, such as a p-value that is not possible given a t-value and degrees of freedom [@nuijten2016prevalence]. Reproducible reports help avoid transcription and rounding errors.
+
+We will make reproducible reports following the principles of [literate programming](https://en.wikipedia.org/wiki/Literate_programming). The basic idea is to have the text of the report together in a single document along with the code needed to perform all analyses and generate the tables. The report is then "compiled" from the original format into some other, more portable format, such as HTML or PDF. This is different from traditional cutting and pasting approaches where, for instance, you create a graph in Microsoft Excel or a statistics program like SPSS and then paste it into Microsoft Word.
+
+## Projects {#sec-projects}
+
+Before we write any code, first, we need to get organised. `r glossary("project", "Projects")` in RStudio are a way to group all the files you need for one project. Most projects include `r glossary("script", "scripts")`, data files, and output files like the PDF report created by the script or images.
+
+### File System
+
+Modern computers tend to hide the file system from users, but we need to understand a little bit about how files are stored on your computer in order to get a script to find your data. Your computer's file system is like a big box (or `r glossary("directory")`) that contains both files and smaller boxes, or "subdirectories". You can specify the location of a file with its name and the names of all the directories it is inside.
+
+For example, if Lisa is looking for a file called `report.qmd`on their Desktop, they can specify the full file `r glossary("path")` like this: `/Users/lisad/Desktop/report.qmd`, because the `Desktop` directory is inside the `lisad` directory, which is inside the `Users` directory, which is located at the base of the whole file system. If that file was on *your* desktop, you would probably have a different path unless your user directory is also called `lisad`. You can also use the `~` shortcut to represent the user directory of the person who is currently logged in, like this: `~/Desktop/report.qmd`.
+
+### Default working directory
+
+First, make a new `r glossary("directory")` (i.e., folder) on your computer where you will keep all of your R projects. Name it something like "R-projects" (avoid spaces and other special characters). Make sure you know how to get to this directory using your computer's Finder or Explorer. 
+
+::: {.callout-caution collapse="true"}
+## Avoid networked drives
+
+If possible, don't use a network or cloud drive (e.g., OneDrive or Dropbox), as this can sometimes cause problems. If you're working from a networked drive and you are having issues, a helpful test is to try moving your project folder to the desktop to see if that solves the problem.
+:::
+
+Next, open <if>Tools > Global Options...</if>, navigate to the <if>General</if> pane, and set the "Default working directory (when not in a project)" to this directory. Now, if you're not working in a project, any files or images you make will be saved in this `r glossary("working directory")`. 
+
+::: {.callout-caution collapse="true"}
+## Avoid long path names
+
+On some versions of Windows 10 and 11, it can cause problems if path names are longer than 260 characters. Set your default working directory to a path with a length well below that to avoid problems when R creates temporary files while rendering a report. If you are having issues, a helpful test is to try moving your project folder to the desktop to see if that solves the problem as this will likely have a much short path name than most other folders on your computer.
+:::
+
+You can set the working directory to another location manually with menu commands: <if>Session > Set Working Directory > Choose Directory...</if> However, there's a better way of organising your files by using Projects in RStudio.
+
+
+### Start a Project {#sec-project-start}
+
+To create a new project for the work we'll do in this book:
+
+-   <if>File > New Project...</if>
+-   Select <if>New Directory</if>
+-   Select <if>New Project</if>
+-   Name the project `r path("reprores")`
+-   Save it inside the default `R-projects` directory
+-   Click <if>Create Project</if>
+
+RStudio will restart itself and open with this new project directory as the working directory.
+
+::: {#fig-new-proj layout-ncol=3}
+
+![](images/reports/new_proj_1.png)
+
+![](images/reports/new_proj_2.png)
+
+![](images/reports/new_proj_3.png)
+
+Starting a new project.
+:::
+
+Click on the Files tab in the lower right pane to see the contents of the project directory. You will see a file called `reprores.Rproj`, which is a file that contains all of the project information. When you're in the Finder/Explorer, you can double-click on it to open up the project.
+
+::: {.callout-note}
+## Dot files
+
+Depending on your settings, you may also see a directory called `.Rproj.user`, which contains your specific user settings. You can ignore this and other "invisible" files that start with a full stop.
+:::
+
+::: {.callout-caution}
+## Don't nest projects
+
+Don't ever save a new project **inside** another project directory. This can cause some hard-to-resolve problems.
+:::
+
+### Naming things {#sec-naming}
+
+Before we start creating new files, it's important to review how to name your files. This might seem a bit pedantic, but following clear naming rules so that both people and computers can easily find things will make your life much easier in the long run. Here are some important principles:
+
+-   file and directory names should only contain letters, numbers, dashes, and underscores, with a full stop (`.`) between the file name and `r glossary("extension")` (that means no spaces!)
+-   be consistent with capitalisation (set a rule to make it easy to remember, like always use lowercase)
+-   use underscores (`_`) to separate parts of the file name, like the title and date, and dashes (`-`) to separate words in each part (e.g., `thesis-analysis_2024-10-31.Rmd`)
+-   name files with a pattern that alphabetises in a sensible order and makes it easy for you to find the file you're looking for
+-   prefix a file name with an underscore to move it to the top of the list, or prefix all files with numbers to control their order
+
+For example, these file names are a mess:
+
+-   `r path("report.doc")`
+-   `r path("report final.doc")`
+-   `r path("Data (Customers) 11-15.xls")`
+-   `r path("Customers Data Nov 12.xls")`
+-   `r path("final report2.doc")`
+-   `r path("project notes.txt")`
+-   `r path("Vendor Data November 15.xls")`
+
+Here is one way to structure them so that similar files have the same structure and it's easy for a human to scan the list or to use code to find relevant files. See if you can figure out what the last one should be.
+
+-   `r path("_project-notes.txt")`
+-   `r path("report_v1.doc")`
+-   `r path("report_v2.doc")`
+-   `r path("report_v3.doc")`
+-   `r path("data_customer_2021-11-12.xls")`
+-   `r path("data_customer_2021-11-15.xls")`
+-   `r mcq(c("vendor-data_2021-11-15.xls", "data-vendor-2021_11_15.xls", answer = "data_vendor_2021-11-15.xls", "data_2021-11-15_vendor.xls"))`
+
+::: {.try}
+## Naming practice
+
+Think of other ways to name the files above. Look at some of your own project files and see what you can improve.
+:::
+
+## Quarto {#sec-quarto}
+
+Throughout this course we will use `r glossary("quarto")` to create reproducible reports with a table of contents, text, tables, images, and code. The text can be written using `r glossary("markdown")`, which is a way to specify formatting, such as headers, paragraphs, lists, bolding, and links. Code is placed in `r glossary("chunk", "code chunks")`.
+
+:::{.callout-note}
+## Quarto vs R Markdown
+
+You may have learned `r glossary("R Markdown")` in other classes, or see .Rmd files in other people's projects. Quarto is basically a newer and more general version of R Markdown, with many improvements. The formatting is very similar, and you can often convert R Markdown files by changing the file extension from .Rmd to .qmd with no or very few other changes. 
+:::
+
+### New document {#sec-quarto-newdoc}
+
+To open a new quarto document, click <if>File > New File > Quarto Document...</if>. You will be prompted to give it a title; title it `Reports`. You can also change the author name. Keep the output format as HTML. Save the file as `r path("02-reports.qmd")`.
+
+::: {.callout-warning collapse="true"}
+## Source versus visual editor
+
+You can use the visual editor if you have RStudio version 1.4 or higher. This will be a button at the top of the source pane and the menu options should be very familiar to anyone who has worked with software like Microsoft Word. However, **the examples in the rest of this book are shown for the source editor**, not the visual editor, so delete the line `editor: visual` if needed.
+
+In the visual editor, you won't see the hashes that create headers, or the asterisks that create bold and italic text. You also won't see the backticks that demarcate inline code.
+
+![The example code above shown in the visual editor.](images/reports/visual-editor-example.png){#fig-visual-editor-example}
+
+If you try to add the hashes, asterisks and backticks to the visual editor, you will get frustrated as they disappear. If you succeed, your text in the regular editor will be full of backslashes and the code will not run.
+:::
+
+### Header
+
+At the top of the file, you will see some text between a pair of three dashes:
+
+```{verbatim, lang="markdown"}
+---
+title: "Reports"
+author: "Lisa DeBruine"
+format: html
+---
+```
+
+This is the `r glossary("YAML")` header, which provides information to quarto about how you want to render a document. Here, it sets the title, author, and format. Add a new line with the date, e.g., `date: 2024-10-04`.
+
+You will learn in @sec-yaml how to further customise your document using information in the header.
+
+### Markdown {#sec-markdown}
+
+Now replace all of the text beneath the header with the following text. Make sure to skip a line or two after the three dashes.
+
+``` md
+## Basic Markdown
+
+Now I can make:
+
+* headers
+* paragraphs
+* lists
+* [links](https://psyteachr.github.io/reprores-v4/)
+
+```
+
+If you start a line with hashes, it creates a header. One hash makes a document title, two hashes make a document header, three a subheader, and so on. Make sure you leave a blank line before and after a header, and don't put any spaces or other characters before the first hash. 
+
+Put a blank line between paragraphs of text. Bullet-point list items start with "* " or "- " and numbered list items start with "1. ". Indent list items to make nested lists.
+
+
+### Text Styles
+
+See [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html) for a quick reference.
+
+:::{.try}
+Add an ordered list of different text styles to your document, like bold, italic, strikethrough, subscript, superscript, code, and a task item.
+:::
+
+### Code chunks {#sec-code-chunks}
+
+::: {.try}
+Add a new level-2 header called "Code Chunks", skip a line, and add the following text at the end:
+
+```{r}
+#| echo: fenced
+# this is a code chunk
+```
+:::
+
+What you have created is a `r glossary("chunk", "code chunk")`. In quarto, anything written between lines that start with three backticks is processed as code, and anything written outside is processed as markdown. This makes it easy to combine both text and code in one document. On the default RStudio appearance theme, code chunks are grey and plain text is white, but the actual colours will depend on which theme you have applied.
+
+::: {.callout-caution}
+## Code chunk errors
+
+When you create a new code chunk you should notice that the grey box starts and ends with three backticks \`\`\`. One common mistake is to accidentally delete these backticks. Remember, code chunks and text entry are different colours - if the colour of certain parts of your Markdown doesn't look right, check that you haven't deleted the backticks.
+:::
+
+
+::: {.try}
+Inside your code chunk, add the code you created in @sec-objects.
+
+```{r}
+name <- "Lisa"
+age <- 47
+today <- Sys.Date()
+halloween <- as.Date("2024-10-31")
+```
+:::
+
+::: {.callout-note}
+## Console vs scripts
+
+In @sec-intro, we asked you to type code into the console. Now, we want you to put code into code chunks in quarto files to make the code reproducible. This way, you can re-run your code any time the data changes to update the report, and you or others can inspect the code to identify and fix any errors. 
+
+However, there will still be times that you need to put code in the console instead of in a script, such as when you install a new package. In this book, code chunks will be labelled with whether you should run them in the console or add the code to a script.
+:::
+
+### Running code
+
+When you're working in a quarto document, there are several ways to run your lines of code.
+
+First, you can highlight the code you want to run and then click <if>Run > Run Selected Line(s)</if>, however this is tedious and can cause problems if you don't highlight *exactly* the code you want to run.
+
+Alternatively, you can press the green "play" button at the top-right of the code chunk and this will run **all** lines of code in that chunk.
+
+![Click the green arrow to run all the code in the current chunk.](images/reports/run-current.png){#fig-run-current}
+
+Even better is to learn some of the keyboard shortcuts for RStudio. To run a single line of code, make sure that the cursor is in the line of code you want to run (it can be anywhere) and press <pc>Ctrl+Enter</pc> or <mac>Cmd+Enter</mac>. If you want to run all of the code in the code chunk, press <pc>Ctrl+Shift+Enter</pc> or <mac>Cmd+Shift+Enter</mac>. Learn these short cuts; they will make your life easier!
+
+![Use the keyboard shortcut to run only highlighted code, or run one line at a time by placing the cursor on a line without highlighting anything.](images/reports/run-line.mov){#fig-run-line}
+
+::: {.try}
+
+Run your code using each of the methods above. You should see the variables `name`, `age`, `today`, and `halloween` appear in the environment pane. 
+
+Restart R to clear the objects. They should disappear from the environment (see @sec-rstudio-settings if they don't disappear). 
+
+Run you code again, and then change the value of `name` in the script. When/how does it change in the Environment tab? 
+:::
+
+### Inline code {#sec-inline-r}
+
+One important feature of quarto for reproducible reports is that you can combine text and code to insert values into your writing using **inline coding**. If you've ever had to copy and paste a value or text from one file to another, you'll know how easy it can be to make mistakes. Inline code avoids this. 
+
+::: {.try}
+
+Add a new level-2 header called "Inline Code", then copy and paste the text below. If you used a different variable name than `halloween`, you should update this with the name of the object you created, but otherwise don't change anything else.
+
+```{verbatim, lang="markdown"}
+My name is `r name` and I am `r age` years old. 
+It is `r halloween - today` days until Halloween, 
+which is my favourite holiday.
+```
+
+:::
+
+### Rendering your file {#sec-render}
+
+Now we are going to `r glossary("render")` the file into a document type of our choosing. In this case we'll create a default html file, but you will learn how to create other files like Word and PDF in @sec-formats. To render your file, click the <if>Render</if> button at the top of the source pane.
+
+The console pane will open a tab called "Background Jobs". This is because quarto is not an R package, but a separate application on your computer. You can make this application run with commands from R, or run it from the command line yourself. You may see some text in the Background Jobs window, like "Processing file: 02-reports.qmd" and eventually "Output created: 02-reports.html". Your rendered html file may pop up in a separate web browser, a pop-up window in RStudio, or in the Viewer tab of the lower right pane, depending on your RStudio settings. 
+
+That slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created.
+
+> My name is `r name` and I am `r age` years old. It is `r halloween - today` days until Halloween, which is my favourite holiday.
+
+::: {.callout-note collapse="true"}
+## Rendering with Code
+
+You can also render by typing the following code into the console. Never put this in a qmd script itself, or it will try to render itself in an infinite loop.
+
+```{r, eval = FALSE, filename="Run in the console"}
+quarto::quarto_render("02-reports.qmd")
+```
+:::
+
+::: {.try}
+Edit your file to put the code chunk that defines the objects `name`, `age`, `today` and `halloween` *after* the inline text that uses it and render. What happened and why?
+:::
+
+## Writing a report
+
+We're going to write a basic report for this dataset using quarto to show you some more of the features. We'll be expanding on almost every bit of what we're about to show you throughout this course; the most important outcome is that you start to get comfortable with how quarto works and what you can use it to do. 
+
+### Setup Chunk {#sec-setup-chunk}
+
+Most of your quarto documents should have a setup chunk at the top that loads any necessary libraries and sets default values. 
+
+::: {.try}
+Add the following just below the YAML header. 
+
+```{r}
+#| echo: fenced
+#| label: setup
+#‎| include: false
+
+library(tidyverse)
+```
+:::
+
+The function `library(tidyverse)` makes tidyverse functions available to your script. You should always add the packages you need in your setup chunk. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to `library(package_I_need)` way down in the script. Put it in the setup chunk so the user has an overview of what packages are needed.
+
+### Chunk Options
+
+The chunk execution option `label` above designates this as the setup chunk, and the `include` option makes sure that this chunk and any output it produces don't end up in your rendered document. 
+
+Chunk options are structured like `#| option: value`, and go at the very top of a code chunk. You can also set default values in the YAML header under `execute:` (see @sec-execute below).  
+
+::: {.callout-warning}
+Make sure there are no blank lines, code, or comments before any chunk options, otherwise the options will not be applied.
+:::
+
+### Online sources {#sec-loading-online}
+
+Now, rather than using objects we have created from scratch, we will read in a data file. First, let's try loading data that is stored online. 
+
+::: {.try}
+Create a new level 2 header called "Data Analysis", add a code chunk below it, and copy, paste, and run the below code. This code loads some simulated experiment data.
+
+```{r, eval=FALSE}
+smalldata <- read_csv("https://psyteachr.github.io/reprores/data/smalldata.csv")
+```
+
+:::
+
+- The data is stored in a `.csv` file so we're going to use the `read_csv()` function to load it in.
+- Note that the url is contained within double quotation marks - it won't work without this.
+- You should see a message that starts with "Rows: 10 Columns: 4", you can ignore this for now.                                                                   
+
+
+::: {.callout-warning}
+## Could not find function
+
+If you get an error message that looks like:
+
+> Error in read_csv("https://psyteachr.github.io/reprores/data/smalldata.csv") :  
+>  could not find function "read_csv"
+
+This means that you have not loaded tidyverse. Check that `library(tidyverse)` is in the setup chunk and that you have run the setup chunk.
+:::
+
+This dataset is a few lines of simulated data for an experiment with 10 participants, 2 groups (experimental and control) and two dependent measures (pre and post). There are multiple ways to view and check a dataset in R. Do each of the following and make a note of what information each approach seems to give you. If you'd like more information about each of these functions, you can look up the help documentation with `?function`:
+
+Click on the `smalldata` object in the environment pane, or run each of the following lines of code in the console:
+
+```{r, eval = FALSE, filename="Run in the console"}
+# different ways to view a data frame
+head(smalldata)
+summary(smalldata)
+str(smalldata)
+View(smalldata)
+```
+
+### Local data files
+
+More commonly, you will be working from data files that are stored locally on your computer. But where should you put all of your files? You usually want to have all your scripts and data files for a single project inside one folder on your computer, that project's `r glossary("working directory")`, and we have already set up the main directory `r path("reprores")`for this course.
+
+You can organise files in subdirectories inside this main project directory, such as putting all raw data files in a subdirectory called `r path("data")` and saving any image files to a subdirectory called `r path("images")`. Using subdirectories helps avoid one single folder becoming too cluttered, which is important if you're working on big projects.
+
+In your `r path("reprores")` directory, create a new folder named `r path("data")`, [download a copy of the data file](https://psyteachr.github.io/reprores/data/smalldata.csv){download=""}, and save it in this new subdirectory.
+
+To load in data from a local file, again we can use the `read_csv()` function, but this time rather than specifying a url, give it the subdirectory and file name. 
+
+::: {.try}
+Change the code in your file to the following.
+
+```{r read-csv, message=FALSE}
+smalldata <- read_csv("data/smalldata.csv")
+```
+:::
+
+::: {.callout-tip}
+## Tab-autocomplete file names
+
+Use tab auto-complete when typing file names in a code chunk. After you type the first quote, hit tab to see a drop-down menu of the files in your working directory. You can start typing the name of the subdirectory or file to narrow it down. This is really useful for avoiding annoying errors because of typos or files not being where you expect.
+:::
+
+Things to note:
+
+-   You must include the file extension (in this case `.csv`)
+-   The subdirectory folder name (`data`) and the file name are separated by a forward slash `/`
+-   Precision is important, if you have a typo in the file name it won't be able to find your file; remember that R is case sensitive - `SmallData.csv` is a completely different file to `smalldata.csv` as far as R is concerned.
+
+::: {.try}
+Run `head()`, `summary()`, `str()`, and `View()` on `smalldata` to confirm that the data is the same as before.
+:::
+
+### Data analysis
+
+For this report we're just going to present some simple stats for two groups: "control" and "exp". We'll come back to how to write this kind of code yourself in @sec-summary. For now, see if you can follow the logic of what the code is doing via the code comments.
+
+::: {.try}
+Create a new code chunk, then copy, paste and run the following code and then view `group_counts` by clicking on the object in the environment pane.
+
+```{r smalldata_counts}
+# count how many are in each group
+group_counts <- count(smalldata, group)
+```
+:::
+
+Because each row of the dataset is a participant, this code gives us a nice and easy way of seeing how many participants were in each group; it just counts the number of rows in each group.
+
+```{r group_counts_show, echo = FALSE}
+group_counts
+```
+
+::: {.try}
+Copy and paste the text below into the white space below the code chunk that loads in the data. Save the file and then render to view the results.
+
+``` md
+The total number of participants in the **control** condition was `r group_counts$n[1]`.
+```
+:::
+
+Try and match up the inline code with what is in the `group_counts` table. Of note:
+
+* The `$` sign is used to indicate specific variables (or columns)  in an object using the `object$variable` syntax. 
+* Square brackets with a number e.g., `[1]`, indicate a particular observation
+* So `group_counts$n[1]` asks the inline code to display the first observation of the variable `n` in the dataset `group_counts`.
+
+::: {.try}
+Add another line that reports the total numbers of participants in the **experimental** condition using inline code. Using either the visual editor or text markups, add in bold and italics so that it matches the others.
+
+`r hide()`
+```{verbatim, lang="markdown"}
+The total number of participants in the **experimental** condition was `r group_counts$n[2]`.
+```
+`r unhide()`
+
+:::
+
+### Code comments {#sec-comments}
+
+In the above code we've used code `r glossary("comment", "comments")` and it's important to highlight how useful these are. You can add comments inside R chunks with the hash symbol (`#`). R will ignore characters from the hash to the end of the line.
+
+```{r}
+# important numbers
+
+n <- nrow(smalldata) # the total number of participants (number of rows)
+pre <- mean(smalldata$pre) # the mean of the pre column
+post <- mean(smalldata$post) # the mean of the post column
+```
+
+It's usually good practice to start a code chunk with a comment that explains what you're doing there, especially if the code is not explained in the text of the report.
+
+If you name your objects clearly, you often don't need to add clarifying comments. For example, if I'd named the three objects above `total_participants`, `mean_pre` and `mean_post`, I would omit the comments. It's a bit of an art to comment your code well, but try to add comments as you're working through this book - it will help consolidate your learning and when future you comes to review your code, you'll thank past you for being so clear.
+
+### Images {#sec-md-images}
+
+As the saying goes, a picture paints a thousand words, and sometimes you will want to communicate your data using visualisations. 
+
+Create a code chunk to display a graph of the data in your document after the text we've written so far. We'll use some code that you'll learn more about in @sec-viz to make a simple bar chart that represents the sales data -- focus on trying to follow how bits of the code map on to the plot that is created.
+
+::: {.try}
+Add a new level-3 header called "Visualisation". Copy and paste the code below into a new chunk. Run the code in your script to see the plot it creates and then render the file to see how it is displayed in your document.
+
+```{r}
+ggplot(data = smalldata, 
+       mapping = aes(x = pre, 
+                     y = post, 
+                     color = group)) +
+  geom_point() +
+  labs(x = "Pre-test Score",
+       y = "Post-test Score")
+```
+
+:::
+
+You can also include images that you did not create in R using the markdown syntax for images. This is very similar to loading data in that you can either use an image that is stored on your computer, or via a url.  
+
+The general syntax for adding an image in markdown is `![caption](url){#fig-name}`. You can leave the caption blank, but must include the square brackets. The curly brackets are optional, and allow you to reference the figure as `@fig-name` (change the "name" part for each new figure). You can also add other formatting options in the curly brackets, like an image width or CSS styles.
+
+``` md
+![The ReproRes logo](images/logos/logo.png){#fig-logo width="33%"}
+```
+
+![The ReproRes logo](images/logos/logo.png){#fig-logo width="33%"}
+
+
+::: {.callout-note collapse="true"}
+## Image Licenses
+
+Most images on Wikipedia are public domain or have an open license. You can search for images by license on Google Images by clicking on the <if>Tools</if> button and choosing "Creative Commons licenses" from the "Usage Rights" menu.
+
+```{r, echo=FALSE, fig.alt="Screenshot of Google Images interface with Usage Rights selections open."}
+knitr::include_graphics("images/reports/google-images.png")
+```
+:::
+
+
+### Tables {#sec-md-tables}
+
+Rather than a figure, we might want to display our data in a table. 
+
+::: {.try}
+Add a new level 3 heading to your document, name the heading "Tables" and then create a new code chunk below this. 
+
+```{r, eval = FALSE}
+smalldata
+```
+::: 
+
+First, let's see what the table looks like if we don't make any edits. Simply write the name of the table you want to display in the code chunk (in our case `smalldata`) and then render to see what it looks like.
+
+
+
+```
+# A tibble: 10 × 4
+   id    group     pre  post
+   <chr> <chr>   <dbl> <dbl>
+ 1 S01   control  98.5 107. 
+ 2 S02   control 104.   89.1
+ 3 S03   control 105.  124. 
+ 4 S04   control  92.4  70.7
+ 5 S05   control 124.  125. 
+ 6 S06   exp      97.5 102. 
+ 7 S07   exp      87.8 126. 
+ 8 S08   exp      77.2  72.3
+ 9 S09   exp      97.0 109. 
+10 S10   exp     102.  114. 
+```
+
+This isn't very pretty, but we can change the print style. 
+
+::: {.try}
+Change the line `format: html` in the YAML header to the following. 
+
+
+``` md
+---
+format: 
+  html:
+    df-print: kable
+---
+```
+:::
+
+::: {.callout-warning}
+Make sure to keep the spaces exactly the same (YAML is very picky about spaces). In YAML, if a `key: value` pair doesn't have any sub-options, you can write it on one line, like `format: html`. But if you want to set any html options, you have to indent it like above.
+:::
+
+
+
+### Cross references {#sec-cross-references}
+
+You can automatically number your figures and tables by giving them labels that start with `fig-` or `tbl-`, and referring to them in the text like `@fig-name` or `@tbl-name` (see [quarto cross references](https://quarto.org/docs/authoring/cross-references.html) for more details).
+
+::: {.try}
+Add the following text above the chunk containing the table:
+
+```{verbatim, lang='markdown'}
+All data are shown in @tbl-raw-data.
+```
+
+Also, add the two commented lines below to the top of the code chunk:
+
+``` yaml
+#| label: tbl-raw-data
+#| tbl-cap: The raw data from the study.
+```
+:::
+
+These set the figure label so you can reference it in the document, and the table caption. The label must start with "tbl-" to automatically add it to the numbered list of tables. Now, when you render your document, tables will display in "kable" format, which looks much nicer. 
+
+All data are shown in @tbl-raw-data2.
+
+```{r}
+#| label: tbl-raw-data2
+#| echo: false
+#| tbl-cap: The raw data from the study.
+smalldata
+```
+
+
+::: {.callout-note collapse="true"}
+## Advanced table customisation
+
+If you're feeling confident with what we have covered so far, you can also explore the [gt](https://gt.rstudio.com/) package, which is complex, but allows you to create beautiful customised tables. [Riding tables with {gt} and {gtExtras}](https://bjnnowak.netlify.app/2021/10/04/r-beautiful-tables-with-gt-and-gtextras/) is an outstanding tutorial.
+:::
+
+## Refining your report
+
+### Execution defaults {#sec-execute}
+
+Let's finish by tidying up the report and organising our code a bit better. 
+
+You can set more default options for your document in the YAML header. The help pages for [quarto execution options](https://quarto.org/docs/computations/execution-options.html) has a full list of options. However, the most useful and common options to change for the purposes of writing reports revolve around whether you want to show your code and the size of your images.
+
+Add the code below to your YAML header and then try changing each option from `false` to `true` and changing the numeric values then render the file again to see the difference it makes.
+
+```{verbatim, lang='yaml'}
+---
+execute:
+  echo: false     # whether to show code chunks
+  message: false  # whether to show messages from your code
+  warning: false  # whether to show warnings from your code
+  fig-width: 8    # figure width in inches (at 96 dpi)
+  fig-height: 5   # figure height in inches (at 96 dpi)
+---
+```
+
+You can also override defaults in a code cell. See [quarto code cells help](https://quarto.org/docs/reference/cells/cells-knitr.html) for a full list of options.
+
+
+
+::: {.callout-warning collapse="true"}
+## Figure versus output dimensions
+
+Note that `fig-width` and `fig-height` control the original size and aspect ratio of images generated by R, such as plots. This will affect the relative size of text and other elements in plots. It does not affect the size of existing images at all. However, `out-width` controls the **display** size of both existing images and figures generated by R. This is usually set as a percentage of the page width.
+
+```{r}
+#| echo: fenced
+#| label: fig-full-100
+#| fig-width: 8
+#| fig-height: 5
+#| out-width: '100%'
+#| fig-cap: A plot with the default values
+ggplot2::last_plot()
+```
+
+```{r}
+#| echo: fenced
+#| label: fig-half-100
+#| fig-width: 4
+#| fig-height: 2.5
+#| out-width: '100%'
+#| fig-cap: The same plot with half the default width and height
+
+ggplot2::last_plot()
+```
+
+```{r}
+#| echo: fenced
+#| label: fig-half-50
+#| fig-width: 4
+#| fig-height: 2.5
+#| out-width: '50%'
+#| fig-cap: The same plot as above at half the output width
+ggplot2::last_plot()
+```
+
+:::
+
+### Override defaults
+
+These setup options change the behaviour for the entire document, however, you can override the behaviour for individual code chunks. 
+
+For example, by default you might want to hide your code but there also might be an occasion where you want to show the code you used to analyse your data. You can set `echo = FALSE` in your setup chunk to make hiding code the default but in the individual code chunk for your plot set `echo = TRUE`. Try this now and knit the file to see the results.
+
+Additionally, you can also override the default image display size or dimensions.
+
+```{r}
+#| echo: fenced
+#| label: fig-change-height
+#| fig-width: 10
+#| fig-height: 5
+ggplot(data = smalldata, 
+       mapping = aes(x = pre, 
+                     y = post, 
+                     color = group)) +
+  geom_point() +
+  labs(x = "Pre-test Score",
+       y = "Post-test Score",
+       title = "Relationship between pre- and post-test by group")
+```
+
+
+### YAML options {#sec-yaml}
+
+[Quarto HTML reference](https://quarto.org/docs/reference/formats/html.html) 
+
+Finally, the `r glossary("YAML")` header is the bit at the very top of your quarto document. You can set several options here as well. 
+
+
+::: {.callout-note}
+
+Update the format section. Try changing the values from `false` to `true` to see what the options do.
+
+``` md
+---
+format:
+  html:
+    df-print: paged
+    theme: superhero
+    toc: true
+---
+```
+:::
+
+The `df-print: paged` option prints data frames using `rmarkdown::paged_table()` automatically. You can use `df_print: kable` to default to the simple kable style.
+
+The built-in bootswatch themes are: default, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti. You can [view and download more themes](https://bootswatch.com/4/). Try changing the theme to see which one you like best.
+
+
+![Light themes in versions 3 and 4.](images/reports/bootswatch.png){#fig-bootswatch}
+
+::: {.callout-warning}
+## YAML formatting
+
+YAML headers can be very picky about spaces and semicolons (the rest of R Markdown is much more forgiving). For example, if you put a space before "author", you will get an error that looks like:
+
+```
+Error in yaml::yaml.load(..., eval.expr = TRUE) : 
+  Parser error: while parsing a block mapping at line 1, 
+  column 1 did not find expected key at line 2, column 2
+```
+
+The error message will tell you exactly where the problem is (the second character of the second line of the YAML header), and it's usually a matter of fixing typos or making sure that the indenting is exactly right.
+:::
+
+### Table of Contents {#sec-toc}
+
+The table of contents is created by setting `toc: true`. This will use the markdown header structure to create the table of contents. The option `toc-depth: 3` means that the table of contents will only display headers up to level 3 (i.e., those that start with three hashes: `###`), and `toc-expand` sets wether the sections are expanded or collapsed. 
+
+::: {.try}
+Try changing the values of the toc settings and re-render. 
+
+```{verbatim, lang="yaml"}
+---
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: true
+---
+```
+
+Add `{-}` after a header title to remove it from the table of contents, e.g., 
+
+``` md
+## Basic Markdown {-}
+```
+::: 
+
+::: {.callout-caution}
+If your table of contents isn't showing up correctly, this probably means that your headers are not set up right. Make sure that headers have no spaces before the hashes and at least one space after the hashes. For example, `##Analysis` won't display as a header and be added to the table of contents, but `## Analysis` will.
+:::
+
+### Formats {#sec-formats}
+
+So far we've just rendered to html. To generate PDF reports, you need to install <pkg>tinytex</pkg> [@R-tinytex] and run the following code in the console (do **not** add this to your Rmd file):
+
+```{r}
+#| eval: false
+#| filename: Run in the console
+install.packages("tinytex")
+tinytex::install_tinytex()
+```
+
+Once you've done this, update your YAML heading to add a `pdf_document` section and knit a PDF document. The options for PDFs are more limited than for HTML documents, so if you just replace `html` with `pdf`, you may need to remove some options if you get an error that looks like "Functions that produce HTML output found in document targeting PDF output."
+
+```  md
+---
+format:
+  pdf:
+    df-print: kable
+    toc: TRUE
+---
+```
+
+There are many different formats you can render your document to, from HTML and PDF, to Word, Open Office, and ePub. You can also create websites, books, and presentations with a few small changes. See the [quarto documentation](https://quarto.org/docs/output-formats/all-formats.html) for more information. 
+
+## Bibliography {#sec-bibliography}
+
+There are several ways to do in-text references and automatically generate a [bibliography](https://quarto.org/docs/authoring/citations.html) in quarto. Quarto files need to link to a BibTex or JSON file (a plain text file with references in a specific format) that contains the references you need to cite. You specify the name of this file in the YAML header, like `bibliography: refs.bib` and cite references in text using an at symbol and a shortname, like `[@tidyverse]`. You can also include a Citation Style Language (.csl) file to format your references in, for example, APA style.
+
+``` md
+---
+format:
+  html:
+    toc: true
+bibliography: refs.bib
+csl: apa.csl
+---
+```
+
+### Converting from reference software
+
+Most reference software like EndNote or Zotero has exporting options that can export to BibTeX format. You just need to check the shortnames in the resulting file.
+
+::: {.callout-warning}
+Please start using a reference manager consistently through your research career. It will make your life so much easier. Zotero is probably the best one.
+:::
+
+
+::: {.try}
+1. If you don't already have one, set up a [Zotero](https://www.zotero.org/) account  
+2. Add the [connector for your web browser](https://www.zotero.org/download/) (if you're on a computer you can add browser extensions to)  
+3. Navigate to [Easing Into Open Science](https://doi.org/10.1525/collabra.18684) and add this reference to your library with the browser connector  
+4. Go to your library and make a new collection called "Open Research" (click on the + icon after **`My Library`**)  
+5. Drag the reference to Easing Into Open Science into this collection  
+6. Export this collection as BibTex  
+:::
+
+```{r zotero, echo = FALSE}
+#| fig.cap: Export a bibliography file from Zotero
+knitr::include_graphics("images/repro/zotero.png")
+```
+
+The exported file should look like this:
+
+```{embed, file = "demos/export-data.bib"}
+
+```
+
+
+### Creating a BibTeX File
+
+You can also add references manually. 
+
+::: {.try}
+In RStudio, go to **`File`** > **`New File...`** > **`Text File`** and save the file as "refs.bib".
+
+Add the line `bibliography: refs.bib` to your YAML header.
+:::
+
+### Adding references {#references}
+
+You can add references to a journal article in the following format:
+
+```
+@article{shortname,
+  author = {Author One and Author Two and Author Three},
+  title = {Paper Title},
+  journal = {Journal Title},
+  volume = {vol},
+  number = {issue},
+  pages = {startpage--endpage},
+  year = {year},
+  doi = {doi}
+}
+```
+
+See [A complete guide to the BibTeX format](https://www.bibtex.com/g/bibtex-format/) for instructions on citing books, technical reports, and more.
+
+You can get the reference for an R package using the functions `citation()` and `toBibtex()`. You can paste the bibtex entry into your bibliography.bib file. Make sure to add a short name (e.g., "ggplot2") before the first comma to refer to the reference.
+
+```{r}
+citation(package="ggplot2") %>% toBibtex()
+```
+
+
+[Google Scholar](https://scholar.google.com/) entries have a BibTeX citation option. This is usually the easiest way to get the relevant values if you can't add a citation through the Zotero browser connector, although you have to add the DOI yourself. You can keep the suggested shortname or change it to something that makes more sense to you.
+
+```{r google-scholar, echo = FALSE, fig.cap = "Get BibTex citations from Google Scholar."}
+knitr::include_graphics("images/present/google-scholar.png")
+```
+
+
+### Citing references {#citations}
+
+You can cite references in text like this: 
+
+```
+This tutorial uses several R packages [@tidyverse;@rmarkdown].
+```
+
+This tutorial uses several R packages [@tidyverse;@rmarkdown].
+
+Put a minus in front of the @ if you just want the year:
+
+```
+Kathawalla and colleagues [-@kathawalla_easing_2021] explain how to introduce open research practices into your postgraduate studies.
+```
+
+Kathawalla and colleagues [-@kathawalla_easing_2021] explain how to introduce open research practices into your postgraduate studies.
+
+### Uncited references
+
+If you want to add an item to the reference section without citing, it, add it to the YAML header like this:
+
+```
+nocite: |
+  @kathawalla_easing_2021, @broman2018data, @nordmann2022data
+```
+
+Or add all of the items in the .bib file like this:
+
+```
+nocite: '@*'
+```
+
+### Citation Styles
+
+You can search a [list of style files](https://www.zotero.org/styles) for various journals and download a file that will format your bibliography for a specific journal's style. You'll need to add the line `csl: filename.csl` to your YAML header. 
+
+::: {.try}
+Add some citations to your refs.bib file, reference them in your text, and render your manuscript to see the automatically generated reference section. Try a few different citation style files.
+:::
+
+### Reference Section
+
+By default, the reference section is added to the end of the document. If you want to change the position (e.g., to add figures and tables after the references), include the following where you want the references:
+
+``` md
+::: {#refs}
+:::
+```
+
+::: {.try}
+Add in-text citations and a reference list to your report.
+:::
+
+## Summary {#sec-reports-summary}
+
+This chapter has covered a lot but hopefully now you have a much better idea of what quarto is able to do. Whilst working in quarto and markdown takes longer in the initial set-up stage, once you have a fully reproducible report you can plug in new data each week or month and simply render, reducing duplication of effort, and the human error that comes with it.
+
+You can access a [working quarto file](demos/02-reports.qmd){download="02-reports.qmd"} with the code from the example above to compare to your own code.
+
+As you continue to work through the book you will learn how to wrangle and analyse your data and how to use quarto to present it. We'll slowly build on the available customisation options so over the course of next few weeks, you'll find your quarto reports start to look more polished and professional.
+
+
+## Exercises {#sec-exercises-reports}
+
+### Create a Project
+
+Create a new project called "cv" ([@sec-projects]).
+
+### Create a New Script
+
+In the "cv" project, create a new quarto document called "cv.qmd" ([@sec-quarto-newdoc]). Edit the YAML header to print data frames using kable and set a custom theme ([@sec-yaml]).
+
+`r hide()`
+```{verbatim}
+---
+title: "CV"
+author: "Me"
+format:
+  html:
+    df-print: kable
+    theme: cosmo
+---
+```
+`r unhide()`
+
+### Markdown Practice
+
+Write a short paragraph describing you and your work or academic aspirations. Include a bullet-point list of links to related websites ([@sec-markdown]).
+
+`r hide()`
+
+```
+I am a research psychologist who is interested in open science 
+and teaching computational skills.
+
+* [psyTeachR books](https://psyteachr.github.io/)
+* [Google Scholar](https://scholar.google.com/)
+```
+
+`r unhide()`
+
+### Add a Table
+
+Make a subheading titled "Education" and use the following code to load a small table of your education ([@sec-code-chunks]). Edit it to be relevant to you (you can change the categories entirely if you want).  
+
+```{r}
+#| echo: fenced
+tibble::tribble(
+  ~degree, ~topic, ~school, ~year,
+  "BSc", "BioPsych/AnthroZoo", "University of Michigan", "1998",
+  "MSc", "Biology", "University of Michigan", "2000",
+  "GradCert", "Women's Studies", "University of Michigan", "2000",
+  "PhD", "Psychology", "McMaster University", "2004"
+)
+```
+
+
+### Code Execution
+
+Figure out how to make it so that code chunks don't show in your rendered document ([@sec-execute]).
+
+`r hide()`
+
+You can set the execution default to `echo: false` in the YAML header at the top of the script.
+
+```{verbatim}
+---
+execute:
+  echo: false
+---
+```
+
+To set visibility for a specific code chunk, put `#| echo: false` at the top of the code chunk.
+
+`r unhide()`
+
+### Add an Image
+
+Add an image of anything relevant ([@sec-md-images]).
+
+`r hide()`
+
+You can add an image from the web using its URL:
+
+```{verbatim}
+![ReproRes](https://psyteachr.github.io/images/reprores.png){width='200px'}
+```
+    
+Or save an image into your project directory (e.g., in the images folder) and add it using the relative path:
+
+```{verbatim}
+![ReproRes](images/logos/logo.png){width='200px'}
+```
+    
+`r unhide()`
+
+
+
+### Use Inline R 
+
+Include the current date ([@sec-inline-r]) in a sentence like:
+
+This CV was created on `r Sys.Date()`.
+
+`r hide()`
+
+```{verbatim lang="markdown"}
+This CV was created on `r Sys.Date()`.
+```
+
+`r unhide()`
+
+### Render
+
+Render this document to html ([@sec-render]).
+
+    `r hide()`
+    Click on the render button or run the following code in the console. (Do not put it the script!)
+    
+    ```{r, eval = FALSE}
+    quarto::quarto_render("cv.qmd")
+    ```
+    
+    `r unhide()`
+
+### Share
+
+Once you're done, zip up your entire project folder and share it on Teams under the week 2 exercise post. Try downloading someone else's project and rendering their qmd file.
+
+::: {.callout-important}
+Make sure any files you reference are inside your project folder, and **always** use `r glossary("relative path", "relative paths")` and not `r glossary("absolute path", "absolute paths")` when you refer to images or other files in your code. The use of absolute paths is a major source of irreproducibility in published code. The best way to double-check that your code for reproducibility problems is to share your entire project directory with a friend and see if they can render your file.
+:::
+
+## Glossary {#sec-glossary-reports -}
+
+```{r, echo = FALSE}
+glossary_table()
+```
+
+## Further Resources {#sec-resources-reports -}
+
+-   [Quarto Guide](https://quarto.org/docs/guide/)
+-   [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
+-   [Project Structure](https://slides.djnavarro.net/project-structure/) by Danielle Navarro
+-   [How to name files](https://speakerdeck.com/jennybc/how-to-name-files) by Jenny Bryan
+-   [gt](https://gt.rstudio.com/) for customised tables
+
+## References {#sec-references-reports -}
+
+
+

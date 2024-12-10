@@ -1,0 +1,8 @@
+"","term","description","url","package","title"
+"1","count()","count unique values of variables","https://dplyr.tidyverse.org/reference/count.html","dplyr","psyteachr_fqa Ch. 14"
+"2","summarise()",NA,NA,NA,"psyteachr_fqa Ch. 14"
+"3","round()","round values to specified number of digits","https://rdrr.io/r/base/Round.html","base","psyteachr_fqa Ch. 14"
+"4","mean()","calculate mean of elements of vector","https://rdrr.io/r/base/mean.html","base","psyteachr_fqa Ch. 14"
+"5","sd()","compute standard deviation","https://rdrr.io/r/stats/sd.html","stats","psyteachr_fqa Ch. 14"
+"6","group_by()","group data by levels of column","https://dplyr.tidyverse.org/reference/group_by.html","dplyr","psyteachr_fqa Ch. 14"
+"7","mutate()","create or modify data columns","https://dplyr.tidyverse.org/reference/mutate.html","dplyr","psyteachr_fqa Ch. 14"

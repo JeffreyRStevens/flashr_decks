@@ -1,0 +1,491 @@
+# Data Summaries {#sec-summary}
+
+## Intended Learning Outcomes {#sec-ilo-summary .unnumbered}
+
+* Be able to load data from external files
+* Be able to summarise data by groups
+* Use pipes to chain together functions
+
+## Functions used {#functions-summary}
+
+```{r, include = FALSE}
+# load tidyverse packages separately so auto-links work in `func()` notation
+library(readr)
+library(dplyr)
+library(janitor)
+```
+
+* built-in (you can always use these without loading any packages)
+    * base:: `c()`, `dput()`, `library()`, `max()`, `mean()`, `min()`, `sum()`
+    * stats:: `quantile()`
+    * utils:: `head()`
+* tidyverse (you can use all these with `library(tidyverse)`)
+    * readr:: `cols()`, `col_factor()`, `col_skip()`, `read_csv()`, `spec()`
+    * dplyr:: `arrange()`, `count()`, `desc()`, `filter()`, `glimpse()`, `group_by()`, `median()`, `mutate()`, `n()`, `summarise()`, `ungroup()`
+* other (you need to load each package to use these)
+    * janitor:: `clean_names()`
+
+## Walkthrough video {#sec-walkthrough-summary .unnumbered}
+
+There is a walkthrough video of this chapter available via [Echo360](https://echo360.org.uk/media/7684e5ec-5ca7-44e4-9a22-f46f21da498c/public). Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+
+
+## Set-up {#sec-setup-summary}
+
+First, create a new project for the work we'll do in this chapter named `r path("04-summary")`. Second, download the data for this chapter (<a href="data/12.1_delivery.csv" download>12.1_delivery.csv</a>) and save it in your project data folder. Finally, open and save and new R Markdown document named `summary.Rmd`, delete the welcome text and load the required packages for this chapter.
+
+```{r setup-summary, message=FALSE, warning = FALSE, filename="Chapter packages"}
+library(tidyverse)   # data wrangling functions
+library(janitor)     # data cleaning functions
+```
+
+Download the [Data transformation cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf).
+
+## Import Data
+
+The data we'll be working with is on method of delivery for singleton births from Public Health Scotland. You can see the most recent version at [Method of Delivery](https://www.opendata.nhs.scot/dataset/births-in-scottish-hospitals/resource/8654b6d8-9765-4ced-8e9b-4611aa4596eb), but we'll be working from a saved version. 
+
+The data are in a `r glossary("CSV")` file (download <a href="data/12.1_delivery.csv" download>12.1_delivery.csv</a>), so we can read this with the function `read_csv()` , and assign it to a new object that we'll call `births`. You can learn more about importing data from other file types in @sec-data. 
+
+```{r, message=TRUE}
+births <- read_csv("data/12.1_delivery.csv")
+```
+
+When you load data with `read_csv()`, you get a quick summary that you should always check to see if the data were loaded correctly. One common problem is that data load with the the wrong type (see @sec-data-types), usually because a numeric column contains some unexpected text values. So the first thing to check is that each column has the expected data type. The abbreviation "chr" means this is a `r glossary("character")` column, which can contain any text. The abbreviation "dbl" is a `r glossary("double")`, which is a number that can have decimal places. 
+
+There are too many columns to show all of them in the summary, so it tells you to use the `spec()` function to check all the columns. 
+
+```{r}
+spec(births)
+```
+
+This gives you the info formatted inside the `cols()` function to make it easy for you to copy and edit this if any of the columns imported incorrectly.
+
+You can also use the `glimpse()` function to check the type of each column, and see a few examples of the cell values. 
+
+```{r}
+glimpse(births)
+```
+
+The column `SIMDQuintileQF` looks a little odd. We can quickly check what all the values are in a data table with the `count()` function:
+
+```{r}
+count(births, SIMDQuintileQF)
+```
+
+It looks like this column doesn't contain any useful info, so we can just ignore it, or skip it. To do this at the point of loading in the data, we create an object (`birth_cols`) that contains our column specification using the `col_types` argument and two helper functions, `cols()` and `col_skip()`. We then pass `birth_cols` to the `col_types` argument of `read_csv()` which uses this info to amend the file that is loaded in.
+
+```{r}
+# edit the output of spec(births)
+birth_cols <- cols(
+  SIMDQuintileQF = col_skip()
+)
+
+births <- read_csv("data/12.1_delivery.csv", col_types = birth_cols)
+```
+
+There's also additional edits you can make to the initial file, for example, you can also set the order of levels for `r glossary("categorical")` data when you first import it. 
+
+To check which groups our data has, we can  use the `count()` function to check the level labels for `AgeGroup`, `Delivery` and `Induced`; and set `sort = TRUE` to sort by frequency.
+
+```{r}
+count(births, AgeGroup)
+count(births, Delivery, sort = TRUE)
+count(births, Induced, sort = TRUE)
+```
+
+We'll now add on extra code to `birth_cols` to set the order of our factors. What order you choose will depend on what makes most sense for the data. For `AgeGroup` we'll list them in chronological order, whilst for `Delivery` and `Induced`, we'll sort them according to the highest value - it can be helpful to think of what order you'll like the bars to be in if you were making a graph.
+
+
+:::{.callout-tip}
+
+The levels for `Delivery` are numerous and complex, which increases the risk of a typo and is just tedious to type. Here is a quick trick to generate the text you can copy and paste into your code. The function `dput()` gives you the code you can use to recreate an object.
+
+```{r, filename = "Type in the console"}
+delivery_table <- count(births, Delivery, sort = TRUE)
+dput(delivery_table$Delivery)
+```
+
+:::
+
+
+```{r}
+# edit the output of spec(births)
+birth_cols <- cols(
+  SIMDQuintileQF = col_skip(),
+  AgeGroup = col_factor(levels = c("Under 25", "25-34", "35 and over","Unknown")),
+  Delivery = col_factor(levels = c("Spontaneous", 
+                                   "Caesarean - Emergency", 
+                                   "Forceps", 
+                                   "Vacuum", 
+                                   "Caesarean - Elective", 
+                                   "Breech", 
+                                   "Not Known")),
+  Induced = col_factor(levels = c("Not Induced", "Induced", "Unknown"))
+)
+
+births <- read_csv("data/12.1_delivery.csv", col_types = birth_cols)
+```
+
+
+
+### Clean up names
+
+Data sets often import with column names that are a little difficult to use in code. You can manually rename them, but the `r pkg("janitor")` package makes this incredibly easy. This dataset has pretty good names, with no spaces or special characters, but it does use uppercase letters to separate words, which can be hard to remember. the `clean_names()` function changes everything to lowercase and uses underscores to separate word parts. Using `clean_names` every time you import a dataset is a good habit to get into. 
+
+```{r}
+births <- clean_names(births)
+
+colnames(births)
+```
+
+
+### Exploring a Dataset 
+
+There are `r nrow(births)` rows and `r ncol(births)` columns of data. The data dictionary on the NHS website includes the following, but doesn't clearly state what the possible values are for each column. We're going to practice figuring out more about how data is structured using data summaries in this exercise, since it's a common task to get a mysteriously formatted data file and need to figure it out yourself. At the very least, this exercise should remind you to never do this to other people -- always provide a clear codebook with all values! 
+
+Column | Type | Label
+:------|:-----|:-----
+FinancialYear     | text | Data is recorded for financial years (1st April to 31st March) based on the date of the mother's discharge
+CA                | text | 9-digit code for Council areas based on boundaries as at 1st April 2019
+SIMDQuintile      | text | Scottish Index of Multiple Deprivation (SIMD) quintile; 1(Most Deprived) - 5(Least Deprived)
+SIMDQuintileQF    | text | Qualifier for SIMDQuintile indicating unknown quintiles
+SIMDVersion       | text | Most appropriate SIMD release used for each year
+AgeGroup          | text | Age Group of the mother at time of admission
+Delivery          | text | The method by which the baby was delivered
+Induced           | text | Was the delivery induced, that is, was it started artificially
+Livebirths        | numeric |Number of live births
+
+: Data Codebook {tbl-colwidths="[25,25,50]"}
+
+### The $ operator
+
+We need to take a couple of brief detours to introduce some additional coding conventions. First, let's introduce the `$` notation. The dollar sign allows you to select items from some objects, like lists or data frames.  The left-hand side is the object, and the right-hand side is the item. Here, we will select columns from a table. When you call a column like this, R will return all the observations in that column.
+
+```{r}
+years <- births$financial_year
+```
+
+If your item has multiple observations, you can specify which ones to return using square brackets `[]` and the row number or a `r glossary("vector")` of row numbers.
+
+```{r}
+births$financial_year[1] # select the first observation
+births$livebirths[c(20,30,40)] # select multiple with c()
+```
+
+## Pipes {#sec-pipes-first}
+
+::: {style="width: 200px; float: right;"}
+<img src="images/tidy/pipe_sticker.png" style="width: 100%"/>
+:::
+
+Let's say you want to filter the dataset down to just the emergency C-sections, and then sum up the total number of live births per year, and then arrange the data from largest to smallest (don't worry, we'll introduce these functions soon). You could do it by creating intermediate objects for each step:
+
+```{r}
+# filter the table to just emergency c-sections
+c_sections <- filter(births, 
+                     delivery == "Caesarean - Emergency")
+
+# calculate the total number of births per year
+c_per_year <- summarise(c_sections, 
+                        n = sum(livebirths), 
+                        .by = financial_year)
+
+# sort by n, descending
+c_sorted <- arrange(c_per_year, desc(n))
+
+head(c_sorted)
+```
+
+Whilst the above code is functional, it adds three unnecessary objects to the environment, increasing cognitive load and the risk of mistakes. Enter... the `r glossary("pipe")`, that weird `%>%` you may have seen. 
+
+Pipes allow you to send the output from one function straight into another function. Specifically, they send the result of the function before `%>%` to be an argument in the function after `%>%`. By default, this is the first argument, but we'll show you ways to change that later.
+
+It can be useful to translate the pipe as "**and then**". It's easier to show than tell, so let's look at an example.
+
+```{r}
+        
+c_per_year <- births %>% # and then
+  
+  filter(delivery == "Caesarean - Emergency") %>% # and then
+  
+  summarise(n = sum(livebirths), 
+            .by = financial_year) %>% # and then
+  
+  arrange(desc(n))
+
+head(c_per_year)
+```
+
+Notice that  `filter()`, `summarise()` and `arrange()` no longer need the first argument to be the data table; it is pulled in from the pipe above. The power of the pipe may not be obvious now, but it will soon prove its worth. 
+
+:::{.callout-note}
+Base R recently added a "native pipe" that looks like this: `|>`, while the tidyverse has traditionally used the "magrittr pipe" that looks like this `%>%`. They have a few small differences that you don't need to learn about yet. We'll be using the magrittr pipe, but you might see the base R pipe in other sources.
+:::
+
+## Counting
+
+You can count categorical data with the `count()` function. This will give you a new table with each combination of the counted columns and a column called `n` containing the number of rows from that group. 
+
+Let's figure out how many entries there were per delivery type. The first argument is the name of the data table object, and the second argument is the name of the column we want to count.
+
+```{r}
+count(births, delivery)
+```
+
+There are 7 types of deliveries, and the new column `n` tells you how many rows of the data table there are per type. 
+
+You can add on a column with the numbers expressed in percent using the function `mutate()`. We'll go into more detail on how to use `mutate()` in @sec-wrangle, but for now, it can be used to add new columns or overwrite existing columns.
+
+The code below divides the value in the `n` column by the total sum of the numbers in that column, and adds it to a new column called `percent`. The next step modifies the percent column by multiplying it by 100 and rounding the value. You could do this all in one step, like `round(100 * n / sum(n))`, but often it's clearer to break it into a few steps to avoid too many nested parentheses.
+
+```{r}
+count(births, delivery) %>%
+  mutate(percent = n / sum(n),
+         percent = round(100 * percent))
+```
+
+
+We can also count combinations of columns by adding more arguments. The table below shows the number of rows per age group and induction status, sorted by the number of rows. We won't add on percent just yet as the additional variable requires another function that we'll come back to later.
+
+```{r}
+count(births, age_group, induced, sort = TRUE)
+```
+
+
+```{r, echo = FALSE}
+mcq1 <- c(answer = "`count(births, induced, sort = TRUE)`", 
+          x = "`count(induced, births, sort = TRUE)`", 
+          x = "`count(births, induced)`", 
+          x = "`count(induced, births)`") %>%
+  sample() %>%
+  longmcq()
+```
+
+::: {.callout-note .try}
+How would you create the table of counts below? 
+
+```{r, echo = FALSE}
+count(births, induced, sort = TRUE)
+```
+
+`r mcq1`
+:::
+
+However, the numbers above are not the number of births, but rather the number of rows in the data set. The column `live_births` contains the number per each category, so we will need to add those numbers together to see the total number of births. 
+
+
+## Summarise {#sec-summary-summarise}
+
+The `summarise()` function from the <pkg>dplyr</pkg> package is loaded as part of the tidyverse and creates summary statistics. It creates a new table with columns that summarise the data from a larger table using summary functions. Check the [Data Transformation Cheat Sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf) for various summary functions. Some common ones are: `n()`, `min()`, `max()`, `sum()`, `mean()`, and `quantile()`.
+
+::: {.callout-warning}
+If you get the answer `NA` from a summary function, that usually means that there are missing values in the columns you were summarising. This may seem counter-intuitive but it is actually very logical if you consider that NA means "I don't know the value of this cell" because the average of 1 + 2 + I don't know isn't 1.5, it's "I don't know". We'll discuss this more in @sec-missing-values, but you can ignore missing values for many functions by adding the argument `na.rm = TRUE`.
+
+```{r}
+values <- c(1, 2, 4, 3, NA, 2)
+mean(values) # is NA
+mean(values, na.rm = TRUE) # removes NAs first
+```
+:::
+
+This function can be used to answer questions like: How many total live births were there? What are the `r glossary("mean")` and `r glossary("median")` number of births per year? Let's start with a very simple example to calculate the total number of births:
+
+* The first argument that `summarise()` takes is the data table you wish to summarise, in this case the object `delivery`.
+* `summarise()` will create a new table. The column names of this new table will be the left hand-side arguments (e.g., `total_births`)
+* The values of these columns are the result of the summary operation on the right hand-side.
+
+```{r}
+summarise(births,
+          total_births = sum(livebirths))
+```
+
+
+If you want to summarise by category, you can use the `.by` argument, as long as you have a version of dplyr that is 1.1.0 or above (if not, you can use the method in the next section).
+
+```{r}
+summarise(births,
+          total_births = sum(livebirths),
+          .by = delivery)
+```
+
+If you want to group by more than one column, use the `c()` function to group the column names.
+
+```{r}
+summarise(births,
+          total_births = sum(livebirths),
+          .by = c(delivery, induced))
+```
+
+
+
+## Grouping {#sec-grouping}
+
+You can also create summary values by group using a combination of `group_by()` and `summarise()`. The function `group_by()` takes an existing data table and converts it into a grouped table, where any operations that are subsequently performed on it are done "by group". 
+
+It differs from the `.by` argument to `summarise()` in that it is persistent, so the table stays grouped until you explicitly remove the groups using the `ungroup()` functions, while the `.by` argument only applies to the function it is inside. Most of the code examples you'll see use this style, since the `.by` argument is fairly new.
+
+```{r}
+births %>%
+  group_by(delivery) %>%
+  summarise(births = sum(livebirths)) %>%
+  ungroup()
+```
+
+::: {.callout-warning}
+Make sure you call the `ungroup()` function when you are done with grouped functions. Failing to do this can cause all sorts of mysterious problems if you use that data table later assuming it isn't grouped.
+:::
+
+
+You might have noticed that the order of the table above is different from the order when using the `.by` argument of `summarise()`. This is because `group_by()` always sorts the values in the grouping columns in ascending order, while `.by` leaves them in the order they are first encountered in your data frame. Use the function `arrange()` to manually change order (see @sec-arrange).
+
+```{r}
+births %>%
+  group_by(delivery) %>%
+  summarise(births = sum(livebirths)) %>%
+  ungroup() %>%
+  arrange(desc(births)) # sort by number of births in descending order
+```
+
+
+
+### Multiple groupings
+
+You can add multiple variables to `group_by()` to further break down your data. For example, the below gives us the number of births broken down by delivery type and year.
+
+* Reverse the order of `delivery` and financial_year` in `group_by()` to see how it changes the output.
+
+```{r eval = FALSE}
+births %>%
+  group_by(delivery, financial_year) %>%
+  summarise(n = sum(livebirths)) %>%
+  ungroup()
+```
+
+::: {.callout-warning}
+You may get the following message when using `summarise()` after `group_by()`.
+
+> `summarise()` has grouped output by 'delivery'. You can override using the `.groups` argument.
+
+Tidyverse recently added a message to remind you whether the `summarise()` function automatically ungroups grouped data or not (it may do different things depending on how it's used). You can set the argument `.groups` to "drop", "drop_last", "keep", or "rowwise" (see the help for `?summarise`), but it's good practice to explicitly use `ungroup()` when you're done working by groups, regardless. 
+:::
+
+### Percent by groups
+
+Calculating percent by groups is a great example of the flexibility of `group_by()` but also why you have to be very careful and always check the output of your code.
+
+When we just had one variable to count, adding percent was nice and easy:
+
+```{r}
+count(births, delivery) %>%
+  mutate(percent = n/sum(n)*100)
+```
+
+With multiple variables, problems can arise if we use the exact same approach because by default, it will calculate the percent that each row contributes to the dataset as a whole. This might be what you want:
+
+```{r}
+count(births, age_group, induced, sort = TRUE)%>%
+  mutate(percent = n/sum(n)*100)
+```
+
+However, it's more likely that you would want to calculate percent by groups. For example, what percent of people in the Induced category were in which age group? Or what percent of 25-34 year olds were induced? To calculate these numbers, we add in a call to `group_by()`:
+
+```{r}
+# group by age, percentages within each age group will sum to 100
+count(births, age_group, induced)%>% #age then induced
+  group_by(age_group) %>%
+  mutate(percent = n/sum(n)*100)
+
+# group by induced, percentages within each induction group will sum to 100
+count(births, induced, age_group)%>% #induced then age
+  group_by(induced) %>%
+  mutate(percent = n/sum(n)*100)
+```
+
+If you have updated `r pkg("dyplr")` then you can also use the `.by` argument in `mutate()`:
+
+```{r}
+# group by age, percentages within each age group will sum to 100
+count(births, age_group, induced)%>% #age then induced
+  mutate(percent = n/sum(n)*100,
+         .by = age_group)
+
+# group by induced, percentages within each induction group will sum to 100
+count(births, induced, age_group)%>% #induced then age
+  mutate(percent = n/sum(n)*100,
+         .by = induced)
+```
+
+
+## Additional Functions
+
+You can also use additional functions like `filter()` after `group_by` or with the `.by` argument. You'll learn more about these in @sec-wrangle but briefly:
+
+* `filter()` keeps observations (rows) according to specified criteria, e.g., all values above 5, or all induced births
+* `arrange()` sorts the rows by value
+
+You can combine functions like this to get detailed insights into your data. For example, you can 
+
+* recode the financial year into just the first year, and make it numeric
+* filter your data to remove unknown ages and delivery types
+
+
+```{r}
+births_per_year_type_age <- births %>%
+  mutate(year = str_extract(financial_year, ".{4}"), # takes first four digits
+         year = as.integer(year)) %>% # transform to numeric
+  filter(age_group != "Unknown", # remove unknown
+         delivery != "Not Known") %>% # remove not known
+  summarise(n = sum(livebirths),
+            .by = c(year, delivery, age_group)) %>%
+  mutate(pcnt = n / sum(n) * 100, 
+         .by = c(year, age_group))
+  
+
+# show just the first 6 rows
+head(births_per_year_type_age)
+```
+
+::: {.callout-note .try}
+Re-write the code above using `group_by()` instead of the `.by` argument?
+:::
+
+Now you can use your skills from @sec-viz to plot the data! The code below has a few elements you haven't seen before. For example, it adds a transparent horizontal line at 0, which is a trick to force all the y-axes to start at 0, but allows different scales per facet. It also angles the text in the x-axis. 
+
+```{r fig-birth-year-type-age, fig.cap = ""}
+births_per_year_type_age  %>%
+  ggplot(aes(x = year, y = pcnt, color = age_group)) +
+  geom_line() +
+  facet_wrap(~delivery, scales = "free_y") +
+  geom_hline(yintercept = 0, color = "transparent") + 
+  labs(x = NULL, 
+       y = "Percent of Live Births per Year",
+       color = "Age Group") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+## Exercises
+
+Take a break and then try one (or more) of the following:
+
+* Create an Rmd report that presents the above code with nice formatting. For example, hide the code from the output and format the tables.
+* Explore the data and add at least one unique insights of your own to the report
+* Download a different data set from [Scottish Health and Social Care Open Data](https://www.opendata.nhs.scot/) and create summary tables and plots.
+* If you have data of your own, practice summarising this in R.
+
+### Share on Teams
+
+Once you're done, share your knitted report and the Rmd file on Teams in the Week 04 channel.
+
+## Glossary {#sec-glossary-summary}
+
+```{r, echo = FALSE}
+glossary_table()
+```
+
+## Further resources {#sec-resources-summary}
+
+* [Data transformation cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)
+* [Chapter 3: Data Transformation ](https://r4ds.hadley.nz/data-transform) in *R for Data Science*
+* [kableExtra vignettes](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)

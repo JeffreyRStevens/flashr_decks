@@ -1,0 +1,943 @@
+# Reports with R Markdown {#sec-reports}
+
+## Intended Learning Outcomes {#sec-ilo-reports .unnumbered}
+
+-   Be able to structure a project
+-   Be able to knit a simple reproducible report with R Markdown
+-   Be able to create code chunks, tables, images, and inline R in an R Markdown document
+
+## Functions used {#functions-reports}
+
+```{r, include = FALSE}
+# load tidyverse packages separately so auto-links work in `func()` notation
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(knitr)
+library(kableExtra)
+library(tinytex)
+```
+
+* built-in (you can always use these without loading any packages)
+    * base:: `max()`, `min()`, `nrow()`, `str()`, `summary()`
+    * utils:: `View()`
+* tidyverse (you can use all these with `library(tidyverse)`)
+    * readr:: `read_csv()`, `row_spec()`
+    * dplyr:: `count()`, `filter()`
+    * ggplot2:: `geom_bar()`, `geom_col()`, `ggplot()`, `labs()`
+* other (you need to load each package to use these)
+    * knitr:: `include_graphics()`, `kable()`
+    * kableExtra:: `kable_classic()`, `row_spec()`
+    * tinytex:: `install_tinytex()`  
+    
+
+
+
+Download the [R Markdown Cheat Sheet](https://www.rstudio.org/links/r_markdown_cheat_sheet){download=""}
+
+## Walkthrough video {#sec-walkthrough-reports .unnumbered}
+
+There is a walkthrough video of this chapter available via [Echo360.](https://echo360.org.uk/media/6b6c1c8f-c24f-44c1-9e43-988fe577ce5b/public) Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+
+## Setup {#sec-setup-reports}
+
+For reference, here are the packages we will use in this chapter. You may need to install them, as explained in @sec-install-package, if running the code below in the console pane gives you the error `Error in library(package_name) : there is no package called ‘packagename’`. 
+
+```{r setup-reports, message=FALSE, filename="Chapter packages"}
+library(tidyverse)  # various data manipulation functions
+library(knitr)      # for rendering a report from a script
+library(rmarkdown)  # for using R markdown
+library(kableExtra) # for styling tables
+```
+
+## Organising a project {#sec-projects}
+
+Before we write any code, first, we need to get organised. `r glossary("project", "Projects")` in RStudio are a way to group all the files you need for one project. Most projects include `r glossary("script", "scripts")`, data files, and output files like the PDF report created by the script or images.
+
+### Default working directory
+
+First, make a new `r glossary("directory")` (i.e., folder) on your computer where you will keep all of your R projects. Name it something like "R-projects" (avoid spaces and other special characters). Make sure you know how to get to this directory using your computer's Finder or Explorer. 
+
+::: {.callout-caution}
+## Avoid networked drives
+
+If possible, don't use a network or cloud drive (e.g., OneDrive or Dropbox), as this can sometimes cause problems. If you're working from a networked drive and you are having issues, a helpful test is to try moving your project folder to the desktop to see if that solves the problem.
+:::
+
+Next, open <if>Tools > Global Options...</if>, navigate to the <if>General</if> pane, and set the "Default working directory (when not in a project)" to this directory. Now, if you're not working in a project, any files or images you make will be saved in this `r glossary("working directory")`. 
+
+::: {.callout-caution}
+## Avoid long path names
+
+On some versions of Windows 10 and 11, it can cause problems if path names are longer than 260 characters. Set your default working directory to a path with a length well below that to avoid problems when R creates temporary files while rendering a report. If you are having issues, a helpful test is to try moving your project folder to the desktop to see if that solves the problem as this will likely have a much short path name than most other folders on your computer.
+:::
+
+You can set the working directory to another location manually with menu commands: <if>Session > Set Working Directory > Choose Directory...</if> However, there's a better way of organising your files by using Projects in RStudio.
+
+
+### Start a Project {#sec-project-start}
+
+Start by making a directory inside your default project directory where you will keep all of your materials for this class; we'd suggest naming it something like `ADS-23`. 
+
+To create a new project for the work we'll do in this chapter:
+
+-   <if>File > New Project...</if>
+-   Name the project `r path("02-reports")`
+-   Save it inside the `ADS-23` directory
+
+RStudio will restart itself and open with this new project directory as the working directory.
+
+::: {#fig-new-proj layout-ncol=3}
+
+![](images/reports/new_proj_1.png)
+
+![](images/reports/new_proj_2.png)
+
+![](images/reports/new_proj_3.png)
+
+Starting a new project.
+:::
+
+Click on the Files tab in the lower right pane to see the contents of the project directory. You will see a file called `02-reports.Rproj`, which is a file that contains all of the project information. When you're in the Finder/Explorer, you can double-click on it to open up the project.
+
+::: {.callout-note}
+## Dot files
+
+Depending on your settings, you may also see a directory called `.Rproj.user`, which contains your specific user settings. You can ignore this and other "invisible" files that start with a full stop.
+:::
+
+::: {.callout-caution}
+## Don't nest projects
+
+Don't ever save a new project **inside** another project directory. This can cause some hard-to-resolve problems.
+:::
+
+### Naming Things {#sec-naming}
+
+Before we start creating new files, it's important to review how to name your files. This might seem a bit pedantic, but following clear naming rules so that both people and computers can easily find things will make your life much easier in the long run. Here are some important principles:
+
+-   file and directory names should only contain letters, numbers, dashes, and underscores, with a full stop (`.`) between the file name and `r glossary("extension")` (that means no spaces!)
+-   be consistent with capitalisation (set a rule to make it easy to remember, like always use lowercase)
+-   use underscores (`_`) to separate parts of the file name, like the title and date, and dashes (`-`) to separate words in each part (e.g., `social-media-report_2021-10.Rmd`)
+-   name files with a pattern that alphabetises in a sensible order and makes it easy for you to find the file you're looking for
+-   prefix a file name with an underscore to move it to the top of the list, or prefix all files with numbers to control their order
+
+For example, these file names are a mess:
+
+-   `r path("report.doc")`
+-   `r path("report final.doc")`
+-   `r path("Data (Customers) 11-15.xls")`
+-   `r path("Customers Data Nov 12.xls")`
+-   `r path("final report2.doc")`
+-   `r path("project notes.txt")`
+-   `r path("Vendor Data November 15.xls")`
+
+Here is one way to structure them so that similar files have the same structure and it's easy for a human to scan the list or to use code to find relevant files. See if you can figure out what the last one should be.
+
+-   `r path("_project-notes.txt")`
+-   `r path("report_v1.doc")`
+-   `r path("report_v2.doc")`
+-   `r path("report_v3.doc")`
+-   `r path("data_customer_2021-11-12.xls")`
+-   `r path("data_customer_2021-11-15.xls")`
+-   `r mcq(c("vendor-data_2021-11-15.xls", "data-vendor-2021_11_15.xls", answer = "data_vendor_2021-11-15.xls", "data_2021-11-15_vendor.xls"))`
+
+::: {.callout-note .try}
+## Naming practice
+
+Think of other ways to name the files above. Look at some of your own project files and see what you can improve.
+:::
+
+## R Markdown {#sec-rmarkdown}
+
+Throughout this course we will use `r glossary("R Markdown")` to create reproducible reports with a table of contents, text, tables, images, and code. The text can be written using `r glossary("markdown")`, which is a way to specify formatting, such as headers, paragraphs, lists, bolding, and links.
+
+### New document
+
+To open a new R Markdown document, click <if>File > New File > R Markdown</if>. You will be prompted to give it a title; title it `Important Info`. You can also change the author name. Keep the output format as HTML.
+
+Once you've opened a new document be sure to save it by clicking <if>File > Save As...</if>. You should name this file `important_info` (if you are on a Mac and can see the file `r glossary("extension")`, name it `important_info.Rmd`). This file will automatically be saved in your project folder (i.e., your working directory) so you should now see this file appear in your file viewer pane.
+
+When you first open a new R Markdown document you will see a bunch of welcome text that looks like this:
+
+```{r fig-markdown-default, echo=FALSE, fig.cap="New R Markdown text"}
+
+knitr::include_graphics("images/reports/markdown-default.png")
+
+```
+
+Do the following steps:
+
+-   Change the title to "Important Information" and the author to your name
+-   Delete **everything** after the setup chunk
+-   Skip a line after the setup chunk and type "## My info" (with the hashes but without the quotation marks); make sure there are no spaces before the hashes and at least one space after the hashes before the subtitle
+-   Skip a line and click the insert new code menu (a green box with a C and a plus sign) then choose <if>R</if>
+
+Your Markdown document should now look something like this:
+
+```{r fig-new-chunk, echo=FALSE, fig.cap="New R chunk"}
+
+knitr::include_graphics("images/reports/new-chunk.png")
+
+```
+
+### Code chunks {#sec-code-chunks}
+
+What you have created is a subtitle and a **code chunk**. In R Markdown, anything written in a grey code chunk is assumed to be code, and anything written in the white space (between the code chunks) is regarded as normal text (the actual colours will depend on which theme you have applied, but we will refer to the default white and grey). This makes it easy to combine both text and code in one document.
+
+::: {.callout-caution}
+## Code chunk errors
+
+When you create a new code chunk you should notice that the grey box starts and ends with three back ticks \`\`\`. One common mistake is to accidentally delete these back ticks. Remember, code chunks and text entry are different colours - if the colour of certain parts of your Markdown doesn't look right, check that you haven't deleted the back ticks.
+:::
+
+
+In your code chunk, write the code you created in @sec-objects.
+
+```{r, filename="important_info.Rmd"}
+name <- "Emily"
+age <- 36
+today <- Sys.Date()
+christmas <- as.Date("2024-12-25")
+```
+
+::: {.callout-note}
+## Console vs Scripts
+
+In @sec-intro, we asked you to type code into the console. Now, we want you to put code into code chunks in R Markdown files to make the code reproducible. This way, you can re-run your code any time the data changes to update the report, and you or others can inspect the code to identify and fix any errors. 
+
+However, there will still be times that you need to put code in the console instead of in a script, such as when you install a new package. In this book, code chunks will be labelled with whether you should run them in the console or add the code to a script.
+:::
+
+### Running code
+
+When you're working in an R Markdown document, there are several ways to run your lines of code.
+
+First, you can highlight the code you want to run and then click <if>Run > Run Selected Line(s)</if>, however this is tedious and can cause problems if you don't highlight *exactly* the code you want to run.
+
+Alternatively, you can press the green "play" button at the top-right of the code chunk and this will run **all** lines of code in that chunk.
+
+```{r fig-run-all, echo=FALSE, fig.cap="Click the green arrow to run all the code in the chunk."}
+
+knitr::include_graphics("images/reports/run-all.png")
+
+```
+
+
+Even better is to learn some of the keyboard short cuts for R Studio. To run a single line of code, make sure that the cursor is in the line of code you want to run (it can be anywhere) and press <pc>Ctrl+Enter</pc> or <mac>Cmd+Enter</mac>. If you want to run all of the code in the code chunk, press <pc>Ctrl+Shift+Enter</pc> or <mac>Cmd+Shift+Enter</mac>. Learn these short cuts; they will make your life easier!
+
+```{r fig-run3, echo=FALSE, fig.cap="Use the keyboard shortcut to run only highlighted code, or run one line at a time by placing the cursor on a line without highlighting anything."}
+
+knitr::include_graphics("images/reports/run3.gif")
+
+```
+
+Run your code using each of the methods above. You should see the variables `name`, `age`, `today`, and `christmas` appear in the environment pane. (Restart R to reset.)
+
+### Inline code {#sec-rmd-inline-r }
+
+We keep talking about using R Markdown for reproducible reports, but it's easier to show you than tell you why this is so powerful and to give you an insight into how this course will (hopefully!) change the way you work with data forever!
+
+One important feature of R Markdown is that you can combine text and code to insert values into your writing using **inline coding**. If you've ever had to copy and paste a value or text from one file to another, you'll know how easy it can be to make mistakes. Inline code avoids this. Again it's easier to show you what inline code does rather than to explain it so let's have a go.
+
+First, copy and paste this text to the **white space underneath** your code chunk. If you used a different variable name than `christmas`, you should update this with the name of the object you created, but otherwise don't change anything else.
+
+```{verbatim, lang="md"}
+My name is `r name` and I am `r age` years old. 
+It is `r christmas - today` days until Christmas, 
+which is my favourite holiday.
+```
+
+:::{.callout-caution}
+## Displaying Plots
+
+You cannot display a plot using inline R. Plots should be displayed from code chunks. We'll come back to how to do this soon.
+:::
+
+### Knitting your file {#sec-rmd-knit}
+
+Now we are going to `r glossary("knit")`, or compile, the file into a document type of our choosing. In this case we'll create a default html file, but you will learn how to create other files like Word and PDF throughout this course. To knit your file, click <if>Knit > Knit to HMTL</if>.
+
+R Markdown will create and display a new HTML document, but it will also automatically save this file in your working directory.
+
+As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created.
+
+> My name is `r name` and I am `r age` years old. It is `r christmas - today` days until Christmas, which is my favourite holiday.
+
+::: {.callout-note collapse="true"}
+## Knitting with Code
+
+You can also knit by typing the following code into the console. Never put this in an Rmd script itself, or it will try to knit itself in an infinite loop.
+
+```{r, eval = FALSE, filename="Run in the console"}
+rmarkdown::render("important_info.Rmd")
+
+# alternatively, you can use this, but may get a warning
+knitr::knit2html("important_info.Rmd")
+```
+:::
+
+## Loading data
+
+Now let's try another example of using Markdown, but this time rather than using objects we have created from scratch, we will read in a data file.
+
+Save and close your `important_info.Rmd` document. Then open and save a new Markdown document, this time named `sales_data.Rmd`. You can again get rid of everything after the setup chunk.  Add `library(tidyverse)` to the setup chunk so that tidyverse functions are available to your script.
+
+```{r, verbatim="r setup, include=FALSE"}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+
+### Online sources {#sec-loading-online}
+
+First, let's try loading data that is stored online. Create a code chunk in your document and copy, paste, and run the below code. This code loads some simulated sales data.
+
+-   The data is stored in a `.csv` file so we're going to use the `read_csv()` function to load it in.
+-   Note that the url is contained within double quotation marks - it won't work without this.
+
+```{r, message=FALSE, filename="sales_data.Rmd"}
+sales_online <- read_csv("https://psyteachr.github.io/ads-v2/data/sales_data_sample.csv")
+```
+
+::: {.callout-warning}
+## Could not find function
+
+If you get an error message that looks like:
+
+> Error in read_csv("https://psyteachr.github.io/ads-v2/data/sales_data_sample.csv") :  
+>  could not find function "read_csv"
+
+This means that you have not loaded tidyverse. Check that `library(tidyverse)` is in the setup chunk and that you have run the setup chunk.
+:::
+
+This dataset is simulated sales data for different types of vehicles (originally from [Kaggle](https://www.kaggle.com/kyanyoga/sample-sales-data)) where each line of data is a single order. There are multiple ways to view and check a dataset in R. Do each of the following and make a note of what information each approach seems to give you. If you'd like more information about each of these functions, you can look up the help documentation with `?function`:
+
+-   Click on the `sales_online` object in the environment pane
+-   Run `head(sales_online)` in the console
+-   Run `summary(sales_online)` in the console
+-   Run `str(sales_online)` in the console
+-   Run `View(sales_online)` in the console
+
+### Local data files
+
+More commonly, you will be working from data files that are stored locally on your computer. But where should you put all of your files? You usually want to have all your scripts and data files for a single project inside one folder on your computer, that project's `r glossary("working directory")`, and we have already set up the main directory `r path("02-reports")`for this chapter.
+
+You can organise files in subdirectories inside this main project directory, such as putting all raw data files in a subdirectory called `r path("data")` and saving any image files to a subdirectory called `r path("images")`. Using subdirectories helps avoid one single folder becoming too cluttered, which is important if you're working on big projects.
+
+In your `r path("02-reports")` directory, create a new folder named `r path("data")`, [download a copy of the sales data file](https://psyteachr.github.io/ads-v2/data/sales_data_sample.csv){download=""}, and save it in this new subdirectory.
+
+To load in data from a local file, again we can use the `read_csv()` function, but this time rather than specifying a url, give it the subdirectory and file name.
+
+```{r read-csv, eval = FALSE, filename="sales_data.Rmd"}
+sales_local <- read_csv("data/sales_data_sample.csv")
+```
+
+::: {.callout-tip}
+## Tab-autocomplete file names
+
+Use tab auto-complete when typing file names in a code chunk. After you type the first quote, hit tab to see a drop-down menu of the files in your working directory. You can start typing the name of the subdirectory or file to narrow it down. This is really useful for avoiding annoying errors because of typos or files not being where you expect.
+:::
+
+Things to note:
+
+-   You must include the file extension (in this case `.csv`)
+-   The subdirectory folder name (`data`) and the file name are separated by a forward slash `/`
+-   Precision is important, if you have a typo in the file name it won't be able to find your file; remember that R is case sensitive - `Sales_Data.csv` is a completely different file to `sales_data.csv` as far as R is concerned.
+
+::: {.callout-note .try}
+## View sales_local
+
+Run `head()`, `summary()`, `str()`, and `View()` on `sales_local` to confirm that the data is the same as `sales_online`.
+:::
+
+## Writing a report
+
+We're going to write a basic report for this sales dataset using R Markdown to show you some of the features. We'll be expanding on almost every bit of what we're about to show you throughout this course; the most important outcome is that you start to get comfortable with how R Markdown works and what you can use it to do. 
+
+### Data analysis
+
+For this report we're just going to present some simple sales stats for three types of vehicles: planes, motorcycles, and classic cars. We'll come back to how to write this kind of code yourself in @sec-summary. For now, see if you can follow the logic of what the code is doing via the code comments.
+
+Create a new code chunk, then copy, paste and run the following code and then view `sales_counts` by clicking on the object in the environment pane. Note that it doesn't really matter whether you use `sales_local` or `sales_online` in the first line as they're identical.
+
+```{r sales_counts, filename="sales_data.Rmd"}
+# keep only the data from planes, motorcycles, and cars
+sales_pmc <- filter(sales_online,
+         PRODUCTLINE %in% c("Planes", "Motorcycles", "Classic Cars"))
+
+# count how many are in each PRODUCTLINE
+sales_counts <-count(sales_pmc, PRODUCTLINE)
+```
+
+Because each row of the dataset is a sale, this code gives us a nice and easy way of seeing how many sales were made of each type of vehicle; it just counts the number of rows in each group.
+
+```{r sales_counts_show, echo = FALSE}
+sales_counts
+```
+
+::: {.callout-note}
+Just putting an object by itself on a line "prints" it. @sec-rmd-tables will show you how to print the table in different formats for your report.
+:::
+
+### Text formatting {#sec-markdown}
+
+You can use the visual `r glossary("markdown")` editor if you have RStudio version 1.4 or higher. This will be a button at the top of the source pane and the menu options should be very familiar to anyone who has worked with software like Microsoft Word.
+
+```{r fig-visual-editor, echo = FALSE, fig.cap="The visual editor."}
+include_graphics("images/reports/visual-editor.png")
+```
+
+This is useful for complex styling, but you can also use these common plain-text style markups:
+
+-   Headers are created by prefacing subtitles with one or more hashes (`#`) and a space (do not exclude the space). If you include a table of contents, this will be created from your document headers.
+-   Format text with *italics* or **bold** by surrounding the text with one or two asterisks or underscores.
+-   Make lists using numbers, asterisks or dashes before items. Indent items to make nested lists.
+-   Make links like this: `[psyTeachR](https://psyteachr.github.io/)`
+-   Download the [R Markdown Cheat Sheet](https://www.rstudio.org/links/r_markdown_cheat_sheet) to learn more.
+
+Copy and paste the below text into the white space below the code chunk that loads in the data. Save the file and then click knit to view the results. It will look a bit messy for now as it contains the code and messages from loading the data but don't worry, we'll get rid of that soon.
+
+```{verbatim, lang="md", filename="sales_data.Rmd"}
+## Sample sales report
+
+This report summarises the sales data for different types of vehicles sold between 2003 and 2005. This data is from [Kaggle](https://www.kaggle.com/kyanyoga/sample-sales-data).
+
+### Sales by type
+
+The *total* number of **planes** sold was `r sales_counts$n[3]`
+
+The *total* number of **classic cars** sold was `r sales_counts$n[1]`.
+```
+
+
+::: {.callout-warning}
+The example markdown above (and in the rest of this book) is shown for the regular editor, not the visual editor. In the visual editor, you won't see the hashes that create headers, or the asterisks that create bold and italic text. You also won't see the backticks that demarcate inline code.
+
+```{r visual-editor-example, echo = FALSE, fig.cap="The example code above shown in the visual editor."}
+knitr::include_graphics("images/reports/visual-editor-example.png")
+```
+
+If you try to add the hashes, asterisks and backticks to the visual editor, you will get frustrated as they disappear. If you succeed, your code in the regular editor will look mangled like this:
+
+```{verbatim, lang="md"}
+\#\#\# Sales by type
+
+The \*total\* number of \*\*planes\*\* sold was \`r sales_counts\$n\[3]\`
+```
+
+:::
+
+Try and match up the inline code with what is in the `sales_counts` table. Of note:
+
+* The `$` sign is used to indicate specific variables (or columns)  in an object using the `object$variable` syntax. 
+* Square brackets with a number e.g., `[3]` indicate a particular observation
+* So `sales_counts$n[3]` asks the inline code to display the third observation of the variable `n` in the dataset `sales_online`.
+
+::: {.callout-note .try}
+## Further Practice
+
+Add another line that reports the total numbers of **motorcycles** using inline code. Using either the visual editor or text markups, add in bold and italics so that it matches the others.
+
+`r hide()`
+```{verbatim, lang="md", filename="sales_data.Rmd"}
+The *total* number of **motorcycles** sold was `r sales_counts$n[2]`.
+```
+`r unhide()`
+
+:::
+
+### Code comments {#sec-comments}
+
+In the above code we've used code **comments** and it's important to highlight how useful these are. You can add comments inside R chunks with the hash symbol (`#`). R will ignore characters from the hash to the end of the line.
+
+```{r}
+# important numbers
+
+n <- nrow(sales_online) # the total number of sales (number of rows)
+first <- min(sales_online$YEAR_ID) # the first (minimum) year
+last <- max(sales_online$YEAR_ID) # the last (maximum) year
+```
+
+It's usually good practice to start a code chunk with a comment that explains what you're doing there, especially if the code is not explained in the text of the report.
+
+If you name your objects clearly, you often don't need to add clarifying comments. For example, if I'd named the three objects above `total_number_of_sales`, `first_year` and `last_year`, I would omit the comments. It's a bit of an art to comment your code well, but try to add comments as you're working through this book - it will help consolidate your learning and when future you comes to review your code, you'll thank past you for being so clear.
+
+### Images {#sec-rmd-images}
+
+As the saying goes, a picture paints a thousand words and sometimes you will want to communicate your data using visualisations. 
+
+Create a code chunk to display a graph of the data in your document after the text we've written so far. We'll use some code that you'll learn more about in @sec-viz to make a simple bar chart that represents the sales data -- focus on trying to follow how bits of the code map on to the plot that is created.
+
+Copy and paste the below code. Run the code in your Markdown to see the plot it creates and then knit the file to see how it is displayed in your document.
+
+```{r, filename="sales_data.Rmd"}
+ggplot(data = sales_counts, 
+       mapping = aes(x = PRODUCTLINE, 
+                     y = n, 
+                     fill = PRODUCTLINE)) +
+  geom_col(show.legend = FALSE) +
+  labs(x = "Type of vehicle",
+       y = "Number of sales",
+       title = "Sales by vehicle type",
+       subtitle = "2003 - 2005")
+```
+
+You can also include images that you did not create in R using the markdown syntax for images or `knitr::include_graphics()`. This is very similar to loading data in that you can either use an image that is stored on your computer, or via a url.  
+
+Create a new code chunk underneath each of the sales figures for planes, classic cars, and motorcycles and add in an image from Google or Wikipedia for each (right click on an image and select copy image address to get a url). See the section on [chunk defaults](#rmd-setup) to see how to change the display size.
+
+```{r fig-example, eval = FALSE, filename="sales_data.Rmd"}
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/3/3f/P-51_Mustang_edit1.jpg")
+```
+
+::: {.callout-note collapse="true"}
+## Image Licenses
+
+Most images on Wikipedia are public domain or have an open license. You can search for images by license on Google Images by clicking on the <if>Tools</if> button and choosing "Creative Commons licenses" from the "Usage Rights" menu.
+
+```{r, echo=FALSE, fig.alt="Screenshot of Google Images interface with Usage Rights selections open."}
+knitr::include_graphics("images/reports/google-images.png")
+```
+:::
+
+Alternatively, you can use the markdown notation `![caption](url)` to show an image. This goes in the markdown text section of the document, not inside is grey code block. The caption is optional; you can omit it like this: 
+
+`![](images/reports/google-images.png)`
+
+
+### Tables {#sec-rmd-tables}
+
+Rather than a figure, we might want to display our data in a table. 
+
+* Add a new level 2 heading (two hashtags) to your document, name the heading "Data in table form" and then create a new code chunk below this. 
+
+First, let's see what the table looks like if we don't make any edits. Simply write the name of the table you want to display in the code chunk (in our case `sales_counts`) and then click knit to see what it looks like.
+
+```{r, eval = FALSE, filename="sales_data.Rmd"}
+sales_counts
+```
+
+```
+## # A tibble: 3 × 2
+## # Groups:   PRODUCTLINE [3]
+##   PRODUCTLINE      n
+##   <chr>        <int>
+## 1 Classic Cars   967
+## 2 Motorcycles    331
+## 3 Planes         306
+```
+
+It's just about readable but it's not great. 
+
+Another way to customise tables uses the function `kable()` from the `kableExtra` package.
+
+Amend your code to load the `kableExtra` package and apply the `kable()` function to the table. Once you've done this, knit the file again to see the output.
+
+```{r, filename="sales_data.Rmd"}
+library(kableExtra) # for table display
+
+kable(sales_counts) # apply the kable function
+```
+
+It's better, but it's still not amazing. So let's make a few adjustments. We can change the names of the columns, add a caption, and also change the alignment of the cell contents using arguments to `kable()`. 
+
+We can also add a theme to change the overall style. In this example we've used `kable_classic` but there are 5 others: `kable_paper`, `kable_classic_2`, `kable_minimal`, `kable_material` and `kable_material_dark`. Try them all and see which one you prefer.
+
+Finally, we can change the formatting of the first row using `row_spec`. Look up the help documentation for `row_spec` to see what other options are available. Try changing the value of  any of the arguments below to figure out what they do.
+
+```{r, filename="sales_data.Rmd"}
+k <- kable(sales_counts, 
+      col.names = c("Product", "Sales"),
+      caption = "Number of sales per product line.", 
+      align = "c")
+k_style <- kable_classic(k, full_width = FALSE) 
+k_highlighted <- row_spec(k_style, row = 0, bold = TRUE, color = "red") 
+
+k_highlighted
+```
+
+::: {.callout-note}
+## Caption placement
+
+The appearance and placement of the table caption depends on the type of document you are creating. Your captions may look different to those in this book because you are creating a single-page `html_document`, while this book uses the `html` style from [quarto](https://quarto.org/), which is a newer alternative to R Markdown. You'll learn more about other document output types in @sec-custom-reports.
+:::
+
+
+::: {.callout-note collapse="true"}
+## Advanced table customisation
+
+If you're feeling confident with what we have covered so far, the [kableExtra vignette](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html){target="_blank"} gives a lot more detail on how you can edit your tables using `kableExtra`. 
+
+You can also explore the [gt](https://gt.rstudio.com/){target="_blank"} package, which is complex, but allows you to create beautiful customised tables. [Riding tables with {gt} and {gtExtras}](https://bjnnowak.netlify.app/2021/10/04/r-beautiful-tables-with-gt-and-gtextras/){target="_blank"} is an outstanding tutorial.
+:::
+
+## Refining your report
+
+### Chunk defaults {#sec-rmd-setup}
+
+Let's finish by tidying up the report and organising our code a bit better. When you create a new R Markdown file in RStudio, a setup chunk is automatically created - we've mostly ignored this chunk until now.
+
+```{r knitr-setup, eval=FALSE, verbatim="r setup, include=FALSE"}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+You can set more default options for your document here. Type the following code into the console to see the full list of options that you can set and their default values. However, the most useful and common options to change for the purposes of writing reports revolve around whether you want to show your code and the size of your images.
+
+```{r, eval = FALSE, filename="Run in the console"}
+# list option default values
+str(knitr::opts_chunk$get())
+```
+
+
+Replace the code in your setup chunk with the below code and then try changing each option from `FALSE` to `TRUE` and changing the numeric values then knit the file again to see the difference it makes.
+
+```{r knitr-setup2, eval=FALSE, verbatim="r setup, include=FALSE", filename="sales_data.Rmd"}
+knitr::opts_chunk$set(
+  echo       = FALSE, # whether to show code chunks
+  message    = FALSE, # whether to show messages from your code
+  warning    = FALSE, # whether to show warnings from your code
+  fig.width  = 8,     # figure width in inches (at 96 dpi)
+  fig.height = 5,     # figure height in inches (at 96 dpi)
+  out.width = "50%"   # figures/images span 50% of the page width
+)
+```
+
+::: {.callout-warning collapse="true"}
+## Figure versus output dimensions
+
+Note that `fig.width` and `fig.height` control the original size and aspect ratio of images generated by R, such as plots. This will affect the relative size of text and other elements in plots. It does not affect the size of existing images at all. However, `out.width` controls the **display** size of both existing images and figures generated by R. This is usually set as a percentage  of the page width.
+
+```{r fig-full-100, echo = FALSE, fig.width=8, fig.height=5, out.width="100%", fig.cap="A plot with the default values of fig.width = 8, fig.height = 5, out.width = \"100%\""}
+ggplot(diamonds, aes(color, fill = cut)) + geom_bar()
+```
+
+```{r fig-half-100, echo = FALSE, fig.width=4, fig.height=2.5, out.width="100%", fig.cap="The same plot with half the default width and height: fig.width = 4, fig.height = 2.5, out.width = \"100%\""}
+ggplot(diamonds, aes(color, fill = cut)) + geom_bar()
+```
+
+```{r fig-half-50, echo = FALSE, fig.width=4, fig.height=2.5, out.width="50%", fig.cap="The same plot as above at half the output width: fig.width = 4, fig.height = 2.5, out.width = \"50%\""}
+ggplot(diamonds, aes(color, fill = cut)) + geom_bar()
+```
+
+:::
+
+### Override defaults
+
+These setup options change the behaviour for the entire document, however, you can override the behaviour for individual code chunks. 
+
+For example, by default you might want to hide your code but there also might be an occasion where you want to show the code you used to analyse your data. You can set `echo = FALSE` in your setup chunk to make hiding code the default but in the individual code chunk for your plot set `echo = TRUE`. Try this now and knit the file to see the results.
+
+```{r show-code, eval=FALSE, verbatim = "r, echo = TRUE", filename="sales_data.Rmd"}
+ggplot(data = sales_counts, 
+       mapping = aes(x = PRODUCTLINE, 
+                     y = n, 
+                     fill = PRODUCTLINE)) +
+  geom_col(show.legend = FALSE) +
+  labs(x = "Type of vehicle",
+       y = "Number of sales",
+       title = "Sales by vehicle type",
+       subtitle = "2003 - 2005")
+```
+
+Additionally, you can also override the default image display size or dimensions.
+
+```{r change-image, eval = FALSE, verbatim = "r, out.width='25%'"}
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/3/3f/P-51_Mustang_edit1.jpg")
+```
+
+```{r change-image2, eval=FALSE, verbatim = "r, fig.width = 10, fig.height = 20", filename="sales_data.Rmd"}
+ggplot(data = sales_counts, 
+       mapping = aes(x = PRODUCTLINE, y = n, fill = PRODUCTLINE)) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  labs(x = "Type of vehicle",
+       y = "Number of sales",
+       title = "Sales by vehicle type",
+       subtitle = "2003 - 2005")
+```
+
+### Loading packages
+
+You should add the packages you need in your setup chunk using `library()`. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to `library(package_I_need)` way down in the script. Put it in the setup chunk so the user has an overview of what packages are needed.
+
+::: {.callout-note .try}
+## Move library calls to the setup chunk
+Move the code that loads the `tidyverse` and `kableExtra` to the setup chunk.
+:::
+
+### YAML header {#sec-yaml}
+
+Finally, the `r glossary("YAML")` header is the bit at the very top of your Markdown document. You can set several options here as well. 
+
+    ---
+    title: "Sales Data Report"
+    author: "Your name"
+    output:
+      html_document:
+        df_print: paged
+        theme: 
+          version: 4
+          bootswatch: yeti
+        toc: true
+        toc_float:
+          collapsed: false
+          smooth_scroll: false
+        toc_depth: 3
+        number_sections: false
+    ---
+
+::: {.callout-note}
+## Try
+
+Try changing the values from `false` to `true` to see what the options do.
+:::
+
+The `df_print: paged` option prints data frames using `rmarkdown::paged_table()` automatically. You can use `df_print: kable` to default to the simple kable style, but you will need the code from @sec-rmd-tables for more complex tables with kableExtra.
+
+The built-in bootswatch themes are: default, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti. You can [view and download more themes](https://bootswatch.com/4/). Try changing the theme to see which one you like best.
+
+```{r fig-bootswatch, echo=FALSE, fig.cap="Light themes in versions 3 and 4."}
+knitr::include_graphics("images/reports/bootswatch.png")
+```
+
+::: {.callout-warning}
+## YAML formatting
+
+YAML headers can be very picky about spaces and semicolons (the rest of R Markdown is much more forgiving). For example, if you put a space before "author", you will get an error that looks like:
+
+```
+Error in yaml::yaml.load(..., eval.expr = TRUE) : 
+  Parser error: while parsing a block mapping at line 1, 
+  column 1 did not find expected key at line 2, column 2
+```
+
+The error message will tell you exactly where the problem is (the second character of the second line of the YAML header), and it's usually a matter of fixing typos or making sure that the indenting is exactly right.
+:::
+
+### Table of Contents {#sec-toc}
+
+The table of contents is created by setting `toc: true`. It will be displayed at the top of your document unless you set `toc_float: true` or include `toc_float:` with its options `collapsed` and `smooth_scroll` (options for a setting are indented under it). 
+
+    ---
+    output:
+      html_document:
+        toc: true
+        toc_float:
+          collapsed: false
+          smooth_scroll: false
+        toc_depth: 3
+    ---
+
+This will use the markdown header structure to create the table of contents. `toc_depth: 3` means that the table of contents will only display headers up to level 3 (i.e., those that start with three hashes: `###`). Add `{-}` after the header title to remove it from the table of contents (e.g., `### Overview {-}`).
+
+::: {.callout-caution}
+## Malformated ToC
+
+If your table of contents isn't showing up correctly, this probably means that your headers are not set up right. Make sure that headers have no spaces before the hashes and at least one space after the hashes. For example, `##Analysis` won't display as a header and be added to the table of contents, but `## Analysis` will.
+:::
+
+### Formats
+
+So far we've just knitted to html. To generate PDF reports, you need to install <pkg>tinytex</pkg> [@R-tinytex] and run the following code in the console (do **not** add this to your Rmd file):
+
+```{r eval=FALSE, filname="Run in the console"}
+install.packages("tinytex")
+tinytex::install_tinytex()
+```
+
+Once you've done this, update your YAML heading to add a `pdf_document` section and knit a PDF document. The options for PDFs are more limited than for HTML documents, so if you just replace `html_document` with `pdf_document`, you may need to remove some options, such as `toc_float` if you get an error that looks like "Functions that produce HTML output found in document targeting PDF output."
+
+    ---
+    output:
+      pdf_document:
+        toc: TRUE
+      html_document:
+        toc: TRUE
+        toc_float: TRUE
+    ---
+
+As an alternative, you can also knit to a Word document. When you click the **`Knit`** button, the first format will knit by default, but you can use the drop-down menu under the Knit button to choose another format.
+
+    ---
+    output:
+      pdf_document:
+        toc: TRUE
+      html_document:
+        toc: TRUE
+        toc_float: TRUE
+      word_document:
+        toc: TRUE
+    ---
+    
+::: {.callout-warning}
+## Knitting errors
+
+If you encounter errors, ask on Teams for help - knitting to PDF or Word can be tricky.
+:::
+
+### Summary {#sec-reports-summary}
+
+This chapter has covered a lot but hopefully now you have a much better idea of what Markdown is able to do. Whilst working in Markdown takes longer in the initial set-up stage, once you have a fully reproducible report you can plug in new data each week or month and simply click knit, reducing duplication of effort, and the human error that comes with it.
+
+You can access a [working R Markdown file](demos/sales_data.Rmd){download="important_info.Rmd"} with the code from the example above to compare to your own code.
+
+As you continue to work through the book you will learn how to wrangle and analyse your data and how to use Markdown to present it. We'll slowly build on the available customisation options so over the course of next few weeks, you'll find your Markdown reports start to look more polished and professional.
+
+## Exercises {#sec-exercises-reports}
+
+Below are some additional exercises that will let you apply what you have learned in this chapter. We would suggest taking a break before you do these - it might feel slightly more effortful, but spreading out your practice will help you learn more in the long run.
+
+### New project {#sec-exercises-reports-project}
+
+Create a new project called "demo_report" ([@sec-projects]).
+
+### New script {#sec-exercises-reports-setup}
+
+In the "demo_report" project, create a new Rmarkdown document called "job.Rmd" ([@sec-rmarkdown]). Edit the YAML header to output tables using kable and set a custom theme ([@sec-yaml]).
+
+`r hide()`
+    ---
+    title: "My Job"
+    author: "Me"
+    output:
+      html_document:
+        df_print: kable
+        theme: 
+          version: 4
+          bootswatch: sandstone
+    ---
+`r unhide()`
+
+### R Markdown {#sec-exercises-reports-rmarkdown}
+
+Write a short paragraph describing your job or a job you might like to have in the future ([@sec-markdown]). Include a bullet-point list of links to websites that are useful for that job ([@sec-markdown]).
+
+`r hide()`
+
+```
+I am a research psychologist who is interested in open science 
+and teaching computational skills.
+
+* [psyTeachR books](https://psyteachr.github.io/)
+* [Google Scholar](https://scholar.google.com/)
+```
+
+`r unhide()`
+
+
+### Tables {#sec-exercises-reports-tables}
+
+Use the following code to load a small table of tasks ([@sec-code-chunks]). Edit it to be relevant to your job (you can change the categories entirely if you want).  
+
+```{r, filename="job.Rmd"}
+tasks <- tibble::tribble(
+  ~task,                   ~category,      ~frequency,
+  "Respond to tweets",     "social media", "daily",
+  "Create a twitter poll", "social media", "weekly",
+  "Make the sales report", "reporting",    "montly"
+)
+```
+
+Figure out how to make it so that code chunks don't show in your knitted document ([@sec-rmd-setup]).
+
+`r hide()`
+
+You can set the default to `echo = FALSE` in the setup chunk at the top of the script.
+
+```{r, eval = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+To set visibility for a specific code chunk, put `echo = FALSE` inside the curly brackets.
+
+```{r, verbatim = "r, echo=FALSE"}
+# code to hide
+```
+
+`r unhide()`
+
+Display the table with purple italic column headers. Try different styles using <pkg>kableExtra</pkg> ([@sec-rmd-tables]).
+
+```{r, webex.hide=T}
+k <- kableExtra::kable(tasks)
+k_style <- kableExtra::kable_minimal(k)
+k_highlight <- kableExtra::row_spec(k_style,
+                                    row = 0, 
+                                    italic = TRUE, 
+                                    color = "purple")
+k_highlight
+```
+
+### Images {#sec-exercises-reports-images}
+
+Add an image of anything relevant ([@sec-rmd-images]).
+
+```{r, webex.hide= TRUE}
+knitr::include_graphics("https://psyteachr.github.io/ads-v2/images/logos/logo.png")
+```
+
+
+`r hide("Alternative Solution")`
+
+You can add an image from the web using its URL:
+
+```
+![Applied Data Skills](https://psyteachr.github.io/ads-v2/images/logos/logo.png)
+```
+    
+Or save an image into your project directory (e.g., in the images folder) and add it using the relative path:
+
+```
+![Applied Data Skills](images/logos/logo.png)
+```
+    
+`r unhide()`
+
+### Inline R {#sec-exercises-reports-inline}
+
+Use inline R to include the version of R you are using in the following sentence: "This report was created using `r R.version.string`." You can get the version using the object `R.version.string` ([@sec-rmd-inline-r]).
+
+`r hide()`
+
+This report was created using `` `r R.version.string` ``.
+
+`r unhide()`
+
+### Knit {#sec-exercises-reports-knit}
+
+Knit this document to html ([@sec-rmd-knit]).
+
+`r hide()`
+Click on the knit button or run the following code in the console. (Do not put it the Rmd script!)
+
+```{r, eval = FALSE}
+rmarkdown::render("job.Rmd")
+```
+
+`r unhide()`
+
+### Share on Teams
+
+Once you're done, share your knitted html file and the Rmd file for the exercises on Teams in the Week 02 channel.
+
+## Glossary {#sec-glossary-reports}
+
+```{r, echo = FALSE, results='asis'}
+glossary_table()
+```
+
+## Further Resources {#sec-resources-reports}
+
+-   [R Markdown Cheat Sheet](https://www.rstudio.org/links/r_markdown_cheat_sheet)
+<!--
+-   [R Markdown reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+-->
+-   [R Markdown Tutorial](https://rmarkdown.rstudio.com/lesson-1.html)
+-   [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) by Yihui Xie, J. J. Allaire, & Garrett Grolemund
+-   [Project Structure](https://slides.djnavarro.net/project-structure/) by Danielle Navarro
+-   [How to name files](https://speakerdeck.com/jennybc/how-to-name-files) by Jenny Bryan
+-   [kableExtra](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html)
+-   [gt](https://gt.rstudio.com/)
+
+
+
