@@ -1,8 +1,0 @@
-term,description,url,title
-chunk,A section of code in an R Markdown file,https://psyteachr.github.io/glossary/c.html#chunk,PsyTeachR DSRR Ch. 3
-continuous,Data that can take on any values between other existing values.,https://psyteachr.github.io/glossary/c.html#continuous,PsyTeachR DSRR Ch. 3
-discrete,"Data that can only take certain values, such as integers.",https://psyteachr.github.io/glossary/d.html#discrete,PsyTeachR DSRR Ch. 3
-geom,"The geometric style in which data are displayed, such as boxplot, density, or histogram.",https://psyteachr.github.io/glossary/g.html#geom,PsyTeachR DSRR Ch. 3
-likert,A rating scale with a small number of discrete points in order,https://psyteachr.github.io/glossary/l.html#likert,PsyTeachR DSRR Ch. 3
-nominal,"Categorical variables that don't have an inherent order, such as types of animal.",https://psyteachr.github.io/glossary/n.html#nominal,PsyTeachR DSRR Ch. 3
-ordinal,"Discrete variables that have an inherent order, such as number of legs",https://psyteachr.github.io/glossary/o.html#ordinal,PsyTeachR DSRR Ch. 3

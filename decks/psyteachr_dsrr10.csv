@@ -1,30 +1,82 @@
-term,description,url,title
-alpha,(stats) The cutoff value for making a decision to reject the null hypothesis; (graphics) A value between 0 and 1 used to control the levels of transparency in a plot,https://psyteachr.github.io/glossary/a.html#alpha,PsyTeachR DSRR Ch. 10
-beta,The false negative rate we accept for a statistical test.,https://psyteachr.github.io/glossary/b.html#beta,PsyTeachR DSRR Ch. 10
-binomial distribution,"The distribution of data where each observation can have one of two outcomes, like success/failure, yes/no or head/tails.",https://psyteachr.github.io/glossary/b.html#binomial-distribution,PsyTeachR DSRR Ch. 10
-bivariate normal,Two normally distributed vectors that have a specified correlation with each other.,https://psyteachr.github.io/glossary/b.html#bivariate-normal,PsyTeachR DSRR Ch. 10
-confidence interval,A type of interval estimate used to summarise a given statistic or measurement where a proportion of intervals calculated from the sample(s) will contain the true value of the statistic.,https://psyteachr.github.io/glossary/c.html#confidence-interval,PsyTeachR DSRR Ch. 10
-correlation,The relationship two vectors have to each other.,https://psyteachr.github.io/glossary/c.html#correlation,PsyTeachR DSRR Ch. 10
-covariance matrix,Parameters showing how a set of vectors vary and are correlated.,https://psyteachr.github.io/glossary/c.html#covariance-matrix,PsyTeachR DSRR Ch. 10
-discrete,"Data that can only take certain values, such as integers.",https://psyteachr.github.io/glossary/d.html#discrete,PsyTeachR DSRR Ch. 10
-effect,"Some measure of your data, such as the mean value, or the number of standard deviations the mean differs from a chance value.",https://psyteachr.github.io/glossary/e.html#effect,PsyTeachR DSRR Ch. 10
-effect size,The difference between the effect in your data and the null effect (usually a chance value),https://psyteachr.github.io/glossary/e.html#effect-size,PsyTeachR DSRR Ch. 10
-false negative,When a test concludes there is no effect when there really is an effect,https://psyteachr.github.io/glossary/f.html#false-negative,PsyTeachR DSRR Ch. 10
-false positive,When a test concludes there is an effect when there really is no effect,https://psyteachr.github.io/glossary/f.html#false-positive,PsyTeachR DSRR Ch. 10
-function,A named section of code that can be reused.,https://psyteachr.github.io/glossary/f.html#function,PsyTeachR DSRR Ch. 10
-NHST,Null Hypothesis Signficance Testing,https://psyteachr.github.io/glossary/n.html#nhst,PsyTeachR DSRR Ch. 10
-normal distribution,A symmetric distribution of data where values near the centre are most probable.,https://psyteachr.github.io/glossary/n.html#normal-distribution,PsyTeachR DSRR Ch. 10
-null effect,An outcome that does not show an otherwise expected effect.,https://psyteachr.github.io/glossary/n.html#null-effect,PsyTeachR DSRR Ch. 10
-p value,"The probability of seeing an effect at least as extreme as what you have, if the real effect was the value you are testing against (e.g., a null effect)",https://psyteachr.github.io/glossary/p.html#p-value,PsyTeachR DSRR Ch. 10
-parameter,A quantity characterizing a population.,https://psyteachr.github.io/glossary/p.html#parameter,PsyTeachR DSRR Ch. 10
-Poisson distribution,A distribution that models independent events happening over a unit of time,https://psyteachr.github.io/glossary/p.html#poisson-distribution,PsyTeachR DSRR Ch. 10
-power,The probability of rejecting the null hypothesis when it is false.,https://psyteachr.github.io/glossary/p.html#power,PsyTeachR DSRR Ch. 10
-probability,A number between 0 and 1 where 0 indicates impossibility of the event and 1 indicates certainty,https://psyteachr.github.io/glossary/p.html#probability,PsyTeachR DSRR Ch. 10
-SESOI,Smallest Effect Size of Interest: the smallest effect that is theoretically or practically meaningful,https://psyteachr.github.io/glossary/s.html#sesoi,PsyTeachR DSRR Ch. 10
-significant,The conclusion when the p-value is less than the critical alpha.,https://psyteachr.github.io/glossary/s.html#significant,PsyTeachR DSRR Ch. 10
-simulation,Generating data from summary parameters,https://psyteachr.github.io/glossary/s.html#simulation,PsyTeachR DSRR Ch. 10
-true positive,When a test concludes there is an effect when there is really is an effect,https://psyteachr.github.io/glossary/t.html#true-positive,PsyTeachR DSRR Ch. 10
-type I error,A false positive; When a test concludes there is an effect when there is really is no effect,https://psyteachr.github.io/glossary/t.html#type-i-error,PsyTeachR DSRR Ch. 10
-type II error,A false negative; When a test concludes there is no effect when there is really is an effect,https://psyteachr.github.io/glossary/t.html#type-ii-error,PsyTeachR DSRR Ch. 10
-uniform distribution,A distribution where all numbers in the range have an equal probability of being sampled,https://psyteachr.github.io/glossary/u.html#uniform-distribution,PsyTeachR DSRR Ch. 10
-univariate,Relating to a single variable.,https://psyteachr.github.io/glossary/u.html#univariate,PsyTeachR DSRR Ch. 10
+"","term","description","url","package","title"
+"1","library()","load R packages","https://rdrr.io/r/base/library.html","base","psyteachr_dsrr Ch. 10"
+"2","theme_set()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"3","theme_light()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"4","cols()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"5","col_factor()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"6","c()","create vector of numbers, characters, etc.","https://rdrr.io/r/base/c.html","base","psyteachr_dsrr Ch. 10"
+"7","read_csv()","read comma delimited files","https://readr.tidyverse.org/reference/read_delim.html","readr","psyteachr_dsrr Ch. 10"
+"8","ggplot()","create a plotting area","https://ggplot2.tidyverse.org/reference/ggplot.html","ggplot2","psyteachr_dsrr Ch. 10"
+"9","aes()","create aesthetic mappings between data and plot","https://ggplot2.tidyverse.org/reference/aes.html","ggplot2","psyteachr_dsrr Ch. 10"
+"10","geom_bar()","create bar chart based on counts in data","https://ggplot2.tidyverse.org/reference/geom_bar.html","ggplot2","psyteachr_dsrr Ch. 10"
+"11","labs()","modify axis, legend, and plot labels","https://ggplot2.tidyverse.org/reference/labs.html","ggplot2","psyteachr_dsrr Ch. 10"
+"12","geom_point()","add layer of points to plot","https://ggplot2.tidyverse.org/reference/geom_point.html","ggplot2","psyteachr_dsrr Ch. 10"
+"13","geom_smooth()","create smoothed lines to plot","https://ggplot2.tidyverse.org/reference/geom_smooth.html","ggplot2","psyteachr_dsrr Ch. 10"
+"14","annotate()","annotate plot independent of data","https://ggplot2.tidyverse.org/reference/annotate.html","ggplot2","psyteachr_dsrr Ch. 10"
+"15","arrow()","plot arrows","https://rdrr.io/r/grid/arrow.html","grid","psyteachr_dsrr Ch. 10"
+"16","unit()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"17","ggplotly()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"18","count()","count unique values of variables","https://dplyr.tidyverse.org/reference/count.html","dplyr","psyteachr_dsrr Ch. 10"
+"19","geom_waffle()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"20","theme_enhance_waffle()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"21","scale_fill_colorblind()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"22","treemap()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"23","arrange()","change order of rows based on values of columns","https://dplyr.tidyverse.org/reference/arrange.html","dplyr","psyteachr_dsrr Ch. 10"
+"24","list()","create recursive vector (list)","https://rdrr.io/r/base/list.html","base","psyteachr_dsrr Ch. 10"
+"25","tribble()","create row-wise tibble","https://tibble.tidyverse.org/reference/tribble.html","tibble","psyteachr_dsrr Ch. 10"
+"26","pivot_longer()","pivot data frame to be longer","https://tidyr.tidyverse.org/reference/pivot_longer.html","tidyr","psyteachr_dsrr Ch. 10"
+"27","group_by()","group data by levels of column","https://dplyr.tidyverse.org/reference/group_by.html","dplyr","psyteachr_dsrr Ch. 10"
+"28","mutate()","create or modify data columns","https://dplyr.tidyverse.org/reference/mutate.html","dplyr","psyteachr_dsrr Ch. 10"
+"29","n()","return current group size","https://dplyr.tidyverse.org/reference/context.html","dplyr","psyteachr_dsrr Ch. 10"
+"30","rank()","return sample ranks of the values in a vector","https://rdrr.io/r/base/rank.html","base","psyteachr_dsrr Ch. 10"
+"31","ungroup()","remove grouping","https://dplyr.tidyverse.org/reference/group_by.html","dplyr","psyteachr_dsrr Ch. 10"
+"32","str_replace()","replace first matched pattern in a string","https://stringr.tidyverse.org/reference/str_replace.html","stringr","psyteachr_dsrr Ch. 10"
+"33","as.integer()","coerce to integer","https://rdrr.io/r/base/integer.html","base","psyteachr_dsrr Ch. 10"
+"34","geom_bump()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"35","scale_x_continuous()","scale x axis to be continuous","https://ggplot2.tidyverse.org/reference/scale_continuous.html","ggplot2","psyteachr_dsrr Ch. 10"
+"36","expansion()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"37","scale_y_reverse()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"38","geom_text()","adds text to plot","https://ggplot2.tidyverse.org/reference/geom_text.html","ggplot2","psyteachr_dsrr Ch. 10"
+"39","filter()","keep rows based on values of columns","https://dplyr.tidyverse.org/reference/filter.html","dplyr","psyteachr_dsrr Ch. 10"
+"40","theme()","customize non-data components of plot","https://ggplot2.tidyverse.org/reference/theme.html","ggplot2","psyteachr_dsrr Ch. 10"
+"41","element_blank()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"42","element_text()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"43","import()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"44","unnest_tokens()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"45","tibble()","create tibble","https://tibble.tidyverse.org/reference/tibble.html","tibble","psyteachr_dsrr Ch. 10"
+"46","anti_join()","join two data sets dropping all observations in x that have a match in y","https://dplyr.tidyverse.org/reference/filter-joins.html","dplyr","psyteachr_dsrr Ch. 10"
+"47","slice_max()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"48","geom_text_wordcloud_area()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"49","scale_size_area()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"50","ggtitle()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"51","theme_minimal()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"52","ne_countries()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"53","geom_sf()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"54","element_rect()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"55","ne_states()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"56","bind_rows()","bind rows in dplyr","https://dplyr.tidyverse.org/reference/bind.html","dplyr","psyteachr_dsrr Ch. 10"
+"57","is.na()","determine whether elements of vector are missing","https://rdrr.io/r/base/NA.html","base","psyteachr_dsrr Ch. 10"
+"58","coord_sf()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"59","st_crs()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"60","scale_fill_manual()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"61","ifelse()","conditionally set values","https://rdrr.io/r/base/ifelse.html","base","psyteachr_dsrr Ch. 10"
+"62","left_join()","join two data sets keeping the observations in the left one","https://dplyr.tidyverse.org/reference/mutate-joins.html","dplyr","psyteachr_dsrr Ch. 10"
+"63","select()","keep specified columns","https://dplyr.tidyverse.org/reference/select.html","dplyr","psyteachr_dsrr Ch. 10"
+"64","scale_fill_viridis_c()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"65","seq()","create sequences of numbers","https://rdrr.io/r/base/seq.html","base","psyteachr_dsrr Ch. 10"
+"66","paste0()","concatenate character vectors with no space between elements","https://rdrr.io/r/base/paste.html","base","psyteachr_dsrr Ch. 10"
+"67","read_excel()","import either xls or xlsx Excel files","https://readxl.tidyverse.org/reference/read_excel.html","readxl","psyteachr_dsrr Ch. 10"
+"68","round()","round values to specified number of digits","https://rdrr.io/r/base/Round.html","base","psyteachr_dsrr Ch. 10"
+"69","as.numeric()","coerce object to numeric","https://rdrr.io/r/base/numeric.html","base","psyteachr_dsrr Ch. 10"
+"70","geom_col()","create bar chart based on values in data","https://ggplot2.tidyverse.org/reference/geom_bar.html","ggplot2","psyteachr_dsrr Ch. 10"
+"71","scale_fill_viridis_d()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"72","scale_x_discrete()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"73","guide_axis()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"74","scale_y_continuous()","scale y axis to be continuous","https://ggplot2.tidyverse.org/reference/scale_continuous.html","ggplot2","psyteachr_dsrr Ch. 10"
+"75","include_graphics()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"76","datatable()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"77","lm()","fit linear model","https://rdrr.io/r/stats/lm.html","stats","psyteachr_dsrr Ch. 10"
+"78","person()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"79","week()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"80","word()",NA,NA,NA,"psyteachr_dsrr Ch. 10"
+"81","year()","return or set year component of a date-time","https://lubridate.tidyverse.org/reference/year.html","lubridate","psyteachr_dsrr Ch. 10"

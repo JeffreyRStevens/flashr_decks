@@ -1,0 +1,8 @@
+"","term","description","url","package","title"
+"1","library()","load R packages","https://rdrr.io/r/base/library.html","base","psyteachr_ads Ch. 01"
+"2","sample()","randomly sample from vector","https://rdrr.io/r/base/sample.html","base","psyteachr_ads Ch. 01"
+"3","set.seed()",NA,NA,NA,"psyteachr_ads Ch. 01"
+"4","Sys.Date()","return system date","https://rdrr.io/r/base/Sys.time.html","base","psyteachr_ads Ch. 01"
+"5","as.Date()","convert to date","https://rdrr.io/r/base/as.Date.html","base","psyteachr_ads Ch. 01"
+"6","paste()","concatenate character vectors with space between elements","https://rdrr.io/r/base/paste.html","base","psyteachr_ads Ch. 01"
+"7","today()","return the current date","https://lubridate.tidyverse.org/reference/now.html","lubridate","psyteachr_ads Ch. 01"
