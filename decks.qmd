@@ -83,15 +83,15 @@ This has not only a list of the built-in decks available for the flashr package 
 
 <summary>PsyTeachR Fundamentals of Quantitative Analysis</summary>
 
--   <a href = "html/psyteachr_fqa1.html" target="_blank">Ch. 1 Introduction to programming</a>: `psyteachr_fqa01`
--   <a href = "html/psyteachr_fqa2.html" target="_blank">Ch. 2 Creating reproducible documents</a>: `psyteachr_fqa002`
--   <a href = "html/psyteachr_fqa3.html" target="_blank">Ch. 3 Intro to data visualisation</a>: `psyteachr_fqa03`
--   <a href = "html/psyteachr_fqa4.html" target="_blank">Ch. 4 Data wrangling 1</a>: `psyteachr_fqa04`
--   <a href = "html/psyteachr_fqa5.html" target="_blank">Ch. 5 Data wrangling 2</a>: `psyteachr_fqa05`
--   <a href = "html/psyteachr_fqa6.html" target="_blank">Ch. 6 Data wrangling 3</a>: `psyteachr_fqa06`
--   <a href = "html/psyteachr_fqa7.html" target="_blank">Ch. 7 Scatterplots, boxplots, violin plots</a>: `psyteachr_fqa07`
--   <a href = "html/psyteachr_fqa8.html" target="_blank">Ch. 8 Regression with continuous predictor</a>: `psyteachr_fqa08`
--   <a href = "html/psyteachr_fqa9.html" target="_blank">Ch. 9 Regression with categorical predictor</a>: `psyteachr_fqa09`
+-   <a href = "html/psyteachr_fqa01.html" target="_blank">Ch. 1 Introduction to programming</a>: `psyteachr_fqa01`
+-   <a href = "html/psyteachr_fqa02.html" target="_blank">Ch. 2 Creating reproducible documents</a>: `psyteachr_fqa002`
+-   <a href = "html/psyteachr_fqa03.html" target="_blank">Ch. 3 Intro to data visualisation</a>: `psyteachr_fqa03`
+-   <a href = "html/psyteachr_fqa04.html" target="_blank">Ch. 4 Data wrangling 1</a>: `psyteachr_fqa04`
+-   <a href = "html/psyteachr_fqa05.html" target="_blank">Ch. 5 Data wrangling 2</a>: `psyteachr_fqa05`
+-   <a href = "html/psyteachr_fqa06.html" target="_blank">Ch. 6 Data wrangling 3</a>: `psyteachr_fqa06`
+-   <a href = "html/psyteachr_fqa07.html" target="_blank">Ch. 7 Scatterplots, boxplots, violin plots</a>: `psyteachr_fqa07`
+-   <a href = "html/psyteachr_fqa08.html" target="_blank">Ch. 8 Regression with continuous predictor</a>: `psyteachr_fqa08`
+-   <a href = "html/psyteachr_fqa09.html" target="_blank">Ch. 9 Regression with categorical predictor</a>: `psyteachr_fqa09`
 -   <a href = "html/psyteachr_fqa10.html" target="_blank">Ch. 10 Statistical power</a>: `psyteachr_fqa10`
 -   <a href = "html/psyteachr_fqa11.html" target="_blank">Ch. 11 Missing data</a>: `psyteachr_fqa11`
 -   <a href = "html/psyteachr_fqa12.html" target="_blank">Ch. 12 One-way ANOVA</a>: `psyteachr_fqa12`
@@ -109,13 +109,13 @@ This has not only a list of the built-in decks available for the flashr package 
 
 -   <a href = "html/psyteachr_dsrr01.html" target="_blank">Ch. 1 Introduction</a>: `psyteachr_dsrr01`
 -   <a href = "html/psyteachr_dsrr02.html" target="_blank">Ch. 2 Reports</a>: `psyteachr_dsrr02`
--   <a href = "html/psyteachr_dsrr3.html" target="_blank">Ch. 3 Data visualisation</a>: `psyteachr_dsrr03`
--   <a href = "html/psyteachr_dsrr4.html" target="_blank">Ch. 4 Data summaries</a>: `psyteachr_dsrr04`
--   <a href = "html/psyteachr_dsrr5.html" target="_blank">Ch. 5 Data relations</a>: `psyteachr_dsrr05`
--   <a href = "html/psyteachr_dsrr6.html" target="_blank">Ch. 6 Data tidying</a>: `psyteachr_dsrr06`
--   <a href = "html/psyteachr_dsrr7.html" target="_blank">Ch. 7 Data wrangling</a>: `psyteachr_dsrr07`
--   <a href = "html/psyteachr_dsrr8.html" target="_blank">Ch. 8 Iteration & functions</a>: `psyteachr_dsrr08`
--   <a href = "html/psyteachr_dsrr9.html" target="_blank">Ch. 9 Probability & simulation</a>: `psyteachr_dsrr09`
+-   <a href = "html/psyteachr_dsrr03.html" target="_blank">Ch. 3 Data visualisation</a>: `psyteachr_dsrr03`
+-   <a href = "html/psyteachr_dsrr04.html" target="_blank">Ch. 4 Data summaries</a>: `psyteachr_dsrr04`
+-   <a href = "html/psyteachr_dsrr05.html" target="_blank">Ch. 5 Data relations</a>: `psyteachr_dsrr05`
+-   <a href = "html/psyteachr_dsrr06.html" target="_blank">Ch. 6 Data tidying</a>: `psyteachr_dsrr06`
+-   <a href = "html/psyteachr_dsrr07.html" target="_blank">Ch. 7 Data wrangling</a>: `psyteachr_dsrr07`
+-   <a href = "html/psyteachr_dsrr08.html" target="_blank">Ch. 8 Iteration & functions</a>: `psyteachr_dsrr08`
+-   <a href = "html/psyteachr_dsrr09.html" target="_blank">Ch. 9 Probability & simulation</a>: `psyteachr_dsrr09`
 -   <a href = "html/psyteachr_dsrr10.html" target="_blank">Ch. 10 Next steps</a>: `psyteachr_dsrr10`
 
 </details>
@@ -124,13 +124,13 @@ This has not only a list of the built-in decks available for the flashr package 
 
 <summary>PsyTeachR Applied Data Skills</summary>
 
--   <a href = "html/psyteachr_ads1.html" target="_blank">Ch. 1 Intro to R and RStudio</a>: `psyteachr_ads01`
--   <a href = "html/psyteachr_ads2.html" target="_blank">Ch. 2 Reports with R Markdown</a>: `psyteachr_ads02`
--   <a href = "html/psyteachr_ads3.html" target="_blank">Ch. 3 Data visualisation</a>: `psyteachr_ads03`
--   <a href = "html/psyteachr_ads4.html" target="_blank">Ch. 4 Data summaries</a>: `psyteachr_ads04`
--   <a href = "html/psyteachr_ads7.html" target="_blank">Ch. 7 Data relations</a>: `psyteachr_ads07`
--   <a href = "html/psyteachr_ads8.html" target="_blank">Ch. 8 Data tidying</a>: `psyteachr_ads08`
--   <a href = "html/psyteachr_ads9.html" target="_blank">Ch. 9 Data wrangling</a>: `psyteachr_ads09`
+-   <a href = "html/psyteachr_ads01.html" target="_blank">Ch. 1 Intro to R and RStudio</a>: `psyteachr_ads01`
+-   <a href = "html/psyteachr_ads02.html" target="_blank">Ch. 2 Reports with R Markdown</a>: `psyteachr_ads02`
+-   <a href = "html/psyteachr_ads03.html" target="_blank">Ch. 3 Data visualisation</a>: `psyteachr_ads03`
+-   <a href = "html/psyteachr_ads04.html" target="_blank">Ch. 4 Data summaries</a>: `psyteachr_ads04`
+-   <a href = "html/psyteachr_ads07.html" target="_blank">Ch. 7 Data relations</a>: `psyteachr_ads07`
+-   <a href = "html/psyteachr_ads08.html" target="_blank">Ch. 8 Data tidying</a>: `psyteachr_ads08`
+-   <a href = "html/psyteachr_ads09.html" target="_blank">Ch. 9 Data wrangling</a>: `psyteachr_ads09`
 -   <a href = "html/psyteachr_ads10.html" target="_blank">Ch. 10 Customising visualisations & reports</a>: `psyteachr_ads10`
 
 </details>
