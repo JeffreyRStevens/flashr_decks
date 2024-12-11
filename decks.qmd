@@ -2,11 +2,11 @@
 
 This has not only a list of the built-in decks available for the flashr package (and the tags used in the [`flashr`](https://jeffreyrstevens.github.io/flashr/) package) but also HTML examples of each deck that you can test out.
 
-## Functions
+## R for Data Science
 
 <details>
 
-<summary>R for Data Science (1st edition)</summary>
+<summary>1st edition</summary>
 
 -   <a href = "html/r4ds01.html" target="_blank">Ch. 1 Introduction</a>: `r4ds01`
 -   <a href = "html/r4ds03.html" target="_blank">Ch. 3 Data visualization</a>: `r4ds03`
@@ -34,7 +34,7 @@ This has not only a list of the built-in decks available for the flashr package 
 
 <details>
 
-<summary>R for Data Science (2nd edition)</summary>
+<summary>2nd edition</summary>
 
 -   <a href = "html/r4ds-2e00.html" target="_blank">Ch. 0 Introduction</a>: `r4ds-2e00`
 -   <a href = "html/r4ds-2e01.html" target="_blank">Ch. 1 Data visualization</a>: `r4ds-2e01`
@@ -67,17 +67,8 @@ This has not only a list of the built-in decks available for the flashr package 
 
 </details>
 
-<details>
 
-<summary>Miscellaneous decks</summary>
-
--   <a href = "html/data_types.html" target="_blank">Data types</a>: `data_types`
--   <a href = "html/operators.html" target="_blank">Operators</a>: `operators`
--   <a href = "html/vectors.html" target="_blank">Vectors</a>: `vectors`
-
-</details>
-
-## [PsyTeachR](https://psyteachr.github.io/) book glossaries
+## [PsyTeachR](https://psyteachr.github.io/) books
 
 <details>
 
@@ -134,5 +125,19 @@ This has not only a list of the built-in decks available for the flashr package 
 -   <a href = "html/psyteachr_ads10.html" target="_blank">Ch. 10 Customising visualisations & reports</a>: `psyteachr_ads10`
 
 </details>
+
+## Miscellaneous functions
+
+<details>
+
+<summary>Miscellaneous decks</summary>
+
+-   <a href = "html/data_types.html" target="_blank">Data types</a>: `data_types`
+-   <a href = "html/operators.html" target="_blank">Operators</a>: `operators`
+-   <a href = "html/vectors.html" target="_blank">Vectors</a>: `vectors`
+
+</details>
+
+
 
 If you have ideas for decks that are listed here, look into [contributing your own decks](contribute.html).
