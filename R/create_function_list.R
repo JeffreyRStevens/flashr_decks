@@ -1,4 +1,8 @@
 
+
+#  Do not use this script. Do not rewrite function list. Edit by hand.
+
+
 library(tidyverse)
 library(here)
 
@@ -28,4 +32,6 @@ all_functions <- deckpaths |>
   relocate(package, .after = term) |> 
   mutate(function_name = ifelse(term %in% all_operators, term, paste0(package, "::", term)), .after = package) |> 
   arrange(term)
-write_csv(all_functions, here("data/functions.csv"))
+
+# Do not rewrite function list
+# write_csv(all_functions, here("data/functions.csv"))   
