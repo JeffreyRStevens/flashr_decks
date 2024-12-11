@@ -36,8 +36,8 @@ This has not only a list of the built-in decks available for the flashr package 
 
 <summary>R for Data Science (2nd edition)</summary>
 
--   <a href = "decks/r4ds-2e00.html" target="_blank">Ch. 0 Introduction</a>: `r4ds-2e00`
--   <a href = "decks/r4ds-2e01.html" target="_blank">Ch. 1 Data visualization</a>: `r4ds-2e01`
+-   <a href = "html/r4ds-2e00.html" target="_blank">Ch. 0 Introduction</a>: `r4ds-2e00`
+-   <a href = "html/r4ds-2e01.html" target="_blank">Ch. 1 Data visualization</a>: `r4ds-2e01`
 -   <a href = "decks/r4ds-2e02.html" target="_blank">Ch. 2 Workflow: Basics</a>: `r4ds-2e02`
 -   <a href = "decks/r4ds-2e03.html" target="_blank">Ch. 3 Data transformation</a>: `r4ds-2e03`
 -   <a href = "decks/r4ds-2e04.html" target="_blank">Ch. 4 Workflow: Style</a>: `r4ds-2e04`
