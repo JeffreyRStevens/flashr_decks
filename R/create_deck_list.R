@@ -37,9 +37,10 @@ write.csv(all_decks, here("decks/00_all_decks.csv"), row.names = FALSE)
 
 # Create HTML decks for website ------------------------------------------------
 
-for (i in seq_along(all_decks$decklabel)) {
-  deck <- all_decks$decklabel[i]
-  flashcard(deck, file = here(paste0("html/", deck, ".html")))
-}
+# for (i in seq_along(all_decks$decklabel)) {
+#   deck <- all_decks$decklabel[i]
+#   flashcard(deck, file = here(paste0("html/", deck, ".html")))
+# }
+purrr::walk(all_decks$decklabel, ~ flashcard(.x, file = here(paste0("html/", all_decks$decklabel, ".html"))))
 
 # Run quarto render then copy slides from html to _site/decks (may have to create directory)
