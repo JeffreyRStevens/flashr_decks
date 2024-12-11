@@ -8,27 +8,27 @@ This has not only a list of the built-in decks available for the flashr package 
 
 <summary>R for Data Science (1st edition)</summary>
 
--   <a href = "decks/r4ds01.html" target="_blank">Ch. 1 Introduction</a>: `r4ds01`
--   <a href = "decks/r4ds03.html" target="_blank">Ch. 3 Data visualization</a>: `r4ds03`
--   <a href = "decks/r4ds05.html" target="_blank">Ch. 5 Data transformation</a>: `r4ds05`
--   <a href = "decks/r4ds07.html" target="_blank">Ch. 7 Exploratory data analysis</a>: `r4ds07`
--   <a href = "decks/r4ds08.html" target="_blank">Ch. 8 Workflow: projects</a>: `r4ds08`
--   <a href = "decks/r4ds10.html" target="_blank">Ch. 10 Tibbles</a>: `r4ds10`
--   <a href = "decks/r4ds11.html" target="_blank">Ch. 11 Data import</a>: `r4ds11`
--   <a href = "decks/r4ds12.html" target="_blank">Ch. 12 Tidy data</a>: `r4ds12`
--   <a href = "decks/r4ds13.html" target="_blank">Ch. 13 Relational data</a>: `r4ds13`
--   <a href = "decks/r4ds14.html" target="_blank">Ch. 14 Strings</a>: `r4ds14`
--   <a href = "decks/r4ds15.html" target="_blank">Ch. 15 Factors</a>: `r4ds15`
--   <a href = "decks/r4ds16.html" target="_blank">Ch. 16 Dates and times</a>: `r4ds16`
--   <a href = "decks/r4ds18.html" target="_blank">Ch. 18 Pipes</a>: `r4ds18`
--   <a href = "decks/r4ds20.html" target="_blank">Ch. 20 Vectors</a>: `r4ds20`
--   <a href = "decks/r4ds21.html" target="_blank">Ch. 21 Iteration</a>: `r4ds21`
--   <a href = "decks/r4ds23.html" target="_blank">Ch. 23 Model basics</a>: `r4ds23`
--   <a href = "decks/r4ds25.html" target="_blank">Ch. 25 Many models</a>: `r4ds25`
--   <a href = "decks/r4ds27.html" target="_blank">Ch. 27 R Markdown</a>: `r4ds27`
--   <a href = "decks/r4ds28.html" target="_blank">Ch. 28 Graphics for communication</a>: `r4ds28`
--   <a href = "decks/r4ds29.html" target="_blank">Ch. 29 R Markdown formats</a>: `r4ds29`
--   <a href = "decks/r4ds30.html" target="_blank">Ch. 30 R Markdown workflow</a>: `r4ds30`
+-   <a href = "html/r4ds01.html" target="_blank">Ch. 1 Introduction</a>: `r4ds01`
+-   <a href = "html/r4ds03.html" target="_blank">Ch. 3 Data visualization</a>: `r4ds03`
+-   <a href = "html/r4ds05.html" target="_blank">Ch. 5 Data transformation</a>: `r4ds05`
+-   <a href = "html/r4ds07.html" target="_blank">Ch. 7 Exploratory data analysis</a>: `r4ds07`
+-   <a href = "html/r4ds08.html" target="_blank">Ch. 8 Workflow: projects</a>: `r4ds08`
+-   <a href = "html/r4ds10.html" target="_blank">Ch. 10 Tibbles</a>: `r4ds10`
+-   <a href = "html/r4ds11.html" target="_blank">Ch. 11 Data import</a>: `r4ds11`
+-   <a href = "html/r4ds12.html" target="_blank">Ch. 12 Tidy data</a>: `r4ds12`
+-   <a href = "html/r4ds13.html" target="_blank">Ch. 13 Relational data</a>: `r4ds13`
+-   <a href = "html/r4ds14.html" target="_blank">Ch. 14 Strings</a>: `r4ds14`
+-   <a href = "html/r4ds15.html" target="_blank">Ch. 15 Factors</a>: `r4ds15`
+-   <a href = "html/r4ds16.html" target="_blank">Ch. 16 Dates and times</a>: `r4ds16`
+-   <a href = "html/r4ds18.html" target="_blank">Ch. 18 Pipes</a>: `r4ds18`
+-   <a href = "html/r4ds20.html" target="_blank">Ch. 20 Vectors</a>: `r4ds20`
+-   <a href = "html/r4ds21.html" target="_blank">Ch. 21 Iteration</a>: `r4ds21`
+-   <a href = "html/r4ds23.html" target="_blank">Ch. 23 Model basics</a>: `r4ds23`
+-   <a href = "html/r4ds25.html" target="_blank">Ch. 25 Many models</a>: `r4ds25`
+-   <a href = "html/r4ds27.html" target="_blank">Ch. 27 R Markdown</a>: `r4ds27`
+-   <a href = "html/r4ds28.html" target="_blank">Ch. 28 Graphics for communication</a>: `r4ds28`
+-   <a href = "html/r4ds29.html" target="_blank">Ch. 29 R Markdown formats</a>: `r4ds29`
+-   <a href = "html/r4ds30.html" target="_blank">Ch. 30 R Markdown workflow</a>: `r4ds30`
 
 </details>
 
@@ -38,32 +38,32 @@ This has not only a list of the built-in decks available for the flashr package 
 
 -   <a href = "html/r4ds-2e00.html" target="_blank">Ch. 0 Introduction</a>: `r4ds-2e00`
 -   <a href = "html/r4ds-2e01.html" target="_blank">Ch. 1 Data visualization</a>: `r4ds-2e01`
--   <a href = "decks/r4ds-2e02.html" target="_blank">Ch. 2 Workflow: Basics</a>: `r4ds-2e02`
--   <a href = "decks/r4ds-2e03.html" target="_blank">Ch. 3 Data transformation</a>: `r4ds-2e03`
--   <a href = "decks/r4ds-2e04.html" target="_blank">Ch. 4 Workflow: Style</a>: `r4ds-2e04`
--   <a href = "decks/r4ds-2e05.html" target="_blank">Ch. 5 Data tidying</a>: `r4ds-2e05`
--   <a href = "decks/r4ds-2e07.html" target="_blank">Ch. 7 Data import</a>: `r4ds-2e07`
--   <a href = "decks/r4ds-2e09.html" target="_blank">Ch. 9 Layers</a>: `r4ds-2e09`
--   <a href = "decks/r4ds-2e10.html" target="_blank">Ch. 10 Exploratory data analysis</a>: `r4ds-2e10`
--   <a href = "decks/r4ds-2e11.html" target="_blank">Ch. 11 Communication</a>: `r4ds-2e11`
--   <a href = "decks/r4ds-2e12.html" target="_blank">Ch. 12 Logical vectors</a>: `r4ds-2e12`
--   <a href = "decks/r4ds-2e13.html" target="_blank">Ch. 13 Numbers</a>: `r4ds-2e13`
--   <a href = "decks/r4ds-2e14.html" target="_blank">Ch. 14 Strings</a>: `r4ds-2e14`
--   <a href = "decks/r4ds-2e15.html" target="_blank">Ch. 15 Regular expressions</a>: `r4ds-2e15`
--   <a href = "decks/r4ds-2e16.html" target="_blank">Ch. 16 Factors</a>: `r4ds-2e16`
--   <a href = "decks/r4ds-2e17.html" target="_blank">Ch. 17 Dates and times</a>: `r4ds-2e17`
--   <a href = "decks/r4ds-2e18.html" target="_blank">Ch. 18 Missing values</a>: `r4ds-2e18`
--   <a href = "decks/r4ds-2e19.html" target="_blank">Ch. 19 Joins</a>: `r4ds-2e19`
--   <a href = "decks/r4ds-2e20.html" target="_blank">Ch. 20 Spreadsheets</a>: `r4ds-2e20`
--   <a href = "decks/r4ds-2e21.html" target="_blank">Ch. 21 Databases</a>: `r4ds-2e21`
--   <a href = "decks/r4ds-2e22.html" target="_blank">Ch. 22 Arrow</a>: `r4ds-2e22`
--   <a href = "decks/r4ds-2e23.html" target="_blank">Ch. 23 Hierarchical data</a>: `r4ds-2e23`
--   <a href = "decks/r4ds-2e24.html" target="_blank">Ch. 24 Web scraping</a>: `r4ds-2e24`
--   <a href = "decks/r4ds-2e25.html" target="_blank">Ch. 25 Functions</a>: `r4ds-2e25`
--   <a href = "decks/r4ds-2e26.html" target="_blank">Ch. 26 Iteration</a>: `r4ds-2e26`
--   <a href = "decks/r4ds-2e27.html" target="_blank">Ch. 27 Base R</a>: `r4ds-2e27`
--   <a href = "decks/r4ds-2e28.html" target="_blank">Ch. 28 Quarto</a>: `r4ds-2e28`
--   <a href = "decks/r4ds-2e29.html" target="_blank">Ch. 29 Quarto formats</a>: `r4ds-2e29`
+-   <a href = "html/r4ds-2e02.html" target="_blank">Ch. 2 Workflow: Basics</a>: `r4ds-2e02`
+-   <a href = "html/r4ds-2e03.html" target="_blank">Ch. 3 Data transformation</a>: `r4ds-2e03`
+-   <a href = "html/r4ds-2e04.html" target="_blank">Ch. 4 Workflow: Style</a>: `r4ds-2e04`
+-   <a href = "html/r4ds-2e05.html" target="_blank">Ch. 5 Data tidying</a>: `r4ds-2e05`
+-   <a href = "html/r4ds-2e07.html" target="_blank">Ch. 7 Data import</a>: `r4ds-2e07`
+-   <a href = "html/r4ds-2e09.html" target="_blank">Ch. 9 Layers</a>: `r4ds-2e09`
+-   <a href = "html/r4ds-2e10.html" target="_blank">Ch. 10 Exploratory data analysis</a>: `r4ds-2e10`
+-   <a href = "html/r4ds-2e11.html" target="_blank">Ch. 11 Communication</a>: `r4ds-2e11`
+-   <a href = "html/r4ds-2e12.html" target="_blank">Ch. 12 Logical vectors</a>: `r4ds-2e12`
+-   <a href = "html/r4ds-2e13.html" target="_blank">Ch. 13 Numbers</a>: `r4ds-2e13`
+-   <a href = "html/r4ds-2e14.html" target="_blank">Ch. 14 Strings</a>: `r4ds-2e14`
+-   <a href = "html/r4ds-2e15.html" target="_blank">Ch. 15 Regular expressions</a>: `r4ds-2e15`
+-   <a href = "html/r4ds-2e16.html" target="_blank">Ch. 16 Factors</a>: `r4ds-2e16`
+-   <a href = "html/r4ds-2e17.html" target="_blank">Ch. 17 Dates and times</a>: `r4ds-2e17`
+-   <a href = "html/r4ds-2e18.html" target="_blank">Ch. 18 Missing values</a>: `r4ds-2e18`
+-   <a href = "html/r4ds-2e19.html" target="_blank">Ch. 19 Joins</a>: `r4ds-2e19`
+-   <a href = "html/r4ds-2e20.html" target="_blank">Ch. 20 Spreadsheets</a>: `r4ds-2e20`
+-   <a href = "html/r4ds-2e21.html" target="_blank">Ch. 21 Databases</a>: `r4ds-2e21`
+-   <a href = "html/r4ds-2e22.html" target="_blank">Ch. 22 Arrow</a>: `r4ds-2e22`
+-   <a href = "html/r4ds-2e23.html" target="_blank">Ch. 23 Hierarchical data</a>: `r4ds-2e23`
+-   <a href = "html/r4ds-2e24.html" target="_blank">Ch. 24 Web scraping</a>: `r4ds-2e24`
+-   <a href = "html/r4ds-2e25.html" target="_blank">Ch. 25 Functions</a>: `r4ds-2e25`
+-   <a href = "html/r4ds-2e26.html" target="_blank">Ch. 26 Iteration</a>: `r4ds-2e26`
+-   <a href = "html/r4ds-2e27.html" target="_blank">Ch. 27 Base R</a>: `r4ds-2e27`
+-   <a href = "html/r4ds-2e28.html" target="_blank">Ch. 28 Quarto</a>: `r4ds-2e28`
+-   <a href = "html/r4ds-2e29.html" target="_blank">Ch. 29 Quarto formats</a>: `r4ds-2e29`
 
 </details>
 
@@ -71,9 +71,9 @@ This has not only a list of the built-in decks available for the flashr package 
 
 <summary>Miscellaneous decks</summary>
 
--   <a href = "decks/data_types.html" target="_blank">Data types</a>: `data_types`
--   <a href = "decks/operators.html" target="_blank">Operators</a>: `operators`
--   <a href = "decks/vectors.html" target="_blank">Vectors</a>: `vectors`
+-   <a href = "html/data_types.html" target="_blank">Data types</a>: `data_types`
+-   <a href = "html/operators.html" target="_blank">Operators</a>: `operators`
+-   <a href = "html/vectors.html" target="_blank">Vectors</a>: `vectors`
 
 </details>
 
@@ -83,23 +83,23 @@ This has not only a list of the built-in decks available for the flashr package 
 
 <summary>PsyTeachR Fundamentals of Quantitative Analysis</summary>
 
--   <a href = "decks/psyteachr_fqa01.html" target="_blank">Ch. 1 Introduction to programming</a>: `psyteachr_fqa01`
--   <a href = "decks/psyteachr_fqa02.html" target="_blank">Ch. 2 Creating reproducible documents</a>: `psyteachr_fqa002`
--   <a href = "decks/psyteachr_fqa03.html" target="_blank">Ch. 3 Intro to data visualisation</a>: `psyteachr_fqa03`
--   <a href = "decks/psyteachr_fqa04.html" target="_blank">Ch. 4 Data wrangling 1</a>: `psyteachr_fqa04`
--   <a href = "decks/psyteachr_fqa05.html" target="_blank">Ch. 5 Data wrangling 2</a>: `psyteachr_fqa05`
--   <a href = "decks/psyteachr_fqa06.html" target="_blank">Ch. 6 Data wrangling 3</a>: `psyteachr_fqa06`
--   <a href = "decks/psyteachr_fqa07.html" target="_blank">Ch. 7 Scatterplots, boxplots, violin plots</a>: `psyteachr_fqa07`
--   <a href = "decks/psyteachr_fqa08.html" target="_blank">Ch. 8 Regression with continuous predictor</a>: `psyteachr_fqa08`
--   <a href = "decks/psyteachr_fqa09.html" target="_blank">Ch. 9 Regression with categorical predictor</a>: `psyteachr_fqa09`
--   <a href = "decks/psyteachr_fqa10.html" target="_blank">Ch. 10 Statistical power</a>: `psyteachr_fqa10`
--   <a href = "decks/psyteachr_fqa11.html" target="_blank">Ch. 11 Missing data</a>: `psyteachr_fqa11`
--   <a href = "decks/psyteachr_fqa12.html" target="_blank">Ch. 12 One-way ANOVA</a>: `psyteachr_fqa12`
--   <a href = "decks/psyteachr_fqa13.html" target="_blank">Ch. 13 Factorial ANOVA</a>: `psyteachr_fqa13`
--   <a href = "decks/psyteachr_fqa14.html" target="_blank">Ch. 14 Multiple regression</a>: `psyteachr_fqa14`
--   <a href = "decks/psyteachr_fqa15.html" target="_blank">Ch. 15 Analysis Journey 1</a>: `psyteachr_fqa15`
--   <a href = "decks/psyteachr_fqa16.html" target="_blank">Ch. 16 Analysis Journey 2</a>: `psyteachr_fqa16`
-<!-- -   <a href = "decks/psyteachr_fqa17.html" target="_blank">Ch. 17 Multiple regression</a>: `psyteachr_fqa17` -->
+-   <a href = "html/psyteachr_fqa01.html" target="_blank">Ch. 1 Introduction to programming</a>: `psyteachr_fqa01`
+-   <a href = "html/psyteachr_fqa02.html" target="_blank">Ch. 2 Creating reproducible documents</a>: `psyteachr_fqa002`
+-   <a href = "html/psyteachr_fqa03.html" target="_blank">Ch. 3 Intro to data visualisation</a>: `psyteachr_fqa03`
+-   <a href = "html/psyteachr_fqa04.html" target="_blank">Ch. 4 Data wrangling 1</a>: `psyteachr_fqa04`
+-   <a href = "html/psyteachr_fqa05.html" target="_blank">Ch. 5 Data wrangling 2</a>: `psyteachr_fqa05`
+-   <a href = "html/psyteachr_fqa06.html" target="_blank">Ch. 6 Data wrangling 3</a>: `psyteachr_fqa06`
+-   <a href = "html/psyteachr_fqa07.html" target="_blank">Ch. 7 Scatterplots, boxplots, violin plots</a>: `psyteachr_fqa07`
+-   <a href = "html/psyteachr_fqa08.html" target="_blank">Ch. 8 Regression with continuous predictor</a>: `psyteachr_fqa08`
+-   <a href = "html/psyteachr_fqa09.html" target="_blank">Ch. 9 Regression with categorical predictor</a>: `psyteachr_fqa09`
+-   <a href = "html/psyteachr_fqa10.html" target="_blank">Ch. 10 Statistical power</a>: `psyteachr_fqa10`
+-   <a href = "html/psyteachr_fqa11.html" target="_blank">Ch. 11 Missing data</a>: `psyteachr_fqa11`
+-   <a href = "html/psyteachr_fqa12.html" target="_blank">Ch. 12 One-way ANOVA</a>: `psyteachr_fqa12`
+-   <a href = "html/psyteachr_fqa13.html" target="_blank">Ch. 13 Factorial ANOVA</a>: `psyteachr_fqa13`
+-   <a href = "html/psyteachr_fqa14.html" target="_blank">Ch. 14 Multiple regression</a>: `psyteachr_fqa14`
+-   <a href = "html/psyteachr_fqa15.html" target="_blank">Ch. 15 Analysis Journey 1</a>: `psyteachr_fqa15`
+-   <a href = "html/psyteachr_fqa16.html" target="_blank">Ch. 16 Analysis Journey 2</a>: `psyteachr_fqa16`
+<!-- -   <a href = "html/psyteachr_fqa17.html" target="_blank">Ch. 17 Multiple regression</a>: `psyteachr_fqa17` -->
 
 </details>
 
@@ -107,16 +107,16 @@ This has not only a list of the built-in decks available for the flashr package 
 
 <summary>PsyTeachR Data Skills for Reproducible Research</summary>
 
--   <a href = "decks/psyteachr_dsrr01.html" target="_blank">Ch. 1 Introduction</a>: `psyteachr_dsrr01`
--   <a href = "decks/psyteachr_dsrr02.html" target="_blank">Ch. 2 Reports</a>: `psyteachr_dsrr02`
--   <a href = "decks/psyteachr_dsrr03.html" target="_blank">Ch. 3 Data visualisation</a>: `psyteachr_dsrr03`
--   <a href = "decks/psyteachr_dsrr04.html" target="_blank">Ch. 4 Data summaries</a>: `psyteachr_dsrr04`
--   <a href = "decks/psyteachr_dsrr05.html" target="_blank">Ch. 5 Data relations</a>: `psyteachr_dsrr05`
--   <a href = "decks/psyteachr_dsrr06.html" target="_blank">Ch. 6 Data tidying</a>: `psyteachr_dsrr06`
--   <a href = "decks/psyteachr_dsrr07.html" target="_blank">Ch. 7 Data wrangling</a>: `psyteachr_dsrr07`
--   <a href = "decks/psyteachr_dsrr08.html" target="_blank">Ch. 8 Iteration & functions</a>: `psyteachr_dsrr08`
--   <a href = "decks/psyteachr_dsrr09.html" target="_blank">Ch. 9 Probability & simulation</a>: `psyteachr_dsrr09`
--   <a href = "decks/psyteachr_dsrr10.html" target="_blank">Ch. 10 Next steps</a>: `psyteachr_dsrr10`
+-   <a href = "html/psyteachr_dsrr01.html" target="_blank">Ch. 1 Introduction</a>: `psyteachr_dsrr01`
+-   <a href = "html/psyteachr_dsrr02.html" target="_blank">Ch. 2 Reports</a>: `psyteachr_dsrr02`
+-   <a href = "html/psyteachr_dsrr03.html" target="_blank">Ch. 3 Data visualisation</a>: `psyteachr_dsrr03`
+-   <a href = "html/psyteachr_dsrr04.html" target="_blank">Ch. 4 Data summaries</a>: `psyteachr_dsrr04`
+-   <a href = "html/psyteachr_dsrr05.html" target="_blank">Ch. 5 Data relations</a>: `psyteachr_dsrr05`
+-   <a href = "html/psyteachr_dsrr06.html" target="_blank">Ch. 6 Data tidying</a>: `psyteachr_dsrr06`
+-   <a href = "html/psyteachr_dsrr07.html" target="_blank">Ch. 7 Data wrangling</a>: `psyteachr_dsrr07`
+-   <a href = "html/psyteachr_dsrr08.html" target="_blank">Ch. 8 Iteration & functions</a>: `psyteachr_dsrr08`
+-   <a href = "html/psyteachr_dsrr09.html" target="_blank">Ch. 9 Probability & simulation</a>: `psyteachr_dsrr09`
+-   <a href = "html/psyteachr_dsrr10.html" target="_blank">Ch. 10 Next steps</a>: `psyteachr_dsrr10`
 
 </details>
 
@@ -124,16 +124,16 @@ This has not only a list of the built-in decks available for the flashr package 
 
 <summary>PsyTeachR Applied Data Skills</summary>
 
--   <a href = "decks/psyteachr_ads01.html" target="_blank">Ch. 1 Intro to R and RStudio</a>: `psyteachr_ads01`
--   <a href = "decks/psyteachr_ads02.html" target="_blank">Ch. 2 Reports with R Markdown</a>: `psyteachr_ads02`
--   <a href = "decks/psyteachr_ads03.html" target="_blank">Ch. 3 Data visualisation</a>: `psyteachr_ads03`
--   <a href = "decks/psyteachr_ads04.html" target="_blank">Ch. 4 Data summaries</a>: `psyteachr_ads04`
--   <a href = "decks/psyteachr_ads05.html" target="_blank">Ch. 5 Practice report</a>: `psyteachr_ads05`
--   <a href = "decks/psyteachr_ads06.html" target="_blank">Ch. 6 Coding with AI</a>: `psyteachr_ads06`
--   <a href = "decks/psyteachr_ads07.html" target="_blank">Ch. 7 Data relations</a>: `psyteachr_ads07`
--   <a href = "decks/psyteachr_ads08.html" target="_blank">Ch. 8 Data tidying</a>: `psyteachr_ads08`
--   <a href = "decks/psyteachr_ads09.html" target="_blank">Ch. 9 Data wrangling</a>: `psyteachr_ads09`
--   <a href = "decks/psyteachr_ads10.html" target="_blank">Ch. 10 Customising visualisations & reports</a>: `psyteachr_ads10`
+-   <a href = "html/psyteachr_ads01.html" target="_blank">Ch. 1 Intro to R and RStudio</a>: `psyteachr_ads01`
+-   <a href = "html/psyteachr_ads02.html" target="_blank">Ch. 2 Reports with R Markdown</a>: `psyteachr_ads02`
+-   <a href = "html/psyteachr_ads03.html" target="_blank">Ch. 3 Data visualisation</a>: `psyteachr_ads03`
+-   <a href = "html/psyteachr_ads04.html" target="_blank">Ch. 4 Data summaries</a>: `psyteachr_ads04`
+-   <a href = "html/psyteachr_ads05.html" target="_blank">Ch. 5 Practice report</a>: `psyteachr_ads05`
+-   <a href = "html/psyteachr_ads06.html" target="_blank">Ch. 6 Coding with AI</a>: `psyteachr_ads06`
+-   <a href = "html/psyteachr_ads07.html" target="_blank">Ch. 7 Data relations</a>: `psyteachr_ads07`
+-   <a href = "html/psyteachr_ads08.html" target="_blank">Ch. 8 Data tidying</a>: `psyteachr_ads08`
+-   <a href = "html/psyteachr_ads09.html" target="_blank">Ch. 9 Data wrangling</a>: `psyteachr_ads09`
+-   <a href = "html/psyteachr_ads10.html" target="_blank">Ch. 10 Customising visualisations & reports</a>: `psyteachr_ads10`
 
 </details>
 
