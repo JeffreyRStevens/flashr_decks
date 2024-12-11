@@ -23,5 +23,6 @@
 "22","str_equal()","compare if two strings are equal",NA,"stringr","R4DS-2e Ch. 14"
 "23","str_to_upper()","change text to upper case","https://stringr.tidyverse.org/reference/case.html","stringr","R4DS-2e Ch. 14"
 "24","str_sort()","sort numeric or character vector (stringr version)","https://stringr.tidyverse.org/reference/str_order.html","stringr","R4DS-2e Ch. 14"
-"25","debug()",NA,NA,NA,"R4DS-2e Ch. 14"
-"26","n()","return current group size","https://dplyr.tidyverse.org/reference/context.html","dplyr","R4DS-2e Ch. 14"
+"25","df()",NA,NA,NA,"R4DS-2e Ch. 14"
+"26","debug()",NA,NA,NA,"R4DS-2e Ch. 14"
+"27","n()","return current group size","https://dplyr.tidyverse.org/reference/context.html","dplyr","R4DS-2e Ch. 14"

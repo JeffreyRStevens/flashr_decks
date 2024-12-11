@@ -24,5 +24,6 @@
 "23","year()","return or set year component of a date-time","https://lubridate.tidyverse.org/reference/year.html","lubridate","R4DS-2e Ch. 05"
 "24","week()",NA,NA,NA,"R4DS-2e Ch. 05"
 "25","rank()","return sample ranks of the values in a vector","https://rdrr.io/r/base/rank.html","base","R4DS-2e Ch. 05"
-"26","id()",NA,NA,NA,"R4DS-2e Ch. 05"
-"27","family()",NA,NA,NA,"R4DS-2e Ch. 05"
+"26","df()",NA,NA,NA,"R4DS-2e Ch. 05"
+"27","id()",NA,NA,NA,"R4DS-2e Ch. 05"
+"28","family()",NA,NA,NA,"R4DS-2e Ch. 05"

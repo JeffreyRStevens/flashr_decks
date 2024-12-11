@@ -34,4 +34,5 @@
 "33","fct_lump_lowfreq()","lump together least frequent levels of a factor","https://forcats.tidyverse.org/reference/fct_lump.html","forcats","R4DS-2e Ch. 16"
 "34","fct_lump_n()","lump all factor levels except the most frequent","https://forcats.tidyverse.org/reference/fct_lump.html","forcats","R4DS-2e Ch. 16"
 "35","ordered()","created ordered factor","https://rdrr.io/r/base/factor.html","base","R4DS-2e Ch. 16"
-"36","month()","return or set month component of a date-time","https://lubridate.tidyverse.org/reference/month.html","lubridate","R4DS-2e Ch. 16"
+"36","df()",NA,NA,NA,"R4DS-2e Ch. 16"
+"37","month()","return or set month component of a date-time","https://lubridate.tidyverse.org/reference/month.html","lubridate","R4DS-2e Ch. 16"

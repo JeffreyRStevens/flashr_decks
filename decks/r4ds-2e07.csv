@@ -22,3 +22,4 @@
 "21","write_rds()","write RDS files","https://readr.tidyverse.org/reference/read_rds.html","readr","R4DS-2e Ch. 07"
 "22","read_rds()","read RDS files","https://readr.tidyverse.org/reference/read_rds.html","readr","R4DS-2e Ch. 07"
 "23","tribble()","create row-wise tibble","https://tibble.tidyverse.org/reference/tribble.html","tibble","R4DS-2e Ch. 07"
+"24","df()",NA,NA,NA,"R4DS-2e Ch. 07"

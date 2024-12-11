@@ -33,5 +33,6 @@
 "32","rbind()","bind rows in base R","https://rdrr.io/r/base/cbind.html","base","R4DS-2e Ch. 27"
 "33","hist()",NA,NA,NA,"R4DS-2e Ch. 27"
 "34","plot()",NA,NA,NA,"R4DS-2e Ch. 27"
-"35","cut()","divide range of vector into intervals","https://rdrr.io/r/base/cut.html","base","R4DS-2e Ch. 27"
-"36","is.numeric()","determine if input is of type numeric","https://rdrr.io/r/base/numeric.html","base","R4DS-2e Ch. 27"
+"35","df()",NA,NA,NA,"R4DS-2e Ch. 27"
+"36","cut()","divide range of vector into intervals","https://rdrr.io/r/base/cut.html","base","R4DS-2e Ch. 27"
+"37","is.numeric()","determine if input is of type numeric","https://rdrr.io/r/base/numeric.html","base","R4DS-2e Ch. 27"

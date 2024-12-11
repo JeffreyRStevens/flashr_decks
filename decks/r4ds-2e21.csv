@@ -37,3 +37,4 @@
 "36","year()","return or set year component of a date-time","https://lubridate.tidyverse.org/reference/year.html","lubridate","R4DS-2e Ch. 21"
 "37","month()","return or set month component of a date-time","https://lubridate.tidyverse.org/reference/month.html","lubridate","R4DS-2e Ch. 21"
 "38","day()","get days component of date-time","https://lubridate.tidyverse.org/reference/day.html","lubridate","R4DS-2e Ch. 21"
+"39","df()",NA,NA,NA,"R4DS-2e Ch. 21"

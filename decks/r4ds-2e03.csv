@@ -30,3 +30,4 @@
 "29","year()","return or set year component of a date-time","https://lubridate.tidyverse.org/reference/year.html","lubridate","R4DS-2e Ch. 03"
 "30","hours()",NA,NA,NA,"R4DS-2e Ch. 03"
 "31","is.character()","determine if input is of type character","https://rdrr.io/r/base/character.html","base","R4DS-2e Ch. 03"
+"32","df()",NA,NA,NA,"R4DS-2e Ch. 03"

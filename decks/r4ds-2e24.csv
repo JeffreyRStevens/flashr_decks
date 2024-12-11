@@ -17,4 +17,5 @@
 "16","c()","create vector of numbers, characters, etc.","https://rdrr.io/r/base/c.html","base","R4DS-2e Ch. 24"
 "17","head()","return first rows of matrix, data frame, etc.","https://rdrr.io/r/utils/head.html","utils","R4DS-2e Ch. 24"
 "18","parse_number()","parse a character vector to numbers","https://readr.tidyverse.org/reference/parse_atomic.html","readr","R4DS-2e Ch. 24"
-"19","table()",NA,NA,NA,"R4DS-2e Ch. 24"
+"19","url()",NA,NA,NA,"R4DS-2e Ch. 24"
+"20","table()",NA,NA,NA,"R4DS-2e Ch. 24"
